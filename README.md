@@ -1,3 +1,5 @@
+#DEPLOY [![Build Status](https://travis-ci.com/ritik02/Deploy.svg?branch=master)](https://travis-ci.com/ritik02/Deploy)
+
 This Project has been created to bring all the deployment related hassles to a single Platform . We intend to Automate the entire deployment process at Go-Jek in the shortest and safest way .
 
 Main Objectives are -
