@@ -2,10 +2,11 @@ one:
   name: Ritik Verma
   email: ritik.v.aux@go-jek.com
   gitlab_token: ZuJHY7gHnc1cWmZGbQmA
+  gitlab_userid: 1022
   username: ritik.v.aux
-
 two:
   name: Ritik Verma
   email: ritik.v.aux@go-jek.com
   gitlab_token: ZuJHY7gHnc1cWmZGbQmAAAA
+  gitlab_userid: 1022
   username: ritik.v.aux
