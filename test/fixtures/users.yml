@@ -3,3 +3,9 @@ one:
   email: ritik.v.aux@go-jek.com
   gitlab_token: ZuJHY7gHnc1cWmZGbQmA
   username: ritik.v.aux
+
+two:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: ZuJHY7gHnc1cWmZGbQmAAAA
+  username: ritik.v.aux

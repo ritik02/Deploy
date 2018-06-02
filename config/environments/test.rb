@@ -20,6 +20,7 @@ Rails.application.configure do
 
 
   config.action_mailer.delivery_method = :test
+  config.require_master_key = true
 
   config.active_support.deprecation = :stderr
 end

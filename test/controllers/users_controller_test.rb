@@ -16,4 +16,20 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'check for token validity' do
+    gitlab_token = users(:one).gitlab_token
+    assert_equal true, check_api_for_valid_token?(gitlab_token)
+    gitlab_token = users(:one).gitlab_token + "AA"
+    assert_equal false, check_api_for_valid_token?(gitlab_token)
+  end
+
+  test 'redirect to home page if token is invalid or empty' do
+    sign_in users(:two)
+    get users_index_url
+    assert_response :success
+    assert_select "h3", "HOME PAGE"
+  end
+
+
+
 end
