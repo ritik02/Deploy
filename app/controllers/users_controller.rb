@@ -30,7 +30,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    gitlab_token = decrypt_accesstoken(User.find(current_user.id).gitlab_token)
+    gitlab_token = User.find(current_user.id).gitlab_token
+    if gitlab_token == nil || gitlab_token == ""
+      redirect_to users_home_path
+      return
+    end
+    gitlab_token = decrypt_accesstoken(gitlab_token)
     response = check_api_for_valid_token?(gitlab_token)
     if response == false
       redirect_to users_home_path

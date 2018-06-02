@@ -1,6 +1,6 @@
 
 Devise.setup do |config|
-  #config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
   config.cas_base_url = "https://sso.gojek.co.id/cas"
   config.cas_login_url = "https://sso.gojek.co.id/cas/login"
   require 'devise/orm/active_record'

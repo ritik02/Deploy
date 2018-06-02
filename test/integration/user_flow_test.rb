@@ -3,7 +3,7 @@ require 'test_helper'
 class UserFlowTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
 
-  test "Should redirect to home page if users enters Invalid token" do
+  test "Should redirect to home page if users enters Invalid access_token" do
     sign_in users(:two)
     get users_home_url(users(:two))
     assert_response :success
@@ -14,7 +14,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     assert_select "h3" , "HOME PAGE"
   end
 
-  test "Should redirect to index page if users enters Valid token" do
+  test "Should redirect to index page if users enters Valid access_token" do
     sign_in users(:one)
     patch users_home_url(users(:one)) , params: {user: {gitlab_token: decrypt_accesstoken(users(:one).gitlab_token) }}
     assert_response :redirect
