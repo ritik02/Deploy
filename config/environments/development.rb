@@ -22,8 +22,6 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
   config.active_record.migration_error = :page_load
-  #config.include Devise::Test::IntegrationHelpers, type: :feature
-
   config.active_record.verbose_query_logs = true
 
   config.assets.debug = true

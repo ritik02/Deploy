@@ -17,4 +17,17 @@ class ActiveSupport::TestCase
     end
   end
 
+  def encrypt_accesstoken(token)
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.access_token_base)
+    encrypted_token = crypt.encrypt_and_sign(token || "XXXXX")
+    return encrypted_token
+  end
+
+  def decrypt_accesstoken(encrypted_token)
+    crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.access_token_base)
+    decrypted_token = crypt.decrypt_and_verify(encrypted_token || "XXXXX")
+    return decrypted_token
+  end
+
+
 end
