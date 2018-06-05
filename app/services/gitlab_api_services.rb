@@ -5,6 +5,15 @@ class GitlabApiServices
 		@base_url = "https://source.golabs.io/api/v4"
 	end
 
+  def check_api_for_valid_token?
+    url = @base_url + "/users?private_token=" + @access_token
+    response = HTTParty.get(url)
+    if response.code == 200
+      return true
+    else false
+    end
+  end
+
 	def get_user_details(username)
     url = @base_url + "/users?private_token=" + @access_token + "&username=" + username
     HTTParty.get(url)
@@ -23,9 +32,20 @@ class GitlabApiServices
   end
 
   def get_user_projects(gitlab_userid, page_id)
-    url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token + "&per_page=1&page=" + page_id.to_s
+    url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token + "&per_page=10&page=" + page_id.to_s
     HTTParty.get(url)
   end
 
+  def get_search_results(gitlab_userid, searched_query)
+    url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token
+    projects = HTTParty.get(url)
+    search_results = []
+    projects.each do |project|
+    	if project["name"].include?(searched_query)
+    		search_results.push(project)
+    	end
+    end
+    search_results
+  end
 
 end
