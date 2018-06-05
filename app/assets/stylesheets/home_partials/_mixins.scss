@@ -1,0 +1,14 @@
+@mixin heading-font {
+    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+@mixin body-font {
+    font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+@mixin transition-all() {
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}

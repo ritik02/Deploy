@@ -1,3 +1,140 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$border : #ffffff;
+$font: normal 300 18px "Titillium Web", sans-serif;
+$border-radius : 4px;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font: $font;
+  font-family: "Titillium Web", sans serif;
+  color: #758D96;
+}
+
+#menu-nav {
+ max-width: 2000px;
+ margin: 00px auto;
+ background-color: #00000f;
+ border-radius: $border-radius;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#navigation-bar {
+ ul {
+   border-radius: $border-radius;
+   overflow: hidden;
+ }
+
+ li {
+   float: left;
+   width: 20%;
+
+   &:hover a::before {
+     right: 0;
+     left: 0;
+   }
+ }
+
+ a {
+   color: #ffffff;
+   font-size: 15px;
+   text-decoration: none;
+   text-align: center;
+   padding: 5px 0;
+   display: block;
+   position: relative;
+   transition: all 0.3s ease;
+
+   @media (min-width: 996px){
+     font-size: 25px;
+   }
+
+   &:hover {
+     color: $border;
+   }
+
+   &::before {
+     content: "";
+     transition: all 0.4s ease-in-out;
+     position: absolute;
+     right: 50%;
+     left: 50%;
+     bottom: 0;
+     height: 2px;
+     background-color: $border;
+   }
+
+   &:hover::before {
+     right: 0;
+     left: 0;
+   }
+ }
+
+}
+
+
+.timeline {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ont: $font;
+  font-family: "Titillium Web", sans serif;
+}
+
+
+
+
+.status {
+  padding: 0px 40px;
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #D6DCE0;
+  position: relative;
+  transition: all 200ms ease-in;
+}
+.status h4 {
+  font-weight: 600;
+  font-size :15px;
+  @media (min-width: 996px){
+  font-size :25px;
+  }
+
+}
+.li.complete .status {
+  border-top: 2px solid #66DC71;
+}
+.li.complete .status:before {
+  background-color: #66DC71;
+  border: none;
+  transition: all 200ms ease-in;
+}
+.li.complete .status h4 {
+  color: #66DC71;
+}
+
+@media (min-device-width: 320px) and (max-device-width: 700px) {
+  .timeline {
+    list-style-type: none;
+    display: block;
+  }
+
+  .li {
+    transition: all 200ms ease-in;
+    display: flex;
+    width: inherit;
+  }
+
+  .timestamp {
+    width: 100px;
+  }
+
+
+}
+
+
+a{
+  font-size: 15px;
+  @media (min-width: 996px){
+    font-size: 25px;
+  }
+}

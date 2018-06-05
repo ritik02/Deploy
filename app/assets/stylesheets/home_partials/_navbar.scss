@@ -1,0 +1,38 @@
+#mainNav {
+    border-color: fade-out($gray-darker, .95);
+    background-color: transparent;
+    @include transition-all;
+    .navbar-brand {
+        color: $theme-primary;
+        @include heading-font;
+        &:hover,
+        &:focus {
+            color: darken($theme-primary, 10%);
+        }
+    }
+    
+    @media (min-width: 992px) {
+        border-color: transparent;
+        background-color: transparent;
+        .navbar-brand {
+            color: fade(white, 70%);
+            font-size: 25px;
+            font-weight: 500;
+            &:hover,
+            &:focus {
+                color: white;
+            }
+        }
+        &.navbar-shrink {
+            border-color: fade-out($gray-darker, .9);
+            background-color: white;
+            .navbar-brand {
+                color: $gray-darker;
+                &:hover,
+                &:focus {
+                    color: $theme-primary;
+                }
+            }
+        }
+    }
+}

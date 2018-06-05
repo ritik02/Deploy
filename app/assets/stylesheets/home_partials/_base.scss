@@ -1,0 +1,42 @@
+.bg-primary {
+    background: $green;
+    background: -webkit-linear-gradient($green, darken($green, 5%));
+    background: linear-gradient($green, darken($green, 5%));
+}
+.text-primary {
+    color: $black;
+}
+.btn-outline {
+    color: white;
+    border: 2px solid;
+    border-color: white;
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: white;
+        border-color: white;
+        background-color: $black;
+    }
+}
+.btn{
+    border-radius: 300px;
+}
+.btn-xl {
+    font-size: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    white-space: normal;
+}
+.btn-new{
+    background-color: $purple_dark;
+    font-size: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+    padding: 15px 45px;
+    white-space: normal;
+}
+.purple-cards{
+    background-color: $purple_dark;
+}

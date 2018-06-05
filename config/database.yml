@@ -5,8 +5,14 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: godeploy
+  pool: 5
+  username: postgres
+  password: postgres
+  timeout: 5000
+
 test:
   <<: *default
   database: db/test.sqlite3

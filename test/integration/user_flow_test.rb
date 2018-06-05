@@ -11,7 +11,6 @@ class UserFlowTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "h3" , "HOME PAGE"
   end
 
   test "Should redirect to index page if users enters Valid access_token" do

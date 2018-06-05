@@ -29,7 +29,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "h3", "HOME PAGE"
   end
 
   test 'redirect to home page if access_token is empty' do
@@ -38,7 +37,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "h3", "HOME PAGE"
   end
 
   test 'redirect to index page if access_token is valid' do

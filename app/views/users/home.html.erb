@@ -1,12 +1,61 @@
-<h3>HOME PAGE</h3>
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">Go-deploy</a>
+    </div>
+  </nav>
 
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :PasteYourTOken %> <br />
-    <%= f.text_field :gitlab_token %> <br/>
-  </p>
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="col-lg-7 my-auto">
+          <div class="header-content mx-auto">
+            <h1 class="mb-5">Let's bring all the deployment related hassles to a single Platform </h1>
+            <a href="#steps" class="btn btn-outline btn-xl js-scroll-trigger">Let's do this!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <p>
-  <%= f.submit "Lets Go" %>
-  </p>
-<% end %>
+
+  <section class="steps bg-primary text-center" id="steps">
+    <div class="container">
+				<div class="card-deck">
+
+          <div class="card purple-cards align-card p-1 pt-5">
+            <h3 class="my-4 mx-2">1. Click on Generate Token.</h3>
+            <h3 class="my-3 mx-2" >2. Create a new personal access token.</h3>
+            <h3 class="my-3 mx-2">3. Paste the token.</h3></br>
+          </div>
+
+          <div class="card purple-cards p-4 " >
+            <div class="form-group"></br>
+              <img class="img-responsive m-1" src="/assets/generate.png"  alt="paste"></br></br>
+              <a target=_blank href="https://source.golabs.io/profile/personal_access_tokens" class="btn btn-outline btn-xl">Generate Token</a></br></br>
+              <img class="rounded" src="/assets/paste.png"  alt="paste">
+              </br></br>
+              <%= form_for @user do |f|  %>
+								  <%= f.text_field :gitlab_token, class: "form-control"%> <br/>
+								  <%= f.submit "Link your token", class: "btn btn-outline btn-new mt-1" %>
+							<% end %>
+            </div>
+          </div>
+
+          <div class="card purple-cards p-4" >
+            </br>
+             <img class="card-img-top" src="/assets/goready.png" >
+            <a href="#download" class="btn btn-outline btn-xl mt-5">Let's Get Started</a>
+          </div>
+
+       </div>
+      </div>
+  </section>
+
+
+<footer>
+  <div class="container">
+
+  </div>
+</footer>
+
+<%= javascript_include_tag "home_page.js", "data-turbolinks-track" => true  %>
