@@ -32,6 +32,12 @@ class UsersController < ApplicationController
       redirect_to users_home_path
       return
     end
+    search_query = params[:search_query]
+    if !search_query.blank?
+        @projects = @gitlab_api_services.get_search_results(current_user.gitlab_userid, search_query)
+        @number_of_pages = 0
+        return
+    end
     page_id = params[:page_id]
     if page_id.blank?
         page_id = 1
