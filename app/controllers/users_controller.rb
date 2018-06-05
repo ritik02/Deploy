@@ -22,10 +22,6 @@ class UsersController < ApplicationController
 
   def project
     gitlab_token = current_user.gitlab_token
-    if gitlab_token == nil || gitlab_token == ""
-      redirect_to users_home_path
-      return
-    end
     get_gitlab_api_services(decrypt_access_token(gitlab_token))
     response = @gitlab_api_services.check_api_for_valid_token?
     if response == false

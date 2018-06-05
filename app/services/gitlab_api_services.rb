@@ -38,7 +38,6 @@ class GitlabApiServices
   def get_search_results(gitlab_userid, searched_query)
     url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token
     projects = HTTParty.get(url)
-		puts projects
     search_results = []
     projects.each do |project|
     	if project["name"].include?(searched_query)
