@@ -1,0 +1,20 @@
+one:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: 49MPdDmSL+P6so5IWB64pYtKH8O9vq2fFXTtu2VZ--g2Z8ptaLvZK5Bpmd--JaEc1hMZrxY0yfrBNuasTA==
+  gitlab_userid: 1022
+  username: ritik.v.aux
+
+two:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: gN3m3DnXMIe+SF5StWrkY2GuNaWzjr59kjTNlEs/mI4U--XOo6nVmnu4HXth5T--F7bqGbmSgxTmz8ueg9h41A==
+  gitlab_userid: 1022
+  username: ritik.v.aux
+
+three:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token:
+  gitlab_userid: 1022
+  username: ritik.v.aux
