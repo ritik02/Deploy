@@ -43,12 +43,16 @@
  </div>
 </div>
 
+
 <div id="container">
-  <div id="searchbar">
-    <input type="text" id="topics" style="float:left"/><input type="hidden" id="topicID" />
-    <div id="btn" style="float:left">Search</div>
-  </div>
+    <div id="searchbar">
+      <form action="/users/project" method="get">
+        <input type="text" style="float:left" name="search_query"/>
+        <input id="btn" style="float:right" type=submit formmethod="get">
+      </form>
+    </div>
 </div>
+
 
 <div class="container">
   <% @projects.each do |project| %>
@@ -56,15 +60,15 @@
     <div class="col-xs-7 col-md-7" style="height :20px">
       <div class="row">
         <div class="col-xs-1 col-md-1"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive" src="/assets/folderlogo.png"  width="25" height="25"></div>
-        <div class="col-xs-11 col-md-11"><h3 style="margin: 0px 0px"> <%= link_to project["name"]  , users_job_path(:project_id => project["id"]) %></h3><p> <%= project["description"] %></p></div>
+        <div class="col-xs-11 col-md-11"><h3 style="margin: 0px 0px" class="project_title"> <%= link_to project["name"]  , users_job_path(:project_id => project["id"]) %></h3><p class="project_description"> <%= project["description"] %></p></div>
       </div>
     </div>
     <div class="col-xs-5 col-md-5">
         <div class="row">
-          <div class="col-xs-5 col-md-5">
+          <div class="col-xs-3 col-md-3">
           </div>
       <% time = project["last_activity_at"] %>
-      <div class="col-xs-7 col-md-7"> <div >Last Updated : <%= time %></div></div>
+      <div class="col-xs-9 col-md-9 project_date"> Last Updated : <%= time %></div>
     </div>
   </div>
 </div>
@@ -74,11 +78,8 @@
 </div>
 <div style="text-align: center;">
  <% for i in  1..@number_of_pages do %>
-
   <%= link_to "#{i}", users_project_url(:page_id => i)%> :
-
-
- <% end %>
+  <% end %>
 </div>
 </body>
 </html>

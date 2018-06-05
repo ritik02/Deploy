@@ -21,8 +21,7 @@ class GitlabApiServices
 
 	def get_number_of_pages(gitlab_userid)
     url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token
-    response = HTTParty.get(url)
-    projects = response
+    projects = HTTParty.get(url)
     number_of_projects = projects.length
     number_of_pages = number_of_projects / 10
     if number_of_projects % 10 != 0
@@ -39,6 +38,7 @@ class GitlabApiServices
   def get_search_results(gitlab_userid, searched_query)
     url = @base_url + "/users/" + gitlab_userid.to_s + "/projects?private_token=" + @access_token
     projects = HTTParty.get(url)
+		puts projects
     search_results = []
     projects.each do |project|
     	if project["name"].include?(searched_query)
