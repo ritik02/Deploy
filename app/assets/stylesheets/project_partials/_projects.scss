@@ -1,14 +1,14 @@
 .project_date {
-  font-size: 12px;
+  font-size: 10px;
   @media (min-width: 996px){
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
 .project_description {
-  font-size: 12px;
+  font-size: 10px;
   @media (min-width: 996px){
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
@@ -16,5 +16,29 @@
   font-size: 15px;
   @media (min-width: 996px){
     font-size: 25px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
 }
