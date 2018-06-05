@@ -1,9 +1,8 @@
 #searchbar {
   width: 520px;
   height: 36px;
-  background: #718fff;
   border-radius: 5px;
-  border: 3px solid #718fff;
+  border: 3px solid #000000;
 
 }
 
@@ -27,14 +26,14 @@ input {
 }
 
 #btn {
-  background: #4e74ff;
+  background: black;
   width: 105px;
   height: 30px;
   padding-right: 20px;
-    padding-left: 20px;
+  padding-left: 20px;
   color: white;
   float: right;
   font: $font;
   cursor: pointer;
-  line-height: 30px;
+  line-height: 10px;
 }

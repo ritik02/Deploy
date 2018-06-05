@@ -47,7 +47,7 @@
 <div id="container">
     <div id="searchbar">
       <form action="/users/project" method="get">
-        <input type="text" style="float:left" name="search_query"/>
+        <input type="text" style="float:left" placeholder="Search Your Projects"/>
         <input id="btn" style="float:right" type=submit formmethod="get">
       </form>
     </div>
@@ -63,22 +63,22 @@
         <div class="col-xs-11 col-md-11"><h3 style="margin: 0px 0px" class="project_title"> <%= link_to project["name"]  , users_job_path(:project_id => project["id"]) %></h3><p class="project_description"> <%= project["description"] %></p></div>
       </div>
     </div>
-    <div class="col-xs-5 col-md-5">
-        <div class="row">
-          <div class="col-xs-3 col-md-3">
-          </div>
+    <div class="col-xs-5 col-md-5 project_description">
+
+
       <% time = project["last_activity_at"] %>
-      <div class="col-xs-9 col-md-9 project_date"> Last Updated : <%= time %></div>
-    </div>
+      Last Updated : <%= time %>
+
   </div>
 </div>
+<br>
 <br>
 <hr>
    <% end %>
 </div>
 <div style="text-align: center;">
  <% for i in  1..@number_of_pages do %>
-  <%= link_to "#{i}", users_project_url(:page_id => i)%> :
+<h4><strong>  <%= link_to "#{i}", users_project_url(:page_id => i)%> :</h4>
   <% end %>
 </div>
 </body>
