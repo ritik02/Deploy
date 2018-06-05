@@ -1,0 +1,38 @@
+#searchbar {
+  width: 540px;
+  height: 50px;
+  background: #718fff;
+  border-radius: 5px;
+  border: 3px solid #718fff;
+
+}
+
+#container {
+  width: 540px;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 00%;
+}
+
+input {
+  width: 400px;
+  height: 30px;
+  font-size: 20px;
+  outline: none;
+  padding: 10px;
+  border: none;
+  background: white;
+}
+
+#btn {
+  background: #4e74ff;
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  color: white;
+  font-family: "helvetica";
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+}

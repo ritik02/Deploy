@@ -56,7 +56,14 @@
     </ul>
  </div>
 </div>
-<br>
+
+<div id="container">
+  <div id="searchbar">
+    <input type="text" id="topics" style="float:left"/><input type="hidden" id="topicID" />
+    <div id="btn" style="float:left">Search</div>
+  </div>
+</div>
+
 <div class="container">
 
    <% @projects.each do |project| %>
