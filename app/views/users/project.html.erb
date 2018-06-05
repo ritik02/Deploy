@@ -5,7 +5,7 @@
  <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
- <%= stylesheet_link_tag    'project-page'%>
+ <%= stylesheet_link_tag  'project-page'%>
 </head>
 <body>
 
@@ -47,7 +47,7 @@
 <div id="container">
     <div id="searchbar">
       <form action="/users/project" method="get">
-        <input type="text" style="float:left" placeholder="Search Your Projects"/>
+        <input type="text" style="float:left" placeholder="Search Your Projects" name="search_query"/>
         <input id="btn" style="float:right" type=submit formmethod="get">
       </form>
     </div>
@@ -60,7 +60,7 @@
     <div class="col-xs-7 col-md-7" style="height :20px">
       <div class="row">
         <div class="col-xs-1 col-md-1"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive" src="/assets/folderlogo.png"  width="25" height="25"></div>
-        <div class="col-xs-11 col-md-11"><h3 style="margin: 0px 0px" class="project_title"> <%= link_to project["name"]  , users_job_path(:project_id => project["id"]) %></h3><p class="project_description"> <%= project["description"] %></p></div>
+        <div class="col-xs-11 col-md-11"><h3 style="margin: 0px 0px" class="project_title"> <%= link_to project["name"]  , users_project_path(:project_id => project["id"]) %></h3><p class="project_description"> <%= project["description"] %></p></div>
       </div>
     </div>
     <div class="col-xs-5 col-md-5 project_description">
