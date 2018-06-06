@@ -5,6 +5,7 @@ DB_POOL:                     '5'
 DB_TIMEOUT:                  '5000'
 ENABLE_CAS_INTEGRATION:      'false'
 CAS_BASE_URL:                'http://localhost:3001'
+CAS_LOGIN_URL:                'http://localhost:3001/login'
 
 test:
   RAILS_ENV:                 'test'
