@@ -2,7 +2,6 @@
 /tmp
 /log
 /coverage
-/db
 /spec/fixtures/users.yml
 
 # Ignore application configuration
