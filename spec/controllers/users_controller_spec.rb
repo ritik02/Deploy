@@ -59,9 +59,28 @@ RSpec.describe UsersController, type: :controller do
   		patch :update, params: form_params
   		expect(new_user.gitlab_token).to eq(nil)
 		end
+
+		it "should not update gitlab token for a user if blank" do
+			new_user = users(:three)
+			sign_in new_user
+			expected_token = users(:one).gitlab_token
+			form_params = {
+											user: {
+												gitlab_token: ""
+											}
+ 									 }
+  		patch :update, params: form_params
+  		expect(response).to redirect_to(users_home_url)
+		end
 	end
 
 	describe "GET users#project" do
+		it "should redirect to homepage is token is nil for new user" do
+			sign_in users(:three)
+			get :project
+			expect(response).to redirect_to(users_home_url)
+		end
+
 		it "should return selected projects according to the search query of user" do
 			sign_in users(:one)
 			get :project, params: {:search_query => "test2"}
