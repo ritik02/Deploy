@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_06_01_125410) do
     t.string "email"
     t.string "gitlab_token"
     t.string "username", null: false
-    t.integer "gitlab_userid"
+    t.integer "gitlab_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

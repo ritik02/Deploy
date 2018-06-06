@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       return
     end
     response = @gitlab_api_services.get_user_details(current_user.username)
-    current_user.update(:name => response.first["name"], :gitlab_userid => response.first["id"].to_i, :email => response.first["username"]+"@go-jek.com", :gitlab_token => encrypt_access_token(pasted_token))
+    current_user.update(:name => response.first["name"], :gitlab_user_id => response.first["id"].to_i, :email => response.first["username"]+"@go-jek.com", :gitlab_token => encrypt_access_token(pasted_token))
     redirect_to users_project_url
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     end
     search_query = params[:search_query]
     if !search_query.blank?
-        @projects = @gitlab_api_services.get_search_results(current_user.gitlab_userid, search_query)
+        @projects = @gitlab_api_services.get_search_results(current_user.gitlab_user_id, search_query)
         @number_of_pages = 0
         return
     end
@@ -46,8 +46,8 @@ class UsersController < ApplicationController
     if page_id.blank?
         page_id = 1
     end
-    @number_of_pages = @gitlab_api_services.get_number_of_pages(current_user.gitlab_userid)
-    @projects = @gitlab_api_services.get_user_projects(current_user.gitlab_userid, page_id)
+    @number_of_pages = @gitlab_api_services.get_number_of_pages(current_user.gitlab_user_id)
+    @projects = @gitlab_api_services.get_user_projects(current_user.gitlab_user_id, page_id)
   end
 
   def get_gitlab_api_services(gitlab_token)

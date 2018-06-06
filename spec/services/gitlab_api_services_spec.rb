@@ -24,14 +24,14 @@ RSpec.describe GitlabApiServices  do
 
     context "check api for number of pages" do
         it "Should return 1 when there are 2 projects" do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_number_of_pages(users(:one).gitlab_userid)
+        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_number_of_pages(users(:one).gitlab_user_id)
         expect(actual).to eq 1
         end
     end
 
     context "check api for project details" do
         it "Should return 2 projects" do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_user_projects(users(:one).gitlab_userid, 1)
+        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_user_projects(users(:one).gitlab_user_id, 1)
         expect(actual.length).to eq 3
         expect(actual[0]["name"]).to eq "blank"
         end
@@ -39,7 +39,7 @@ RSpec.describe GitlabApiServices  do
 
     context "check api for search project results" do
         it "Should return 'test2' project" do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_search_results(users(:one).gitlab_userid, "test2")
+        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_search_results(users(:one).gitlab_user_id, "test2")
         expect(actual[0]["name"]).to eq "test2"
         end
     end

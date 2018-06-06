@@ -95,7 +95,7 @@ RSpec.describe UsersController, type: :controller do
 
 		it "should return projects of user when no search query" do
 			sign_in users(:one)
-			projects_of_user_one = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_user_projects(users(:one).gitlab_userid, 1)
+			projects_of_user_one = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_user_projects(users(:one).gitlab_user_id, 1)
 			get :project, params: {:search_query => ""}
 			expect(assigns(:projects).length).to eq(projects_of_user_one.length)
 		end
