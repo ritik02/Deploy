@@ -1,4 +1,4 @@
-module UsersHelper
+module EncryptionHelper
 
   def encrypt_access_token(token)
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.credentials.access_token_base)

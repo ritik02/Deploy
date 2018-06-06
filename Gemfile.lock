@@ -42,6 +42,8 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     autoprefixer-rails (8.6.0)
       execjs
@@ -55,6 +57,8 @@ GEM
       sass (>= 3.5.2)
     builder (3.2.3)
     concurrent-ruby (1.0.5)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.4)
     devise (4.4.3)
       bcrypt (~> 3.0)
@@ -72,6 +76,7 @@ GEM
     ffi (1.9.24)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashdiff (0.3.7)
     httparty (0.16.2)
       multi_xml (>= 0.5.2)
     i18n (1.0.1)
@@ -108,6 +113,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.0.0)
     popper_js (1.12.9)
+    public_suffix (3.0.2)
     puma (3.11.4)
     rack (2.0.5)
     rack-test (1.0.0)
@@ -167,6 +173,7 @@ GEM
     ruby_dep (1.5.0)
     rubycas-client (2.3.9)
       activesupport
+    safe_yaml (1.0.4)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -204,6 +211,7 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    vcr (4.0.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -211,6 +219,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webmock (3.4.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -239,7 +251,9 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   turbolinks (~> 5)
+  vcr
   web-console (>= 3.3.0)
+  webmock
 
 RUBY VERSION
    ruby 2.5.1p57

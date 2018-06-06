@@ -1,7 +1,7 @@
 Devise.setup do |config|
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-  config.cas_base_url = "https://sso.gojek.co.id/cas"
-  config.cas_login_url = "https://sso.gojek.co.id/cas/login"
+  config.cas_base_url = "https://google.com"
+  config.cas_login_url = "https://google.com"
   require 'devise/orm/active_record'
   config.skip_session_storage = [:http_auth]
   config.reconfirmable = true

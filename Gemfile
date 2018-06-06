@@ -17,6 +17,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
+gem 'vcr'
+gem 'webmock'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'

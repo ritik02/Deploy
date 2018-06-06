@@ -1,57 +1,19 @@
 require 'gitlab_api_services'
+
 class UsersController < ApplicationController
+  include EncryptionHelper
+  include TokenValidationHelper
 
-  include UsersHelper
-
-  def home
+  def edit
     @user = current_user
   end
 
   def update
     pasted_token = params["user"]["gitlab_token"]
-    if pasted_token.blank?
-     redirect_to users_home_path
-     return
-    end
-    get_gitlab_api_services(pasted_token)
-    response = @gitlab_api_services.check_api_for_valid_token?
-    if response == false
-      redirect_to users_home_path
-      return
-    end
+    return if redirect_if_token_is_nil?(pasted_token)
+    return if redirect_if_token_is_invalid?(pasted_token)
     response = @gitlab_api_services.get_user_details(current_user.username)
     current_user.update(:name => response.first["name"], :gitlab_user_id => response.first["id"].to_i, :email => response.first["username"]+"@go-jek.com", :gitlab_token => encrypt_access_token(pasted_token))
-    redirect_to users_project_url
+    redirect_to action: "index", controller: "projects", user_id: current_user.id
   end
-
-  def project
-    gitlab_token = current_user.gitlab_token
-    if gitlab_token.blank?
-     redirect_to users_home_path
-     return
-    end
-    get_gitlab_api_services(decrypt_access_token(gitlab_token))
-    response = @gitlab_api_services.check_api_for_valid_token?
-    if response == false
-      redirect_to users_home_path
-      return
-    end
-    search_query = params[:search_query]
-    if !search_query.blank?
-        @projects = @gitlab_api_services.get_search_results(current_user.gitlab_user_id, search_query)
-        @number_of_pages = 0
-        return
-    end
-    page_id = params[:page_id]
-    if page_id.blank?
-        page_id = 1
-    end
-    @number_of_pages = @gitlab_api_services.get_number_of_pages(current_user.gitlab_user_id)
-    @projects = @gitlab_api_services.get_user_projects(current_user.gitlab_user_id, page_id)
-  end
-
-  def get_gitlab_api_services(gitlab_token)
-    @gitlab_api_services = GitlabApiServices.new(gitlab_token)
-  end
-
 end
