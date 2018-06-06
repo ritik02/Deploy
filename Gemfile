@@ -19,6 +19,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
 gem 'vcr'
 gem 'webmock'
+gem 'figaro'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
