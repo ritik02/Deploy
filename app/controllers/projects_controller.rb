@@ -12,6 +12,9 @@ class ProjectsController < ApplicationController
     @projects = @gitlab_api_services.get_user_projects(@user.gitlab_user_id, @page_id)
   end
 
+  def show
+  end
+
   private
 
   def got_search_query?(search_query)

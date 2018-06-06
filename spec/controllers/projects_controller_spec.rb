@@ -33,4 +33,12 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
   end
+
+  describe "GET projects#show" do
+    it "should open user_project page when a project is clicked" do
+      sign_in users(:one)
+      get :show, params: { user_id: users(:one).id, id: 3892 }
+      expect(response).to have_http_status(:success)
+    end
+  end
 end

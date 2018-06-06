@@ -56,5 +56,14 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
+  context "check api for project details" do
+    it "Should return project details" do
+      VCR.use_cassette("project_details") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_project_details(3892)
+        expect(actual["name"]).to eq "blank"
+      end
+    end
+  end
+
 
 end
