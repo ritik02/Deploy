@@ -4,3 +4,4 @@
 /coverage
 /db
 /spec/fixtures
+/config/initializers/devise.rb

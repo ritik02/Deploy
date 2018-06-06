@@ -16,66 +16,74 @@ RSpec.describe UsersController, type: :controller do
 
 	describe "PATCH users#update" do
 		it "should update gitlab token for a user if valid" do
-			sign_in users(:three)
-			expected_token = decrypt_access_token(@valid_token)
-			form_params = {
-											id: users(:three).id,
-											user: { gitlab_token: decrypt_access_token(@valid_token) }
- 									 }
-  		patch :update, params: form_params
-  		actual_token = decrypt_access_token(subject.current_user.gitlab_token)
-  		expect(actual_token).to eq(expected_token)
+			VCR.use_cassette("valid_gitlab_token") do
+				sign_in users(:three)
+				expected_token = decrypt_access_token(@valid_token)
+				form_params = {
+					id: users(:three).id,
+					user: { gitlab_token: decrypt_access_token(@valid_token) }
+				}
+				patch :update, params: form_params
+				actual_token = decrypt_access_token(subject.current_user.gitlab_token)
+				expect(actual_token).to eq(expected_token)
+			end
 		end
 
 		it "should not update gitlab token for a user if invalid" do
-			sign_in users(:three)
-			form_params = {
-											id: users(:three).id,
-											user: { gitlab_token: "invalid_gitlab_token" }
- 									 }
-  		patch :update, params: form_params
-  		expect(users(:three).gitlab_token).to eq(nil)
+			VCR.use_cassette("new_invalid_gitlab_token") do
+				sign_in users(:three)
+				form_params = {
+					id: users(:three).id,
+					user: { gitlab_token: "invalid_gitlab_token" }
+				}
+				patch :update, params: form_params
+				expect(users(:three).gitlab_token).to eq(nil)
+			end
 		end
 
 		it "should not update gitlab token for a user if blank" do
 			sign_in users(:three)
 			form_params = {
-											id: users(:three).id,
-											user: { gitlab_token: "" }
- 									 }
-  		patch :update, params: form_params
-  		expect(users(:three).gitlab_token).to eq(nil)
+				id: users(:three).id,
+				user: { gitlab_token: "" }
+			}
+			patch :update, params: form_params
+			expect(users(:three).gitlab_token).to eq(nil)
 		end
 
 		it "should show projects page if gitlab token is valid" do
+			VCR.use_cassette("valid_gitlab_token") do
 				sign_in users(:one)
 				form_params = {
 					id: users(:one).id,
 					user: { gitlab_token: decrypt_access_token(@valid_token) }
-	 				}
-	  		patch :update, params: form_params
-	  		expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:one).id)
+				}
+				patch :update, params: form_params
+				expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:one).id)
 			end
+		end
 
 		it "should reload edit page if gitlab token is invalid" do
-				sign_in users(:three)
+			VCR.use_cassette("new_invalid_gitlab_token") do
+				sign_in users(:two)
 				form_params = {
-												id: users(:three).id,
-												user: { gitlab_token: "invalid_gitlab_token" }
-	 									 }
-	  		patch :update, params: form_params
-	  		expect(response).to redirect_to(edit_user_url)
+					id: users(:two).id,
+					user: { gitlab_token: "invalid_gitlab_token" }
+				}
+				patch :update, params: form_params
+				expect(response).to redirect_to(edit_user_url)
 			end
+		end
 
-			it "should reload edit page if gitlab token is empty" do
-					sign_in users(:three)
-					form_params = {
-													id: users(:three).id,
-													user: { gitlab_token: "" }
-		 									 }
-		  		patch :update, params: form_params
-		  		expect(response).to redirect_to(edit_user_url)
-				end
+		it "should reload edit page if gitlab token is empty" do
+			sign_in users(:three)
+			form_params = {
+				id: users(:three).id,
+				user: { gitlab_token: "" }
+			}
+			patch :update, params: form_params
+			expect(response).to redirect_to(edit_user_url)
+		end
 	end
 
 end
