@@ -3,7 +3,8 @@
 /log
 /coverage
 /db
-/spec/fixtures
+/spec/fixtures/users.yml
 
 # Ignore application configuration
 /config/application.yml
+/config/database.yml

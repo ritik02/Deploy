@@ -1,0 +1,20 @@
+one:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: SOMERangomTOken++
+  gitlab_user_id: 1022
+  username: ritik.v.aux
+
+two:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: AnotherTOKEN--]wd
+  gitlab_user_id: 1022
+  username: ritik.v.aux
+
+three:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token:
+  gitlab_user_id: 1022
+  username: ritik.v.aux

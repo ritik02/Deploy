@@ -1,1 +1,11 @@
-Figaro.require_keys("cas_base_url", "cas_login_url")
+Figaro.require_keys(
+  'DB_HOST',
+  'DB_NAME',
+  'DB_USER',
+  'DB_PASSWORD',
+  'DB_POOL',
+  'DB_TIMEOUT',
+  'RAILS_ENV',
+  'CAS_BASE_URL',
+  'CAS_LOGIN_URL'
+)

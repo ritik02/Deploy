@@ -1,0 +1,11 @@
+DB_USER:                     'postgres'
+DB_HOST:                     'localhost'
+DB_PASSWORD:                 ''
+DB_POOL:                     '5'
+DB_TIMEOUT:                  '5000'
+ENABLE_CAS_INTEGRATION:      'false'
+CAS_BASE_URL:                'http://localhost:3001'
+
+test:
+  RAILS_ENV:                 'test'
+  DB_NAME:                   'godeploytest'
