@@ -47,7 +47,7 @@ RSpec.describe ProjectsController, type: :controller do
       VCR.use_cassette("project_jobs") do
         sign_in users(:four)
         get :show, params: { user_id: users(:four).id, id: 3850 }
-        expect(assigns(:stages)[0]).to eq("test")
+        expect(assigns(:stages)[0]).to eq("deploy")
       end
     end
 

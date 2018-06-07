@@ -69,12 +69,29 @@ RSpec.describe GitlabApiServices  do
     it "Should return jobs of project" do
       VCR.use_cassette("project_jobs_details") do
         actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_project_jobs(3850)
-        expect(actual[0]["commit"]["message"]).to eq "Update .gitlab-ci.yml"
+        expect(actual[0]["commit"]["message"]).to eq "Modify .gitlab-ci.yml"
+      end
+    end
+  end
+
+  context "check api for last deployed commit of project" do
+    it "Should return last deployed commit of project" do
+      VCR.use_cassette("project_last_deployed_commit") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four)).gitlab_token).get_last_deployed_commit(394)
+        expect(actual["deployable"]["name"]).to eq "deploy_staging_sidekiq"
       end
     end
   end
 
 
+  context "check api for all commits after last deployed commit of project" do
+    it "Should return all commits after last deployed commit of project" do
+      VCR.use_cassette("project_all_commits_after_last_deployed_commit") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_all_commits_after_last_deployed_commit(394, "2017-10-31T05:20:02Z")
+        expect(actual[0]["short_id"]).to eq "780b0bcf"
+      end
+    end
+  end
 
 
 end

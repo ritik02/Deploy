@@ -7,3 +7,6 @@
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
+spec/vcr_cassettes/project_all_commits_after_last_deployed_commit.yml
+spec/vcr_cassettes/project_last_deployed_commit.yml
+spec/vcr_cassettes/user_project_commit_details.yml
