@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Jun 2018 11:17:12 GMT
+      - Wed, 06 Jun 2018 15:16:49 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -51,9 +51,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - 7c39cf88-b0a3-47a8-b65c-7bbbe91d6edd
+      - 0a1ee803-f1d0-43ca-adf3-c263462f6e32
       X-Runtime:
-      - '0.014772'
+      - '0.015043'
       X-Total:
       - '1'
       X-Total-Pages:
@@ -64,5 +64,5 @@ http_interactions:
       encoding: UTF-8
       string: '[{"id":1022,"name":"Ritik Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"}]'
     http_version: 
-  recorded_at: Wed, 06 Jun 2018 11:17:12 GMT
+  recorded_at: Wed, 06 Jun 2018 15:16:49 GMT
 recorded_with: VCR 4.0.0

@@ -1,20 +1,28 @@
 one:
   name: Ritik Verma
   email: ritik.v.aux@go-jek.com
-  gitlab_token: SOMERangomTOken++
-  gitlab_user_id: 1022
+  gitlab_token: p168erfH8jiSfn7Ul9g7+uNPQQ==--yIqEl/GSDJSOZpwB--GLvZMHR0dCXDcp+P4gVUEA==
+  gitlab_user_id: 102200
   username: ritik.v.aux
 
 two:
   name: Ritik Verma
   email: ritik.v.aux@go-jek.com
-  gitlab_token: AnotherTOKEN--]wd
-  gitlab_user_id: 1022
+  gitlab_token: p168erfH8jiSfn7Ul9g7+uNPQQ==--yIqEl/GSDJSOZpwB--GLvZMHR0dCXDcp+P4gVUEA==
+  gitlab_user_id: 10000
   username: ritik.v.aux
 
 three:
   name: Ritik Verma
   email: ritik.v.aux@go-jek.com
   gitlab_token:
-  gitlab_user_id: 1022
+  gitlab_user_id: 102324
   username: ritik.v.aux
+
+
+four:
+  name: Archit Joshi
+  email: archit.j.aux@go-jek.com
+  gitlab_token: p168erfH8jiSfn7Ul9g7+uNPQQ==--yIqEl/GSDJSOZpwB--GLvZMHR0dCXDcp+P4gVUEA==
+  gitlab_user_id: 34332
+  username: archit.j.aux

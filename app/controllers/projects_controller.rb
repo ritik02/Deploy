@@ -1,3 +1,4 @@
+require 'set'
 class ProjectsController < ApplicationController
   include TokenValidationHelper
   include EncryptionHelper
@@ -13,6 +14,11 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    project_id = params["id"]
+    get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
+    @projects_details = @gitlab_api_services.get_project_details(project_id)
+    @jobs = @gitlab_api_services.get_project_jobs(project_id)
+    get_stages(@jobs)
   end
 
   private
@@ -28,6 +34,14 @@ class ProjectsController < ApplicationController
 
   def get_page_id(page_id)
     @page_id = page_id.blank? ? 1 : page_id
+  end
+
+  def get_stages(jobs)
+    @stages = Set[]
+    jobs.each do |job|
+      @stages.add(job["stage"])
+    end
+    @stages = @stages.to_a
   end
 
 end

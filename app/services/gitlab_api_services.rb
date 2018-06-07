@@ -40,6 +40,11 @@ class GitlabApiServices
 		HTTParty.get(url)
 	end
 
+	def get_project_jobs(gitlab_project_id)
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs?private_token=" + @access_token
+		HTTParty.get(url)
+	end
+
   def get_search_results(gitlab_user_id, searched_query)
     url = @base_url + "/users/" + gitlab_user_id.to_s + "/projects?private_token=" + @access_token
     projects = HTTParty.get(url)

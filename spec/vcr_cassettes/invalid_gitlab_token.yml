@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Jun 2018 11:17:03 GMT
+      - Wed, 06 Jun 2018 15:16:29 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -37,12 +37,12 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 3651941a-be8f-4d19-9f08-85c4caa30bf8
+      - 4346794b-3791-425f-a34b-4373e231389e
       X-Runtime:
-      - '0.007346'
+      - '0.007012'
     body:
       encoding: UTF-8
       string: '{"message":"401 Unauthorized"}'
     http_version: 
-  recorded_at: Wed, 06 Jun 2018 11:17:03 GMT
+  recorded_at: Wed, 06 Jun 2018 15:16:29 GMT
 recorded_with: VCR 4.0.0
