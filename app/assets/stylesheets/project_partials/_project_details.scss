@@ -1,0 +1,15 @@
+.card-header {
+    line-height: 26px;
+    font-size: 20px;
+ @media (min-width: 996px){
+   font-size: 40px;
+   line-height: 48px;
+ }
+}
+
+.card-text {
+    font-size: 14px;
+ @media (min-width: 996px){
+   font-size: 24px;
+ }
+}

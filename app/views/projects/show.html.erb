@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>GO-Deploy</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <%= stylesheet_link_tag  'project-page'%>
+ <%= javascript_tag  'project'%>
+</head>
+<body>
+
+<div id="menu-nav">
+  <div id="navigation-bar">
+    <ul>
+     <li><a href="<%=user_projects_path%>" style = "color: #00FF00;">Projects</a></li>
+     <li><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits"><span>Commits</span></a></li>
+     <li><a href="#"><span>Checklist</span></a></li>
+     <li><a href="#"><span>Approval</span></a></li>
+     <li><a href="#" ><span>Deploy</span></a></li>
+   </ul>
+   <ul class="timeline" id="timeline">
+     <li class="li complete">
+       <div class="status">
+         <h4> Project Selected </h4>
+       </div>
+     </li>
+     <li class="li">
+       <div class="status">
+         <h4> Commit Selected </h4>
+       </div>
+     </li>
+     <li class="li">
+       <div class="status">
+         <h4> Checklist Filled </h4>
+       </div>
+     </li>
+     <li class="li">
+       <div class="status">
+         <h4> Deploy Approved </h4>
+       </div>
+     </li>
+    </ul>
+ </div>
+</div>
+<div class="container" style="max-width: 1400px;" >
+<div class="card  " style="text-align: center;">
+  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 48px; margin: 0; color: #0a7fad; "><%= @projects_details["name"] %></b></h4>
+  <div class="card-body">
+
+    <p class="card-text" ><%= @projects_details["description"] %></p>
+    <p class="card-text">Commit Count: <%= @projects_details["statistics"]["commit_count"] %>      </p>
+     <p class="card-text">  Last Updated At: <%= @projects_details["last_activity_at"] %> </p>
+  </div>
+</div>
+   </div>
+   <br>
+<% @stages.each do |stage| %>
+<div class="container" style="max-width: 1400px;">
+<div id="accordion">
+
+  <div class="card">
+    <div class="card-header" id="heading<%= stage %>" style="padding-top: 0px; padding-bottom: 0px;">
+      <h6 class="">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= stage %>" " aria-controls="collapse<%= stage %>">
+         <h4><%= stage.upcase %> </h4>
+        </button>
+      </h6>
+    </div>
+
+    <div id="collapse<%= stage %>" class="collapse" aria-labelledby="heading<%= stage %>" data-parent="#accordion">
+      <div class="card-body">
+       <% @jobs.each do |job| %>
+       <% if job["name"] == stage %>
+       <%= job["name"].capitalize %> , <%= job["created_at"] %> <br>
+
+       <% end %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+ </div>
+ <% end %>
+ <br>
+ 	<div class="container"><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits" class="btn btn-primary btn-lg">Continue With Product Deployment</a></div>
+
+</body>
+
+</html>

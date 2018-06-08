@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GO-Deploy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag  'project-page'%>
+  <%= stylesheet_link_tag  'commits'%>
+
+</head>
+<body>
+
+  <div id="menu-nav">
+    <div id="navigation-bar">
+      <ul>
+        <li><a href="#" style = "color: #009944;">Projects</a></li>
+        <li><a href="#" style = "color: #00FF00;"><span>Commits</span></a></li>
+        <li><a href="#"><span>Checklist</span></a></li>
+        <li><a href="#"><span>Approval</span></a></li>
+        <li><a href="#" ><span>Deploy</span></a></li>
+      </ul>
+      <ul class="timeline" id="timeline" >
+        <li class="li complete" >
+          <div class="status">
+            <h4> Project Selected </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Commit Selected </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Checklist Filled </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Deploy Approved </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" >
+    <% @all_commits_after_last_deployed_commit.each do |commit| %>
+      <div class="row" id="checkboxes" >
+        <input type="checkbox" name="checkbox" id = "<%= "#{commit["short_id"]}" %>" />
+        <label for = "<%= "#{commit["short_id"]}" %>" style="float-left"><%= commit["message"] %></label>
+      </div>
+      <% end %>
+  </div>
+
+</body>
+<%= javascript_include_tag "commits.js", "data-turbolinks-track" => true  %>
+</html>

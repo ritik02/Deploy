@@ -77,7 +77,7 @@ RSpec.describe GitlabApiServices  do
   context "check api for last deployed commit of project" do
     it "Should return last deployed commit of project" do
       VCR.use_cassette("project_last_deployed_commit") do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:four)).gitlab_token).get_last_deployed_commit(394)
+        actual = GitlabApiServices.new("NLbDzn_JF9PyUrUs8EGn").get_last_deployed_commit(394)
         expect(actual["deployable"]["name"]).to eq "deploy_staging_sidekiq"
       end
     end

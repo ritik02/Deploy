@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3892?private_token=GeP9zqTKCWDS7aiaVUjj
+    uri: https://source.golabs.io/api/v4/projects/3892?private_token=GeP9zqTKCWDS7aiaVUjj&statistics=true
     body:
       encoding: US-ASCII
       string: ''
@@ -21,17 +21,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Jun 2018 15:16:39 GMT
+      - Thu, 07 Jun 2018 11:25:25 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2137'
+      - '2250'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"b6fac4bb6adb25e89a56fdee470a53cb"
+      - W/"09aa0a47d0cd574d4fc5c9038374a70b"
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -39,18 +39,18 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 3b683c01-b223-49b0-a5af-4c4ba2ffe62f
+      - 57e2b22d-6a14-44dd-90ec-19bf686c2378
       X-Runtime:
-      - '0.056266'
+      - '0.055430'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"id":3892,"description":"This is a blank project","name":"blank","name_with_namespace":"Ritik
         Verma / blank","path":"blank","path_with_namespace":"ritik.v.aux/blank","created_at":"2018-06-05T13:41:57.781Z","default_branch":null,"tag_list":[],"ssh_url_to_repo":"git@source.golabs.io:ritik.v.aux/blank.git","http_url_to_repo":"https://source.golabs.io/ritik.v.aux/blank.git","web_url":"https://source.golabs.io/ritik.v.aux/blank","avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-06-05T13:41:57.781Z","_links":{"self":"https://source.golabs.io/api/v4/projects/3892","issues":"https://source.golabs.io/api/v4/projects/3892/issues","merge_requests":"https://source.golabs.io/api/v4/projects/3892/merge_requests","repo_branches":"https://source.golabs.io/api/v4/projects/3892/repository/branches","labels":"https://source.golabs.io/api/v4/projects/3892/labels","events":"https://source.golabs.io/api/v4/projects/3892/events","members":"https://source.golabs.io/api/v4/projects/3892/members"},"archived":false,"visibility":"internal","owner":{"id":1022,"name":"Ritik
-        Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1022,"namespace":{"id":1185,"name":"ritik.v.aux","path":"ritik.v.aux","kind":"user","full_path":"ritik.v.aux","parent_id":null},"import_status":"none","import_error":null,"open_issues_count":0,"runners_token":"hRvi6JxoEW_wLz3JnUqT","public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","permissions":{"project_access":{"access_level":40,"notification_level":3},"group_access":null}}'
+        Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1022,"namespace":{"id":1185,"name":"ritik.v.aux","path":"ritik.v.aux","kind":"user","full_path":"ritik.v.aux","parent_id":null},"import_status":"none","import_error":null,"open_issues_count":0,"runners_token":"hRvi6JxoEW_wLz3JnUqT","public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","statistics":{"commit_count":0,"storage_size":0,"repository_size":0,"lfs_objects_size":0,"job_artifacts_size":0},"permissions":{"project_access":{"access_level":40,"notification_level":3},"group_access":null}}'
     http_version: 
-  recorded_at: Wed, 06 Jun 2018 15:16:39 GMT
+  recorded_at: Thu, 07 Jun 2018 11:25:25 GMT
 - request:
     method: get
     uri: https://source.golabs.io/api/v4/projects/3892/jobs?private_token=GeP9zqTKCWDS7aiaVUjj
@@ -72,7 +72,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Jun 2018 15:16:40 GMT
+      - Thu, 07 Jun 2018 11:25:25 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -102,9 +102,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - 8fee3cd7-0a73-4241-900e-30955bc1fdad
+      - 8d873ec3-3453-4b07-b8b5-141c15272ef4
       X-Runtime:
-      - '0.020208'
+      - '0.016209'
       X-Total:
       - '0'
       X-Total-Pages:
@@ -115,5 +115,5 @@ http_interactions:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Wed, 06 Jun 2018 15:16:40 GMT
+  recorded_at: Thu, 07 Jun 2018 11:25:25 GMT
 recorded_with: VCR 4.0.0

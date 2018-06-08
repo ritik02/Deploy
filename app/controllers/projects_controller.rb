@@ -3,8 +3,9 @@ class ProjectsController < ApplicationController
   include TokenValidationHelper
   include EncryptionHelper
 
+  before_action :get_current_user
+
   def index
-    @user = current_user
     return if redirect_if_token_is_nil?(@user.gitlab_token)
     return if redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
     return if got_search_query?(params[:search_query])
@@ -42,6 +43,10 @@ class ProjectsController < ApplicationController
       @stages.add(job["stage"])
     end
     @stages = @stages.to_a
+  end
+
+  def get_current_user
+    @user = current_user
   end
 
 end
