@@ -60,7 +60,7 @@ class GitlabApiServices
     projects = HTTParty.get(url)
     search_results = []
     projects.each do |project|
-    	if project["name"].include?(searched_query)
+    	if project["name"].downcase.include?(searched_query.downcase)
     		search_results.push(project)
     	end
     end

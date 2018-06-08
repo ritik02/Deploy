@@ -9,6 +9,8 @@ class CommitsController < ApplicationController
     #@last_deployed_commit = @gitlab_api_services.get_last_deployed_commit(params[:project_id])
     #parse_time
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(params[:project_id], "2018-06-01T06:08:36Z")
+    @all_commits_after_last_deployed_commit.to_a.reverse!
+    puts @all_commits_after_last_deployed_commit
   end
 
   def show
