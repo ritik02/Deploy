@@ -1,1 +1,62 @@
-<h1>Diff will be displayed here</h1>
+<%= stylesheet_link_tag  'project-page'%>
+  <div id="menu-nav">
+    <div id="navigation-bar">
+      <ul>
+        <li><a href="<%=user_projects_path%>" style = "color: #009944;">Projects</a></li>
+        <li><a href="/users/<%=@user_id%>/projects/<%=@project_id%>/commits" style = "color: #00FF00;"><span>Commits</span></a></li>
+        <li><a ><span>Checklist</span></a></li>
+        <li><a ><span>Approval</span></a></li>
+        <li><a ><span>Deploy</span></a></li>
+      </ul>
+      <ul class="timeline" id="timeline" >
+        <li class="li complete" >
+          <div class="status">
+            <h4> Project Selected </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Commit Selected </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Checklist Filled </h4>
+          </div>
+        </li>
+        <li class="li">
+          <div class="status">
+            <h4> Deploy Approved </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <button class="fab fixed-button">Checklist</button>
+
+<h2 style="text-align: center;">Diff of <b><%=@source_commit %> : <%=@destination_commit %></b></h2>
+
+<% @commit_diff.each do |diff| %>
+<div class="container"  >
+	<div class="card  " style="text-align: center;">
+  		<h4 class="card-header"  ><b style=" font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 0px; margin: 0; color: #0a7fad; font-size: 30px;"><%= diff["new_path"] %></b>
+  		</h4>
+
+  		<div class="card-body" style="text-align: left; margin:0px;" >
+			<% diffs = diff["diff"] %>
+				<% diffs.each_line do |line|  %>
+					<%if !line.include?("+++") && !line.include?("---") %>
+						<%if line[0]=='+' %>
+						<pre style="background-color:  #E3FAE8;margin:0px;"><%= line %></pre>
+						<%elsif line[0]=='-' %>
+						<pre style="background-color: #F4D8DC;margin:0px;"><%= line %></pre>
+						<% else %>
+						<pre style="margin:0px;"><%= line %></pre>
+						<% end %>
+					<% end %>
+			<% end %>
+  		</div>
+	</div>
+	</div>
+<% end %>

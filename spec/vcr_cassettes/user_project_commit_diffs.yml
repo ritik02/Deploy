@@ -1,0 +1,363 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3853/repository/commits?private_token=nfwasKz7KA4PFpoexsxd
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 08 Jun 2018 11:47:22 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '10061'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"b06ef11185059846acf606d243c97698"
+      Link:
+      - <https://source.golabs.io/api/v4/projects/3853/repository/commits?id=3853&page=2&per_page=20&private_token=nfwasKz7KA4PFpoexsxd>;
+        rel="next", <https://source.golabs.io/api/v4/projects/3853/repository/commits?id=3853&page=1&per_page=20&private_token=nfwasKz7KA4PFpoexsxd>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3853/repository/commits?id=3853&page=2&per_page=20&private_token=nfwasKz7KA4PFpoexsxd>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 434b9db8-f596-4c5c-b59b-bff0e9d99f1b
+      X-Runtime:
+      - '0.036971'
+      X-Total:
+      - '29'
+      X-Total-Pages:
+      - '2'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":"108c38b5bc6db22d14c8d78b879b7fdfe5180dde","short_id":"108c38b5","title":"Update
+        Gemfile","created_at":"2018-06-01T09:49:49.000+00:00","parent_ids":["e548743001e9bbbad2d1e9d3569b3eda66e6eb4f"],"message":"Update
+        Gemfile","author_name":"prakash","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T09:49:49.000+00:00","committer_name":"prakash","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T09:49:49.000+00:00"},{"id":"e548743001e9bbbad2d1e9d3569b3eda66e6eb4f","short_id":"e5487430","title":"CI
+        - CD","created_at":"2018-06-01T15:14:46.000+05:30","parent_ids":["31c60f509f6c4a66faf494dd349a5fb9894832c4"],"message":"CI
+        - CD\n","author_name":"prakash","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T15:14:46.000+05:30","committer_name":"prakash","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T15:14:46.000+05:30"},{"id":"31c60f509f6c4a66faf494dd349a5fb9894832c4","short_id":"31c60f50","title":"final
+        commit","created_at":"2018-06-01T15:02:51.000+05:30","parent_ids":["bdfb3de5e6a2894f1bda2c460721ba3bfc970bd0"],"message":"final
+        commit\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T15:02:51.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T15:02:51.000+05:30"},{"id":"bdfb3de5e6a2894f1bda2c460721ba3bfc970bd0","short_id":"bdfb3de5","title":"unnecessary
+        routes removed","created_at":"2018-05-24T10:07:36.000+05:30","parent_ids":["5c19462a9ff55523cc4524374fa88c5d84c149ba"],"message":"unnecessary
+        routes removed\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T10:07:36.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T10:07:36.000+05:30"},{"id":"5c19462a9ff55523cc4524374fa88c5d84c149ba","short_id":"5c19462a","title":"unnecessary
+        routes removed","created_at":"2018-05-24T10:04:06.000+05:30","parent_ids":["da04aff7371d30a8fbe6c783f2eb010fb5597cd1"],"message":"unnecessary
+        routes removed\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T10:04:06.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T10:04:06.000+05:30"},{"id":"da04aff7371d30a8fbe6c783f2eb010fb5597cd1","short_id":"da04aff7","title":"Following
+        style guide","created_at":"2018-05-24T09:52:47.000+05:30","parent_ids":["4ea615bc18a2b012e1225269f400d72f4662cf3c"],"message":"Following
+        style guide\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T09:52:47.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T09:52:47.000+05:30"},{"id":"4ea615bc18a2b012e1225269f400d72f4662cf3c","short_id":"4ea615bc","title":"README.md","created_at":"2018-05-24T02:37:08.000+05:30","parent_ids":["f9cb78594ece35165a6aae028839e2098f939e35"],"message":"README.md\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:37:08.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:37:08.000+05:30"},{"id":"f9cb78594ece35165a6aae028839e2098f939e35","short_id":"f9cb7859","title":"Test
+        to check if a post is populated in it''s own category","created_at":"2018-05-24T02:36:32.000+05:30","parent_ids":["c212c476567f370eb6196e140ee42edbe3256cfe"],"message":"Test
+        to check if a post is populated in it''s own category\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:36:32.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:36:32.000+05:30"},{"id":"c212c476567f370eb6196e140ee42edbe3256cfe","short_id":"c212c476","title":"Category
+        functionality up and running","created_at":"2018-05-24T02:07:40.000+05:30","parent_ids":["badb04f12ad4498ca21908750039a78ed5b4d600"],"message":"Category
+        functionality up and running\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:07:40.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:07:40.000+05:30"},{"id":"badb04f12ad4498ca21908750039a78ed5b4d600","short_id":"badb04f1","title":"New
+        categories_controller to show post categorically","created_at":"2018-05-24T01:23:05.000+05:30","parent_ids":["e366d28ffe096c7473dd943651ceceb7f8d04d0f"],"message":"New
+        categories_controller to show post categorically\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:23:05.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:23:05.000+05:30"},{"id":"e366d28ffe096c7473dd943651ceceb7f8d04d0f","short_id":"e366d28f","title":"Test
+        to make sure that category_id is not empty while updating a post","created_at":"2018-05-24T01:10:16.000+05:30","parent_ids":["3f60785e27c4467787593b778032a9a9dd9e63c1"],"message":"Test
+        to make sure that category_id is not empty while updating a post\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:10:16.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:10:16.000+05:30"},{"id":"3f60785e27c4467787593b778032a9a9dd9e63c1","short_id":"3f60785e","title":"Validity
+        of category id","created_at":"2018-05-24T01:00:11.000+05:30","parent_ids":["b543fa32d6b19c54d1549cf825394c124574710c"],"message":"Validity
+        of category id\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:00:11.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:00:11.000+05:30"},{"id":"b543fa32d6b19c54d1549cf825394c124574710c","short_id":"b543fa32","title":"Modified
+        tests with categories assigned to the posts","created_at":"2018-05-24T00:41:05.000+05:30","parent_ids":["992fde84df98a41ddd72e80adc760209c7edda57"],"message":"Modified
+        tests with categories assigned to the posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:41:05.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:41:05.000+05:30"},{"id":"992fde84df98a41ddd72e80adc760209c7edda57","short_id":"992fde84","title":"Non
+        null category for each posts","created_at":"2018-05-24T00:10:30.000+05:30","parent_ids":["82e662bd9dde61e81e4af6737498c89f00f28bee"],"message":"Non
+        null category for each posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:10:30.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:10:30.000+05:30"},{"id":"82e662bd9dde61e81e4af6737498c89f00f28bee","short_id":"82e662bd","title":"Auto
+        generate 5 categories of posts","created_at":"2018-05-24T00:07:22.000+05:30","parent_ids":["bdf3829cbac3f20b33f7d1eb433ec13d8a6a9e9f"],"message":"Auto
+        generate 5 categories of posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:07:22.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:07:22.000+05:30"},{"id":"bdf3829cbac3f20b33f7d1eb433ec13d8a6a9e9f","short_id":"bdf3829c","title":"New
+        pages with category options","created_at":"2018-05-24T00:06:25.000+05:30","parent_ids":["74c90ec708c5e38b80d74862bf027cb9be6356e2"],"message":"New
+        pages with category options\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:06:25.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:06:25.000+05:30"},{"id":"74c90ec708c5e38b80d74862bf027cb9be6356e2","short_id":"74c90ec7","title":"Corrected
+        ruby version","created_at":"2018-05-23T19:45:20.000+05:30","parent_ids":["80b67a52c9a3c16d447a881b640f40e2874072ae"],"message":"Corrected
+        ruby version\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T19:45:20.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T19:45:20.000+05:30"},{"id":"80b67a52c9a3c16d447a881b640f40e2874072ae","short_id":"80b67a52","title":"New
+        table for categories","created_at":"2018-05-23T19:30:49.000+05:30","parent_ids":["fa4e83bcfdee4d8bf7be203b0eff47156078db05"],"message":"New
+        table for categories\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T19:30:49.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T19:30:49.000+05:30"},{"id":"fa4e83bcfdee4d8bf7be203b0eff47156078db05","short_id":"fa4e83bc","title":"Test
+        to create a post without a title","created_at":"2018-05-23T18:58:14.000+05:30","parent_ids":["2a0b1a6df12e9c663f4bb6c6d3aaeb898af9fab5"],"message":"Test
+        to create a post without a title\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T18:58:14.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T18:58:14.000+05:30"},{"id":"2a0b1a6df12e9c663f4bb6c6d3aaeb898af9fab5","short_id":"2a0b1a6d","title":"Destroy
+        method added and tested","created_at":"2018-05-23T18:14:26.000+05:30","parent_ids":["c7bf469ee3688456b2e5692f84525b363ff9a01d"],"message":"Destroy
+        method added and tested\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T18:14:26.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T18:14:26.000+05:30"}]'
+    http_version: 
+  recorded_at: Fri, 08 Jun 2018 11:47:22 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3853/repository/compare?from=2a0b1a6d&private_token=nfwasKz7KA4PFpoexsxd&to=e5487430
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 08 Jun 2018 11:47:23 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"da987660e03cf1359590c42288b7e744"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 5de1aded-00ba-42b5-b148-1cfe06a9e707
+      X-Runtime:
+      - '0.045466'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: ASCII-8BIT
+      string: '{"commit":{"id":"e548743001e9bbbad2d1e9d3569b3eda66e6eb4f","short_id":"e5487430","title":"CI
+        - CD","created_at":"2018-06-01T15:14:46.000+05:30","parent_ids":["31c60f509f6c4a66faf494dd349a5fb9894832c4"],"message":"CI
+        - CD\n","author_name":"prakash","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T15:14:46.000+05:30","committer_name":"prakash","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T15:14:46.000+05:30"},"commits":[{"id":"fa4e83bcfdee4d8bf7be203b0eff47156078db05","short_id":"fa4e83bc","title":"Test
+        to create a post without a title","created_at":"2018-05-23T18:58:14.000+05:30","parent_ids":["2a0b1a6df12e9c663f4bb6c6d3aaeb898af9fab5"],"message":"Test
+        to create a post without a title\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T18:58:14.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T18:58:14.000+05:30"},{"id":"80b67a52c9a3c16d447a881b640f40e2874072ae","short_id":"80b67a52","title":"New
+        table for categories","created_at":"2018-05-23T19:30:49.000+05:30","parent_ids":["fa4e83bcfdee4d8bf7be203b0eff47156078db05"],"message":"New
+        table for categories\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T19:30:49.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T19:30:49.000+05:30"},{"id":"74c90ec708c5e38b80d74862bf027cb9be6356e2","short_id":"74c90ec7","title":"Corrected
+        ruby version","created_at":"2018-05-23T19:45:20.000+05:30","parent_ids":["80b67a52c9a3c16d447a881b640f40e2874072ae"],"message":"Corrected
+        ruby version\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-23T19:45:20.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-23T19:45:20.000+05:30"},{"id":"bdf3829cbac3f20b33f7d1eb433ec13d8a6a9e9f","short_id":"bdf3829c","title":"New
+        pages with category options","created_at":"2018-05-24T00:06:25.000+05:30","parent_ids":["74c90ec708c5e38b80d74862bf027cb9be6356e2"],"message":"New
+        pages with category options\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:06:25.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:06:25.000+05:30"},{"id":"82e662bd9dde61e81e4af6737498c89f00f28bee","short_id":"82e662bd","title":"Auto
+        generate 5 categories of posts","created_at":"2018-05-24T00:07:22.000+05:30","parent_ids":["bdf3829cbac3f20b33f7d1eb433ec13d8a6a9e9f"],"message":"Auto
+        generate 5 categories of posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:07:22.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:07:22.000+05:30"},{"id":"992fde84df98a41ddd72e80adc760209c7edda57","short_id":"992fde84","title":"Non
+        null category for each posts","created_at":"2018-05-24T00:10:30.000+05:30","parent_ids":["82e662bd9dde61e81e4af6737498c89f00f28bee"],"message":"Non
+        null category for each posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:10:30.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:10:30.000+05:30"},{"id":"b543fa32d6b19c54d1549cf825394c124574710c","short_id":"b543fa32","title":"Modified
+        tests with categories assigned to the posts","created_at":"2018-05-24T00:41:05.000+05:30","parent_ids":["992fde84df98a41ddd72e80adc760209c7edda57"],"message":"Modified
+        tests with categories assigned to the posts\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T00:41:05.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T00:41:05.000+05:30"},{"id":"3f60785e27c4467787593b778032a9a9dd9e63c1","short_id":"3f60785e","title":"Validity
+        of category id","created_at":"2018-05-24T01:00:11.000+05:30","parent_ids":["b543fa32d6b19c54d1549cf825394c124574710c"],"message":"Validity
+        of category id\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:00:11.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:00:11.000+05:30"},{"id":"e366d28ffe096c7473dd943651ceceb7f8d04d0f","short_id":"e366d28f","title":"Test
+        to make sure that category_id is not empty while updating a post","created_at":"2018-05-24T01:10:16.000+05:30","parent_ids":["3f60785e27c4467787593b778032a9a9dd9e63c1"],"message":"Test
+        to make sure that category_id is not empty while updating a post\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:10:16.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:10:16.000+05:30"},{"id":"badb04f12ad4498ca21908750039a78ed5b4d600","short_id":"badb04f1","title":"New
+        categories_controller to show post categorically","created_at":"2018-05-24T01:23:05.000+05:30","parent_ids":["e366d28ffe096c7473dd943651ceceb7f8d04d0f"],"message":"New
+        categories_controller to show post categorically\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T01:23:05.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T01:23:05.000+05:30"},{"id":"c212c476567f370eb6196e140ee42edbe3256cfe","short_id":"c212c476","title":"Category
+        functionality up and running","created_at":"2018-05-24T02:07:40.000+05:30","parent_ids":["badb04f12ad4498ca21908750039a78ed5b4d600"],"message":"Category
+        functionality up and running\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:07:40.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:07:40.000+05:30"},{"id":"f9cb78594ece35165a6aae028839e2098f939e35","short_id":"f9cb7859","title":"Test
+        to check if a post is populated in it''s own category","created_at":"2018-05-24T02:36:32.000+05:30","parent_ids":["c212c476567f370eb6196e140ee42edbe3256cfe"],"message":"Test
+        to check if a post is populated in it''s own category\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:36:32.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:36:32.000+05:30"},{"id":"4ea615bc18a2b012e1225269f400d72f4662cf3c","short_id":"4ea615bc","title":"README.md","created_at":"2018-05-24T02:37:08.000+05:30","parent_ids":["f9cb78594ece35165a6aae028839e2098f939e35"],"message":"README.md\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T02:37:08.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T02:37:08.000+05:30"},{"id":"da04aff7371d30a8fbe6c783f2eb010fb5597cd1","short_id":"da04aff7","title":"Following
+        style guide","created_at":"2018-05-24T09:52:47.000+05:30","parent_ids":["4ea615bc18a2b012e1225269f400d72f4662cf3c"],"message":"Following
+        style guide\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T09:52:47.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T09:52:47.000+05:30"},{"id":"5c19462a9ff55523cc4524374fa88c5d84c149ba","short_id":"5c19462a","title":"unnecessary
+        routes removed","created_at":"2018-05-24T10:04:06.000+05:30","parent_ids":["da04aff7371d30a8fbe6c783f2eb010fb5597cd1"],"message":"unnecessary
+        routes removed\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T10:04:06.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T10:04:06.000+05:30"},{"id":"bdfb3de5e6a2894f1bda2c460721ba3bfc970bd0","short_id":"bdfb3de5","title":"unnecessary
+        routes removed","created_at":"2018-05-24T10:07:36.000+05:30","parent_ids":["5c19462a9ff55523cc4524374fa88c5d84c149ba"],"message":"unnecessary
+        routes removed\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-05-24T10:07:36.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-05-24T10:07:36.000+05:30"},{"id":"31c60f509f6c4a66faf494dd349a5fb9894832c4","short_id":"31c60f50","title":"final
+        commit","created_at":"2018-06-01T15:02:51.000+05:30","parent_ids":["bdfb3de5e6a2894f1bda2c460721ba3bfc970bd0"],"message":"final
+        commit\n","author_name":"prakashdwd","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T15:02:51.000+05:30","committer_name":"prakashdwd","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T15:02:51.000+05:30"},{"id":"e548743001e9bbbad2d1e9d3569b3eda66e6eb4f","short_id":"e5487430","title":"CI
+        - CD","created_at":"2018-06-01T15:14:46.000+05:30","parent_ids":["31c60f509f6c4a66faf494dd349a5fb9894832c4"],"message":"CI
+        - CD\n","author_name":"prakash","author_email":"prakash.d.aux@go-jek.com","authored_date":"2018-06-01T15:14:46.000+05:30","committer_name":"prakash","committer_email":"prakash.d.aux@go-jek.com","committed_date":"2018-06-01T15:14:46.000+05:30"}],"diffs":[{"old_path":".gitlab-ci.yml","new_path":".gitlab-ci.yml","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/.gitlab-ci.yml\n@@ -0,0 +1,10 @@\n+before_script:\n+  - apt-get
+        update -qq \u0026\u0026 apt-get install -y -qq sqlite3 libsqlite3-dev nodejs\n+  -
+        ruby -v\n+  - which ruby\n+  - gem install bundler --no-ri --no-rdoc\n+  -
+        bundle install --jobs $(nproc)  \"${FLAGS[@]}\"\n+\n+rspec:\n+  script:\n+    -
+        bundle exec rspec\n"},{"old_path":".travis.yml","new_path":".travis.yml","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/.travis.yml\n+++ b/.travis.yml\n@@ -1,3 +1,3 @@\n language: ruby\n rvm:\n-
+        - 2.5.1\n+ - 2.3.3\n"},{"old_path":"README.md","new_path":"README.md","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/README.md\n+++ b/README.md\n@@ -1 +1,30 @@\n-# README\n+# Blog\r\n+\r\n+A
+        simple blogging application implemented using RAILS.\r\n+\r\n+### Features!\r\n+\r\n+The
+        application has following features :-\r\n+  - Create a new post\r\n+  - Show
+        a post\r\n+  - Edit/Update a post\r\n+  - Delete a post\r\n+  - View all the
+        categories\r\n+  - View posts categorically \r\n+  \r\n+\r\n+\r\n+### Getting
+        started:\r\n+  - Clone or download this project\r\n+  - Go to `blog/`\r\n+  -
+        Run `bundle install` in the command line\r\n+  - Run `rails db:migrate`\r\n+  -
+        Then run the WEbrick server in your local machine by `rails server`\r\n+  -
+        Open a browser and go to http://localhost:3000/\r\n+    \r\n+\r\n+\r\n+\r\n+\r\n+\r\n+\r\n"},{"old_path":"app/assets/javascripts/application.js","new_path":"app/assets/javascripts/application.js","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/assets/javascripts/application.js\n+++ b/app/assets/javascripts/application.js\n@@
+        -11,6 +11,5 @@\n // about supported directives.\n //\n //= require rails-ujs\n-//=
+        require activestorage\n //= require turbolinks\n //= require_tree .\n"},{"old_path":"app/assets/javascripts/posts.coffee","new_path":"app/assets/javascripts/posts.coffee","a_mode":"100644","b_mode":"0","new_file":false,"renamed_file":false,"deleted_file":true,"diff":"---
+        a/app/assets/javascripts/posts.coffee\n+++ /dev/null\n@@ -1,3 +0,0 @@\n-#
+        Place all the behaviors and hooks related to the matching controller here.\n-#
+        All this logic will automatically be available in application.js.\n-# You
+        can use CoffeeScript in this file: http://coffeescript.org/\n"},{"old_path":"app/assets/stylesheets/posts.scss","new_path":"app/assets/stylesheets/posts.scss","a_mode":"100644","b_mode":"0","new_file":false,"renamed_file":false,"deleted_file":true,"diff":"---
+        a/app/assets/stylesheets/posts.scss\n+++ /dev/null\n@@ -1,3 +0,0 @@\n-// Place
+        all the styles related to the posts controller here.\n-// They will automatically
+        be included in application.css.\n-// You can use Sass (SCSS) here: http://sass-lang.com/\n"},{"old_path":"app/controllers/categories_controller.rb","new_path":"app/controllers/categories_controller.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/app/controllers/categories_controller.rb\n@@ -0,0 +1,10 @@\n+class
+        CategoriesController \u003c ApplicationController\n+  def index\n+  \t@categories
+        = Category.all\n+  end\n+\n+  def show\n+  \t@category = Category.find(params[:id])\n+  \t@posts
+        = @category.posts\n+  end\n+end\n"},{"old_path":"app/controllers/posts_controller.rb","new_path":"app/controllers/posts_controller.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/controllers/posts_controller.rb\n+++ b/app/controllers/posts_controller.rb\n@@
+        -5,6 +5,7 @@ class PostsController \u003c ApplicationController\n \n \tdef
+        new\n \t\t@post = Post.new\n+\t\t@category = Category.all\n \tend\n \n \tdef
+        create\n@@ -22,12 +23,17 @@ class PostsController \u003c ApplicationController\n
+        \n \tdef edit\n \t\t@post = Post.find(params[:id])\n+\t\t@category = Category.all\n
+        \tend\n \n \tdef update\n \t\t@post = Post.find(params[:id])\n-  \t\t@post.update(post_params)\n-  \t\tredirect_to
+        post_path(@post)\n+\t\tbegin\t\t\t\n+\t  \t\t@post.update!(post_params)\n+\t  \t\tredirect_to
+        post_path(@post)\n+\t  \trescue\n+\t  \t\trender :edit\n+\t  \tend \t\t\n
+        \tend\n \n \tdef destroy\n"},{"old_path":"app/helpers/application_helper.rb","new_path":"app/helpers/application_helper.rb","a_mode":"100644","b_mode":"0","new_file":false,"renamed_file":false,"deleted_file":true,"diff":"---
+        a/app/helpers/application_helper.rb\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-module
+        ApplicationHelper\n-end\n"},{"old_path":"app/helpers/posts_helper.rb","new_path":"app/helpers/posts_helper.rb","a_mode":"100644","b_mode":"0","new_file":false,"renamed_file":false,"deleted_file":true,"diff":"---
+        a/app/helpers/posts_helper.rb\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-module PostsHelper\n-end\n"},{"old_path":"app/jobs/application_job.rb","new_path":"app/jobs/application_job.rb","a_mode":"100644","b_mode":"0","new_file":false,"renamed_file":false,"deleted_file":true,"diff":"---
+        a/app/jobs/application_job.rb\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-class ApplicationJob
+        \u003c ActiveJob::Base\n-end\n"},{"old_path":"app/models/category.rb","new_path":"app/models/category.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/app/models/category.rb\n@@ -0,0 +1,4 @@\n+class Category
+        \u003c ApplicationRecord\n+\tvalidates :name , presence: true \n+\thas_many
+        :posts\n+end\n"},{"old_path":"app/models/post.rb","new_path":"app/models/post.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/models/post.rb\n+++ b/app/models/post.rb\n@@ -1,3 +1,5 @@\n class Post
+        \u003c ApplicationRecord\n \tvalidates :title , presence: true\n+\tvalidates
+        :category_id , presence: true\n+\tbelongs_to :category\n end\n"},{"old_path":"app/views/categories/index.html.erb","new_path":"app/views/categories/index.html.erb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/app/views/categories/index.html.erb\n@@ -0,0 +1,5 @@\n+\u003ch1\u003eCategories\u003c/h1\u003e\n+\u003c%
+        @categories.each do |category| %\u003e\n+\t\u003ch2\u003e\u003c%= link_to
+        category.name , category %\u003e\u003c/h2\u003e\n+\t\u003chr\u003e\n+\u003c%
+        end %\u003e\n"},{"old_path":"app/views/categories/show.html.erb","new_path":"app/views/categories/show.html.erb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/app/views/categories/show.html.erb\n@@ -0,0 +1,7 @@\n+\u003ch1\u003e\u003c%=
+        @category.name %\u003e\u003c/h1\u003e\n+\n+\u003c% @posts.each do |post| %\u003e\n+\t\u003ch2\u003e\u003c%=
+        link_to post.title , post %\u003e\u003c/h2\u003e\n+\t\u003cp\u003e\u003c%=
+        post.body %\u003e\u003cp\u003e\n+\t\u003chr\u003e\n+\u003c% end %\u003e\n\\
+        No newline at end of file\n"},{"old_path":"app/views/posts/edit.html.erb","new_path":"app/views/posts/edit.html.erb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/views/posts/edit.html.erb\n+++ b/app/views/posts/edit.html.erb\n@@ -8,6
+        +8,7 @@\n   \u003c%= f.text_area :body %\u003e\n   \u003cbr /\u003e \u003cbr
+        /\u003e\n \n+  \u003c%= f.select :category_id, Category.all.collect { |x|
+        [x.name, x.id] }, {:include_blank =\u003e \"Choose One\" } %\u003e\n   \n
+        \n   \u003c%= submit_tag \"update\" %\u003e\n"},{"old_path":"app/views/posts/index.html.erb","new_path":"app/views/posts/index.html.erb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/views/posts/index.html.erb\n+++ b/app/views/posts/index.html.erb\n@@
+        -1,6 +1,6 @@\n \u003ch1\u003eBlog Posts\u003c/h1\u003e\n \n-\u003c%= link_to
+        \"Create new post\" , new_post_url %\u003e\n+\u003c%= link_to \"Create new
+        post\" , new_post_url %\u003e  |   \u003c%= link_to \"View Categories\" ,
+        categories_url %\u003e\n \n \u003c% @posts.each do |post| %\u003e\n \t\u003ch2\u003e\u003c%=
+        link_to post.title , post %\u003e\u003c/h2\u003e\n"},{"old_path":"app/views/posts/new.html.erb","new_path":"app/views/posts/new.html.erb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/app/views/posts/new.html.erb\n+++ b/app/views/posts/new.html.erb\n@@ -8,7
+        +8,8 @@\n   \u003c%= f.text_area :body %\u003e\n   \u003cbr /\u003e \u003cbr
+        /\u003e\n \n-  \n+    \u003c%= f.select :category_id, Category.all.collect
+        { |x| [x.name, x.id] }, {:include_blank =\u003e \"Choose One\" } %\u003e\n+\n
+        \n   \u003c%= submit_tag \"create\" %\u003e\n \n"},{"old_path":"config/application.rb","new_path":"config/application.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/config/application.rb\n+++ b/config/application.rb\n@@ -1,6 +1,21 @@\n require_relative
+        ''boot''\n \n-require ''rails/all''\n+require ''rails''\n+%w(\n+  active_record/railtie\n+  action_controller/railtie\n+  action_view/railtie\n+  action_mailer/railtie\n+  active_job/railtie\n+  action_cable/engine\n+  rails/test_unit/railtie\n+  sprockets/railtie\n+).each
+        do |railtie|\n+  begin\n+    require railtie\n+  rescue LoadError\n+  end\n+end\n
+        \n \n Bundler.require(*Rails.groups)\n"},{"old_path":"config/environments/development.rb","new_path":"config/environments/development.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/config/environments/development.rb\n+++ b/config/environments/development.rb\n@@
+        -19,7 +19,6 @@ Rails.application.configure do\n     config.cache_store = :null_store\n   end\n
+        \n-  config.active_storage.service = :local\n \n   config.action_mailer.raise_delivery_errors
+        = false\n \n"},{"old_path":"config/environments/test.rb","new_path":"config/environments/test.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/config/environments/test.rb\n+++ b/config/environments/test.rb\n@@ -17,7
+        +17,6 @@ Rails.application.configure do\n \n   config.action_controller.allow_forgery_protection
+        = false\n \n-  config.active_storage.service = :test\n \n   config.action_mailer.perform_caching
+        = false\n \n"},{"old_path":"config/routes.rb","new_path":"config/routes.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/config/routes.rb\n+++ b/config/routes.rb\n@@ -1,4 +1,5 @@\n Rails.application.routes.draw
+        do\n+  \tresources :categories ,only: [:index, :show]\n \tresources :posts\n
+        \troot ''posts#index''\n end\n"},{"old_path":"db/migrate/20180523134302_create_categories.rb","new_path":"db/migrate/20180523134302_create_categories.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/db/migrate/20180523134302_create_categories.rb\n@@ -0,0 +1,8
+        @@\n+class CreateCategories \u003c ActiveRecord::Migration[5.2]\n+  def change\n+    create_table
+        :categories do |t|\n+\n+      t.timestamps\n+    end\n+  end\n+end\n"},{"old_path":"db/migrate/20180523135040_add_name_to_category.rb","new_path":"db/migrate/20180523135040_add_name_to_category.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/db/migrate/20180523135040_add_name_to_category.rb\n@@ -0,0
+        +1,5 @@\n+class AddNameToCategory \u003c ActiveRecord::Migration[5.2]\n+  def
+        change\n+  \tadd_column :categories, :name, :string\n+  end\n+end\n"},{"old_path":"db/schema.rb","new_path":"db/schema.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/db/schema.rb\n+++ b/db/schema.rb\n@@ -10,7 +10,13 @@\n #\n # It''s strongly
+        recommended that you check this file into your version control system.\n \n-ActiveRecord::Schema.define(version:
+        2018_05_23_065316) do\n+ActiveRecord::Schema.define(version: 2018_05_23_135040)
+        do\n+\n+  create_table \"categories\", force: :cascade do |t|\n+    t.datetime
+        \"created_at\", null: false\n+    t.datetime \"updated_at\", null: false\n+    t.string
+        \"name\"\n+  end\n \n   create_table \"posts\", force: :cascade do |t|\n     t.string
+        \"title\"\n"},{"old_path":"db/seeds.rb","new_path":"db/seeds.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/db/seeds.rb\n+++ b/db/seeds.rb\n@@ -1 +1,5 @@\n-\n+Category.create(:name
+        =\u003e \"News\")\n+Category.create(:name =\u003e \"Sports\")\n+Category.create(:name
+        =\u003e \"Technology\")\n+Category.create(:name =\u003e \"Science\")\n+Category.create(:name
+        =\u003e \"Other\")\n"},{"old_path":"test/controllers/categories_controller_test.rb","new_path":"test/controllers/categories_controller_test.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/test/controllers/categories_controller_test.rb\n@@ -0,0 +1,19
+        @@\n+require ''test_helper''\n+\n+class CategoriesControllerTest \u003c ActionDispatch::IntegrationTest\n+  test
+        \"should get index\" do\n+    get categories_url\n+    assert_response :success\n+  end\n+\n+  test
+        \"should get show\" do\n+  \t@category = categories(:cone)\n+    get category_url(@category)\n+    assert_response
+        :success\n+  end\n+\n+  test \"Should open posts from a particular category\"
+        do\n+  \tget category_url(categories(:cone))\n+  \tassert_select \"h2\" ,
+        \"one\"\n+  end\n+end\n"},{"old_path":"test/controllers/posts_controller_test.rb","new_path":"test/controllers/posts_controller_test.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/test/controllers/posts_controller_test.rb\n+++ b/test/controllers/posts_controller_test.rb\n@@
+        -25,7 +25,22 @@ class PostsControllerTest \u003c ActionDispatch::IntegrationTest\n    \t
+        assert_difference(''Post.count'', -1) do\n      \tdelete post_path(post)\n    \t
+        end\n-\t assert_redirected_to posts_url\n+\t   assert_redirected_to posts_url\n+   end\n+\n+   test
+        \"Form should show up\" do\n+     get \"/posts/new\"\n+     assert_select
+        \"form\" do |elements|\n+      elements.each do |element|\n+        assert_select
+        element , \"input\" , 3\n+      end\n+    end\n+   end\n+\n+   test \"Should
+        open the post ''one''\" do\n+     get post_url(@post)\n+     assert_response
+        :success\n+     assert_select \"h1\" , \"one\"\n    end\n \n end\n"},{"old_path":"test/fixtures/categories.yml","new_path":"test/fixtures/categories.yml","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/test/fixtures/categories.yml\n@@ -0,0 +1,5 @@\n+\n+cone:
+        \n+  name: Sports\n+ctwo:\n+  name: News\n\\ No newline at end of file\n"},{"old_path":"test/fixtures/posts.yml","new_path":"test/fixtures/posts.yml","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/test/fixtures/posts.yml\n+++ b/test/fixtures/posts.yml\n@@ -1,11 +1,10 @@\n-#
+        Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html\n
+        \n one:\n-  title: news\n+  title: one\n   body: aaj ki taza khabar\n-  category_id:
+        1\n+  category: cone\n \n two:\n-  title: sports\n+  title: two\n   body:
+        sample text\n-  category_id: 2\n+  category: ctwo\n"},{"old_path":"test/integration/post_flows_test.rb","new_path":"test/integration/post_flows_test.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/test/integration/post_flows_test.rb\n+++ b/test/integration/post_flows_test.rb\n@@
+        -1,6 +1,10 @@\n require ''test_helper''\n \n class PostFlowsTest \u003c ActionDispatch::IntegrationTest\n+  \n+  setup
+        do\n+    @post = posts(:one)\n+  end\n \n \n   test \"It should load post#index\"
+        do\n@@ -11,23 +15,38 @@ class PostFlowsTest \u003c ActionDispatch::IntegrationTest\n   test
+        \"Should create Post\" do\t\n   \tget \"/posts/new\"\n   \tassert_response
+        :success\n-  \tpost \"/posts\" , params: {post: {title: \"Post Title\" , body:
+        \"Post Body\"}}\n+  \tpost \"/posts\" , params: {post: {title: @post.title
+        , body: @post.body , category_id: @post.category.id}}\n   \tassert_response
+        :redirect\n   \tfollow_redirect!\n   \tassert_response :success\n-  \tassert_select
+        \"h2\" , \"Post Title\"\n+  \tassert_select \"h2\" , \"one\"\n+  end\n+\n+  test
+        \"Should NOT create Post\" do  \n+    get \"/posts/new\"\n+    assert_response
+        :success\n+    post \"/posts\" , params: {post: {title: \"\" , body: \"Post
+        Body\" }}\n+    assert_response :success\n   end\n \n   test \"Should update
+        Post\" do  \n-    post = posts(:one)\n+    post = posts(:two)\n     get edit_post_url(post)\n     assert_response
+        :success\n-    patch post_url(post) , params: {post: {title: \"Edited Title\"
+        , body: \"Edited Body\"}}\n+    patch post_url(post) , params: {post: {title:
+        \"Edited Title\" , body: \"Edited Body\" , category_id: posts(:one).category.id}}\n     assert_response
+        :redirect\n     follow_redirect!\n     assert_response :success\n     assert_select
+        \"h1\" , \"Edited Title\"\n   end\n \n+  test \"Should NOT update Post\" do  \n+    post
+        = posts(:two)\n+    get edit_post_url(post)\n+    assert_response :success\n+    patch
+        post_url(post) , params: {post: {title: \"Edited Title\" , body: \"Edited
+        Body\" , category_id: nil }}    \n+    assert_response :success\n+  end\n+\n   \n
+        end\n"},{"old_path":"test/models/category_test.rb","new_path":"test/models/category_test.rb","a_mode":"0","b_mode":"100644","new_file":true,"renamed_file":false,"deleted_file":false,"diff":"---
+        /dev/null\n+++ b/test/models/category_test.rb\n@@ -0,0 +1,12 @@\n+require
+        ''test_helper''\n+\n+class CategoryTest \u003c ActiveSupport::TestCase\n+  test
+        \"Should be invalid without name\" do\n+  \tcategories(:cone).name = nil\n+  \tassert_equal
+        false , categories(:cone).valid?\n+  end\n+\n+  test \"Category name should
+        be string\" do\n+  \tassert_equal true , categories(:cone).name.is_a?(String)\n+  end\n+end\n"},{"old_path":"test/models/post_test.rb","new_path":"test/models/post_test.rb","a_mode":"100644","b_mode":"100644","new_file":false,"renamed_file":false,"deleted_file":false,"diff":"---
+        a/test/models/post_test.rb\n+++ b/test/models/post_test.rb\n@@ -1,10 +1,7
+        @@\n require ''test_helper''\n \n class PostTest \u003c ActiveSupport::TestCase\n-  test
+        \"the truth\" do\n-  assert true\n-  end\n-\n+  \n   test \"Should be invalid
+        without title\" do\n   \tposts(:one).title = nil\n   \tassert_equal false
+        , posts(:one).valid?\n@@ -17,4 +14,19 @@ class PostTest \u003c ActiveSupport::TestCase\n   test
+        \"Body should be string\" do\n     assert_equal true , posts(:one).body.is_a?(String)\n   end\n+\n+  test
+        \"Category_id should not be null\" do\n+    posts(:one).category_id = nil\n+    assert_equal
+        false , posts(:one).valid?\n+  end\n+\n+  test \"Category_id should NOT be
+        string\" do\n+    posts(:one).category_id = \"rer\"\n+    assert_equal false
+        , posts(:one).category.is_a?(Integer)\n+  end\n+\n+  test \"Category_id should
+        be integer\" do\n+    assert_equal false , posts(:one).category.is_a?(Integer)\n+  end\n+\n
+        end\n"}],"compare_timeout":false,"compare_same_ref":false}'
+    http_version: 
+  recorded_at: Fri, 08 Jun 2018 11:47:23 GMT
+recorded_with: VCR 4.0.0

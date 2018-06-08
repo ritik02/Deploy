@@ -50,10 +50,21 @@ class GitlabApiServices
 		HTTParty.get(url)[0]
 	end
 
+  def get_last_deployed_commit_dummy(gitlab_project_id)
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits?private_token=" + @access_token
+    response = HTTParty.get(url)
+    response[response.length - 1]
+  end
+
 	def get_all_commits_after_last_deployed_commit(gitlab_project_id, time)
 		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits?private_token=" + @access_token + "&since=" + time
 		HTTParty.get(url)
 	end
+
+  def get_diff_of_two_commits(gitlab_project_id, source_commit, destination_commit)
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/compare?private_token=" + @access_token + "&from=" + source_commit + "&to=" + destination_commit
+    HTTParty.get(url)["diffs"]
+  end
 
   def get_search_results(gitlab_user_id, searched_query)
     url = @base_url + "/projects?private_token=" + @access_token + "&owned=true&membership=true"
