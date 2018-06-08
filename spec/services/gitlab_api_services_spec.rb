@@ -93,5 +93,14 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
+  context "check api for diff of last_deployed and selected_commit" do
+    it "Should return diff of last_deployed and selected_commit" do
+      VCR.use_cassette("project_commit_diff_of_last_deployed_commit") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:six).gitlab_token)).get_diff_of_two_commits(3853, "2a0b1a6d", "e5487430")
+        expect(actual[0]["new_path"]).to eq ".gitlab-ci.yml"
+      end
+    end
+  end
+
 
 end
