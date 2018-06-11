@@ -61,4 +61,14 @@ class GitlabApiServices
 		search_results
   end
 
+  def get_project_pipelines(gitlab_project_id)
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines?private_token=" + @access_token + "&ref=master&per_page=5"
+    response = HTTParty.get(url)
+  end
+
+  def get_jobs_of_a_pipeline(gitlab_project_id, pipeline_id)
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines/" + pipeline_id.to_s + "/jobs?private_token=" + @access_token
+    response = HTTParty.get(url)
+  end
+
 end

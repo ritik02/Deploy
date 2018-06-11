@@ -15,8 +15,8 @@ class ProjectsController < ApplicationController
     project_id = params["id"]
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
     @projects_details = @gitlab_api_services.get_project_details(project_id)
-    @jobs = @gitlab_api_services.get_project_jobs(project_id)
-    get_stages(@jobs)
+    @pipelines = @gitlab_api_services.get_project_pipelines(project_id)
+    get_jobs_and_stages_of_a_pipelines(@pipelines, project_id)
   end
 
   private
@@ -34,12 +34,22 @@ class ProjectsController < ApplicationController
     @page_id = page_id.blank? ? 1 : page_id
   end
 
-  def get_stages(jobs)
-    @stages = Set[]
-    jobs.each do |job|
-      @stages.add(job["stage"])
+  def get_jobs_and_stages_of_a_pipelines(pipelines, project_id)
+    @stages_hash = {}
+    @jobs_hash = {}
+    pipelines.each do |pipeline|
+      jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, pipeline["id"])
+      @jobs_hash.merge!(pipeline["id"] => jobs)
+      @stages_hash.merge!(pipeline["id"] => get_stages_of_pipeline(jobs))
     end
-    @stages = @stages.to_a
+  end
+
+  def get_stages_of_pipeline(pipeline_jobs)
+    stages = Set[]
+    pipeline_jobs.each do |job|
+      stages.add(job["stage"])
+    end
+    stages.to_a
   end
 
   def validate_token_and_get_user_details
