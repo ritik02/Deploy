@@ -3,14 +3,11 @@ class ProjectsController < ApplicationController
   include TokenValidationHelper
   include EncryptionHelper
 
-  before_action :get_current_user
+  before_action :validate_token_and_get_user_details
 
   def index
-    return if redirect_if_token_is_nil?(@user.gitlab_token)
-    return if redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
     return if got_search_query?(params[:search_query])
     get_page_id(params[:page_id])
-    @number_of_pages = @gitlab_api_services.get_number_of_pages(@user.gitlab_user_id)
     @projects = @gitlab_api_services.get_user_projects(@user.gitlab_user_id, @page_id)
   end
 
@@ -45,8 +42,10 @@ class ProjectsController < ApplicationController
     @stages = @stages.to_a
   end
 
-  def get_current_user
+  def validate_token_and_get_user_details
     @user = current_user
+    return if redirect_if_token_is_nil?(@user.gitlab_token)
+    return if redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
   end
 
 end

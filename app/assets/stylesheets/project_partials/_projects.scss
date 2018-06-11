@@ -19,6 +19,13 @@
   }
 }
 
+.commits_title{
+  font-size: 15px;
+  @media (min-width: 996px){
+    font-size: 20px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

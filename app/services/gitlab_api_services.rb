@@ -19,17 +19,6 @@ class GitlabApiServices
     HTTParty.get(url)
 	end
 
-	def get_number_of_pages(gitlab_user_id)
-    url = @base_url + "/projects?private_token=" + @access_token + + "&owned=true&membership=true"
-    projects = HTTParty.get(url)
-    number_of_projects = projects.length
-    number_of_pages = number_of_projects / 10
-    if number_of_projects % 10 != 0
-      number_of_pages = number_of_pages + 1
-    end
-    return number_of_pages
-  end
-
   def get_user_projects(gitlab_user_id, page_id)
     url = @base_url + "/projects?private_token=" + @access_token + "&per_page=10&page=" + page_id.to_s + "&owned=true&membership=true"
     HTTParty.get(url)
@@ -37,7 +26,7 @@ class GitlabApiServices
 
 	def get_project_details(gitlab_project_id)
 		url = @base_url + "/projects/" + gitlab_project_id.to_s + "?private_token=" + @access_token + "&statistics=true"
-		return HTTParty.get(url)
+		HTTParty.get(url)
 	end
 
 	def get_project_jobs(gitlab_project_id)
@@ -67,15 +56,9 @@ class GitlabApiServices
   end
 
   def get_search_results(gitlab_user_id, searched_query)
-    url = @base_url + "/projects?private_token=" + @access_token + "&owned=true&membership=true"
-    projects = HTTParty.get(url)
-    search_results = []
-    projects.each do |project|
-    	if project["name"].downcase.include?(searched_query.downcase)
-    		search_results.push(project)
-    	end
-    end
-    search_results
+    url = @base_url + "/projects?private_token=" + @access_token + "&owned=true&membership=true&search=" + searched_query + "&per_page=1000"
+    search_results = HTTParty.get(url)
+		search_results
   end
 
 end

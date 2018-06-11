@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <title>GO-Deploy</title>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag  'project-page'%>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -49,7 +45,7 @@
       <div class="col-xs-7 col-md-7 column" style="height :20px">
         <div class="row">
           <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
-          <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px" class="project_title"> <%= link_to commit["message"]  , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"]) %></h3><p class="project_description"> <%= commit["short_id"] %></p></div>
+          <div class="col-xs-11 col-md-11 column"><h5 style="margin: 0px 0px" class="commits_title"> <%= link_to commit["message"]  , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"]) %></h5><p class="project_description"> <%= commit["short_id"] %></p></div>
         </div>
       </div>
       <div class="col-xs-5 col-md-5 project_date column" >
@@ -63,5 +59,4 @@
   </div>
 
 </body>
-<%= javascript_include_tag "commits.js", "data-turbolinks-track" => true  %>
 </html>

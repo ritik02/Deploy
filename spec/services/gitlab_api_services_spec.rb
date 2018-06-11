@@ -28,14 +28,6 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
-  context "check api for number of pages" do
-    it "Should return 1 when there are 2 projects" do
-      VCR.use_cassette("projects") do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_number_of_pages(users(:one).gitlab_user_id)
-        expect(actual).to eq 1
-      end
-    end
-  end
 
   context "check api for project details" do
     it "Should return 2 projects" do
@@ -69,7 +61,7 @@ RSpec.describe GitlabApiServices  do
     it "Should return jobs of project" do
       VCR.use_cassette("project_jobs_details") do
         actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_project_jobs(3850)
-        expect(actual[0]["commit"]["message"]).to eq "Modify .gitlab-ci.yml"
+        expect(actual[0]["commit"]["message"]).to eq "Included some lines in README.md"
       end
     end
   end
