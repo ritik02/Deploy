@@ -94,5 +94,29 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
+  context "check api for project pipelines" do
+    it "Should return pipelines of selected project" do
+      VCR.use_cassette("project_pipelines") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_project_pipelines(3850)
+        expect(actual[0]["id"]).to eq 210972
+      end
+    end
+
+    it "Should return 5 or less pipelines of selected project" do
+      VCR.use_cassette("project_pipelines") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_project_pipelines(3850)
+        expect(actual.length).to be <= 5
+      end
+    end
+  end
+
+context "check api for jobs of pipelines" do
+    it "Should return jobs for a pipeline" do
+      VCR.use_cassette("project_pipeline_jobs") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_jobs_of_a_pipeline(3850, 210972)
+        expect(actual[0]["id"]).to eq 1328119
+      end
+    end
+  end
 
 end

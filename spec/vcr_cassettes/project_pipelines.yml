@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines?per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 11 Jun 2018 07:20:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '486'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"28cd74bf1661fae94c81a7596101ff99"
+      Link:
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
+        rel="next", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=1&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '5'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - e98f8e30-69dc-4185-ad34-961ebeb888fb
+      X-Runtime:
+      - '0.021696'
+      X-Total:
+      - '8'
+      X-Total-Pages:
+      - '2'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},{"id":209654,"sha":"116c146766436681ab6d7f5d4c2876d0b7988a9c","ref":"master","status":"success"}]'
+    http_version: 
+  recorded_at: Mon, 11 Jun 2018 07:20:43 GMT
+recorded_with: VCR 4.0.0
