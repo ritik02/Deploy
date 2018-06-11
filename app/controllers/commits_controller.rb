@@ -37,5 +37,6 @@ class CommitsController < ApplicationController
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
     @project_id = params[:project_id]
     @user_id = params[:user_id]
+    @user = current_user
   end
 end

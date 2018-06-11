@@ -43,9 +43,19 @@
     </ul>
  </div>
 </div>
+
+<div class="fixed-username" >
+  Hello, <%= @user.name %>
+</div>
+<div class="fixed-logout" >
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% end %>
+</div>
+
 <div class="container" style="max-width: 1400px;" >
 <div class="card  " style="text-align: center;">
-  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 48px; margin: 0; color: #0a7fad; "><%= @projects_details["name"] %></b></h4>
+  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 20px; margin: 0; color: #0a7fad;"><%= @projects_details["name"] %></b></h4>
   <div class="card-body">
 
     <p class="card-text" ><%= @projects_details["description"] %></p>
@@ -55,38 +65,26 @@
 </div>
    </div>
    <br>
-<% @stages.each do |stage| %>
-<div class="container" style="max-width: 1400px;">
-<div id="accordion">
+   <div class="container .table-responsive-md">
+     <table class="table table-hover table-striped">
+       <thead class="thead-dark">
+         <tr>
+           <th>Pipeline</th>
+           <th>Commit</th>
+           <th>Stages</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>John</td>
+           <td>Doe</td>
+           <td>john@example.com</td>
+         </tr>
+         
+       </tbody>
+     </table>
 
-  <div class="card">
-    <div class="card-header" id="heading<%= stage %>" style="padding-top: 0px; padding-bottom: 0px;">
-      <h6 class="">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= stage %>" " aria-controls="collapse<%= stage %>">
-         <h4><%= stage.upcase %> </h4>
-        </button>
-      </h6>
-    </div>
-
-    <div id="collapse<%= stage %>" class="collapse" aria-labelledby="heading<%= stage %>" data-parent="#accordion">
-      <div class="card-body">
-       <% @jobs.each do |job| %>
-       <% if job["name"] == stage %>
-       <%= job["name"].capitalize %> , <%= job["created_at"] %> <br>
-
-       <% end %>
-       <% end %>
-      </div>
-    </div>
-  </div>
-
-  </div>
-</div>
- </div>
- <% end %>
- <br>
- 	<div class="container"><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits" class="btn btn-primary btn-lg">Continue With Product Deployment</a></div>
-
+   </div>
 </body>
 
 </html>

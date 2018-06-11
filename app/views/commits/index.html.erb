@@ -38,7 +38,14 @@
       </ul>
     </div>
   </div>
-
+  <div class="fixed-username" >
+    Hello, <%= @user.name %>
+  </div>
+  <div class="fixed-logout" >
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% end %>
+  </div>
   <div class="container" >
     <% @all_commits_after_last_deployed_commit.each do |commit|  %>
     <div class="row">
