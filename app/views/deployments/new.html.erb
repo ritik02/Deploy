@@ -1,0 +1,58 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<%= stylesheet_link_tag 'deployment-page'%>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div id="menu-nav">
+
+  <div id="navigation-bar">
+    <ul>
+      <li><a href="" style="color: #009944;">Projects</a>
+      </li>
+      <li><a href="" style="color: #009944;"><span>Commits</span></a>
+      </li>
+      <li><a><span style="color: #00FF00;">Checklist</span></a>
+      </li>
+      <li><a><span>Approval</span></a>
+      </li>
+      <li><a><span>Deploy</span></a>
+      </li>
+    </ul>
+    <ul class="timeline" id="timeline">
+      <li class="li complete">
+        <div class="status">
+          <h4> Project Selected </h4>
+        </div>
+      </li>
+      <li class="li complete">
+        <div class="status">
+          <h4> Commit Selected </h4>
+        </div>
+      </li>
+      <li class="li">
+        <div class="status">
+          <h4> Checklist Filled </h4>
+        </div>
+      </li>
+      <li class="li">
+        <div class="status">
+          <h4> Deploy Approved </h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<br>
+
+<div class="container">
+<%= form_for :deployments, url: "/deployments" do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit  %>
+  <%end %>
+</div>
+</body>
+
+</html>

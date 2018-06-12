@@ -5,6 +5,6 @@ Rails.application.routes.draw do
       resources :commits, only: [:index, :show]
     end
   end
-  resources :deployments, only: [:edit, :update]
+  resources :deployments, only: [:new, :create]
   devise_for :users, contollers: {cas_sessions: 'sessions'}
 end

@@ -1,4 +1,9 @@
 class DeploymentsController < ApplicationController
-  def edit
+  def new
+    puts params
+  end
+
+  def create
+    puts params
   end
 end
