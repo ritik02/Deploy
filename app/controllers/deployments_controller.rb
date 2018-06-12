@@ -11,4 +11,5 @@ class DeploymentsController < ApplicationController
 		@deployment.save
 		@user = current_user
 	end
+
 end
