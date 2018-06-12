@@ -1,9 +1,10 @@
 class DeploymentsController < ApplicationController
   def new
-    puts params
+    @user=current_user
   end
 
   def create
-    puts params
+
+
   end
 end
