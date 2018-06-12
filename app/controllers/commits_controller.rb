@@ -37,7 +37,6 @@ class CommitsController < ApplicationController
    end
  end
 
- def parse_time
     @time = @time[0..18] + "Z"
  end
 
