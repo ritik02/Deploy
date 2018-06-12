@@ -42,17 +42,21 @@ class CommitsController < ApplicationController
 
   def parse_time_dummy
     @time = @last_deployed_commit["created_at"]
+
     @time = @time[0..18] + "Z"
-  end
+ end
 
-  def validate_token_and_get_details
-    return if redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token))
-    return if redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token))
-    get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
-    @project_id = params[:project_id]
-    @user_id = params[:user_id]
-    @user = current_user
-  end
+ def parse_time_dummy
+   @time = @last_deployed_commit["created_at"]
+   @time = @time[0..18] + "Z"
+ end
+
+ def validate_token_and_get_details
+   return if redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token))
+   return if redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token))
+   get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
+   @project_id = params[:project_id]
+   @user_id = params[:user_id]
+   @user = current_user
+ end
 end
-
-
