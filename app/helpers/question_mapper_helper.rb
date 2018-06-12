@@ -1,6 +1,6 @@
 module QuestionMapperHelper
 	question_hash = {
-		title: "Title"
+		title: "Title",
 		overview: "Overview",
 		committers: "Committers",
 		services_impacted: "SERVICES IMPACTED",

@@ -1,4 +1,5 @@
 one:
+   id: 1
    user_id: 2
    project_id: 32
    commit_id: 32
@@ -6,6 +7,5 @@ one:
    stage_name: deploy
    job_name: deploy_test
    checklist:
-   status:
+   status: created
 
-      

@@ -175,7 +175,7 @@
   <%= form.text_area :project_component_code_7 ,class: 'form-group form-control' %>
   <label >8. How many synchronous calls your code makes? (Also list down in impacted services)</label>
   <%= form.text_area :project_component_code_8 ,class: 'form-group form-control' %>
-
+  <%= hidden_field_tag 'deployment_id', @deployment.id  %>
   <%= form.submit  class: 'btn btn-primary' %>
   <%end %>
 </div>
