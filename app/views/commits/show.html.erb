@@ -33,7 +33,14 @@
       </ul>
     </div>
   </div>
-
+  <div class="fixed-username" >
+    Hello, <%= @user.name %>
+  </div>
+  <div class="fixed-logout" >
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+    <% end %>
+  </div>
   <button class="fab fixed-button">Checklist</button>
 
 <h3 style="text-align: center;">Diff of <b><%=@source_commit %> : <%=@destination_commit %></b></h3>

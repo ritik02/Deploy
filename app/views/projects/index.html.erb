@@ -42,6 +42,14 @@
  </div>
 </div>
 
+<div class="fixed-username" >
+  Hello, <%= @user.name %>
+</div>
+<div class="fixed-logout" >
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% end %>
+</div>
 
 <div id="container">
     <div id="searchbar">
@@ -79,8 +87,8 @@
 <div class="container"  >
   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style=""  >
       <div class="btn-group mr-2" role="group" aria-label="First group" style=" margin-left: 40%" >
-          <button type="button" class="btn btn-secondary btn-center pull-left "  style="background-color: black;  "><%= link_to "Prev", user_projects_url(:page_id => @projects.headers["x-prev-page"], :user_id => @user.id)%></button>
-          <button type="button" class="btn btn-secondary btn-center pull-left "  style="background-color: black;  "><%= link_to "Next", user_projects_url(:page_id => @projects.headers["x-next-page"], :user_id => @user.id)%></button>
+          <button type="button" class="btn btn-secondary btn-center pull-left "  style="background-color: black;  " ><%= link_to_if  !@projects.headers["x-prev-page"].blank?, "Prev", user_projects_url(:page_id => @projects.headers["x-prev-page"], :user_id => @user.id)%></button>
+          <button type="button" class="btn btn-secondary btn-center pull-left "  style="background-color: black;  "><%= link_to_if !@projects.headers["x-next-page"].blank?, "Next", user_projects_url(:page_id => @projects.headers["x-next-page"], :user_id => @user.id)%></button>
         </div>
     </div>
 </div>

@@ -1,5 +1,6 @@
 require 'set'
 class ProjectsController < ApplicationController
+
   include TokenValidationHelper
   include EncryptionHelper
 
