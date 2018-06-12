@@ -2,13 +2,18 @@ require 'rails_helper'
 
 RSpec.describe DeploymentsController, type: :controller do
 	fixtures :deployments , :users
-  describe "GET deployments#edit" do
-    it "should open deployment edit page when checklist button is clicked" do
-      VCR.use_cassette("user_deployment_checklist") do
-        sign_in users(:four)
-        get :edit, params: { id: deployments(:one).id}
-        expect(response).to have_http_status(:success)
-      end
+  describe "GET deployments#new" do
+    it "should open deployment new page when checklist button is clicked" do
+      sign_in users(:four)
+      get :new
+      expect(response).to have_http_status(:success)
+    end
+
+    it "should create a new deployment" do
+    	sign_in users(:four)
+    	previous_length = Deployment.all.length
+    	get :new
+      expect(Deployment.all.length).to eq(previous_length+1)
     end
   end
 end
