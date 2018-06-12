@@ -10,7 +10,7 @@ development:
   database: godeploy
   pool: 5
   username: postgres
-  password: postgres
+  password: heisenberg
   timeout: 5000
 
 test:
@@ -19,7 +19,7 @@ test:
   database: godeploytest
   pool: 5
   username: postgres
-  password: postgres
+  password: heisenberg
   timeout: 5000
 
 production:

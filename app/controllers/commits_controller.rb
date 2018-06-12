@@ -6,8 +6,6 @@ class CommitsController < ApplicationController
 
   def index
     @selected_job_name = params[:job_name]
-    #@deployments = @gitlab_api_services.get_all_deployments(@project_id)
-    #get_last_deployed_commit_details
     @last_deployed_commit = @gitlab_api_services.get_last_deployed_commit_dummy(@project_id)
     parse_time_dummy
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(@project_id, @time)
@@ -22,10 +20,15 @@ class CommitsController < ApplicationController
 
   private
 
+  def get_project_deployments
+    @deployments = @gitlab_api_services.get_all_deployments(@project_id)
+    get_last_deployed_commit_details
+  end
+
   def get_last_deployed_commit_details
     @deployments.each do |deployment|
       if deployment["deployable"]["name"] == @selected_job_name
-        @last_deployed_commit = deployment["deployable"]["commit"]["short_id"]
+        @last_deployed_commit = deployment["deployable"]["commit"]
         @time = deployment["deployable"]["commit"]["created_at"]
         parse_time
         break

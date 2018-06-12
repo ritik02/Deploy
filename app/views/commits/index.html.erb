@@ -1,71 +1,76 @@
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <%= stylesheet_link_tag 'project-page'%>
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <%= stylesheet_link_tag 'project-page'%>
+ <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-  <div id="menu-nav">
-    <div id="navigation-bar">
-      <ul>
-        <li><a href="<%=user_projects_path%>" style="color: #009944;">Projects</a>
-        </li>
-        <li><a href="/users/<%=@user_id%>/projects/<%=@project_id%>/commits" style="color: #00FF00;"><span>Commits</span></a>
-        </li>
-        <li><a><span>Checklist</span></a>
-        </li>
-        <li><a><span>Approval</span></a>
-        </li>
-        <li><a><span>Deploy</span></a>
-        </li>
-      </ul>
-      <ul class="timeline" id="timeline">
-        <li class="li complete">
-          <div class="status">
-            <h4> Project Selected </h4>
-          </div>
-        </li>
-        <li class="li">
-          <div class="status">
-            <h4> Commit Selected </h4>
-          </div>
-        </li>
-        <li class="li">
-          <div class="status">
-            <h4> Checklist Filled </h4>
-          </div>
-        </li>
-        <li class="li">
-          <div class="status">
-            <h4> Deploy Approved </h4>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
+ <div id="menu-nav">
+   <div id="navigation-bar">
+     <ul>
+       <li><a href="<%=user_projects_path%>" style="color: #009944;">Projects</a>
+       </li>
+       <li><a href="/users/<%=@user_id%>/projects/<%=@project_id%>/commits" style="color: #00FF00;"><span>Commits</span></a>
+       </li>
+       <li><a><span>Checklist</span></a>
+       </li>
+       <li><a><span>Approval</span></a>
+       </li>
+       <li><a><span>Deploy</span></a>
+       </li>
+     </ul>
+     <ul class="timeline" id="timeline">
+       <li class="li complete">
+         <div class="status">
+           <h4> Project Selected </h4>
+         </div>
+       </li>
+       <li class="li">
+         <div class="status">
+           <h4> Commit Selected </h4>
+         </div>
+       </li>
+       <li class="li">
+         <div class="status">
+           <h4> Checklist Filled </h4>
+         </div>
+       </li>
+       <li class="li">
+         <div class="status">
+           <h4> Deploy Approved </h4>
+         </div>
+       </li>
+     </ul>
+   </div>
+ </div>
 
 
-  <div class="fixed-username" >
-    Hello, <%= @user.name %>
-  </div>
-  <div class="fixed-logout" >
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% end %>
-  </div>
-  <div class="container" >
-    <% @all_commits_after_last_deployed_commit.each do |commit|  %>
-    <div class="row">
-      <div class="col-xs-7 col-md-7 column" style="height :20px">
-        <div class="row">
-          <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
-          <div class="col-xs-11 col-md-11 column"><h5 style="margin: 0px 0px" class="commits_title"> <%= link_to commit["message"]  , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"]) %></h5><p class="project_description"> <%= commit["short_id"] %></p></div>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <% end %>
-  </div>
+ <div class="fixed-username" >
+   Hello, <%= @user.name %>
+ </div>
+ <div class="fixed-logout" >
+   <% if user_signed_in? %>
+     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+   <% end %>
+ </div>
+ <div class="container" >
+   <% @all_commits_after_last_deployed_commit.each do |commit|  %>
+   <div class="row">
+     <div class="col-xs-7 col-md-7 column" style="height :20px">
+       <div class="row">
+         <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
+         <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %> <%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"]) %></h3><p class="project_description"> <%= commit["short_id"] %></p></div>
+       </div>
+     </div>
+     <div class="col-xs-5 col-md-5 project_date column" >
+       <% time = commit["created_at"] %>
+       Last Updated : <%= time %>
+     </div>
+   </div>
+   <br>
+   <hr>
+   <% end %>
+ </div>
 </body>
 
 </html>
