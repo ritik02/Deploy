@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def show
     project_id = params["id"]
+    @valid_deployable_stages = ["canary", "prod"]
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
     @projects_details = @gitlab_api_services.get_project_details(project_id)
     @pipelines = @gitlab_api_services.get_project_pipelines(project_id)
@@ -40,16 +41,21 @@ class ProjectsController < ApplicationController
     pipelines.each do |pipeline|
       jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, pipeline["id"])
       @jobs_hash.merge!(pipeline["id"] => jobs)
-      @stages_hash.merge!(pipeline["id"] => get_stages_of_pipeline(jobs))
+      @stages_hash.merge!(pipeline["id"] => map_stages_with_jobs(jobs))
     end
   end
 
-  def get_stages_of_pipeline(pipeline_jobs)
-    stages = Set[]
+  def map_stages_with_jobs(pipeline_jobs)
+    @stages = {}
     pipeline_jobs.each do |job|
-      stages.add(job["stage"])
+      if @stages.key?(job["stage"])
+        @stages[job["stage"]].push(job)
+      else
+        @stages.merge!(job["stage"] => [])
+        @stages[job["stage"]].push(job)
+      end
     end
-    stages.to_a
+    @stages
   end
 
   def validate_token_and_get_user_details

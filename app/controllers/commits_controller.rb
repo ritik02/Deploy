@@ -5,9 +5,10 @@ class CommitsController < ApplicationController
   before_action :validate_token_and_get_details
 
   def index
-    #@last_deployed_commit = @gitlab_api_services.get_last_deployed_commit(params[:project_id])
+    @selected_job_name = params[:job_name]
+    #@deployments = @gitlab_api_services.get_all_deployments(@project_id)
+    #get_last_deployed_commit_details
     @last_deployed_commit = @gitlab_api_services.get_last_deployed_commit_dummy(@project_id)
-    #parse_time
     parse_time_dummy
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(@project_id, @time)
     @all_commits_after_last_deployed_commit.to_a.reverse!
@@ -21,8 +22,18 @@ class CommitsController < ApplicationController
 
   private
 
+  def get_last_deployed_commit_details
+    @deployments.each do |deployment|
+      if deployment["deployable"]["name"] == @selected_job_name
+        @last_deployed_commit = deployment["deployable"]["commit"]["short_id"]
+        @time = deployment["deployable"]["commit"]["created_at"]
+        parse_time
+        break
+      end
+    end
+  end
+
   def parse_time
-    @time = @last_deployed_commit["deployable"]["commit"]["created_at"]
 		@time = @time[0..18] + "Z"
   end
 
@@ -40,3 +51,5 @@ class CommitsController < ApplicationController
     @user = current_user
   end
 end
+
+

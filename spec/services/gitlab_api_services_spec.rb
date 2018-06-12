@@ -119,4 +119,13 @@ context "check api for jobs of pipelines" do
     end
   end
 
+  context "check api for all deployments" do
+    it "Should return deployments of a project" do
+      VCR.use_cassette("all_deployed_commit") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_all_deployments(3850)
+        expect(actual[0]["deployable"]["name"]).to eq "deploy"
+      end
+    end
+  end
+
 end
