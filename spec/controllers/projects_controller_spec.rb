@@ -43,14 +43,6 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
 
-    it "should open user_project page when a project is clicked" do
-      VCR.use_cassette("project_jobs") do
-        sign_in users(:four)
-        get :show, params: { user_id: users(:four).id, id: 3850 }
-        expect(assigns(:stages)[0]).to eq("deploy")
-      end
-    end
-
     it "should give stages_hash of pipelines" do
       VCR.use_cassette("stages_pipelines") do
         sign_in users(:four)

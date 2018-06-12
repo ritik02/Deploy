@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <%= stylesheet_link_tag  'project-page'%>
 
- <script>
+<script>
 $(document).ready(function(){
     $('[type="button"]').popover();
 });
@@ -89,11 +89,11 @@ $(document).ready(function(){
          <tr>
            <td>
              <% if pipeline["status"] == "pending" %>
-             <button type="button" class="btn btn-outline-secondary">Secondary</button>
+             <button type="button" class="btn btn-outline-secondary">Pending</button>
              <% elsif pipeline["status"] == "success" %>
              <button type="button" class="btn btn-outline-success">Success</button>
              <% else %>
-             <button type="button" class="btn btn-outline-danger">Danger</button>
+             <button type="button" class="btn btn-outline-danger">Failed</button>
              <% end %>
            </td>
            <td>
@@ -101,51 +101,26 @@ $(document).ready(function(){
            </td>
            <td>
              master <img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="15" height="15"> <%= pipeline["sha"][0..6] %>
-             <p> <%= @jobs_hash[pipeline["id"]][0]["commit"]["message"] %> </p>
+             <p>
+               <% commit_message = @jobs_hash[pipeline["id"]][0]["commit"]["message"] %>
+               <% if commit_message.length >= 35 %>
+               <% commit_message = commit_message[0...35] + "..." %>
+               <% end %>
+               <%= commit_message %>
+             </p>
              <td>
-              <% @stages_hash[pipeline["id"]].each do |stage, jobs| %>
-              <% stage_type = "" %>
-                <% jobs.each do |job| %>
-                  <% if job["status"] == "failed" %>
-                    <% stage_type = "failed" %>
-                    <% break %>
-                  <% elsif job["status"] == "pending" %>
-                    <% stage_type = "pending" %>
-                    <% break %>
-                  <% else stage_type = "success" %>
-                  <% end %>
-                <% end %>
-                  <% if stage_type == "failed" %>
-                  <button type="button" class="btn btn-danger" data-toggle="popover" data-container="body" data-placement="bottom" title="<%= stage %>" data-html="true" data-content="
-                    <%jobs.each do |job| %>
-                    <% if job["name"].include?("canary") || job["name"].include?("prod") %>
-                    <p><a href='/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits?job_name=<%=job["name"]%>' ><%= job["name"]%></a></p>
-                    <% else %>
-                    <p><%= job["name"] %></p>
+               <table >
+                 <% @stages_hash[pipeline["id"]].each do |stage, jobs| %>
+                    <% if stage.include?("canary") || stage.include?("prod") || stage.include?("deploy")  %>
+                      <td>
+                        <b><%= stage[0..10] %></b>
+                        <% jobs.each do |job| %>
+                            <p><%= link_to job["name"], user_project_commits_url(:user_id => @user.id,:project_id => @projects_details["id"],job_name: job["name"] ) %></p>
+                        <% end %>
+                      </td>
                     <% end %>
-                    <% end %>" style="border-radius: 100%;"><span class="glyphicon glyphicon-remove"></span></button>
-                <% elsif stage_type == "success" %>
-                  <button type="button" class="btn btn-success" data-toggle="popover" data-container="body" data-placement="bottom" rel="popover" title="<%= stage %>" data-html="true" style="border-radius: 100%;"  data-content="
-                    <%jobs.each do |job| %>
-                    <% if job["name"].include?("canary") || job["name"].include?("prod")%>
-                    <p><a href='/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits?job_name=<%=job["name"]%>' ><%= job["name"]%></a></p>
-                    <% else %>
-                    <p><%= job["name"] %></p>
-                    <% end %>
-                    <% end %> "> <span class="glyphicon glyphicon-ok"></span></button>
-                <% else %>
-                <button type="button" class="btn btn-secondary" data-toggle="popover" data-container="body" data-placement="bottom" rel="popover" title="<%= stage %>" data-html="true" style="border-radius: 100%;"  data-content="
-                  <%jobs.each do |job| %>
-                  <% if job["name"].include?("canary") || job["name"].include?("prod") %>
-                  <p><a href='/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits?job_name=<%=job["name"]%>' ><%= job["name"]%></a></p>
-                  <% else %>
-                  <p><%= job["name"] %></p>
-                  <% end %>
-                  <% end %>"> <span class="glyphicon glyphicon-option-horizontal"></span></button>
-                <% end %>
-
               <% end %>
-
+            </table>
             </td>
          </tr>
          <% end %>

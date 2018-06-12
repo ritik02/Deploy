@@ -22,6 +22,7 @@ gem 'webmock'
 gem 'figaro'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
+  gem 'pry'
   gem 'rails-controller-testing'
 end
 
