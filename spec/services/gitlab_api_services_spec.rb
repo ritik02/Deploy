@@ -69,8 +69,8 @@ RSpec.describe GitlabApiServices  do
   context "check api for last deployed commit of project" do
     it "Should return last deployed commit of project" do
       VCR.use_cassette("project_last_deployed_commit") do
-        actual = GitlabApiServices.new("NLbDzn_JF9PyUrUs8EGn").get_last_deployed_commit(394)
-        expect(actual["deployable"]["name"]).to eq "deploy_staging_sidekiq"
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_last_deployed_commit(3850)
+        expect(actual["deployable"]["name"]).to eq "deploy_staging"
       end
     end
   end
@@ -79,8 +79,8 @@ RSpec.describe GitlabApiServices  do
   context "check api for all commits after last deployed commit of project" do
     it "Should return all commits after last deployed commit of project" do
       VCR.use_cassette("project_all_commits_after_last_deployed_commit") do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_all_commits_after_last_deployed_commit(394, "2017-10-31T05:20:02Z")
-        expect(actual[0]["short_id"]).to eq "9067c7c4"
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_all_commits_after_last_deployed_commit(3850, "2018-06-13T06:18:35Z")
+        expect(actual[0]["short_id"]).to eq "ed62398d"
       end
     end
   end
