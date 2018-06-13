@@ -44,6 +44,7 @@ module QuestionMapperHelper
 	  project_component_code_5: "Are you reading or writing to same fields?",
 	  project_component_code_6: "How many domain entities are impacted?",
 	  project_component_code_7: "Do you read from database? If yes, then explain why do you need to read from database?And why don’t you use cache, also, how many places you utilise cache.",
-	  project_component_code_8: "How many synchronous calls your code makes? (Also list down in impacted services)"
+	  project_component_code_8: "How many synchronous calls your code makes? (Also list down in impacted services)",
+	  reviewer_email: "Reviewer Email"
 	}
 end
