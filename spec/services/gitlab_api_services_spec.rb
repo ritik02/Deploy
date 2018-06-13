@@ -61,7 +61,7 @@ RSpec.describe GitlabApiServices  do
     it "Should return jobs of project" do
       VCR.use_cassette("project_jobs_details") do
         actual = GitlabApiServices.new(decrypt_access_token(users(:one).gitlab_token)).get_project_jobs(3850)
-        expect(actual[0]["commit"]["message"]).to eq "Included some lines in README.md"
+        expect(actual[0]["commit"]["message"]).to eq "Update README.md"
       end
     end
   end
@@ -80,7 +80,7 @@ RSpec.describe GitlabApiServices  do
     it "Should return all commits after last deployed commit of project" do
       VCR.use_cassette("project_all_commits_after_last_deployed_commit") do
         actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_all_commits_after_last_deployed_commit(394, "2017-10-31T05:20:02Z")
-        expect(actual[0]["short_id"]).to eq "780b0bcf"
+        expect(actual[0]["short_id"]).to eq "9067c7c4"
       end
     end
   end
@@ -98,7 +98,7 @@ RSpec.describe GitlabApiServices  do
     it "Should return pipelines of selected project" do
       VCR.use_cassette("project_pipelines") do
         actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_project_pipelines(3850)
-        expect(actual[0]["id"]).to eq 210972
+        expect(actual[0]["id"]).to eq 213350
       end
     end
 

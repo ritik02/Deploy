@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/users?private_token=SpFM_1tetqXNjmQWvSZp
+    uri: https://source.golabs.io/api/v4/users?private_token=hsxHUDx6k_t6P_5isK5t
     body:
       encoding: US-ASCII
       string: ''
@@ -21,21 +21,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:56 GMT
+      - Wed, 13 Jun 2018 09:10:13 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '4573'
+      - '4567'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"c94e9dfca2aac3e9ba5621c577bd940f"
+      - W/"f67ef60e613fbf0cbef2fd17dd9e79f7"
       Link:
-      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=2&per_page=20&private_token=SpFM_1tetqXNjmQWvSZp&with_custom_attributes=false>;
-        rel="next", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=SpFM_1tetqXNjmQWvSZp&with_custom_attributes=false>;
-        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=51&per_page=20&private_token=SpFM_1tetqXNjmQWvSZp&with_custom_attributes=false>;
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=2&per_page=20&private_token=hsxHUDx6k_t6P_5isK5t&with_custom_attributes=false>;
+        rel="next", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=hsxHUDx6k_t6P_5isK5t&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=51&per_page=20&private_token=hsxHUDx6k_t6P_5isK5t&with_custom_attributes=false>;
         rel="last"
       Vary:
       - Origin
@@ -52,24 +52,24 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - b1c98abd-f315-4521-a7dc-aea98e46f884
+      - 57915dcd-28d8-440a-a1b7-d12d996f35e8
       X-Runtime:
-      - '0.028815'
+      - '0.029218'
       X-Total:
-      - '1003'
+      - '1007'
       X-Total-Pages:
       - '51'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"},{"id":1036,"name":"indrajati","username":"indrajati","state":"active","avatar_url":"https://secure.gravatar.com/avatar/28361b130118098a4a59dea00bfd893d?s=80\u0026d=identicon","web_url":"https://source.golabs.io/indrajati"},{"id":1035,"name":"vipul.nair","username":"vipul.nair","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ae5ede5d992fab1abc02d20685086fc5?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vipul.nair"},{"id":1034,"name":"duchh","username":"duchh","state":"active","avatar_url":"https://secure.gravatar.com/avatar/23084de0bc0dec957e0b65c2a2d82e2b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duchh"},{"id":1033,"name":"harish.nazief","username":"harish.nazief","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2ba5e7a62cab528bda7869aad637ff0e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/harish.nazief"},{"id":1032,"name":"almer.alana","username":"almer.alana","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3c2d2952bcb5496e780a64504c1de4fa?s=80\u0026d=identicon","web_url":"https://source.golabs.io/almer.alana"},{"id":1031,"name":"didiet.noor","username":"didiet.noor","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1031/avatar.png","web_url":"https://source.golabs.io/didiet.noor"},{"id":1030,"name":"faisal.ridwan","username":"faisal.ridwan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/631e736ae4dbd7d25c14739f320821d1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/faisal.ridwan"},{"id":1029,"name":"gunawan.santoso","username":"gunawan.santoso","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1029/avatar.png","web_url":"https://source.golabs.io/gunawan.santoso"},{"id":1028,"name":"maulik.soneji","username":"maulik.soneji","state":"active","avatar_url":"https://secure.gravatar.com/avatar/401df8ee0df5a51d18871db64212a9bb?s=80\u0026d=identicon","web_url":"https://source.golabs.io/maulik.soneji"},{"id":1027,"name":"saurabh.k.aux","username":"saurabh.k.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/742a0e30b99124b395937b2b9d8a508e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/saurabh.k.aux"},{"id":1026,"name":"adit.lal","username":"adit.lal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e26c1853a00d563092e1bf9e4c900138?s=80\u0026d=identicon","web_url":"https://source.golabs.io/adit.lal"},{"id":1025,"name":"shivaprasad.bhat","username":"shivaprasad.bhat","state":"active","avatar_url":"https://secure.gravatar.com/avatar/8f66e94781d97cfac929d8188d471930?s=80\u0026d=identicon","web_url":"https://source.golabs.io/shivaprasad.bhat"},{"id":1024,"name":"alvin.adianto","username":"alvin.adianto","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4aba035e4af9f0e3c77d1f9c87debf03?s=80\u0026d=identicon","web_url":"https://source.golabs.io/alvin.adianto"},{"id":1023,"name":"dong.yunfan","username":"dong.yunfan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/bcb0dd2765a70f39971be8a1d4730b1f?s=80\u0026d=identicon","web_url":"https://source.golabs.io/dong.yunfan"},{"id":1022,"name":"Ritik
-        Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"},{"id":1021,"name":"prakash","username":"prakash.d.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/abac243343ef83dcb445c45d2c6c3cc2?s=80\u0026d=identicon","web_url":"https://source.golabs.io/prakash.d.aux"},{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux"},{"id":1019,"name":"paulina.ika","username":"paulina.ika","state":"active","avatar_url":"https://secure.gravatar.com/avatar/d00d31b3526a64717af3806761578c5e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/paulina.ika"},{"id":1018,"name":"lawrence.wong","username":"lawrence.wong","state":"active","avatar_url":"https://secure.gravatar.com/avatar/fc5cd1e3829a707b77b09a7ce8049646?s=80\u0026d=identicon","web_url":"https://source.golabs.io/lawrence.wong"}]'
+      string: '[{"id":1041,"name":"kashyap.k","username":"kashyap.k","state":"active","avatar_url":"https://secure.gravatar.com/avatar/657939eb7b23ae76b54ca8fcb04cb597?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashyap.k"},{"id":1040,"name":"kashif.khan","username":"kashif.khan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/dd10994651237ccfc564817e718dfc60?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashif.khan"},{"id":1039,"name":"gunjan.dewan","username":"gunjan.dewan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2512136b37be09f1bc7c011661e35c88?s=80\u0026d=identicon","web_url":"https://source.golabs.io/gunjan.dewan"},{"id":1038,"name":"vinkesh.banka","username":"vinkesh.banka","state":"active","avatar_url":"https://secure.gravatar.com/avatar/80e6c75489e17773160b1c52afe5a75c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vinkesh.banka"},{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"},{"id":1036,"name":"indrajati","username":"indrajati","state":"active","avatar_url":"https://secure.gravatar.com/avatar/28361b130118098a4a59dea00bfd893d?s=80\u0026d=identicon","web_url":"https://source.golabs.io/indrajati"},{"id":1035,"name":"vipul.nair","username":"vipul.nair","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ae5ede5d992fab1abc02d20685086fc5?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vipul.nair"},{"id":1034,"name":"duchh","username":"duchh","state":"active","avatar_url":"https://secure.gravatar.com/avatar/23084de0bc0dec957e0b65c2a2d82e2b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duchh"},{"id":1033,"name":"harish.nazief","username":"harish.nazief","state":"active","avatar_url":"https://secure.gravatar.com/avatar/133d19cdec935d939828af95e454c347?s=80\u0026d=identicon","web_url":"https://source.golabs.io/harish.nazief"},{"id":1032,"name":"almer.alana","username":"almer.alana","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3c2d2952bcb5496e780a64504c1de4fa?s=80\u0026d=identicon","web_url":"https://source.golabs.io/almer.alana"},{"id":1031,"name":"didiet.noor","username":"didiet.noor","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1031/avatar.png","web_url":"https://source.golabs.io/didiet.noor"},{"id":1030,"name":"faisal.ridwan","username":"faisal.ridwan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/631e736ae4dbd7d25c14739f320821d1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/faisal.ridwan"},{"id":1029,"name":"gunawan.santoso","username":"gunawan.santoso","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1029/avatar.png","web_url":"https://source.golabs.io/gunawan.santoso"},{"id":1028,"name":"maulik.soneji","username":"maulik.soneji","state":"active","avatar_url":"https://secure.gravatar.com/avatar/401df8ee0df5a51d18871db64212a9bb?s=80\u0026d=identicon","web_url":"https://source.golabs.io/maulik.soneji"},{"id":1027,"name":"saurabh.k.aux","username":"saurabh.k.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/742a0e30b99124b395937b2b9d8a508e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/saurabh.k.aux"},{"id":1026,"name":"adit.lal","username":"adit.lal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e26c1853a00d563092e1bf9e4c900138?s=80\u0026d=identicon","web_url":"https://source.golabs.io/adit.lal"},{"id":1025,"name":"shivaprasad.bhat","username":"shivaprasad.bhat","state":"active","avatar_url":"https://secure.gravatar.com/avatar/8f66e94781d97cfac929d8188d471930?s=80\u0026d=identicon","web_url":"https://source.golabs.io/shivaprasad.bhat"},{"id":1024,"name":"alvin.adianto","username":"alvin.adianto","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4aba035e4af9f0e3c77d1f9c87debf03?s=80\u0026d=identicon","web_url":"https://source.golabs.io/alvin.adianto"},{"id":1023,"name":"dong.yunfan","username":"dong.yunfan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/bcb0dd2765a70f39971be8a1d4730b1f?s=80\u0026d=identicon","web_url":"https://source.golabs.io/dong.yunfan"},{"id":1022,"name":"Ritik
+        Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:56 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:13 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850?private_token=SpFM_1tetqXNjmQWvSZp&statistics=true
+    uri: https://source.golabs.io/api/v4/projects/3850?private_token=hsxHUDx6k_t6P_5isK5t&statistics=true
     body:
       encoding: US-ASCII
       string: ''
@@ -88,17 +88,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:57 GMT
+      - Wed, 13 Jun 2018 09:10:14 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '2370'
+      - '2372'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"42c7bf7717233b3e2adf97967e9c2c11"
+      - W/"d1e55748eff64bebacb7961483a818e5"
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -106,20 +106,21 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 30e6f62c-e9c4-4b76-abec-2e0b8e8e1904
+      - e95f39c3-dc4a-4442-84b1-05d1b9d45417
       X-Runtime:
-      - '1.104468'
+      - '0.049269'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
       string: '{"id":3850,"description":"This is my awesome calculator.","name":"CalculatorProject","name_with_namespace":"archit.j.aux
-        / CalculatorProject","path":"CalculatorProject","path_with_namespace":"archit.j.aux/CalculatorProject","created_at":"2018-06-01T06:04:27.249Z","default_branch":"master","tag_list":[],"ssh_url_to_repo":"git@source.golabs.io:archit.j.aux/CalculatorProject.git","http_url_to_repo":"https://source.golabs.io/archit.j.aux/CalculatorProject.git","web_url":"https://source.golabs.io/archit.j.aux/CalculatorProject","avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-06-08T12:09:16.808Z","_links":{"self":"https://source.golabs.io/api/v4/projects/3850","issues":"https://source.golabs.io/api/v4/projects/3850/issues","merge_requests":"https://source.golabs.io/api/v4/projects/3850/merge_requests","repo_branches":"https://source.golabs.io/api/v4/projects/3850/repository/branches","labels":"https://source.golabs.io/api/v4/projects/3850/labels","events":"https://source.golabs.io/api/v4/projects/3850/events","members":"https://source.golabs.io/api/v4/projects/3850/members"},"archived":false,"visibility":"internal","owner":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1020,"namespace":{"id":1183,"name":"archit.j.aux","path":"archit.j.aux","kind":"user","full_path":"archit.j.aux","parent_id":null},"import_status":"none","import_error":null,"open_issues_count":0,"runners_token":"jAsV_gU1MhUrVrZs6QyS","public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","statistics":{"commit_count":6,"storage_size":439216,"repository_size":398458,"lfs_objects_size":0,"job_artifacts_size":93775},"permissions":{"project_access":{"access_level":40,"notification_level":3},"group_access":null}}'
+        / CalculatorProject","path":"CalculatorProject","path_with_namespace":"archit.j.aux/CalculatorProject","created_at":"2018-06-01T06:04:27.249Z","default_branch":"master","tag_list":[],"ssh_url_to_repo":"git@source.golabs.io:archit.j.aux/CalculatorProject.git","http_url_to_repo":"https://source.golabs.io/archit.j.aux/CalculatorProject.git","web_url":"https://source.golabs.io/archit.j.aux/CalculatorProject","avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-06-13T06:07:21.905Z","_links":{"self":"https://source.golabs.io/api/v4/projects/3850","issues":"https://source.golabs.io/api/v4/projects/3850/issues","merge_requests":"https://source.golabs.io/api/v4/projects/3850/merge_requests","repo_branches":"https://source.golabs.io/api/v4/projects/3850/repository/branches","labels":"https://source.golabs.io/api/v4/projects/3850/labels","events":"https://source.golabs.io/api/v4/projects/3850/events","members":"https://source.golabs.io/api/v4/projects/3850/members"},"archived":false,"visibility":"internal","owner":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1020,"namespace":{"id":1183,"name":"archit.j.aux","path":"archit.j.aux","kind":"user","full_path":"archit.j.aux","parent_id":null},"import_status":"none","import_error":null,"open_issues_count":0,"runners_token":"jAsV_gU1MhUrVrZs6QyS","public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","statistics":{"commit_count":14,"storage_size":469016,"repository_size":304087,"lfs_objects_size":0,"job_artifacts_size":176684},"permissions":{"project_access":{"access_level":40,"notification_level":3},"group_access":null}}'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:57 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:14 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines?per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines?per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master
     body:
       encoding: US-ASCII
       string: ''
@@ -138,21 +139,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:58 GMT
+      - Wed, 13 Jun 2018 09:10:14 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '486'
+      - '487'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"28cd74bf1661fae94c81a7596101ff99"
+      - W/"80662b7cf4f15db72cfeeeca3f0030c9"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
-        rel="next", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=1&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
+        rel="next", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=1&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=3&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
         rel="last"
       Vary:
       - Origin
@@ -169,23 +170,23 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - 6f4cc9a6-7fb1-4be2-9beb-0a6ff62a91c2
+      - 4610aaac-4f4b-4d32-a42c-9285624e7ce4
       X-Runtime:
-      - '0.021096'
+      - '0.018306'
       X-Total:
-      - '8'
+      - '14'
       X-Total-Pages:
-      - '2'
+      - '3'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},{"id":209654,"sha":"116c146766436681ab6d7f5d4c2876d0b7988a9c","ref":"master","status":"success"}]'
+      string: '[{"id":213350,"sha":"ed62398d217afa7767e488ae36ce3356f39ed531","ref":"master","status":"success"},{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},{"id":213329,"sha":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","ref":"master","status":"success"},{"id":213326,"sha":"ae8617d17cada11e99e8bc31489ea1c467c16161","ref":"master","status":"success"},{"id":213315,"sha":"2940844b59cff959818aee6a07ca029432c0b6ca","ref":"master","status":"success"}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:58 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:14 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/210972/jobs?private_token=SpFM_1tetqXNjmQWvSZp
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/213350/jobs?private_token=hsxHUDx6k_t6P_5isK5t
     body:
       encoding: US-ASCII
       string: ''
@@ -204,20 +205,20 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:58 GMT
+      - Wed, 13 Jun 2018 09:10:15 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3749'
+      - '3896'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"d3934d23cb60109c793e7acb1b9a1a76"
+      - W/"0aadb7d23f49cb65c82e60891f8ee1ff"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines/210972/jobs?id=3850&page=1&per_page=20&pipeline_id=210972&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/210972/jobs?id=3850&page=1&per_page=20&pipeline_id=210972&private_token=SpFM_1tetqXNjmQWvSZp>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/213350/jobs?id=3850&page=1&per_page=20&pipeline_id=213350&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/213350/jobs?id=3850&page=1&per_page=20&pipeline_id=213350&private_token=hsxHUDx6k_t6P_5isK5t>;
         rel="last"
       Vary:
       - Origin
@@ -234,9 +235,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - 7c70da5c-df60-4091-beab-091c8d2dd3d2
+      - 630e3f98-f5f7-4845-8410-d34b02152d43
       X-Runtime:
-      - '0.142964'
+      - '0.070691'
       X-Total:
       - '3'
       X-Total-Pages:
@@ -245,18 +246,21 @@ http_interactions:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":1328119,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:12:43.103Z","started_at":"2018-06-08T12:12:43.505Z","finished_at":"2018-06-08T12:13:18.466Z","duration":34.961803,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","short_id":"95158f8e","title":"Included
-        some lines in README.md","created_at":"2018-06-08T12:12:42.000Z","parent_ids":["21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5"],"message":"Included
-        some lines in README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:12:42.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:12:42.000Z"},"pipeline":{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},"runner":null},{"id":1328120,"status":"success","stage":"deploy","name":"staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:12:43.117Z","started_at":"2018-06-08T12:13:19.394Z","finished_at":"2018-06-08T12:14:00.618Z","duration":41.224348,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","short_id":"95158f8e","title":"Included
-        some lines in README.md","created_at":"2018-06-08T12:12:42.000Z","parent_ids":["21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5"],"message":"Included
-        some lines in README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:12:42.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:12:42.000Z"},"pipeline":{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},"runner":null},{"id":1328121,"status":"success","stage":"deploy","name":"production","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:12:43.129Z","started_at":"2018-06-08T12:13:19.486Z","finished_at":"2018-06-08T12:13:58.191Z","duration":38.70488,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","short_id":"95158f8e","title":"Included
-        some lines in README.md","created_at":"2018-06-08T12:12:42.000Z","parent_ids":["21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5"],"message":"Included
-        some lines in README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:12:42.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:12:42.000Z"},"pipeline":{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},"runner":null}]'
+      string: '[{"id":1340737,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:41:30.475Z","started_at":"2018-06-13T06:41:31.709Z","finished_at":"2018-06-13T06:42:01.637Z","duration":29.928454,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ed62398d217afa7767e488ae36ce3356f39ed531","short_id":"ed62398d","title":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","created_at":"2018-06-13T06:41:30.000Z","parent_ids":["c05f9e9b8ed24ac1face4844c67aac8b04e13bf4"],"message":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:41:30.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:41:30.000Z"},"pipeline":{"id":213350,"sha":"ed62398d217afa7767e488ae36ce3356f39ed531","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340738,"status":"manual","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:41:30.517Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ed62398d217afa7767e488ae36ce3356f39ed531","short_id":"ed62398d","title":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","created_at":"2018-06-13T06:41:30.000Z","parent_ids":["c05f9e9b8ed24ac1face4844c67aac8b04e13bf4"],"message":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:41:30.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:41:30.000Z"},"pipeline":{"id":213350,"sha":"ed62398d217afa7767e488ae36ce3356f39ed531","ref":"master","status":"success"},"runner":null},{"id":1340739,"status":"manual","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:41:30.530Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ed62398d217afa7767e488ae36ce3356f39ed531","short_id":"ed62398d","title":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","created_at":"2018-06-13T06:41:30.000Z","parent_ids":["c05f9e9b8ed24ac1face4844c67aac8b04e13bf4"],"message":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:41:30.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:41:30.000Z"},"pipeline":{"id":213350,"sha":"ed62398d217afa7767e488ae36ce3356f39ed531","ref":"master","status":"success"},"runner":null}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:58 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:15 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/210966/jobs?private_token=SpFM_1tetqXNjmQWvSZp
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/213338/jobs?private_token=hsxHUDx6k_t6P_5isK5t
     body:
       encoding: US-ASCII
       string: ''
@@ -275,20 +279,20 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:59 GMT
+      - Wed, 13 Jun 2018 09:10:15 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3652'
+      - '5095'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"c890e3f68fbaf9451b86c7778215a881"
+      - W/"9c5f17cdf8586372c4af6bce423f7cb4"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines/210966/jobs?id=3850&page=1&per_page=20&pipeline_id=210966&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/210966/jobs?id=3850&page=1&per_page=20&pipeline_id=210966&private_token=SpFM_1tetqXNjmQWvSZp>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/213338/jobs?id=3850&page=1&per_page=20&pipeline_id=213338&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/213338/jobs?id=3850&page=1&per_page=20&pipeline_id=213338&private_token=hsxHUDx6k_t6P_5isK5t>;
         rel="last"
       Vary:
       - Origin
@@ -305,9 +309,86 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - '08864023-2f8c-49e9-85aa-f7cb1ad445ae'
+      - 2a3cb08e-3ec6-48f5-aab9-58daad1be6a9
       X-Runtime:
-      - '0.117443'
+      - '0.081027'
+      X-Total:
+      - '4'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1340667,"status":"canceled","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:21:20.054Z","started_at":"2018-06-13T06:21:22.577Z","finished_at":"2018-06-13T06:21:28.749Z","duration":6.172602,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
+        README.md","created_at":"2018-06-13T06:21:19.000Z","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
+        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000Z"},"pipeline":{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340668,"status":"canceled","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:21:20.068Z","started_at":null,"finished_at":"2018-06-13T06:21:28.758Z","duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
+        README.md","created_at":"2018-06-13T06:21:19.000Z","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
+        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000Z"},"pipeline":{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},"runner":null},{"id":1340669,"status":"canceled","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:21:20.090Z","started_at":null,"finished_at":"2018-06-13T06:21:28.766Z","duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
+        README.md","created_at":"2018-06-13T06:21:19.000Z","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
+        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000Z"},"pipeline":{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},"runner":null},{"id":1340778,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T07:04:04.168Z","started_at":"2018-06-13T07:04:06.895Z","finished_at":"2018-06-13T07:04:59.668Z","duration":52.773409,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
+        README.md","created_at":"2018-06-13T06:21:19.000Z","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
+        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000Z"},"pipeline":{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},"runner":{"id":2481,"description":"i-gitlab-docker-runner-d3qv","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}}]'
+    http_version: 
+  recorded_at: Wed, 13 Jun 2018 09:10:15 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/213329/jobs?private_token=hsxHUDx6k_t6P_5isK5t
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jun 2018 09:10:16 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3870'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"0e7ae45af1b77959ee43caaf1073cedb"
+      Link:
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/213329/jobs?id=3850&page=1&per_page=20&pipeline_id=213329&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/213329/jobs?id=3850&page=1&per_page=20&pipeline_id=213329&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 5d081425-833d-4a22-9427-bd769f2a3fe2
+      X-Runtime:
+      - '0.054944'
       X-Total:
       - '3'
       X-Total-Pages:
@@ -316,18 +397,21 @@ http_interactions:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":1328089,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:46.184Z","started_at":"2018-06-08T12:09:47.131Z","finished_at":"2018-06-08T12:10:33.590Z","duration":46.45906,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","short_id":"21cd48b5","title":"Update
-        router.rb","created_at":"2018-06-08T12:09:45.000Z","parent_ids":["0167e10f88271c1ff82d2d25d93c7c446f3cb469"],"message":"Update
-        router.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:45.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:45.000Z"},"pipeline":{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},"runner":null},{"id":1328090,"status":"success","stage":"deploy","name":"staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:46.201Z","started_at":"2018-06-08T12:10:34.380Z","finished_at":"2018-06-08T12:11:09.219Z","duration":34.83905,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","short_id":"21cd48b5","title":"Update
-        router.rb","created_at":"2018-06-08T12:09:45.000Z","parent_ids":["0167e10f88271c1ff82d2d25d93c7c446f3cb469"],"message":"Update
-        router.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:45.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:45.000Z"},"pipeline":{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},"runner":null},{"id":1328091,"status":"success","stage":"deploy","name":"production","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:46.213Z","started_at":"2018-06-08T12:10:34.478Z","finished_at":"2018-06-08T12:11:09.228Z","duration":34.750522,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","short_id":"21cd48b5","title":"Update
-        router.rb","created_at":"2018-06-08T12:09:45.000Z","parent_ids":["0167e10f88271c1ff82d2d25d93c7c446f3cb469"],"message":"Update
-        router.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:45.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:45.000Z"},"pipeline":{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},"runner":null}]'
+      string: '[{"id":1340606,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:18:35.469Z","started_at":"2018-06-13T06:18:37.546Z","finished_at":"2018-06-13T06:19:16.689Z","duration":39.142942,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","short_id":"8d78d8b0","title":"Reformated
+        calculator_spec.rb","created_at":"2018-06-13T06:18:35.000Z","parent_ids":["ae8617d17cada11e99e8bc31489ea1c467c16161"],"message":"Reformated
+        calculator_spec.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:18:35.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:18:35.000Z"},"pipeline":{"id":213329,"sha":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340607,"status":"success","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:18:35.516Z","started_at":"2018-06-13T06:19:17.095Z","finished_at":"2018-06-13T06:19:43.831Z","duration":26.736577,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","short_id":"8d78d8b0","title":"Reformated
+        calculator_spec.rb","created_at":"2018-06-13T06:18:35.000Z","parent_ids":["ae8617d17cada11e99e8bc31489ea1c467c16161"],"message":"Reformated
+        calculator_spec.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:18:35.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:18:35.000Z"},"pipeline":{"id":213329,"sha":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","ref":"master","status":"success"},"runner":null},{"id":1340608,"status":"success","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:18:35.544Z","started_at":"2018-06-13T06:19:17.191Z","finished_at":"2018-06-13T06:19:45.395Z","duration":28.203578,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","short_id":"8d78d8b0","title":"Reformated
+        calculator_spec.rb","created_at":"2018-06-13T06:18:35.000Z","parent_ids":["ae8617d17cada11e99e8bc31489ea1c467c16161"],"message":"Reformated
+        calculator_spec.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:18:35.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:18:35.000Z"},"pipeline":{"id":213329,"sha":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","ref":"master","status":"success"},"runner":null}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:59 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:16 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/210964/jobs?private_token=SpFM_1tetqXNjmQWvSZp
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/213326/jobs?private_token=hsxHUDx6k_t6P_5isK5t
     body:
       encoding: US-ASCII
       string: ''
@@ -346,20 +430,20 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:58:59 GMT
+      - Wed, 13 Jun 2018 09:10:16 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3708'
+      - '4097'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"62b1f97c1c8428a67598f6aa2ea0edaf"
+      - W/"012b77acd6f1c2e5c6a9e7ad33ed6506"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines/210964/jobs?id=3850&page=1&per_page=20&pipeline_id=210964&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/210964/jobs?id=3850&page=1&per_page=20&pipeline_id=210964&private_token=SpFM_1tetqXNjmQWvSZp>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/213326/jobs?id=3850&page=1&per_page=20&pipeline_id=213326&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/213326/jobs?id=3850&page=1&per_page=20&pipeline_id=213326&private_token=hsxHUDx6k_t6P_5isK5t>;
         rel="last"
       Vary:
       - Origin
@@ -376,9 +460,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - a29636ac-a7e0-495a-bd03-919e575b5e7b
+      - ac588f86-c720-42d7-ad00-1b7b81746f7e
       X-Runtime:
-      - '0.077048'
+      - '0.126266'
       X-Total:
       - '3'
       X-Total-Pages:
@@ -387,18 +471,21 @@ http_interactions:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":1328081,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:16.871Z","started_at":"2018-06-08T12:09:19.378Z","finished_at":"2018-06-08T12:09:50.192Z","duration":30.814275,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","short_id":"0167e10f","title":"Update
-        validitychecker.rb","created_at":"2018-06-08T12:09:16.000Z","parent_ids":["07038cd57dd6acdf5d3693c3aba347089160f65a"],"message":"Update
-        validitychecker.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:16.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:16.000Z"},"pipeline":{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},"runner":null},{"id":1328082,"status":"success","stage":"deploy","name":"staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:16.886Z","started_at":"2018-06-08T12:09:52.385Z","finished_at":"2018-06-08T12:10:24.714Z","duration":32.328988,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","short_id":"0167e10f","title":"Update
-        validitychecker.rb","created_at":"2018-06-08T12:09:16.000Z","parent_ids":["07038cd57dd6acdf5d3693c3aba347089160f65a"],"message":"Update
-        validitychecker.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:16.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:16.000Z"},"pipeline":{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},"runner":null},{"id":1328083,"status":"success","stage":"deploy","name":"production","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-08T12:09:16.898Z","started_at":"2018-06-08T12:09:52.484Z","finished_at":"2018-06-08T12:10:22.350Z","duration":29.865235,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","short_id":"0167e10f","title":"Update
-        validitychecker.rb","created_at":"2018-06-08T12:09:16.000Z","parent_ids":["07038cd57dd6acdf5d3693c3aba347089160f65a"],"message":"Update
-        validitychecker.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-08T12:09:16.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-08T12:09:16.000Z"},"pipeline":{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},"runner":null}]'
+      string: '[{"id":1340600,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:17:07.627Z","started_at":"2018-06-13T06:17:08.085Z","finished_at":"2018-06-13T06:18:04.725Z","duration":56.640289,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ae8617d17cada11e99e8bc31489ea1c467c16161","short_id":"ae8617d1","title":"Removed
+        unwanted comments from calculator.rb","created_at":"2018-06-13T06:17:07.000Z","parent_ids":["2940844b59cff959818aee6a07ca029432c0b6ca"],"message":"Removed
+        unwanted comments from calculator.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:17:07.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:17:07.000Z"},"pipeline":{"id":213326,"sha":"ae8617d17cada11e99e8bc31489ea1c467c16161","ref":"master","status":"success"},"runner":null},{"id":1340601,"status":"success","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:17:07.660Z","started_at":"2018-06-13T06:18:07.544Z","finished_at":"2018-06-13T06:18:43.148Z","duration":35.603602,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ae8617d17cada11e99e8bc31489ea1c467c16161","short_id":"ae8617d1","title":"Removed
+        unwanted comments from calculator.rb","created_at":"2018-06-13T06:17:07.000Z","parent_ids":["2940844b59cff959818aee6a07ca029432c0b6ca"],"message":"Removed
+        unwanted comments from calculator.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:17:07.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:17:07.000Z"},"pipeline":{"id":213326,"sha":"ae8617d17cada11e99e8bc31489ea1c467c16161","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340602,"status":"success","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:17:07.700Z","started_at":"2018-06-13T06:18:07.747Z","finished_at":"2018-06-13T06:18:37.857Z","duration":30.109716,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"ae8617d17cada11e99e8bc31489ea1c467c16161","short_id":"ae8617d1","title":"Removed
+        unwanted comments from calculator.rb","created_at":"2018-06-13T06:17:07.000Z","parent_ids":["2940844b59cff959818aee6a07ca029432c0b6ca"],"message":"Removed
+        unwanted comments from calculator.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:17:07.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:17:07.000Z"},"pipeline":{"id":213326,"sha":"ae8617d17cada11e99e8bc31489ea1c467c16161","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:58:59 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:16 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/209671/jobs?private_token=SpFM_1tetqXNjmQWvSZp
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/213315/jobs?private_token=hsxHUDx6k_t6P_5isK5t
     body:
       encoding: US-ASCII
       string: ''
@@ -417,20 +504,20 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:59:00 GMT
+      - Wed, 13 Jun 2018 09:10:17 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '3684'
+      - '4174'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"7af108ab5cced2586b476e8a68b0c28c"
+      - W/"5d5d5c26c3ed439c7ed5ae6f0cfa5ee2"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines/209671/jobs?id=3850&page=1&per_page=20&pipeline_id=209671&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/209671/jobs?id=3850&page=1&per_page=20&pipeline_id=209671&private_token=SpFM_1tetqXNjmQWvSZp>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/213315/jobs?id=3850&page=1&per_page=20&pipeline_id=213315&private_token=hsxHUDx6k_t6P_5isK5t>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/213315/jobs?id=3850&page=1&per_page=20&pipeline_id=213315&private_token=hsxHUDx6k_t6P_5isK5t>;
         rel="last"
       Vary:
       - Origin
@@ -447,9 +534,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - 7f12fe21-ad32-4103-ab4b-63796c5990d7
+      - 7efeb20b-b9ec-4321-a72f-86c6b0d92f38
       X-Runtime:
-      - '0.109064'
+      - '0.060124'
       X-Total:
       - '3'
       X-Total-Pages:
@@ -458,82 +545,16 @@ http_interactions:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":1320866,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-07T05:22:05.942Z","started_at":"2018-06-07T05:22:06.583Z","finished_at":"2018-06-07T05:23:23.736Z","duration":77.152525,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"07038cd57dd6acdf5d3693c3aba347089160f65a","short_id":"07038cd5","title":"Modify
-        .gitlab-ci.yml","created_at":"2018-06-07T05:22:05.000Z","parent_ids":["116c146766436681ab6d7f5d4c2876d0b7988a9c"],"message":"Modify
-        .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-07T05:22:05.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-07T05:22:05.000Z"},"pipeline":{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},"runner":null},{"id":1320867,"status":"success","stage":"deploy","name":"staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-07T05:22:05.961Z","started_at":"2018-06-07T05:23:24.484Z","finished_at":"2018-06-07T05:23:59.346Z","duration":34.862379,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"07038cd57dd6acdf5d3693c3aba347089160f65a","short_id":"07038cd5","title":"Modify
-        .gitlab-ci.yml","created_at":"2018-06-07T05:22:05.000Z","parent_ids":["116c146766436681ab6d7f5d4c2876d0b7988a9c"],"message":"Modify
-        .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-07T05:22:05.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-07T05:22:05.000Z"},"pipeline":{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},"runner":null},{"id":1320868,"status":"success","stage":"deploy","name":"production","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-07T05:22:05.974Z","started_at":"2018-06-07T05:23:24.560Z","finished_at":"2018-06-07T05:23:59.574Z","duration":35.013513,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"07038cd57dd6acdf5d3693c3aba347089160f65a","short_id":"07038cd5","title":"Modify
-        .gitlab-ci.yml","created_at":"2018-06-07T05:22:05.000Z","parent_ids":["116c146766436681ab6d7f5d4c2876d0b7988a9c"],"message":"Modify
-        .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-07T05:22:05.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-07T05:22:05.000Z"},"pipeline":{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},"runner":null}]'
+      string: '[{"id":1340523,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:07:21.960Z","started_at":"2018-06-13T06:07:22.475Z","finished_at":"2018-06-13T06:08:05.888Z","duration":43.412673,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"2940844b59cff959818aee6a07ca029432c0b6ca","short_id":"2940844b","title":"Add
+        environments to .gitlab-ci.yml","created_at":"2018-06-13T06:07:21.000Z","parent_ids":["63a476ef629c7bdf8ef22960572f045ca1a6b084"],"message":"Add
+        environments to .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:07:21.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:07:21.000Z"},"pipeline":{"id":213315,"sha":"2940844b59cff959818aee6a07ca029432c0b6ca","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340524,"status":"success","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:07:21.975Z","started_at":"2018-06-13T06:08:07.481Z","finished_at":"2018-06-13T06:08:41.519Z","duration":34.038038,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"2940844b59cff959818aee6a07ca029432c0b6ca","short_id":"2940844b","title":"Add
+        environments to .gitlab-ci.yml","created_at":"2018-06-13T06:07:21.000Z","parent_ids":["63a476ef629c7bdf8ef22960572f045ca1a6b084"],"message":"Add
+        environments to .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:07:21.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:07:21.000Z"},"pipeline":{"id":213315,"sha":"2940844b59cff959818aee6a07ca029432c0b6ca","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1340525,"status":"success","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-13T06:07:21.986Z","started_at":"2018-06-13T06:08:07.570Z","finished_at":"2018-06-13T06:08:45.594Z","duration":38.023654,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"2940844b59cff959818aee6a07ca029432c0b6ca","short_id":"2940844b","title":"Add
+        environments to .gitlab-ci.yml","created_at":"2018-06-13T06:07:21.000Z","parent_ids":["63a476ef629c7bdf8ef22960572f045ca1a6b084"],"message":"Add
+        environments to .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:07:21.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:07:21.000Z"},"pipeline":{"id":213315,"sha":"2940844b59cff959818aee6a07ca029432c0b6ca","ref":"master","status":"success"},"runner":{"id":2473,"description":"i-gitlab-docker-runner-nw31","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:59:00 GMT
-- request:
-    method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?private_token=SpFM_1tetqXNjmQWvSZp
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 11 Jun 2018 07:59:00 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '2452'
-      Connection:
-      - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"5bf799b2ed0af842acb85e48def8dcac"
-      Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?id=3850&page=1&per_page=20&pipeline_id=209654&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?id=3850&page=1&per_page=20&pipeline_id=209654&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="last"
-      Vary:
-      - Origin
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Next-Page:
-      - ''
-      X-Page:
-      - '1'
-      X-Per-Page:
-      - '20'
-      X-Prev-Page:
-      - ''
-      X-Request-Id:
-      - d47140a2-7205-4338-99a4-8749f9a896eb
-      X-Runtime:
-      - '0.054159'
-      X-Total:
-      - '2'
-      X-Total-Pages:
-      - '1'
-      Strict-Transport-Security:
-      - max-age=31536000
-    body:
-      encoding: UTF-8
-      string: '[{"id":1320746,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-07T05:05:30.803Z","started_at":"2018-06-07T05:05:31.629Z","finished_at":"2018-06-07T05:06:21.476Z","duration":49.846707,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"116c146766436681ab6d7f5d4c2876d0b7988a9c","short_id":"116c1467","title":"Modify
-        .gitlab-ci.yml","created_at":"2018-06-07T05:05:30.000Z","parent_ids":["7771c0a1756ab828d5e0e1c3f94b47b4212e1087"],"message":"Modify
-        .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-07T05:05:30.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-07T05:05:30.000Z"},"pipeline":{"id":209654,"sha":"116c146766436681ab6d7f5d4c2876d0b7988a9c","ref":"master","status":"success"},"runner":null},{"id":1320747,"status":"success","stage":"deploy","name":"deploy","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-07T05:05:30.816Z","started_at":"2018-06-07T05:06:22.080Z","finished_at":"2018-06-07T05:07:09.435Z","duration":47.355875,"user":{"id":1020,"name":"archit.j.aux","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"116c146766436681ab6d7f5d4c2876d0b7988a9c","short_id":"116c1467","title":"Modify
-        .gitlab-ci.yml","created_at":"2018-06-07T05:05:30.000Z","parent_ids":["7771c0a1756ab828d5e0e1c3f94b47b4212e1087"],"message":"Modify
-        .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-07T05:05:30.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-07T05:05:30.000Z"},"pipeline":{"id":209654,"sha":"116c146766436681ab6d7f5d4c2876d0b7988a9c","ref":"master","status":"success"},"runner":null}]'
-    http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:59:00 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:17 GMT
 recorded_with: VCR 4.0.0

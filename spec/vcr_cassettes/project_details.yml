@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3892?private_token=SpFM_1tetqXNjmQWvSZp&statistics=true
+    uri: https://source.golabs.io/api/v4/projects/3892?private_token=hsxHUDx6k_t6P_5isK5t&statistics=true
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 04:44:33 GMT
+      - Wed, 13 Jun 2018 09:10:24 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -39,9 +39,9 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - d572baa0-75cf-4af9-ab37-744a8c7496e0
+      - 9edbbc9f-5028-4f85-bbee-53f69b844f8d
       X-Runtime:
-      - '0.048038'
+      - '0.052799'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -50,5 +50,5 @@ http_interactions:
         Verma / blank","path":"blank","path_with_namespace":"ritik.v.aux/blank","created_at":"2018-06-05T13:41:57.781Z","default_branch":null,"tag_list":[],"ssh_url_to_repo":"git@source.golabs.io:ritik.v.aux/blank.git","http_url_to_repo":"https://source.golabs.io/ritik.v.aux/blank.git","web_url":"https://source.golabs.io/ritik.v.aux/blank","avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-06-05T13:41:57.781Z","_links":{"self":"https://source.golabs.io/api/v4/projects/3892","issues":"https://source.golabs.io/api/v4/projects/3892/issues","merge_requests":"https://source.golabs.io/api/v4/projects/3892/merge_requests","repo_branches":"https://source.golabs.io/api/v4/projects/3892/repository/branches","labels":"https://source.golabs.io/api/v4/projects/3892/labels","events":"https://source.golabs.io/api/v4/projects/3892/events","members":"https://source.golabs.io/api/v4/projects/3892/members"},"archived":false,"visibility":"internal","owner":{"id":1022,"name":"Ritik
         Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1022,"namespace":{"id":1185,"name":"ritik.v.aux","path":"ritik.v.aux","kind":"user","full_path":"ritik.v.aux","parent_id":null},"import_status":"none","open_issues_count":0,"public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","statistics":{"commit_count":0,"storage_size":0,"repository_size":0,"lfs_objects_size":0,"job_artifacts_size":0},"permissions":{"project_access":null,"group_access":null}}'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 04:44:33 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:24 GMT
 recorded_with: VCR 4.0.0

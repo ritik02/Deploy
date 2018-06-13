@@ -16,11 +16,20 @@
     <tbody>
       <% @deployments.each do |deployment| %>
         <tr>
+          <% if !deployment.reviewer_id.blank? %>
           <th><%= deployment.project_name %></th>
           <th><%= JSON.parse(deployment.checklist)["title"] %></th>
           <th><%= deployment.commit_id %></th>
           <th><%= User.where(:id => deployment.reviewer_id).first.name %></th>
           <th><%= deployment.status %></th>
+          <% else %>
+          <th><%= deployment.project_name %></th>
+          <th></th>
+          <th><%= deployment.commit_id %></th>
+          <th></th>
+          <th><%= deployment.status %></th>
+          <th> <%= link_to "Delete", deployment_url(:id => deployment.id), :method => :delete ,data: { confirm: 'Are you sure?' }%> </th>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

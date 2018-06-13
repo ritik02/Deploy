@@ -6,7 +6,6 @@ class DeploymentsController < ApplicationController
 
   def create
     deployment = Deployment.find(params[:deployment_id])
-		puts deployment
 		return if !reviewer_not_valid?
     checklist_json_string = params[:deployments].to_json
     deployment.update({checklist: checklist_json_string, status: "filled", reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id })
@@ -17,10 +16,16 @@ class DeploymentsController < ApplicationController
 		@deployments = Deployment.all
 	end
 
+	def destroy
+     @deployment = Deployment.find(params[:id])
+     @deployment.destroy
+     redirect_to deployments_path
+	end
+
 	private
 
 	def initialize_deployment
-		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id]})
+		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "created"})
 		@deployment.save
 		@user = current_user
 	end

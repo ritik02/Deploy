@@ -47,7 +47,7 @@ RSpec.describe ProjectsController, type: :controller do
       VCR.use_cassette("stages_pipelines") do
         sign_in users(:four)
         get :show, params: { user_id: users(:four).id, id: 3850 }
-        expect(assigns(:stages_hash)[210972]["test"][0]["name"]).to eq("rspec")
+        expect(assigns(:stages_hash)[213350]["test"][0]["name"]).to eq("rspec")
       end
     end
 
@@ -55,7 +55,7 @@ RSpec.describe ProjectsController, type: :controller do
       VCR.use_cassette("jobs_pipelines") do
         sign_in users(:four)
         get :show, params: { user_id: users(:four).id, id: 3850 }
-        expect(assigns(:jobs_hash)[210972][0]["name"]).to eq("rspec")
+        expect(assigns(:jobs_hash)[213350][0]["name"]).to eq("rspec")
       end
     end
   end

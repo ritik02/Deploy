@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines?per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines?per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master
     body:
       encoding: US-ASCII
       string: ''
@@ -21,21 +21,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 07:20:43 GMT
+      - Wed, 13 Jun 2018 09:10:26 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '486'
+      - '487'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"28cd74bf1661fae94c81a7596101ff99"
+      - W/"80662b7cf4f15db72cfeeeca3f0030c9"
       Link:
-      - <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
-        rel="next", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=1&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=SpFM_1tetqXNjmQWvSZp&ref=master&sort=desc>;
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=2&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
+        rel="next", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=1&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines?id=3850&order_by=id&page=3&per_page=5&private_token=hsxHUDx6k_t6P_5isK5t&ref=master&sort=desc>;
         rel="last"
       Vary:
       - Origin
@@ -52,18 +52,18 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - e98f8e30-69dc-4185-ad34-961ebeb888fb
+      - 83865104-1b95-4619-9e8d-15238b3fcd6b
       X-Runtime:
-      - '0.021696'
+      - '0.019162'
       X-Total:
-      - '8'
+      - '14'
       X-Total-Pages:
-      - '2'
+      - '3'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '[{"id":210972,"sha":"95158f8e7da1c17ba1989cad3ca22dc4c4b21920","ref":"master","status":"success"},{"id":210966,"sha":"21cd48b5a2f72bbc3bb6b5f93d7b66012f4c45d5","ref":"master","status":"success"},{"id":210964,"sha":"0167e10f88271c1ff82d2d25d93c7c446f3cb469","ref":"master","status":"success"},{"id":209671,"sha":"07038cd57dd6acdf5d3693c3aba347089160f65a","ref":"master","status":"success"},{"id":209654,"sha":"116c146766436681ab6d7f5d4c2876d0b7988a9c","ref":"master","status":"success"}]'
+      string: '[{"id":213350,"sha":"ed62398d217afa7767e488ae36ce3356f39ed531","ref":"master","status":"success"},{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},{"id":213329,"sha":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","ref":"master","status":"success"},{"id":213326,"sha":"ae8617d17cada11e99e8bc31489ea1c467c16161","ref":"master","status":"success"},{"id":213315,"sha":"2940844b59cff959818aee6a07ca029432c0b6ca","ref":"master","status":"success"}]'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 07:20:43 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:26 GMT
 recorded_with: VCR 4.0.0
