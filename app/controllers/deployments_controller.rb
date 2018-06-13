@@ -14,6 +14,7 @@ class DeploymentsController < ApplicationController
 
 	def index
 		@deployments = Deployment.all
+		@user = current_user
 	end
 
 	def destroy

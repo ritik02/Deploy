@@ -6,16 +6,8 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <%= stylesheet_link_tag  'project-page'%>
-
-<script>
-$(document).ready(function(){
-    $('[type="button"]').popover();
-});
-
-</script>
+ <%= javascript_tag  'project'%>
 </head>
 <body>
 
@@ -52,19 +44,9 @@ $(document).ready(function(){
     </ul>
  </div>
 </div>
-
-<div class="fixed-username" >
-  Hello, <%= @user.name %>
-</div>
-<div class="fixed-logout" >
-  <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <% end %>
-</div>
-
 <div class="container" style="max-width: 1400px;" >
 <div class="card  " style="text-align: center;">
-  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 20px; margin: 0; color: #0a7fad;"><%= @projects_details["name"] %></b></h4>
+  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 48px; margin: 0; color: #0a7fad; "><%= @projects_details["name"] %></b></h4>
   <div class="card-body">
 
     <p class="card-text" ><%= @projects_details["description"] %></p>
@@ -74,61 +56,37 @@ $(document).ready(function(){
 </div>
    </div>
    <br>
-   <div class="container .table-responsive-md">
-     <table class="table table-hover table-striped">
-       <thead class="thead-dark">
-            <tr>
-              <th>Status</th>
-            <th>Pipeline</th>
-           <th>Commit</th>
-           <th>Stages</th>
-         </tr>
-       </thead>
-       <tbody>
-         <% @pipelines.each do |pipeline| %>
-         <tr>
-           <td>
-             <% if pipeline["status"] == "pending" %>
-             <button type="button" class="btn btn-outline-secondary">Pending</button>
-             <% elsif pipeline["status"] == "success" %>
-             <button type="button" class="btn btn-outline-success">Success</button>
-             <% else %>
-             <button type="button" class="btn btn-outline-danger">Failed</button>
-             <% end %>
-           </td>
-           <td>
-            #<%= pipeline["id"] %>
-           </td>
-           <td>
-             master <img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="15" height="15"> <%= pipeline["sha"][0..6] %>
-             <p>
-               <% commit_message = @jobs_hash[pipeline["id"]][0]["commit"]["message"] %>
-               <% if commit_message.length >= 35 %>
-               <% commit_message = commit_message[0...35] + "..." %>
-               <% end %>
-               <%= commit_message %>
-             </p>
-             <td>
-               <table >
-                 <% @stages_hash[pipeline["id"]].each do |stage, jobs| %>
-                    <% if stage.include?("canary") || stage.include?("prod") || stage.include?("deploy")  %>
-                      <td>
-                        <b><%= stage[0..10] %></b>
-                        <% jobs.each do |job| %>
-                            <p><%= link_to job["name"], user_project_commits_url(:user_id => @user.id,:project_id => @projects_details["id"], job_name: job["name"], project_name: @projects_details["name"]) %></p>
-                        <% end %>
-                      </td>
-                    <% end %>
-              <% end %>
-            </table>
-            </td>
-         </tr>
-         <% end %>
-       </tbody>
-     </table>
+<% @stages.each do |stage| %>
+<div class="container" style="max-width: 1400px;">
+<div id="accordion">
 
-   </div>
+  <div class="card">
+    <div class="card-header" id="heading<%= stage %>" style="padding-top: 0px; padding-bottom: 0px;">
+      <h6 class="">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= stage %>" " aria-controls="collapse<%= stage %>">
+         <h4><%= stage.upcase %> </h4>
+        </button>
+      </h6>
+    </div>
 
+    <div id="collapse<%= stage %>" class="collapse" aria-labelledby="heading<%= stage %>" data-parent="#accordion">
+      <div class="card-body">
+       <% @jobs.each do |job| %>
+       <% if job["name"] == stage %>
+       <%= job["name"].capitalize %> , <%= job["created_at"] %> <br>
+
+       <% end %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+ </div>
+ <% end %>
+ <br>
+ 	<div class="container"><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits" class="btn btn-primary btn-lg">Continue With Product Deployment</a></div>
 
 </body>
 
