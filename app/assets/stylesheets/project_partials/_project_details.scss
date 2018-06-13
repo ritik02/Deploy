@@ -20,6 +20,13 @@
     z-index: 10;
 }
 
+.fixed-button1 {
+    position: fixed;
+    right: 30px;
+    top: 120px;
+    z-index: 10;
+}
+
 .fab {
 	 border:none;
     font-size:1.5em;
@@ -42,14 +49,14 @@ border:none;
   background-color: #009944;
 }
 
-.fab {
-	 border:none;
-    font-size:1em;
-    color:white;
+.fab1 {
+	  border:none;
+    font-size: 0.9em;
+    color: white;
     background-color: #000;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     margin: auto;
     -webkit-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);
        -moz-box-shadow: 2px 3px 3px 0px rgba(41, 41, 41, .3);

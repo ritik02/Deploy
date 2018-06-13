@@ -10,9 +10,9 @@
 
   <div id="navigation-bar">
     <ul>
-      <li><a href="" style="color: #009944;">Projects</a>
+      <li><a href="<%=user_projects_path(:user_id => @user.id)%>" style="color: #009944;">Projects</a>
       </li>
-      <li><a href="" style="color: #009944;"><span>Commits</span></a>
+      <li><a href="/users/<%=@user.id%>/projects/<%=@project_id%>/commits" style="color: #009944;"><span>Commits</span></a>
       </li>
       <li><a><span style="color: #00FF00;">Checklist</span></a>
       </li>
@@ -68,8 +68,8 @@
   <%= form.text_area :committers ,class: 'form-group form-control' %>
   <hr>
 
-  <h4 style="color: #4DA852;"><b>SERVICES IMPACTED</b></h4>
-  <%= form.text_field :service_impacted ,class: 'form-group form-control' %>
+  <h5 style="color: #4DA852;"><b>SERVICES IMPACTED</b></h5>
+  <%= form.text_area :service_impacted ,class: 'form-group form-control' %>
   <hr>
 
   <h5 style="color: #4DA852;"><b>Service Details</b></h5>
@@ -85,20 +85,20 @@
   <label >1. What’s your rollback strategy:</label>
   <%= form.text_area :service_rollback_1 ,class: 'form-group form-control' %>
   <label >2. Do you switch rollback with feature flag or does it require complete deployment again?</label>
-  <%= form.text_field :service_rollback_2 ,class: 'form-group form-control' %>
+  <%= form.text_field :service_rollback_2 ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Database</b></h5>
-  <%= form.text_field :service_component_database ,class: 'form-group form-control' %>
+  <%= form.text_field :service_component_database ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Security</b></h5>
-  <%= form.text_field :service_component_security ,class: 'form-group form-control' %>
+  <%= form.text_field :service_component_security ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Monitoring</b></h5>
   <label >List all the services you own and list down each server monitoring parameters</label>
-  <%= form.text_area :service_component_monitoring ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_monitoring ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Cache</b></h5>
-  <%= form.text_field :service_component_cache ,class: 'form-group form-control' %>
+  <%= form.text_field :service_component_cache ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - API Changes</b></h5>
   <%= form.text_field :service_component_api_changes ,class: 'form-group form-control' %>
@@ -111,11 +111,11 @@
   <label >4. Is there is feature flag for this API to switch on and switch off?</label>
   <%= form.text_field :service_component_api_changes_4 ,class: 'form-group form-control' %>
   <label >5. What kind of API is this - does it make changes to database? Please provide API endpoint, protocol (http, grpc) and signature affected data contract.</label>
-  <%= form.text_area :service_component_api_changes_5 ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_api_changes_5 ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Analytics Impact</b></h5>
   <label >1. Does your change impact BI, if yes, please explain how? And get a approval from Crystal.</label>
-  <%= form.text_area :service_component_analytics_impact_1 ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_analytics_impact_1 ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Consumer App Impact</b></h5>
   <label >1. Does your change impact mobile consumer app? If yes, how does it impact</label>
@@ -127,16 +127,16 @@
   <label >4. How will you ensure staggered roll out</label>
   <%= form.text_area :service_component_consumer_app_impact_4 ,class: 'form-group form-control' %>
   <label >5. Is there mixpanel configuration or play store configuration?</label>
-  <%= form.text_field :service_component_consumer_app_impact_5 ,class: 'form-group form-control' %>
+  <%= form.text_field :service_component_consumer_app_impact_5 ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Driver App Impact</b></h5>
-  <%= form.text_area :service_component_driver_app_impact ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_driver_app_impact ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - GoResto App Impact</b></h5>
-  <%= form.text_area :service_component_goresto_app_impact ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_goresto_app_impact ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - Configuration Management Impact</b></h5>
-  <%= form.text_area :service_component_configuration_management_impact ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_configuration_management_impact ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Service Component - System Configurations</b></h5>
   <label >1. Did you check limits</label>
@@ -156,7 +156,7 @@
   <label >8. What’s the connection timeout configuration?</label>
   <%= form.text_area :service_component_system_configurations_8 ,class: 'form-group form-control' %>
   <label >9.What errors you would return if there are timeouts or internal errors?</label>
-  <%= form.text_area :service_component_system_configurations_9 ,class: 'form-group form-control' %>
+  <%= form.text_area :service_component_system_configurations_9 ,class: 'form-group form-control' %><hr>
 
   <h5 style="color: #4DA852;"><b>Project component - Code</b></h5>
   <label >1. List down commits with acceptance criteria, if it’s adhoc, mention adhoc, if it’s adhoc thenget sign off from tech lead and product manager, ask them to document this ad-hoc storyand put a proper sign off</label>
@@ -174,8 +174,12 @@
   <label >7. Do you read from database? If yes, then explain why do you need to read from database?And why don’t you use cache, also, how many places you utilise cache.</label>
   <%= form.text_area :project_component_code_7 ,class: 'form-group form-control' %>
   <label >8. How many synchronous calls your code makes? (Also list down in impacted services)</label>
-  <%= form.text_area :project_component_code_8 ,class: 'form-group form-control' %>
+  <%= form.text_area :project_component_code_8 ,class: 'form-group form-control' %><hr>
 
+  <label >Reviewer Email</label>
+  <%= form.text_field :reviewer_email ,class: 'form-group form-control' %><hr>
+
+  <%= hidden_field_tag 'deployment_id', @deployment.id  %>
   <%= form.submit  class: 'btn btn-primary' %>
   <%end %>
 </div>

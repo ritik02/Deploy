@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/389/deployments?private_token=ZUToPioeFWK5nvSWMLAi&sort=desc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jun 2018 08:07:35 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '118'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache
+      Vary:
+      - Origin
+      Www-Authenticate:
+      - Bearer realm="Protected by OAuth 2.0", error="invalid_token", error_description="Token
+        is expired. You can either do re-authorization or token refresh."
+      X-Request-Id:
+      - bceaafb7-14cb-4ed1-a987-b327bdcff11a
+      X-Runtime:
+      - '0.015631'
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_token","error_description":"Token is expired. You
+        can either do re-authorization or token refresh."}'
+    http_version: 
+  recorded_at: Wed, 13 Jun 2018 08:07:35 GMT
+recorded_with: VCR 4.0.0

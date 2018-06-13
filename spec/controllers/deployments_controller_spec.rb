@@ -16,4 +16,12 @@ RSpec.describe DeploymentsController, type: :controller do
       expect(Deployment.all.length).to eq(previous_length+1)
     end
   end
+
+	describe "GET deployments#index" do
+		it "should open deployments index page (history of deployments) when deployments button is clicked" do
+			sign_in users(:four)
+      get :index
+      expect(response).to have_http_status(:success)
+		end
+	end
 end
