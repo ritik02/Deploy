@@ -1,9 +1,8 @@
 one:
+   id: 1
    user_id: 2
    project_name: Calculator_Project
    commit_id: 32
    reviewer_id: 1140
-   stage_name: deploy
-   job_name: deploy_test
    checklist:
-   status:
+   status: created
