@@ -40,7 +40,7 @@ class GitlabApiServices
 	end
 
   def get_all_deployments(gitlab_project_id)
-    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/deployments?private_token=" + @access_token
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/deployments?private_token=" + @access_token + "&sort=desc"
     HTTParty.get(url)
   end
 

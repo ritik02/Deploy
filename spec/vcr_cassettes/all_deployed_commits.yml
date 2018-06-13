@@ -2,7 +2,11 @@
 http_interactions:
 - request:
     method: get
+<<<<<<< HEAD
     uri: https://source.golabs.io/api/v4/projects/389/deployments?private_token=ZUToPioeFWK5nvSWMLAi
+=======
+    uri: https://source.golabs.io/api/v4/projects/389/deployments?private_token=ZUToPioeFWK5nvSWMLAi&sort=desc
+>>>>>>> a9a69b9630039c5428599e14b4a5a3fa81ba3cb1
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +25,11 @@ http_interactions:
       Server:
       - nginx
       Date:
+<<<<<<< HEAD
       - Wed, 13 Jun 2018 08:12:17 GMT
+=======
+      - Wed, 13 Jun 2018 08:07:35 GMT
+>>>>>>> a9a69b9630039c5428599e14b4a5a3fa81ba3cb1
       Content-Type:
       - application/json
       Content-Length:
@@ -36,13 +44,23 @@ http_interactions:
       - Bearer realm="Protected by OAuth 2.0", error="invalid_token", error_description="Token
         is expired. You can either do re-authorization or token refresh."
       X-Request-Id:
+<<<<<<< HEAD
       - e3f687df-38da-4780-802f-5769c1d8e276
       X-Runtime:
       - '0.015916'
+=======
+      - bceaafb7-14cb-4ed1-a987-b327bdcff11a
+      X-Runtime:
+      - '0.015631'
+>>>>>>> a9a69b9630039c5428599e14b4a5a3fa81ba3cb1
     body:
       encoding: UTF-8
       string: '{"error":"invalid_token","error_description":"Token is expired. You
         can either do re-authorization or token refresh."}'
     http_version: 
+<<<<<<< HEAD
   recorded_at: Wed, 13 Jun 2018 08:12:17 GMT
+=======
+  recorded_at: Wed, 13 Jun 2018 08:07:35 GMT
+>>>>>>> a9a69b9630039c5428599e14b4a5a3fa81ba3cb1
 recorded_with: VCR 4.0.0

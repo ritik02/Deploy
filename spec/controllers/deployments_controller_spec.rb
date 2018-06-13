@@ -17,6 +17,15 @@ RSpec.describe DeploymentsController, type: :controller do
     end
   end
 
+
+	describe "GET deployments#index" do
+		it "should open deployments index page (history of deployments) when deployments button is clicked" do
+			sign_in users(:four)
+      get :index
+      expect(response).to have_http_status(:success)
+		end
+	end
+
   describe "GET deployments#create" do
     it "should create the checklist of a deployment" do
       sign_in users(:four)
@@ -24,4 +33,5 @@ RSpec.describe DeploymentsController, type: :controller do
       expect(deployments(:one).status).to eq "filled"
     end
   end
+
 end

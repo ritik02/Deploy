@@ -115,7 +115,7 @@ $(document).ready(function(){
                       <td>
                         <b><%= stage[0..10] %></b>
                         <% jobs.each do |job| %>
-                            <p><%= link_to job["name"], user_project_commits_url(:user_id => @user.id,:project_id => @projects_details["id"],job_name: job["name"] ) %></p>
+                            <p><%= link_to job["name"], user_project_commits_url(:user_id => @user.id,:project_id => @projects_details["id"], job_name: job["name"], project_name: @projects_details["name"]) %></p>
                         <% end %>
                       </td>
                     <% end %>
