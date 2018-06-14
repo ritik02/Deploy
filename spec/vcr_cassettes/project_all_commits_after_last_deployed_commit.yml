@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/repository/commits?private_token=hsxHUDx6k_t6P_5isK5t&since=2018-06-13T06:18:35Z
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Jun 2018 11:38:29 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1517'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"8fd63387101dedc6257555d57546cf27"
+      Link:
+      - <https://source.golabs.io/api/v4/projects/3850/repository/commits?id=3850&page=1&per_page=20&private_token=hsxHUDx6k_t6P_5isK5t&since=2018-06-13T06%3A18%3A35%2B00%3A00>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/repository/commits?id=3850&page=1&per_page=20&private_token=hsxHUDx6k_t6P_5isK5t&since=2018-06-13T06%3A18%3A35%2B00%3A00>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 917cddf0-dba8-469b-abe1-6a099e1eefa4
+      X-Runtime:
+      - '0.061722'
+      X-Total:
+      - '3'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":"ed62398d217afa7767e488ae36ce3356f39ed531","short_id":"ed62398d","title":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","created_at":"2018-06-13T06:41:30.000+00:00","parent_ids":["c05f9e9b8ed24ac1face4844c67aac8b04e13bf4"],"message":"Add
+        when: manual in deploy stage in .gitlab-ci.yml","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:41:30.000+00:00","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:41:30.000+00:00"},{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
+        README.md","created_at":"2018-06-13T06:21:19.000+00:00","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
+        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000+00:00","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000+00:00"},{"id":"8d78d8b0ee848a2b04318f9b075c3ea7f835d171","short_id":"8d78d8b0","title":"Reformated
+        calculator_spec.rb","created_at":"2018-06-13T06:18:35.000+00:00","parent_ids":["ae8617d17cada11e99e8bc31489ea1c467c16161"],"message":"Reformated
+        calculator_spec.rb","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:18:35.000+00:00","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:18:35.000+00:00"}]'
+    http_version: 
+  recorded_at: Wed, 13 Jun 2018 11:38:29 GMT
+recorded_with: VCR 4.0.0

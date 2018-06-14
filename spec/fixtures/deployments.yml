@@ -3,6 +3,6 @@ one:
    user_id: 2
    project_name: Calculator_Project
    commit_id: 32
-   reviewer_id: 1140
+   reviewer_id: 2
    checklist:
-   status: created
+   status: Created

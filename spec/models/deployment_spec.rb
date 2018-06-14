@@ -14,9 +14,9 @@ RSpec.describe Deployment, type: :model do
   	expect(deploy).to_not be_valid
   end
 
-  it "is not valid without a project_id" do
+  it "is not valid without a project_name" do
   	deploy = deployments(:one)
-  	deploy.project_id = nil
+  	deploy.project_name = nil
   	expect(deploy).to_not be_valid
   end
 end

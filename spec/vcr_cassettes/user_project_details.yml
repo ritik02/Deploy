@@ -501,8 +501,7 @@ http_interactions:
       - W/"5bf799b2ed0af842acb85e48def8dcac"
       Link:
       - <https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?id=3850&page=1&per_page=20&pipeline_id=209654&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?id=3850&page=1&per_page=20&pipeline_id=209654&private_token=SpFM_1tetqXNjmQWvSZp>;
-        rel="last"
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/209654/jobs?id=3850&page=1&per_page=20&pipeline_id=209654&private_token=
       Vary:
       - Origin
       X-Content-Type-Options:

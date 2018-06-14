@@ -1,4 +1,60 @@
-<h2> Deployment History </h2>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<%= stylesheet_link_tag 'deployment-page'%>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div id="menu-nav">
+
+  <div id="navigation-bar">
+    <ul>
+      <li><a href="<%=user_projects_path(:user_id => @user.id)%>" style="color: #009944;">Projects</a>
+      </li>
+      <li><a style="color: #009944;"><span>Commits</span></a>
+      </li>
+      <li><a><span style="color: #009944;">Checklist</span></a>
+      </li>
+      <li><a><span style="color: #009944;">Approval</span></a>
+      </li>
+      <li><a><span style="color: #00FF00;">Deploy</span></a>
+      </li>
+    </ul>
+    <ul class="timeline" id="timeline">
+      <li class="li complete">
+        <div class="status">
+          <h4> Project Selected </h4>
+        </div>
+      </li>
+      <li class="li complete">
+        <div class="status">
+          <h4> Commit Selected </h4>
+        </div>
+      </li>
+      <li class="li complete">
+        <div class="status">
+          <h4> Checklist Filled </h4>
+        </div>
+      </li>
+      <li class="li">
+        <div class="status">
+          <h4> Deploy Approved </h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="fixed-username" >
+  Hello, <%= @user.name %>
+</div>
+<div class="fixed-logout" >
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% end %>
+</div>
+
+<h2 style="text-align:center;"> Deployment History </h2>
 
 
 <div class="container .table-responsive-md">
@@ -16,14 +72,24 @@
     <tbody>
       <% @deployments.each do |deployment| %>
         <tr>
+          <% if !deployment.reviewer_id.blank? %>
           <th><%= deployment.project_name %></th>
           <th><%= JSON.parse(deployment.checklist)["title"] %></th>
           <th><%= deployment.commit_id %></th>
           <th><%= User.where(:id => deployment.reviewer_id).first.name %></th>
           <th><%= deployment.status %></th>
+          <% else %>
+          <th><%= deployment.project_name %></th>
+          <th></th>
+          <th><%= deployment.commit_id %></th>
+          <th></th>
+          <th><%= deployment.status %></th>
+          <th> <%= link_to "Delete", deployment_url(:id => deployment.id), :method => :delete ,data: { confirm: 'Are you sure?' }%> </th>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
 
   </table>
 </div>
+</body>

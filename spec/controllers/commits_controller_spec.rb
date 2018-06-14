@@ -6,8 +6,15 @@ RSpec.describe CommitsController, type: :controller do
     it "should open user_project_commits page when a product deployment button is clicked" do
       VCR.use_cassette("user_project_commit_details") do
         sign_in users(:four)
-        get :index, params: { user_id: users(:four).id, project_id: 3850 }
+        get :index, params: { user_id: users(:four).id, project_id: 3850 , job_name: "prod" }
         expect(response).to have_http_status(:success)
+      end
+    end
+    it "should render error template if no deployment related to job name is found" do
+      VCR.use_cassette("user_project_commit_details") do
+        sign_in users(:four)
+        get :index, params: { user_id: users(:four).id, project_id: 3850 , job_name: "somename" }
+        expect(response).to render_template('layouts/error')
       end
     end
   end
@@ -16,7 +23,7 @@ RSpec.describe CommitsController, type: :controller do
     it "should open user_project_commits page when a commit is clicked" do
       VCR.use_cassette("user_project_commit_diff") do
         sign_in users(:four)
-        get :show, params: { user_id: users(:four).id, project_id: 3850, id: "56fe362d" }
+        get :show, params: { user_id: users(:four).id, project_id: 3850, id: "56fe362d", last_deployed_commit: "56fe362d" }
         expect(response).to have_http_status(:success)
       end
     end

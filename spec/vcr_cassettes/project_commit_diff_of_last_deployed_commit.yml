@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 11 Jun 2018 04:44:34 GMT
+      - Wed, 13 Jun 2018 09:10:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -40,9 +40,9 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 2f60481b-7b74-480d-b22b-d6c470218a60
+      - 3be33c18-693c-487f-af4b-65a6414be877
       X-Runtime:
-      - '0.199559'
+      - '0.240863'
       Strict-Transport-Security:
       - max-age=31536000
     body:
@@ -255,5 +255,5 @@ http_interactions:
         be integer\" do\n+    assert_equal false , posts(:one).category.is_a?(Integer)\n+  end\n+\n
         end\n"}],"compare_timeout":false,"compare_same_ref":false}'
     http_version: 
-  recorded_at: Mon, 11 Jun 2018 04:44:35 GMT
+  recorded_at: Wed, 13 Jun 2018 09:10:26 GMT
 recorded_with: VCR 4.0.0
