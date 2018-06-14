@@ -30,7 +30,7 @@ RSpec.describe DeploymentsController, type: :controller do
     it "should create the checklist of a deployment" do
 			sign_in users(:four)
       post :create, params: {deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, deployment_id: 1}
-      expect(deployments(:one).status).to eq "Checklist Filled"
+      expect(deployments(:one).status).to eq "Pending Approval"
     end
 
 		it "should not update the checklist of a deployment if reviewer_email is invalid" do

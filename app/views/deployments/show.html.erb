@@ -1,3 +1,7 @@
-<h2> Deployment show </h2>
-
+<h2><u> Deployments </u></h2>
+<hr>
+<h3> Current Status: <%= @deployment.status %> </h3>
+<h3> Project Name: <%= @deployment.project_name %> </h3>
+<h3> Commit ID: <%= @deployment.commit_id %> </h3>
+<h3> Checklist Filled At: <%= @deployment.updated_at %> </h3>
 <%= @deployment.checklist %>

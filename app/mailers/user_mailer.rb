@@ -1,9 +1,7 @@
 class UserMailer < ApplicationMailer
-	#default from: 'notifications@example.com'
-
-  def sample_email(user , deployment)
+  default from: 'notifications@example.com'
+  def sample_email(deployment)
     @deployment = deployment
-    @user = user
-    mail(to: "prakash.d.aux@go-jek.com" , subject: 'Sample Email')
+    mail(to: User.find(deployment.reviewer_id).email, subject: 'Production Deployment Approval')
   end
 end
