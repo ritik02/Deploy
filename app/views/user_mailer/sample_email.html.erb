@@ -9,6 +9,6 @@
     <p> Hey, I am waiting for your approval .Please have a look.
         Project Name: <%= @deployment.project_name %>
     </p>
-	<%= link_to "Checklist Form" , deployment_url(@deployment.id) %>
+	<%= link_to "Checklist Form" , "http://172.16.12.143:3000/deployments/" + @deployment.id.to_s %>
   </body>
 </html>

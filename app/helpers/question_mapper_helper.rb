@@ -1,5 +1,6 @@
 module QuestionMapperHelper
-	question_hash = {
+	def get_question_mapper
+	@question_hash = {
 		title: "Title",
 		overview: "Overview",
 		committers: "Committers",
@@ -47,4 +48,5 @@ module QuestionMapperHelper
 	  project_component_code_8: "How many synchronous calls your code makes? (Also list down in impacted services)",
 		reviewer_email: "Reviewer Email"
 	}
+ end
 end

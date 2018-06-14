@@ -1,7 +1,22 @@
-<h2><u> Deployments </u></h2>
+<h2><u> Deployment </u></h2>
 <hr>
-<h3> Current Status: <%= @deployment.status %> </h3>
-<h3> Project Name: <%= @deployment.project_name %> </h3>
-<h3> Commit ID: <%= @deployment.commit_id %> </h3>
-<h3> Checklist Filled At: <%= @deployment.updated_at %> </h3>
-<%= @deployment.checklist %>
+<br>
+<div class="container" >
+<p> Current Status: <%= @deployment.status %> </p>
+<p> Project Name: <%= @deployment.project_name %> </p>
+<p> Commit ID: <%= @deployment.commit_id %> </p>
+<p> Diff_Link <%= link_to "Git Diff Link", @deployment.diff_link %>  </p>
+<p> Checklist Filled At: <%= @deployment.updated_at %> </p>
+<p> <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved"), :method => :put ,data: { confirm: 'Are you sure?' } %> </p>
+<p> <%= link_to "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' } %> </p>
+<p> Checklist Contents : </p>
+<% checklist = JSON.parse(@deployment.checklist)%>
+<% @question_hash.each do |key, value| %>
+
+  <h4><%=value %> :<h4>
+    <%= checklist[key.to_s] %>
+  <h5></h5>
+  <br>
+<% end %>
+
+</div>
