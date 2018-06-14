@@ -31,7 +31,7 @@ class CommitsController < ApplicationController
       end
     end
     if @last_deployed_commit.blank? || @time.blank?
-      render 'layouts/error'
+      render 'layouts/error' , :notice => "Sorry no deployments found!"
       return false
     end
   end

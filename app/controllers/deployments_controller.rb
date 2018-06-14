@@ -26,13 +26,17 @@ class DeploymentsController < ApplicationController
 	end
 
 	def show
+		@deployment = Deployment.find(params[:id])
+		if current_user.id != @deployment.reviewer_id
+			render 'layouts/error' #, "You are not authorized to see this"
+		end
 	end
 
 	private
 
 	def reviewer_not_valid?
 		if User.where(:email => params[:deployments][:reviewer_email]).blank?
-			render 'layouts/error'
+			render 'layouts/error'  #,  :notice => "The Reviewer email is not valid"
 			return false
 		end
 		return true

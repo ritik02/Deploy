@@ -50,10 +50,17 @@ RSpec.describe DeploymentsController, type: :controller do
   end
 
 	describe "GET deployments#show" do
-    it "should open show deployment page" do
+    it "should open show deployment page if reviewer is authorized" do
+      sign_in users(:seven)
+      get :show, params: {id: 1}
+			expect(response).to render_template('deployments/show')
+			expect(response).to have_http_status(:success)
+    end
+
+		it "should render error page if reviewer is not authorized to see this" do
       sign_in users(:four)
       get :show, params: {id: 1}
-			expect(response).to have_http_status(:success)
+			expect(response).to render_template('layouts/error')
     end
   end
 end
