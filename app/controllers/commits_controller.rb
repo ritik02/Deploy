@@ -9,7 +9,7 @@ class CommitsController < ApplicationController
     @deployments = @gitlab_api_services.get_all_deployments(@project_id)
     return if !get_last_deployed_commit_details?
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(@project_id, @time)
-    @all_commits_after_last_deployed_commit.to_a.reverse!
+    @all_commits_after_last_deployed_commit
   end
 
   def show

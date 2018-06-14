@@ -5,14 +5,14 @@ RSpec.describe DeploymentsController, type: :controller do
   describe "GET deployments#new" do
     it "should open deployment new page when checklist button is clicked" do
       sign_in users(:four)
-      get :new
+      get :new , params: {user_id: 4, project_name: "Calculator_Project", commit_id: "r3df32", project_id: 234, last_deployed_commit: "r3df32"}
       expect(response).to have_http_status(:success)
     end
 
     it "should create a new deployment" do
     	sign_in users(:four)
     	previous_length = Deployment.all.length
-    	get :new , params: {user_id: 4, project_name: "Calculator_Project", commit_id: "r3df32"}
+    	get :new , params: {user_id: 4, project_name: "Calculator_Project", commit_id: "r3df32", project_id: 234, last_deployed_commit: "r3df32"}
       expect(Deployment.all.length).to eq(previous_length+1)
     end
   end
@@ -30,7 +30,7 @@ RSpec.describe DeploymentsController, type: :controller do
     it "should create the checklist of a deployment" do
 			sign_in users(:four)
       post :create, params: {deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, deployment_id: 1}
-      expect(deployments(:one).status).to eq "Checklist Filled"
+      expect(deployments(:one).status).to eq "Pending Approval"
     end
 
 		it "should not update the checklist of a deployment if reviewer_email is invalid" do
@@ -61,6 +61,20 @@ RSpec.describe DeploymentsController, type: :controller do
       sign_in users(:four)
       get :show, params: {id: 1}
 			expect(response).to render_template('layouts/error')
+    end
+  end
+
+		describe "GET deployments#destroy" do
+    it "should update deployment status to Approved when Approve button is clicked" do
+      sign_in users(:seven)
+      put :update, params: {id: 1,status: "Approved"}
+			expect(deployments(:one).status).to eq "Approved"
+    end
+
+		it "should update deployment status to Rejected when Rejected button is clicked" do
+      sign_in users(:seven)
+      put :update, params: {id: 1,status: "Rejected"}
+			expect(deployments(:one).status).to eq "Rejected"
     end
   end
 end

@@ -111,21 +111,21 @@ RSpec.describe GitlabApiServices  do
   end
 
 context "check api for jobs of pipelines" do
-    it "Should return jobs for a pipeline" do
-      VCR.use_cassette("project_pipeline_jobs") do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_jobs_of_a_pipeline(3850, 210972)
-        expect(actual[0]["id"]).to eq 1328119
-      end
-    end
-  end
+   it "Should return jobs for a pipeline" do
+     VCR.use_cassette("project_pipeline_jobs") do
+       actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_jobs_of_a_pipeline(3850, 210972)
+       expect(actual[0]["id"]).to eq 1328119
+     end
+   end
+ end
 
-  context "check api for all deployments" do
-    it "Should return deployments of a project" do
-      VCR.use_cassette("all_deployed_commits") do
-        actual = GitlabApiServices.new("ZUToPioeFWK5nvSWMLAi").get_all_deployments(389)
-        expect(actual[0]["deployable"]["name"]).to eq "staging_deploy"
-      end
-    end
-  end
+ context "check api for all deployments" do
+   it "Should return deployments of a project" do
+     VCR.use_cassette("all_deployed_commits") do
+       actual = GitlabApiServices.new("ZUToPioeFWK5nvSWMLAi").get_all_deployments(389)
+       expect(actual[0]["deployable"]["name"]).to eq "staging_deploy"
+     end
+   end
+ end
 
 end

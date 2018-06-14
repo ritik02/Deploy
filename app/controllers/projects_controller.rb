@@ -1,8 +1,7 @@
 class ProjectsController < ApplicationController
-
   include TokenValidationHelper
   include EncryptionHelper
-
+  include UrlValidatorHelper
   before_action :validate_token_and_get_user_details
 
   def index
@@ -52,6 +51,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     return if redirect_if_token_is_nil?(@user.gitlab_token)
     return if redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
+    return if !validate_user_id?(current_user.id.to_s, params[:user_id])
   end
 
 end
