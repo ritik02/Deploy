@@ -63,4 +63,18 @@ RSpec.describe DeploymentsController, type: :controller do
 			expect(response).to render_template('layouts/error')
     end
   end
+
+		describe "GET deployments#destroy" do
+    it "should update deployment status to Approved when Approve button is clicked" do
+      sign_in users(:seven)
+      put :update, params: {id: 1,status: "Approved"}
+			expect(deployments(:one).status).to eq "Approved"
+    end
+
+		it "should update deployment status to Rejected when Rejected button is clicked" do
+      sign_in users(:seven)
+      put :update, params: {id: 1,status: "Rejected"}
+			expect(deployments(:one).status).to eq "Rejected"
+    end
+  end
 end
