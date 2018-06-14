@@ -1,7 +1,7 @@
 class DeploymentsController < ApplicationController
 
 	def new
-		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created"})
+		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created", diff_link: request.original_url})
 		@deployment.save
 		@user = current_user
 	end
@@ -26,6 +26,10 @@ class DeploymentsController < ApplicationController
 	end
 
 	def show
+		@deployment = Deployment.find(params[:id])
+		if current_user.id != @deployment.reviewer_id
+			render 'layouts/error'
+		end
 	end
 
 	private

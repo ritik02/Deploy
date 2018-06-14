@@ -1,16 +1,16 @@
 #searchbar {
-  width: 520px;
-  height: 36px;
-  border-radius: 5px;
-  border: 3px solid #000000;
-
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid $menu-grey;
 }
 
 #container {
-  width: 540px;
-  height: 40px;
+  width: 600px;
+  height: 35px;
   position: relative;
   margin: 0 auto;
+  margin-top: 10px;
   padding-top: 00%;
 }
 
@@ -26,8 +26,9 @@ input {
 }
 
 #btn {
-  background: black;
-  width: 105px;
+  background: $menu-grey;
+  outline: none;
+  width: 150px;
   height: 30px;
   padding-right: 20px;
   padding-left: 20px;
@@ -35,5 +36,5 @@ input {
   float: right;
   font: $font;
   cursor: pointer;
-  line-height: 10px;
+  line-height: 12px;
 }

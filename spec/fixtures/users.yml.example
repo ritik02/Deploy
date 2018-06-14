@@ -39,3 +39,11 @@ six:
   gitlab_token: iN0W/7Kplx9yn/7VR0HZSjslr0jWNbqISpWMFTZN--eWmVt8MP1sNDZjB5--4Mi1fT9oLd8lgdDXSyc9fw==
   gitlab_user_id: 1234
   username: prakash.d.aux
+
+seven:
+  id: 2
+  name: Prakash Dwivedi
+  email: prakash.d.aux@go-jek.com
+  gitlab_token: iN0W/7Kplx9yn/7VR0HZSjslr0jWNbqISpWMFTZN--eWmVt8MP1sNDZjB5--4Mi1fT9oLd8lgdDXSyc9fw==
+  gitlab_user_id: 1234
+  username: prakash.d.aux
