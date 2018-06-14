@@ -31,8 +31,6 @@ end
 def show
 	@deployment = Deployment.find(params[:id])
 	get_question_mapper
-	#puts @question_hash
-	puts @question_hash[:title]
 	if current_user.id != @deployment.reviewer_id
 		render 'layouts/error'
 	end
