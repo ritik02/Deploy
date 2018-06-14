@@ -27,7 +27,7 @@ Rails.application.configure do
   authentication: "plain",
   enable_starttls_auto: true,
   user_name: "prakash.d.aux@go-jek.com",
-  password: "xyz"
+  password: "abc"
 }
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load
