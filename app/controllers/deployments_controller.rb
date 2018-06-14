@@ -1,7 +1,7 @@
 class DeploymentsController < ApplicationController
 
 	def new
-		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created"})
+		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created", diff_link: request.original_url})
 		@deployment.save
 		@user = current_user
 	end
@@ -28,7 +28,7 @@ class DeploymentsController < ApplicationController
 	def show
 		@deployment = Deployment.find(params[:id])
 		if current_user.id != @deployment.reviewer_id
-			render 'layouts/error' #, "You are not authorized to see this"
+			render 'layouts/error'
 		end
 	end
 
@@ -36,7 +36,7 @@ class DeploymentsController < ApplicationController
 
 	def reviewer_not_valid?
 		if User.where(:email => params[:deployments][:reviewer_email]).blank?
-			render 'layouts/error'  #,  :notice => "The Reviewer email is not valid"
+			render 'layouts/error'
 			return false
 		end
 		return true
