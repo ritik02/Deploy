@@ -54,21 +54,43 @@
   <% end %>
 </div>
 <div class="container" >
+  <div class="card-header" style="font-size:25px; text-align:center;">Last Deployed Commit </div>
+  <br>
+  <div class="row">
+    <% commit = @all_commits_after_last_deployed_commit[@all_commits_after_last_deployed_commit.length-1] %>
+    <div class="col-xs-7 col-md-7 column" style="height :20px">
+      <div class="row">
+        <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
+        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %><%= message  %> </h3><p class="project_description"> <%= commit["short_id"] %></p></div>
+      </div>
+    </div>
+    <div class="col-xs-5 col-md-5 project_date column" >
+      <% time = commit["created_at"][0...19].sub('T','  ') %>
+      Last Updated : <%= time %>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="card-header" style="font-size:25px; text-align:center;">Commits After Last Deployed Commit  </div>
+  <br>
   <% @all_commits_after_last_deployed_commit.each_with_index do |commit, index|  %>
   <div class="row">
     <div class="col-xs-7 col-md-7 column" style="height :20px">
       <div class="row">
+        <% if index < @all_commits_after_last_deployed_commit.length-1 %>
         <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
-        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %> <%= link_to_if index>0, message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name ) %></h3><p class="project_description"> <%= commit["short_id"] %></p></div>
+        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><a title="<%=commit["message"]%>"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %><%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name ) %></a> </h3>
+          <p class="project_description"> <%= commit["short_id"] %></p></div>
       </div>
     </div>
     <div class="col-xs-5 col-md-5 project_date column" >
-      <% time = commit["created_at"] %>
+      <% time = commit["created_at"][0...19].sub('T','  ') %>
       Last Updated : <%= time %>
     </div>
   </div>
   <br>
   <hr>
+  <% end %>
   <% end %>
 </div>
 </body>
