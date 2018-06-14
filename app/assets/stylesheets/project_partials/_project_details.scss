@@ -13,7 +13,12 @@
    font-size: 20px;
  }
 }
-
+.card-body {
+  font-size: 10px;
+@media (min-width: 996px){
+ font-size: 17px;
+}
+}
 .fixed-button {
     position: fixed;
     right: 30px;

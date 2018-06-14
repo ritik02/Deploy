@@ -19,9 +19,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
 gem 'vcr'
 gem 'webmock'
-gem 'wkhtmltopdf-binary'
 gem 'figaro'
-gem 'wicked_pdf'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'pry'

@@ -44,6 +44,17 @@
     </ul>
  </div>
 </div>
+
+<div class="fixed-username" >
+  Hello, <%= @user.name %>
+</div>
+<div class="fixed-logout" >
+  <% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% end %>
+</div>
+
+
 <div class="container" style="max-width: 1400px;" >
 <div class="card  " style="text-align: center;">
   <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 48px; margin: 0; color: #0a7fad; "><%= @projects_details["name"] %></b></h4>
@@ -56,7 +67,7 @@
 </div>
    </div>
    <br>
-<% @stages.each do |stage| %>
+<% @stages.each do |stage, jobs| %>
 <div class="container" style="max-width: 1400px;">
 <div id="accordion">
 
@@ -71,12 +82,11 @@
 
     <div id="collapse<%= stage %>" class="collapse" aria-labelledby="heading<%= stage %>" data-parent="#accordion">
       <div class="card-body">
-       <% @jobs.each do |job| %>
-       <% if job["name"] == stage %>
-       <%= job["name"].capitalize %> , <%= job["created_at"] %> <br>
-
+      <ul>
+       <% jobs.each do |job| %>
+       <li><p><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )  %> <p></li>
        <% end %>
-       <% end %>
+     </ul>
       </div>
     </div>
   </div>
@@ -85,8 +95,6 @@
 </div>
  </div>
  <% end %>
- <br>
- 	<div class="container"><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits" class="btn btn-primary btn-lg">Continue With Product Deployment</a></div>
 
 </body>
 

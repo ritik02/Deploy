@@ -7,7 +7,9 @@
  <%= stylesheet_link_tag  'project-page'%>
 </head>
 <body>
-
+<script>
+$(document).tooltip({show: null});
+</script>
 <div id="menu-nav">
   <div id="navigation-bar">
     <ul>
@@ -67,7 +69,10 @@
     <div class="col-xs-7 col-md-7 column" style="height :20px">
       <div class="row">
         <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/folderlogo.png"  width="25" height="25"></div>
-        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px font-size: 25px" class="project_title"> <%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h3><p class="project_description"><% if !project["description"].blank? && project["description"].length > 70  %> <% message = project["description"][0..70] + "..." %> <% else message = project["description"] %> <% end %> <%= message %></p></div>
+        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px font-size: 25px" class="project_title"> <%= link_to project["name"], user_project_path(:id => project["id"], :user_id => @user.id) %></h3><a class="project_description" title="zasdasd"><% if !project["description"].blank? && project["description"].length > 70  %> <% message = project["description"][0..70] + "..." %> <% else message = project["description"] %> <% end %> <%= message %>
+              <a class="project_description_full"><%= project["description"]%></a>
+        </a>
+      </div>
       </div>
     </div>
     <div class="col-xs-5 col-md-5 project_date column" >

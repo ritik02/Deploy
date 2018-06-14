@@ -5,4 +5,4 @@ one:
    commit_id: 32
    reviewer_id: 2
    checklist:
-   status: created
+   status: Created

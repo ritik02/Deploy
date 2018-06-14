@@ -1,4 +1,3 @@
-require 'set'
 class ProjectsController < ApplicationController
 
   include TokenValidationHelper
@@ -14,11 +13,11 @@ class ProjectsController < ApplicationController
 
   def show
     project_id = params["id"]
-    @valid_deployable_stages = ["canary", "prod"]
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
     @projects_details = @gitlab_api_services.get_project_details(project_id)
-    @pipelines = @gitlab_api_services.get_project_pipelines(project_id)
-    get_jobs_and_stages_of_a_pipelines(@pipelines, project_id)
+    pipeline = @gitlab_api_services.get_project_pipelines(project_id)[0]
+    jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, pipeline["id"])
+    map_stages_with_jobs(jobs)
   end
 
   private
@@ -34,16 +33,6 @@ class ProjectsController < ApplicationController
 
   def get_page_id(page_id)
     @page_id = page_id.blank? ? 1 : page_id
-  end
-
-  def get_jobs_and_stages_of_a_pipelines(pipelines, project_id)
-    @stages_hash = {}
-    @jobs_hash = {}
-    pipelines.each do |pipeline|
-      jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, pipeline["id"])
-      @jobs_hash.merge!(pipeline["id"] => jobs)
-      @stages_hash.merge!(pipeline["id"] => map_stages_with_jobs(jobs))
-    end
   end
 
   def map_stages_with_jobs(pipeline_jobs)
