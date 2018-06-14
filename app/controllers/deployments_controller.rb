@@ -1,7 +1,8 @@
 class DeploymentsController < ApplicationController
 
 	def new
-		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created", diff_link: request.original_url})
+		git_diff_link = generate_diff_link(params)
+		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created" ,diff_link: git_diff_link})
 		@deployment.save
 		@user = current_user
 	end
@@ -40,6 +41,11 @@ class DeploymentsController < ApplicationController
 			return false
 		end
 		return true
+	end
+
+	def generate_diff_link(params)
+		git_diff_link =  "http://localhost:3000/users/"+ params[:user_id] + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
+		git_diff_link
 	end
 
 end
