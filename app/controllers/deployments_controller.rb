@@ -1,6 +1,8 @@
 class DeploymentsController < ApplicationController
 include QuestionMapperHelper
 
+before_action :get_user_details
+
 def new
 		git_diff_link = generate_diff_link(params)
 		@deployment = Deployment.new({user_id: params[:user_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "Created" ,diff_link: git_diff_link})
@@ -51,6 +53,9 @@ def reviewer_not_valid?
   return true
 end
 
+def get_user_details
+	@user = current_user
+end
 
 def generate_diff_link(params)
   git_diff_link =  "http://172.16.12.143:3000/users/"+ params[:user_id] + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]

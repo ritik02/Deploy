@@ -78,8 +78,9 @@ $(document).tooltip({show: null});
     <div class="col-xs-5 col-md-5 project_date column" >
 
 
-      <% time = project["last_activity_at"] %>
-      Last Updated : <%= time %>
+      <% time = project["last_activity_at"][0...19]+"Z" %>
+
+      Last Updated : <%= Time.zone.parse(time) %>
 
   </div>
 </div>
