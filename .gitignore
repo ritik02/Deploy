@@ -7,5 +7,4 @@
 # Ignore application configuration
 /config/application.yml
 /config/database.yml
-/spec/vcr_cassettes
-/config/environments/development.rb
+#/spec/vcr_cassettes
