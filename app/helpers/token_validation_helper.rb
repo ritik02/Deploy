@@ -6,17 +6,17 @@ module TokenValidationHelper
   def redirect_if_token_is_nil?(token)
     if token.blank?
       redirect_to action: "edit", controller: "users", id: current_user.id
-      return true
+      return false
     end
-    return false
+    return true
   end
 
   def redirect_if_token_is_invalid?(token)
     get_gitlab_api_services(token)
     if !@gitlab_api_services.check_api_for_valid_token?
       redirect_to action: "edit", controller: "users", id: current_user.id
-      return true
+      return false
     end
-    return false
+    return true
   end
 end

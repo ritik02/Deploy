@@ -27,6 +27,15 @@ RSpec.describe CommitsController, type: :controller do
       end
     end
 
+    it "should render open commit index if last deployed commit related to job name is found" do
+      VCR.use_cassette("user_project_last_deployed_commit_found") do
+        sign_in users(:ten)
+        get :index, params: { user_id: users(:ten).id, project_id: 3850 , job_name: "abcd" }
+        puts response
+        expect(response).to have_http_status(:success)
+      end
+    end
+
     it "should render error template if user is not authorized to view deployments" do
       VCR.use_cassette("unauthorized_to_view_deployments") do
         sign_in users(:nine)

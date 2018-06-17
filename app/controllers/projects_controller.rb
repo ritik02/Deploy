@@ -14,8 +14,7 @@ class ProjectsController < ApplicationController
     @user = current_user
     project_id = params["id"]
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
-    return if !project_id_valid?(project_id)
-    return if !pipeline_exist?(project_id)
+    return if !project_id_valid?(project_id) || !pipeline_exist?(project_id)
     jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, @pipeline["id"])
     map_stages_with_jobs(jobs)
   end
@@ -50,9 +49,7 @@ class ProjectsController < ApplicationController
 
   def validate_and_get_user_details
     @user = current_user
-    return if !validate_user_id?(current_user.id.to_s, params[:user_id])
-    return if redirect_if_token_is_nil?(@user.gitlab_token)
-    return if redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
+    return if !validate_user_id?(current_user.id.to_s, params[:user_id]) || !redirect_if_token_is_nil?(@user.gitlab_token) || !redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
   end
 
 end
