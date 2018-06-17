@@ -6,8 +6,7 @@ class CommitsController < ApplicationController
 
   def index
     @selected_job_name = params[:job_name]
-    return if !deployment_exist?
-    return if !get_last_deployed_commit_details?
+    return if !deployment_exist? || !get_last_deployed_commit_details?
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(@project_id, @time)
   end
 

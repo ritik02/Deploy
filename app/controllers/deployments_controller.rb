@@ -13,7 +13,7 @@ class DeploymentsController < ApplicationController
 	def create
 		return if !params_valid?(params)
 		deployment = Deployment.create!(user_id: current_user.id, project_name: params[:project_name], commit_id: params[:commit_id], status: "CheckList Filled" ,diff_link: params[:diff_link], checklist: params[:deployments].to_json, reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id )
-		UserMailer.sample_email(deployment).deliver
+		UserMailer.deployment_request_email(deployment).deliver
 		deployment.update({status: "Pending Approval"})
 		redirect_to deployments_path
 	end
@@ -21,7 +21,7 @@ class DeploymentsController < ApplicationController
 	def index
 		@deployments = Deployment.where(:user_id => current_user.id)
 	end
-
+	
 	def show
 		@deployment = Deployment.find(params[:id])
 		get_question_mapper
