@@ -197,7 +197,11 @@
       <div class="input-field col s12">
         <%= form.select :reviewer_email, User.all.collect { |x| x.email }, {:include_blank => "Select One"} %>
       </div>
-        <%= hidden_field_tag 'deployment_id', @deployment.id  %>
+        <%= hidden_field_tag 'user_id', @deployment.user_id  %>
+        <%= hidden_field_tag 'project_name', @deployment.project_name  %>
+        <%= hidden_field_tag 'project_id', @project_id %>
+        <%= hidden_field_tag 'commit_id', @deployment.commit_id  %>
+        <%= hidden_field_tag 'last_deployed_commit', @last_deployed_commit  %>
         <%= form.submit  class: 'btn btn-primary' %>
     <%end %>
   </div>

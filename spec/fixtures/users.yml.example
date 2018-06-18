@@ -47,3 +47,24 @@ seven:
   gitlab_token: iN0W/7Kplx9yn/7VR0HZSjslr0jWNbqISpWMFTZN--eWmVt8MP1sNDZjB5--4Mi1fT9oLd8lgdDXSyc9fw==
   gitlab_user_id: 1234
   username: prakash.d.aux
+
+eight:
+  name: Archit Joshi
+  email: archit.j.aux@go-jek.com
+  gitlab_token: AluzmdDwax93FERocnvoui1kZYt8T4Aeri2qP8Eu--pm7MbPO/mqgo0a0X--7FAtGu0hAW7TqGqPrrjfmw==
+  gitlab_user_id: 1020
+  username: archit.j.aux
+
+nine:
+  name: Prakash Dwivedi
+  email: prakash.d.aux@go-jek.com
+  gitlab_token: JgRwLMuau7+3x9uiJBgls1eMaP4W8gTYnT8JJx9M--F0z7TqV7eq5q4R++--LT0+3Vg4lQw3avShw1l3Iw==
+  gitlab_user_id: 1234
+  username: prakash.d.aux
+
+ten:
+  name: Archit Joshi
+  email: archit.j.aux@go-jek.com
+  gitlab_token: FH/YvijBziCzDao+RqeK2eld5XCPzQkdznQyuXGc--lcKqhy/m166qU7Jz--s/XD5d4TryB2hv+i/To39A==
+  gitlab_user_id: 1020
+  username: archit.j.aux
