@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1340668/retry?private_token=_YDN1qs7zMVVuCayWYpm
+    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354965/play?private_token=_YDN1qs7zMVVuCayWYpm
     body:
       encoding: UTF-8
       string: ''
@@ -15,23 +15,23 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       Server:
       - nginx
       Date:
-      - Mon, 18 Jun 2018 09:58:49 GMT
+      - Mon, 18 Jun 2018 11:47:55 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1176'
+      - '1405'
       Connection:
       - keep-alive
       Cache-Control:
       - max-age=0, private, must-revalidate
       Etag:
-      - W/"1270f33b008b8955db29c4cff901f720"
+      - W/"990697053c1a5d37ccc57a6c5399e705"
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -39,17 +39,18 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 90c3b479-8526-4a25-b44a-a4cdfb4aab6d
+      - 401bfca6-c4ce-4e96-a924-34370efed35b
       X-Runtime:
-      - '0.179967'
+      - '0.114759'
       Strict-Transport-Security:
       - max-age=31536000
     body:
       encoding: UTF-8
-      string: '{"id":1354247,"status":"pending","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T09:58:49.135Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
-        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","short_id":"c05f9e9b","title":"Update
-        README.md","created_at":"2018-06-13T06:21:19.000Z","parent_ids":["8d78d8b0ee848a2b04318f9b075c3ea7f835d171"],"message":"Update
-        README.md","author_name":"archit.j.aux","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-13T06:21:19.000Z","committer_name":"archit.j.aux","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-13T06:21:19.000Z"},"pipeline":{"id":213338,"sha":"c05f9e9b8ed24ac1face4844c67aac8b04e13bf4","ref":"master","status":"canceled"},"runner":null}'
+      string: '{"id":1354965,"status":"success","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.185Z","started_at":"2018-06-18T11:46:49.870Z","finished_at":"2018-06-18T11:47:17.421Z","duration":27.550201,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":{"id":2494,"description":"i-gitlab-docker-runner-n0dq","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}}'
     http_version: 
-  recorded_at: Mon, 18 Jun 2018 09:58:49 GMT
+  recorded_at: Mon, 18 Jun 2018 11:47:55 GMT
 recorded_with: VCR 4.0.0

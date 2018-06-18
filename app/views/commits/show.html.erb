@@ -2,7 +2,7 @@
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
 
-<button class=" btn fab fixed-button waves-effect waves-light" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>'">Checklist</button>
+<button class=" btn fab fixed-button waves-effect waves-light" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>&job_name=<%=@job_name%>'">Checklist</button>
 
 <div class = "row ">
   <div class = "card diff-heading">

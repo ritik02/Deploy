@@ -58,7 +58,7 @@
                         </div>
                         <div class="col s11 column">
                           <% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %>
-                          <%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name ),
+                          <%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name, job_name: @selected_job_name ),
                              class: 'tooltipped', data: { position: 'top', tooltip: commit["message"] } %>
                           <p class="project_description"> <%= commit["short_id"] %></p>
                         </div>

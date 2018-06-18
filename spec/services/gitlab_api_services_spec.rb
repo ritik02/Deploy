@@ -140,8 +140,8 @@ RSpec.describe GitlabApiServices  do
   context "check api for triggering a job" do
     it "Should trigger a job" do
       VCR.use_cassette("job_trigger") do
-        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1340668, 3850)
-        expect(actual["status"]).to eq "pending"
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850)
+        expect(actual["status"]).to eq "success"
       end
     end
   end
