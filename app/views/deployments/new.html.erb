@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<%= render "layouts/topmenu_bar", user: @user %> 
-<%= render "layouts/sidebar_menu", user: @user %> 
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
 
 <div class="container">
   <div class = "card">
@@ -19,7 +19,7 @@
       </div>
       <h5><b>SERVICES IMPACTED</b></h5>
       <%= form.text_area :service_impacted ,class: 'materialize-textarea form-group form-control' %>
-      
+
 
       <h5><b>Service Details</b></h5>
        <div class="input-field col s12">
@@ -125,7 +125,7 @@
       <div class="input-field col s12">
         <label for="deployments_service_component_system_configurations_1">1. Did you check limits</label>
         <%= form.text_field :service_component_system_configurations_1 ,class: 'form-group form-control' %>
-      </div>  
+      </div>
       <div class="input-field col s12">
         <label for="deployments_service_component_system_configurations_2">2. Did you check proxy update</label>
         <%= form.text_field :service_component_system_configurations_2 ,class: 'form-group form-control' %>
@@ -199,7 +199,8 @@
       </div>
         <%= hidden_field_tag 'user_id', @deployment.user_id  %>
         <%= hidden_field_tag 'project_name', @deployment.project_name  %>
-        <%= hidden_field_tag 'project_id', @project_id %>
+        <%= hidden_field_tag 'project_id', @deployment.project_id %>
+        <%= hidden_field_tag 'job_name', @deployment.job_name %>
         <%= hidden_field_tag 'commit_id', @deployment.commit_id  %>
         <%= hidden_field_tag 'last_deployed_commit', @last_deployed_commit  %>
         <%= form.submit  class: 'btn btn-primary' %>

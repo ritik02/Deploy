@@ -13,6 +13,7 @@ class CommitsController < ApplicationController
   def show
     @destination_commit = params[:id]
     @source_commit = params[:last_deployed_commit]
+    @job_name = params[:job_name]
     @commit_diff = @gitlab_api_services.get_diff_of_two_commits(@project_id, @source_commit, @destination_commit)
   end
 
