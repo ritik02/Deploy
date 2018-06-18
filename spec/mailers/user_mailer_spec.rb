@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe UserMailer, type: :mailer do
 	fixtures :deployments , :users
 
-	describe "sample_email "do		
+	describe "UserMailer"do		
 		let(:mail) { described_class.sample_email(deployments(:one)).deliver_now }
 		it 'renders the subject' do
       expect(mail.subject).to eq('Production Deployment Approval')

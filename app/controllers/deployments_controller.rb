@@ -49,7 +49,7 @@ private
 def reviewer_not_valid?
   if User.where(:email => params[:deployments][:reviewer_email]).blank?
     render 'layouts/error'
-      return false
+    return false
   end
   return true
 end
