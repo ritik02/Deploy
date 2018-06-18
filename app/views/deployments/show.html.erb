@@ -1,22 +1,50 @@
-<h2><u> Deployment </u></h2>
-<hr>
+<h2 style="text-align: center;"><u> Deployment Checklist</u></h2>
 <br>
-<div class="container" >
-<p> Current Status: <%= @deployment.status %> </p>
-<p> Project Name: <%= @deployment.project_name %> </p>
-<p> Commit ID: <%= @deployment.commit_id %> </p>
-<p> Diff_Link <%= link_to "Git Diff Link", @deployment.diff_link %>  </p>
-<p> Checklist Filled At: <%= @deployment.updated_at %> </p>
-<p> <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved"), :method => :put ,data: { confirm: 'Are you sure?' } %> </p>
-<p> <%= link_to "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' } %> </p>
-<p> Checklist Contents : </p>
-<% checklist = JSON.parse(@deployment.checklist)%>
-<% @question_hash.each do |key, value| %>
+<div class="container .table-responsive-md" >
+  <table class="table table-hover table-striped">
+    <tr>
+<th><h5> Deployment Requested By:</th> <th><h5><font color="#2257AD"><%= User.find(@deployment.user_id).name %> </font></h5></th></tr>
+    <tr>
+<th><h5> Current Status:</th> <th><h5><font color="#2257AD"><%= @deployment.status %> </font></h5></th></tr>
+<tr><th><h5> Project Name: </th> <th><h5><font color="#2257AD"><%= @deployment.project_name %></font> </h5></th></tr>
+<tr><th><h5> Commit ID:</th> <th> <h5><font color="#2257AD">#<%= @deployment.commit_id %></font> </h5></th></tr>
 
-  <h4><%=value %> :<h4>
-    <%= checklist[key.to_s] %>
-  <h5></h5>
-  <br>
+<tr><th><h5> Checklist Filled At:</th> <th> <h5><font color="#2257AD"><%= @deployment.updated_at %></font> </h5></th></tr>
+<tr><th><h5> Git Diff Link : </th> <th><h5><font color="#2257AD"><%= link_to "Git Diff Link", @deployment.diff_link %></font></th></tr>
+<tr><th><h5> Action: </th><th>  <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>
+ <%= link_to "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %> </th></tr>
+</table>
+<h5><u> Checklist Contents : </u></h5>
+<br>
+<% checklist = JSON.parse(@deployment.checklist)%>
+<% prev = "" %>
+<% number = "" %>
+<% @question_hash.each do |key, value| %>
+  <% if key.to_s[key.to_s.length-1].between?('0','9') %>
+    <% number = key.to_s[key.to_s.length-1] + ": " %>
+    <% title = key.to_s[0...key.to_s.length-2].split('_') %>
+    <% if prev != title.join(' ').upcase %>
+      <h6 style="color: #4DA852;"><%= title.join(' ').upcase %></h6>
+      <% prev = title.join(' ').upcase %>
+    <% end %>
+    <% else %>
+    <% prev = "" %>
+    <% number = "" %>
+  <% end %>
+
+    <% if value.to_s.include?("Service") || value.to_s.include?("SERVICE") %>
+    <h6 style="color: #4DA852;"><%= value.upcase %></h6>
+    <% else %>
+      <% if !number.blank? %>
+        <h6 style="color: #1e54aa;"><%= number + value %></h6>
+      <% else %>
+        <h6 style="color: #1e54aa;"><%=  value %></h6>
+      <% end %>
+    <%end %>
+
+    <p><%=  checklist[key.to_s] %></p>
+
+    <br>
 <% end %>
 
 </div>

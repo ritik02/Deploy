@@ -2,57 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850?private_token=dwUityYxzfBkgVvkJcch&statistics=true
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Fri, 15 Jun 2018 07:19:21 GMT
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '2372'
-      Connection:
-      - keep-alive
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"d1e55748eff64bebacb7961483a818e5"
-      Vary:
-      - Origin
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Request-Id:
-      - 46b422b0-2b3a-4ff0-8460-898e44981937
-      X-Runtime:
-      - '0.060690'
-      Strict-Transport-Security:
-      - max-age=31536000
-    body:
-      encoding: UTF-8
-      string: '{"id":3850,"description":"This is my awesome calculator.","name":"CalculatorProject","name_with_namespace":"archit.j.aux
-        / CalculatorProject","path":"CalculatorProject","path_with_namespace":"archit.j.aux/CalculatorProject","created_at":"2018-06-01T06:04:27.249Z","default_branch":"master","tag_list":[],"ssh_url_to_repo":"git@source.golabs.io:archit.j.aux/CalculatorProject.git","http_url_to_repo":"https://source.golabs.io/archit.j.aux/CalculatorProject.git","web_url":"https://source.golabs.io/archit.j.aux/CalculatorProject","avatar_url":null,"star_count":0,"forks_count":0,"last_activity_at":"2018-06-13T06:07:21.905Z","_links":{"self":"https://source.golabs.io/api/v4/projects/3850","issues":"https://source.golabs.io/api/v4/projects/3850/issues","merge_requests":"https://source.golabs.io/api/v4/projects/3850/merge_requests","repo_branches":"https://source.golabs.io/api/v4/projects/3850/repository/branches","labels":"https://source.golabs.io/api/v4/projects/3850/labels","events":"https://source.golabs.io/api/v4/projects/3850/events","members":"https://source.golabs.io/api/v4/projects/3850/members"},"archived":false,"visibility":"internal","owner":{"id":1020,"name":"Archit
-        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux"},"resolve_outdated_diff_discussions":false,"container_registry_enabled":true,"issues_enabled":true,"merge_requests_enabled":true,"wiki_enabled":true,"jobs_enabled":true,"snippets_enabled":true,"shared_runners_enabled":true,"lfs_enabled":true,"creator_id":1020,"namespace":{"id":1183,"name":"archit.j.aux","path":"archit.j.aux","kind":"user","full_path":"archit.j.aux","parent_id":null},"import_status":"none","import_error":null,"open_issues_count":0,"runners_token":"jAsV_gU1MhUrVrZs6QyS","public_jobs":true,"ci_config_path":null,"shared_with_groups":[],"only_allow_merge_if_pipeline_succeeds":false,"request_access_enabled":false,"only_allow_merge_if_all_discussions_are_resolved":false,"printing_merge_request_link_enabled":true,"merge_method":"merge","statistics":{"commit_count":14,"storage_size":469016,"repository_size":304087,"lfs_objects_size":0,"job_artifacts_size":176684},"permissions":{"project_access":{"access_level":40,"notification_level":3},"group_access":null}}'
-    http_version: 
-  recorded_at: Fri, 15 Jun 2018 07:19:21 GMT
-- request:
-    method: get
     uri: https://source.golabs.io/api/v4/users?private_token=dwUityYxzfBkgVvkJcch
     body:
       encoding: US-ASCII
@@ -72,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Fri, 15 Jun 2018 07:19:21 GMT
+      - Fri, 15 Jun 2018 07:53:54 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -103,9 +52,9 @@ http_interactions:
       X-Prev-Page:
       - ''
       X-Request-Id:
-      - e0683020-b126-4e6d-b422-db4d6f450461
+      - 834e7449-a74d-409c-95cf-affd053b913e
       X-Runtime:
-      - '0.035670'
+      - '0.041881'
       X-Total:
       - '1008'
       X-Total-Pages:
@@ -116,10 +65,10 @@ http_interactions:
       encoding: UTF-8
       string: '[{"id":1042,"name":"mayank.j.aux","username":"mayank.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/130ef9481910b8fbd54d061aca58bd25?s=80\u0026d=identicon","web_url":"https://source.golabs.io/mayank.j.aux"},{"id":1041,"name":"kashyap.k","username":"kashyap.k","state":"active","avatar_url":"https://secure.gravatar.com/avatar/657939eb7b23ae76b54ca8fcb04cb597?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashyap.k"},{"id":1040,"name":"kashif.khan","username":"kashif.khan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/dd10994651237ccfc564817e718dfc60?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashif.khan"},{"id":1039,"name":"gunjan.dewan","username":"gunjan.dewan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2512136b37be09f1bc7c011661e35c88?s=80\u0026d=identicon","web_url":"https://source.golabs.io/gunjan.dewan"},{"id":1038,"name":"vinkesh.banka","username":"vinkesh.banka","state":"active","avatar_url":"https://secure.gravatar.com/avatar/80e6c75489e17773160b1c52afe5a75c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vinkesh.banka"},{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"},{"id":1036,"name":"indrajati","username":"indrajati","state":"active","avatar_url":"https://secure.gravatar.com/avatar/28361b130118098a4a59dea00bfd893d?s=80\u0026d=identicon","web_url":"https://source.golabs.io/indrajati"},{"id":1035,"name":"vipul.nair","username":"vipul.nair","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ae5ede5d992fab1abc02d20685086fc5?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vipul.nair"},{"id":1034,"name":"duchh","username":"duchh","state":"active","avatar_url":"https://secure.gravatar.com/avatar/23084de0bc0dec957e0b65c2a2d82e2b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duchh"},{"id":1033,"name":"harish.nazief","username":"harish.nazief","state":"active","avatar_url":"https://secure.gravatar.com/avatar/133d19cdec935d939828af95e454c347?s=80\u0026d=identicon","web_url":"https://source.golabs.io/harish.nazief"},{"id":1032,"name":"almer.alana","username":"almer.alana","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3c2d2952bcb5496e780a64504c1de4fa?s=80\u0026d=identicon","web_url":"https://source.golabs.io/almer.alana"},{"id":1031,"name":"didiet.noor","username":"didiet.noor","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1031/avatar.png","web_url":"https://source.golabs.io/didiet.noor"},{"id":1030,"name":"faisal.ridwan","username":"faisal.ridwan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/631e736ae4dbd7d25c14739f320821d1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/faisal.ridwan"},{"id":1029,"name":"gunawan.santoso","username":"gunawan.santoso","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1029/avatar.png","web_url":"https://source.golabs.io/gunawan.santoso"},{"id":1028,"name":"maulik.soneji","username":"maulik.soneji","state":"active","avatar_url":"https://secure.gravatar.com/avatar/401df8ee0df5a51d18871db64212a9bb?s=80\u0026d=identicon","web_url":"https://source.golabs.io/maulik.soneji"},{"id":1027,"name":"saurabh.k.aux","username":"saurabh.k.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/742a0e30b99124b395937b2b9d8a508e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/saurabh.k.aux"},{"id":1026,"name":"adit.lal","username":"adit.lal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e26c1853a00d563092e1bf9e4c900138?s=80\u0026d=identicon","web_url":"https://source.golabs.io/adit.lal"},{"id":1025,"name":"shivaprasad.bhat","username":"shivaprasad.bhat","state":"active","avatar_url":"https://secure.gravatar.com/avatar/8f66e94781d97cfac929d8188d471930?s=80\u0026d=identicon","web_url":"https://source.golabs.io/shivaprasad.bhat"},{"id":1024,"name":"alvin.adianto","username":"alvin.adianto","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4aba035e4af9f0e3c77d1f9c87debf03?s=80\u0026d=identicon","web_url":"https://source.golabs.io/alvin.adianto"},{"id":1023,"name":"dong.yunfan","username":"dong.yunfan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/bcb0dd2765a70f39971be8a1d4730b1f?s=80\u0026d=identicon","web_url":"https://source.golabs.io/dong.yunfan"}]'
     http_version: 
-  recorded_at: Fri, 15 Jun 2018 07:19:21 GMT
+  recorded_at: Fri, 15 Jun 2018 07:53:54 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/repository/compare?from=56fe362d&private_token=dwUityYxzfBkgVvkJcch&to=56fe362d
+    uri: https://source.golabs.io/api/v4/projects/abcd?private_token=dwUityYxzfBkgVvkJcch&statistics=true
     body:
       encoding: US-ASCII
       string: ''
@@ -132,23 +81,21 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 404
+      message: Not Found
     headers:
       Server:
       - nginx
       Date:
-      - Fri, 15 Jun 2018 07:19:22 GMT
+      - Fri, 15 Jun 2018 07:53:55 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '87'
+      - '35'
       Connection:
       - keep-alive
       Cache-Control:
-      - max-age=0, private, must-revalidate
-      Etag:
-      - W/"5a59a755af912b4a7032493995220c9b"
+      - no-cache
       Vary:
       - Origin
       X-Content-Type-Options:
@@ -156,14 +103,12 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - fb4f616f-18f3-47c4-966f-6835eda1621a
+      - 755ce482-6b0b-4b32-8214-eba853db4500
       X-Runtime:
-      - '0.022686'
-      Strict-Transport-Security:
-      - max-age=31536000
+      - '0.013027'
     body:
       encoding: UTF-8
-      string: '{"commit":null,"commits":[],"diffs":[],"compare_timeout":false,"compare_same_ref":true}'
+      string: '{"message":"404 Project Not Found"}'
     http_version: 
-  recorded_at: Fri, 15 Jun 2018 07:19:22 GMT
+  recorded_at: Fri, 15 Jun 2018 07:53:55 GMT
 recorded_with: VCR 4.0.0

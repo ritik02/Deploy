@@ -9,6 +9,12 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to redirect_to(action: "edit", controller: "users", id: users(:three).id)
     end
 
+    it "should redirect to project index page even when user_id is invalid" do
+      sign_in users(:eight)
+      get :index, params: { user_id: "abcd" }
+      expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:eight).id)
+    end
+
     it "should redirect to edit page if users gitlab token is expired" do
       VCR.use_cassette("invalid_gitlab_token") do
         sign_in users(:two)
@@ -51,5 +57,21 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
 
+    it "should redirect to layouts/error when project_id is invalid" do
+      VCR.use_cassette("user_project_id_invalid") do
+        sign_in users(:eight)
+        get :show, params: { user_id: users(:eight).id, id: "abcd" }
+        expect(response).to render_template('layouts/error')
+      end
+    end
+
+    it "should redirect to layouts/error when no pipelines exist for a project" do
+      VCR.use_cassette("user_project_no_pipelines") do
+        sign_in users(:nine)
+        get :show, params: { user_id: users(:nine).id, id: 3852 }
+        expect(response).to render_template('layouts/error')
+      end
+    end
   end
+
 end

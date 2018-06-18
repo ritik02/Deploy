@@ -1,15 +1,13 @@
 class CommitsController < ApplicationController
   include TokenValidationHelper
   include EncryptionHelper
-
-  before_action :validate_token_and_get_details
+  include UrlValidatorHelper
+  before_action :validate_and_get_details
 
   def index
     @selected_job_name = params[:job_name]
-    @deployments = @gitlab_api_services.get_all_deployments(@project_id)
-    return if !get_last_deployed_commit_details?
+    return if !deployment_exist? || !get_last_deployed_commit_details?
     @all_commits_after_last_deployed_commit = @gitlab_api_services.get_all_commits_after_last_deployed_commit(@project_id, @time)
-    @all_commits_after_last_deployed_commit.to_a.reverse!
   end
 
   def show
@@ -20,7 +18,6 @@ class CommitsController < ApplicationController
 
   private
 
-
   def get_last_deployed_commit_details?
     @deployments.each do |deployment|
       if deployment["deployable"]["name"] == @selected_job_name
@@ -30,8 +27,13 @@ class CommitsController < ApplicationController
         return true
       end
     end
+    return false if !got_last_deployed_commit?
+  end
+
+  def got_last_deployed_commit?
     if @last_deployed_commit.blank? || @time.blank?
-      render 'layouts/error' , :notice => "Sorry no deployments found!"
+      flash[:notice] = "Sorry no deployments found!"
+      render 'layouts/error'
       return false
     end
   end
@@ -40,10 +42,9 @@ class CommitsController < ApplicationController
     @time = @time[0..18] + "Z"
   end
 
-  def validate_token_and_get_details
-    return if redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token))
-    return if redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token))
+  def validate_and_get_details
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
+    return if !validate_user_id?(current_user.id.to_s, params[:user_id]) || !project_id_valid?(params[:project_id]) || !redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token)) || !redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token))
     @project_id = params[:project_id]
     @user_id = params[:user_id]
     @user = current_user

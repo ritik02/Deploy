@@ -1,1 +1,9 @@
+<div class="container card-header" style="text-align:center;">
 <h2>Error!! </h2>
+<% flash.each do |k,v| %>
+<% if v != "You need to sign in or sign up before continuing." %>
+<h3> <%= v %> </h3>
+<% end %>
+<% end %>
+<p style="text-align: center;"><a href="/">Go Back!</a></p>
+</div>

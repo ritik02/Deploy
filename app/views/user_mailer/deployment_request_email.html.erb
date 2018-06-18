@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GO - DEPLOY</title>
+
+  </head>
+
+  <body>
+    <p><h3>Project Name: <%= @deployment.project_name %></h3>
+      Hey, <%= User.find(@deployment.user_id).name %> is waiting for your approval .Please have a look.
+
+    </p>
+	<%= link_to "Checklist Form" , "http://172.16.12.114:3000/deployments/" + @deployment.id.to_s %>
+  </body>
+</html>

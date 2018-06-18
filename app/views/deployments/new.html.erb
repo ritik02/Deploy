@@ -178,8 +178,13 @@
 
   <label >Reviewer Email</label>
   <%= form.text_field :reviewer_email ,class: 'form-group form-control' %><hr>
-  <%= hidden_field_tag 'deployment_id', @deployment.id  %>
-  <%= form.submit  class: 'btn btn-primary' %>
+  <%= hidden_field_tag 'user_id', @deployment.user_id  %>
+  <%= hidden_field_tag 'project_name', @deployment.project_name  %>
+  <%= hidden_field_tag 'project_id', @project_id %>
+  <%= hidden_field_tag 'commit_id', @deployment.commit_id  %>
+  <%= hidden_field_tag 'diff_link', @deployment.diff_link  %>
+  <%= hidden_field_tag 'last_deployed_commit', @last_deployed_commit  %>
+  <%= form.submit  class: 'btn btn-primary'%>
   <%end %>
 </div>
 </body>
