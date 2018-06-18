@@ -1,105 +1,46 @@
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <%= stylesheet_link_tag 'deployment-page'%>
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
-</head>
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
 
-<body>
-
-<div id="menu-nav">
-
-  <div id="navigation-bar">
-    <ul>
-      <li><a href="<%=user_projects_path(:user_id => @user.id)%>" style="color: #009944;">Projects</a>
-      </li>
-      <li><a style="color: #009944;"><span>Commits</span></a>
-      </li>
-      <li><a><span style="color: #009944;">Checklist</span></a>
-      </li>
-      <li><a><span style="color: #009944;">Approval</span></a>
-      </li>
-      <li><a><span style="color: #00FF00;">Deploy</span></a>
-      </li>
-    </ul>
-    <ul class="timeline" id="timeline">
-      <li class="li complete">
-        <div class="status">
-          <h4> Project Selected </h4>
-        </div>
-      </li>
-      <li class="li complete">
-        <div class="status">
-          <h4> Commit Selected </h4>
-        </div>
-      </li>
-      <li class="li complete">
-        <div class="status">
-          <h4> Checklist Filled </h4>
-        </div>
-      </li>
-      <li class="li">
-        <div class="status">
-          <h4> Deploy Approved </h4>
-        </div>
-      </li>
-    </ul>
+<div class="container deployment-container table-container">
+  <div class="card card-heading">
+    <h4 style="text-align:center;"> Deployment History </h4>
   </div>
 </div>
-<div class="fixed-username" >
-  Hello, <%= @user.name %>
-</div>
-<div class="fixed-logout" >
-  <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <% end %>
-</div>
-
-<h2 style="text-align:center;"> Deployment History </h2>
-
-
-<div class="container-fluid .table-responsive-md">
-  <table class="table table-hover table-striped">
-    <thead class="thead-dark">
-         <tr>
-           <th>Project Name</th>
-           <th>Title</th>
-           <th>Commit ID</th>
-           <th>Reviewer</th>
-           <th>Status</th>
-            <th>Last Activity</th>
-           <th>Action</th>
-
-        </tr>
-    </thead>
-
-    <tbody>
-      <% @deployments.each do |deployment| %>
+<div class="container table-container">
+  <div class= "card">
+    <table class="table highlight responsive-table striped centered">
+      <thead class="thead-dark">
         <tr>
-          <% if !deployment.reviewer_id.blank? %>
-          <th><%= deployment.project_name %></th>
-          <th><%= JSON.parse(deployment.checklist)["title"] %></th>
-          <th><%= deployment.commit_id %></th>
-          <th><%= User.where(:id => deployment.reviewer_id).first.name %></th>
-          <th><%= deployment.status %></th>
-          <th><%= deployment.updated_at %></th>
-          <% if deployment.status == "Approved" %>
-          <th><%= link_to "Deploy", user_projects_path(user_id: @user.id) ,class: 'btn btn-success'%></th>
-          <% else %>
-          <th></th>
-          <% end %>
-          <% else %>
-          <th><%= deployment.project_name %></th>
-          <th></th>
-          <th><%= deployment.commit_id %></th>
-          <th></th>
-          <th><%= deployment.status %></th>
-          <th><%= deployment.updated_at %></th>
-          <th> <%= link_to "Delete", deployment_url(:id => deployment.id), :method => :delete ,data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %> </th>
-          <% end %>
+          <th>Project Name</th>
+          <th>Title</th>
+          <th>Commit ID</th>
+          <th>Reviewer</th>
+          <th>Status</th>
+          <th>Last Activity</th>
+          <th>Action</th>
         </tr>
-      <% end %>
-    </tbody>
-
-  </table>
+      </thead>
+      <tbody>
+        <% @deployments.each do |deployment| %>
+          <tr>
+            <% if !deployment.reviewer_id.blank? %>
+            <td><%= deployment.project_name %></td>
+            <td><%= JSON.parse(deployment.checklist)["title"] %></td>
+            <td><%= deployment.commit_id %></td>
+            <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
+            <td><%= deployment.status %></td>
+            <td><%= deployment.updated_at.to_s(:rfc822)[6..24] %></td>
+              <% if deployment.status == "Approved" %>
+              <td><%= link_to "Deploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :post ,data: { confirm: ' Are you sure? ' } %></td>
+              <% else %>
+              <td></td>
+              <% end %>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-</body>
+<footer class="page-footer"></footer>

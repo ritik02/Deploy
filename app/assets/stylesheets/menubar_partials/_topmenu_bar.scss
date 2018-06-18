@@ -1,0 +1,15 @@
+.nav-wrapper{
+    background-color: #009944;
+}
+.navbar-brand {
+  padding-left: 1.5rem;
+  height: 50px;
+  width: auto;
+  margin-top: 5px;
+}
+@media screen and (max-width: 600px) {
+  .navbar-brand{
+    margin: 5px;
+    padding: 0px;
+  }
+}

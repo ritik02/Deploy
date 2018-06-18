@@ -21,12 +21,12 @@ RSpec.describe DeploymentsController, type: :controller do
 
 	describe "GET deployments#create" do
 		it "should create the checklist of a deployment" do
-				sign_in users(:nine)
-				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852}
-				expect(Deployment.second.status).to eq "Pending Approval"
+			sign_in users(:nine)
+			post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
+			expect(Deployment.third.status).to eq "Pending Approval"
 		end
 
-		it "should not update the checklist of a deployment if reviewer_email is invalid" do
+		it "should not create the checklist of a deployment if reviewer_email is invalid" do
 			sign_in users(:four)
 			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle", reviewer_email: "invalid@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
 			expect(deployments(:one).status).to eq "Created"
@@ -35,7 +35,7 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#show" do
-		it "should open show deployment page if reviewer is authorized" do
+		it "should open show deployment page" do
 			sign_in users(:seven)
 			get :show, params: {id: 1}
 			expect(response).to render_template('deployments/show')
@@ -43,7 +43,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		end
 	end
 
-	describe "GET deployments#destroy" do
+	describe "GET deployments#update" do
 		it "should update deployment status to Approved when Approve button is clicked when reviewer is valid" do
 			sign_in users(:seven)
 			put :update, params: {id: 1, status: "Approved"}
@@ -60,6 +60,26 @@ RSpec.describe DeploymentsController, type: :controller do
 			sign_in users(:eight)
 			put :update, params: {id: 1,status: "Rejected"}
 			expect(deployments(:one).status).to eq "Created"
+		end
+	end
+
+	describe "GET deployments#trigger_deployment" do
+		it "should trigger job when deploy button is clicked" do
+			VCR.use_cassette("trigger_deployment_controller") do
+				sign_in users(:ten)
+				post :trigger_deployment, params: {id: 2}
+				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
+			end
+		end
+	end
+
+	describe "GET deployments#job_trace" do
+		it "should open job_trace page when deployment is triggered" do
+			VCR.use_cassette("job_trace_controller") do
+				sign_in users(:ten)
+				get :job_trace, params: {id: 135457, project_id: 3850}
+				expect(response).to have_http_status(:success)
+			end
 		end
 	end
 end

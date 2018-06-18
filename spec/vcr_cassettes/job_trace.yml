@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354247/trace?private_token=_YDN1qs7zMVVuCayWYpm
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Jun 2018 10:02:46 GMT
+      Content-Type:
+      - text/plain
+      Content-Length:
+      - '5657'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Disposition:
+      - infile; filename="1354247.log"
+      Etag:
+      - W/"9619392368c5edeeff7b9327fa77311a"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - c353d007-1243-41a1-a224-22a127ce98c5
+      X-Runtime:
+      - '0.030106'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: "\e[0KRunning with gitlab-runner 10.6.0 (a3543a27)\n\e[0;m\e[0K  on
+        i-gitlab-docker-runner-s6p0 e97fa5ba\n\e[0;m\e[0KUsing Docker executor with
+        image ruby:2.4 ...\n\e[0;m\e[0KPulling docker image ruby:2.4 ...\n\e[0;m\e[0KUsing
+        docker image sha256:5601afcd334d0ca95169af14efea16bcdef3c739b835531375338e6a2962b114
+        for ruby:2.4 ...\n\e[0;msection_start:1529315952:prepare_script\r\e[0KRunning
+        on runner-e97fa5ba-project-3850-concurrent-0 via i-gitlab-docker-runner-s6p0...\nsection_end:1529315954:prepare_script\r\e[0Ksection_start:1529315954:get_sources\r\e[0K\e[32;1mCloning
+        repository...\e[0;m\nCloning into '/builds/archit.j.aux/CalculatorProject'...\n\e[32;1mChecking
+        out c05f9e9b as master...\e[0;m\n\e[32;1mSkipping Git submodules setup\e[0;m\nsection_end:1529315955:get_sources\r\e[0Ksection_start:1529315955:restore_cache\r\e[0Ksection_end:1529315957:restore_cache\r\e[0Ksection_start:1529315957:download_artifacts\r\e[0Ksection_end:1529315958:download_artifacts\r\e[0Ksection_start:1529315958:build_script\r\e[0K\e[32;1m$
+        apt-get update -qq && apt-get install -y -qq sqlite3 libsqlite3-dev nodejs\e[0;m\ndebconf:
+        delaying package configuration, since apt-utils is not installed\nSelecting
+        previously unselected package libuv1:amd64.\r\n(Reading database ... \r(Reading
+        database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading
+        database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading
+        database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading
+        database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading
+        database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading
+        database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading
+        database ... 95%\r(Reading database ... 100%\r(Reading database ... 29391
+        files and directories currently installed.)\r\nPreparing to unpack .../libuv1_1.9.1-3_amd64.deb
+        ...\r\nUnpacking libuv1:amd64 (1.9.1-3) ...\r\nSelecting previously unselected
+        package sqlite3.\r\nPreparing to unpack .../sqlite3_3.16.2-5+deb9u1_amd64.deb
+        ...\r\nUnpacking sqlite3 (3.16.2-5+deb9u1) ...\r\nSelecting previously unselected
+        package nodejs.\r\nPreparing to unpack .../nodejs_4.8.2~dfsg-1_amd64.deb ...\r\nUnpacking
+        nodejs (4.8.2~dfsg-1) ...\r\nSetting up libuv1:amd64 (1.9.1-3) ...\r\nSetting
+        up sqlite3 (3.16.2-5+deb9u1) ...\r\nProcessing triggers for libc-bin (2.24-11+deb9u3)
+        ...\r\nSetting up nodejs (4.8.2~dfsg-1) ...\r\nupdate-alternatives: using
+        /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode\r\n\e[32;1m$ ruby
+        -v\e[0;m\nruby 2.4.4p296 (2018-03-28 revision 63013) [x86_64-linux]\n\e[32;1m$
+        which ruby\e[0;m\n/usr/local/bin/ruby\n\e[32;1m$ gem install bundler --no-ri
+        --no-rdoc\e[0;m\nSuccessfully installed bundler-1.16.2\n1 gem installed\n\e[32;1m$
+        bundle install --jobs $(nproc)  \"${FLAGS[@]}\"\e[0;m\nFetching gem metadata
+        from https://rubygems.org/..........\nFetching rake 10.5.0\nUsing bundler
+        1.16.2\nUsing calculator 0.1.0 from source at `.`\nFetching numerizer 0.1.1\nFetching
+        diff-lcs 1.3\nFetching docile 1.3.0\nFetching json 2.1.0\nFetching rspec-support
+        3.7.1\nFetching simplecov-html 0.10.2\nInstalling numerizer 0.1.1\nInstalling
+        json 2.1.0 with native extensions\nFetching chronic_duration 0.10.6\nInstalling
+        docile 1.3.0\nInstalling rspec-support 3.7.1\nInstalling diff-lcs 1.3\nInstalling
+        rake 10.5.0\nInstalling chronic_duration 0.10.6\nInstalling simplecov-html
+        0.10.2\nFetching spec 5.3.4\nFetching rspec-core 3.7.1\nFetching rspec-expectations
+        3.7.0\nFetching rspec-mocks 3.7.0\nInstalling spec 5.3.4\nInstalling rspec-mocks
+        3.7.0\nInstalling rspec-expectations 3.7.0\nInstalling rspec-core 3.7.1\nFetching
+        rspec 3.7.0\nInstalling rspec 3.7.0\nFetching simplecov 0.16.1\nInstalling
+        simplecov 0.16.1\nBundle complete! 6 Gemfile dependencies, 16 gems now installed.\nBundled
+        gems are installed into `/usr/local/bundle`\n\e[32;1m$ gem install dpl\e[0;m\nSuccessfully
+        installed dpl-1.9.7\n1 gem installed\n\e[32;1m$ bundle exec rspec\e[0;m\n\nCalculator\n
+        \ When checking for basic functionality of Calculator\n    check if calculator
+        should exist\n    add method should add successfully\n    subtract method
+        should subtract successfully\n    multiply method should multiply successfully\n
+        \   divide method should divide successfully\n    neg method should negate
+        successfully\n    abs method should absolute successfully\n    sqr method
+        should square successfully\n    sqrt method should compute square_root successfully\n
+        \   cube method should compute cube successfully\n    cubert method should
+        compute cube_root successfully\n    cancel method should reset  successfully\n
+        \   divide method should not divide when dividend is 0\n\nParser\n  When checking
+        for proper parsing of the input command string\n    parser object should exist\n
+        \   should return no error when input is valid\n    should return proper error
+        message when input is invalid\n    should return properly splitted arguments\n\nRouter\n
+        \ When checking for proper routing of parsed commands\n    router object should
+        exist\n    should route add command properly\n    should route subtract command
+        properly\n    should route exit command properly\n    should route multiply
+        command properly\n    should route divide command properly\n    should route
+        neg command properly\n    should route abs command properly\n    should route
+        sqr command properly\n    should route cube command properly\n    should route
+        sqrt command properly\n    should route cubert command properly\n    should
+        route cancel command properly\n\nFinished in 0.00629 seconds (files took 0.13893
+        seconds to load)\n30 examples, 0 failures\n\nCoverage report generated for
+        RSpec to /builds/archit.j.aux/CalculatorProject/coverage. 242 / 242 LOC (100.0%)
+        covered.\nsection_end:1529315978:build_script\r\e[0Ksection_start:1529315978:after_script\r\e[0K"
+    http_version: 
+  recorded_at: Mon, 18 Jun 2018 10:02:46 GMT
+recorded_with: VCR 4.0.0
