@@ -26,7 +26,7 @@ RSpec.describe DeploymentsController, type: :controller do
 				expect(Deployment.second.status).to eq "Pending Approval"
 		end
 
-		it "should not update the checklist of a deployment if reviewer_email is invalid" do
+		it "should not create the checklist of a deployment if reviewer_email is invalid" do
 			sign_in users(:four)
 			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle", reviewer_email: "invalid@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
 			expect(deployments(:one).status).to eq "Created"
@@ -35,7 +35,7 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#show" do
-		it "should open show deployment page if reviewer is authorized" do
+		it "should open show deployment page" do
 			sign_in users(:seven)
 			get :show, params: {id: 1}
 			expect(response).to render_template('deployments/show')
@@ -43,7 +43,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		end
 	end
 
-	describe "GET deployments#destroy" do
+	describe "GET deployments#update" do
 		it "should update deployment status to Approved when Approve button is clicked when reviewer is valid" do
 			sign_in users(:seven)
 			put :update, params: {id: 1, status: "Approved"}

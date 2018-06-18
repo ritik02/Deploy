@@ -59,13 +59,13 @@
 <%= form_for :deployments, url: "/deployments" do |form| %>
 
   <label >TITLE:</label>
-  <%= form.text_field :title ,class: 'form-group form-control', required: true,pattern: '\d{10}' %>
+  <%= form.text_field :title ,class: 'form-group form-control', required: true , placeholder: "Project Name"%>
 
   <label >OVERVIEW:</label>
-  <%= form.text_area :overview ,class: 'form-group form-control', required: true %>
+  <%= form.text_area :overview ,class: 'form-group form-control', required: true, placeholder: "Describe your deployment" %>
 
   <label >COMMITTERS:</label>
-  <%= form.text_area :committers ,class: 'form-group form-control' %>
+  <%= form.text_area :committers ,class: 'form-group form-control',required: true, placeholder: "Mention Committers" %>
   <hr>
 
   <h5 style="color: #4DA852;"><b>SERVICES IMPACTED</b></h5>
@@ -74,11 +74,11 @@
 
   <h5 style="color: #4DA852;"><b>Service Details</b></h5>
   <label >1. Please provide URL for your wiki page for this specific change:</label>
-  <%= form.text_field :service_details_1 ,class: 'form-group form-control' %>
+  <%= form.text_field :service_details_1 ,class: 'form-group form-control', required: true, pattern: "https:\/\/source.golabs.io\/.+\/.+\/wikis/.+",  placeholder: "https://source.golabs.io/your_username/project_name/wikis/xxxx" %>
   <label >2. Please provide datadog dashboard URL for your service:</label>
-  <%= form.text_field :service_details_2 ,class: 'form-group form-control' %>
+  <%= form.text_field :service_details_2 ,class: 'form-group form-control', required: true, pattern: "https:\/\/app.datadoghq.com\/.+", placeholder: "https://app.datadoghq.com/xxxx" %>
   <label >3. Please provide newrelic dashboard URL for your service:</label>
-  <%= form.text_field :service_details_3 ,class: 'form-group form-control' %>
+  <%= form.text_field :service_details_3 ,class: 'form-group form-control', required: true, pattern: "https:\/\/rpm.newrelic.com\/accounts\/[1-9]+\/applications/[1-9]+", placeholder: "https://rpm.newrelic.com/accounts/xxxxxxx/applications/xxxxxxxx"%>
   <hr>
 
   <h5 style="color: #4DA852;"><b>Service Rollback</b></h5>
@@ -176,8 +176,12 @@
   <label >8. How many synchronous calls your code makes? (Also list down in impacted services)</label>
   <%= form.text_area :project_component_code_8 ,class: 'form-group form-control' %><hr>
 
-  <label >Reviewer Email</label>
-  <%= form.text_field :reviewer_email ,class: 'form-group form-control' %><hr>
+  <label >Choose a reviewer to mail</label>
+  <br>
+  <%=form.select :reviewer_email, User.all.collect { |x| x.email }, {:include_blank => "Select One"} %>
+  <br>
+  <br>
+  <hr>
   <%= hidden_field_tag 'user_id', @deployment.user_id  %>
   <%= hidden_field_tag 'project_name', @deployment.project_name  %>
   <%= hidden_field_tag 'project_id', @project_id %>

@@ -10,7 +10,7 @@
 <tr><th><h5> Commit ID:</th> <th> <h5><font color="#2257AD">#<%= @deployment.commit_id %></font> </h5></th></tr>
 
 <tr><th><h5> Checklist Filled At:</th> <th> <h5><font color="#2257AD"><%= @deployment.updated_at %></font> </h5></th></tr>
-<tr><th><h5> Git Diff Link : </th> <th><h5><font color="#2257AD"><%= link_to "Git Diff Link", @deployment.diff_link , target: :_blank%></font></th></tr>
+<tr><th><h5> Git Diff Link : </th> <th><h5><font color="#2257AD"><%= link_to "Git Diff Link", @deployment.diff_link , target: :_blank %></font></th></tr>
 <tr><th><h5> Action: </th><th>  <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>
  <%= link_to "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %> </th></tr>
 </table>
@@ -41,8 +41,11 @@
         <h6 style="color: #1e54aa;"><%=  value %></h6>
       <% end %>
     <%end %>
-
-    <p><%=  checklist[key.to_s] %></p>
+    <% if key.to_s.include?("service_details") %>
+      <p> <%=  link_to checklist[key.to_s], checklist[key.to_s], target: :_blank %>
+    <% else %>
+      <p><%=  checklist[key.to_s] %></p>
+    <% end %>
 
     <br>
 <% end %>

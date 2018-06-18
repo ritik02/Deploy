@@ -7,13 +7,13 @@
 
   <body>
     <p><h3>Project Name: <%= @deployment.project_name %> </h3>
-        Hey, <%=User.find(@deployment.reviewer_id).name%> just changed the status of your deployment request to
+        Hey, <b><%=User.find(@deployment.reviewer_id).name.upcase%></b> just changed the status of your deployment request to
         <% if @deployment.status == "Approved" %>
           <h4><font color="green"><%=@deployment.status%></font></h4>
         <% else %>
           <h4><font color="red"><%=@deployment.status%></font></h4>
         <% end %>
     </p>
-	<%= link_to "Deployment History" , "http://172.16.12.114:3000/deployments/"%>
+	<%= link_to "Deployment History" , "http://172.16.12.161:3000/deployments/"%>
   </body>
 </html>
