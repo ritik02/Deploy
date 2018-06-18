@@ -37,10 +37,9 @@ class DeploymentsController < ApplicationController
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
 		last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
-		puts last_pipeline_id
 		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, last_pipeline_id), deployment.job_name)
-		puts job_id
 		job_trigger_response = @gitlab_api_services.trigger_job(job_id, deployment.project_id) if current_user.id == deployment.user_id
+		deployment.update(:status => "Deployed")
 		redirect_to job_trace_path(id: job_trigger_response["id"], project_id: deployment.project_id)
 	end
 
