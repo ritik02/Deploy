@@ -68,6 +68,7 @@ RSpec.describe DeploymentsController, type: :controller do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
 				post :trigger_deployment, params: {id: 2}
+				expect(Deployment.find(2).status).to eq "Deployed"
 				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
 			end
 		end
