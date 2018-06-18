@@ -67,7 +67,22 @@ class GitlabApiServices
 
   def get_jobs_of_a_pipeline(gitlab_project_id, pipeline_id)
     url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines/" + pipeline_id.to_s + "/jobs?private_token=" + @access_token
-    response = HTTParty.get(url)
+  	HTTParty.get(url)
   end
+
+	def get_last_pipeline_id_of_commit(commit_id, gitlab_project_id)
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits/" + commit_id + "?private_token=" + @access_token
+		HTTParty.get(url)["last_pipeline"]["id"]
+	end
+
+	def trigger_job(job_id, gitlab_project_id)
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/retry?private_token=" + @access_token
+		response = HTTParty.post(url)
+	end
+
+	def get_job_trace(job_id, gitlab_project_id)
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/trace?private_token=" + @access_token
+		response = HTTParty.get(url)
+	end
 
 end

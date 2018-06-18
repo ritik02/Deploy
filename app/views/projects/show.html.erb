@@ -84,7 +84,7 @@
       <div class="card-body">
       <ul>
        <% jobs.each do |job| %>
-       <li><p><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )  %> <p></li>
+       <li><p><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"])  %> <p></li>
        <% end %>
      </ul>
       </div>

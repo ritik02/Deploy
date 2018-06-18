@@ -42,7 +42,7 @@
     <% end %>
   </div>
 
-  <button class="fab fixed-button" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>'" >Checklist</button>
+  <button class="fab fixed-button" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>&job_name=<%=@job_name%>'" >Checklist</button>
 
 
 <h3 style="text-align: center;">Diff of <b><%=@source_commit %> : <%=@destination_commit %></b></h3>

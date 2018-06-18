@@ -110,22 +110,49 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
-context "check api for jobs of pipelines" do
-   it "Should return jobs for a pipeline" do
-     VCR.use_cassette("project_pipeline_jobs") do
-       actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_jobs_of_a_pipeline(3850, 210972)
-       expect(actual[0]["id"]).to eq 1328119
-     end
-   end
- end
+  context "check api for jobs of pipelines" do
+    it "Should return jobs for a pipeline" do
+      VCR.use_cassette("project_pipeline_jobs") do
+        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_jobs_of_a_pipeline(3850, 210972)
+        expect(actual[0]["id"]).to eq 1328119
+      end
+    end
+  end
 
- context "check api for all deployments" do
-   it "Should return deployments of a project" do
-     VCR.use_cassette("all_deployed_commits") do
-       actual = GitlabApiServices.new("ZUToPioeFWK5nvSWMLAi").get_all_deployments(389)
-       expect(actual[0]["deployable"]["name"]).to eq "staging_deploy"
-     end
-   end
- end
+  context "check api for all deployments" do
+    it "Should return deployments of a project" do
+      VCR.use_cassette("all_deployed_commits") do
+        actual = GitlabApiServices.new("ZUToPioeFWK5nvSWMLAi").get_all_deployments(389)
+        expect(actual[0]["deployable"]["name"]).to eq "staging_deploy"
+      end
+    end
+  end
+
+  context "check api for last pipeline id of a commit" do
+    it "Should return last pipeline id of a commit" do
+      VCR.use_cassette("last_pipeline_id_of_commit") do
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").get_last_pipeline_id_of_commit("c05f9e9b", 3850)
+        expect(actual).to eq 213338
+      end
+    end
+  end
+
+  context "check api for triggering a job" do
+    it "Should trigger a job" do
+      VCR.use_cassette("job_trigger") do
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1340668, 3850)
+        expect(actual["status"]).to eq "pending"
+      end
+    end
+  end
+
+  context "check api for job trace" do
+    it "Should return trace of a job" do
+      VCR.use_cassette("job_trace") do
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").get_job_trace(1354247, 3850)
+        expect(actual.code).to eq 200
+      end
+    end
+  end
 
 end

@@ -84,7 +84,7 @@ $(document).ready(function(){
       <div class="row">
         <% if index < @all_commits_after_last_deployed_commit.length-1 %>
         <div class="col-xs-1 col-md-1 column"><img class=".img-fluid. max-width: 100%; height: auto;" style="margin:0px 0px" class="img-responsive column" src="/assets/commit.png"  width="25" height="25"></div>
-        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %><%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name ), data: { toggle: 'tooltip', placement: 'top', original_title: commit["message"] } %></a> </h3>
+        <div class="col-xs-11 col-md-11 column"><h3 style="margin: 0px 0px; font-size: 20px" class="project_title"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %><%= link_to message , user_project_commit_url(:project_id => @project_id, :user_id => @user_id, :id => commit["short_id"], last_deployed_commit: @last_deployed_commit["short_id"], project_name: @project_name, job_name: @selected_job_name ), data: { toggle: 'tooltip', placement: 'top', original_title: commit["message"] } %></a> </h3>
           <p class="project_description"> <%= commit["short_id"] %></p></div>
       </div>
     </div>

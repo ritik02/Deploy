@@ -83,18 +83,10 @@
           <th><%= deployment.status %></th>
           <th><%= deployment.updated_at %></th>
           <% if deployment.status == "Approved" %>
-          <th><%= link_to "Deploy", user_projects_path(user_id: @user.id) ,class: 'btn btn-success'%></th>
+          <th><%= link_to "Deploy", deployment_trigger_path(id: deployment.id) , :method => :post, data: { confirm: 'Are you sure?' }, class: 'btn btn-success'%></th>
           <% else %>
           <th></th>
           <% end %>
-          <% else %>
-          <th><%= deployment.project_name %></th>
-          <th></th>
-          <th><%= deployment.commit_id %></th>
-          <th></th>
-          <th><%= deployment.status %></th>
-          <th><%= deployment.updated_at %></th>
-          <th> <%= link_to "Delete", deployment_url(:id => deployment.id), :method => :delete ,data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %> </th>
           <% end %>
         </tr>
       <% end %>
