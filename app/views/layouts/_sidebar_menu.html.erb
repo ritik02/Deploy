@@ -1,20 +1,14 @@
 <nav class="main-menu">
    <ul>
       <li>
-         <a href="/users/<%=@user.id%>/projects">
-            <i class="fa fa-files-o fa-2x"></i>
+         <a class = "sidemenu-a" href="/users/<%=@user.id%>/projects">
+            <i class="fa fa-files-o"></i>
             <span class="nav-text">Projects</span>
          </a>
       </li>
       <li class="has-subnav">
-         <a href="#">
-            <i class="fa fa-circle-o fa-2x"></i>
-            <span class="nav-text">Commits</span>
-         </a>
-      </li>
-      <li class="has-subnav">
-         <a href="/deployments?user_id=<%=@user.id%>">
-            <i class="fa fa-list-ul fa-2x"></i>
+         <a class = "sidemenu-a" href="/deployments?user_id=<%=@user.id%>">
+            <i class="fa fa-list-ul"></i>
             <span class="nav-text">Deployment History</span>
          </a>
       </li>
@@ -24,8 +18,8 @@
       <li>
         <% if user_signed_in? %>
             <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-power-off fa-2x"></i>
-                <span class="nav-text">Logout</span>
+                <i class="fa fa-power-off"></i>
+                <span class="nav-text sidemenu-a">Logout</span>
             <% end %>
          <% end %>
       </li>

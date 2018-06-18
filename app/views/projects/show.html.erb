@@ -1,101 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <title>GO-Deploy</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <%= stylesheet_link_tag  'project-page'%>
- <%= javascript_tag  'project'%>
-</head>
-<body>
-
-<div id="menu-nav">
-  <div id="navigation-bar">
-    <ul>
-     <li><a href="<%=user_projects_path%>" style = "color: #00FF00;">Projects</a></li>
-     <li><a href="/users/<%=@user.id%>/projects/<%=@projects_details["id"]%>/commits"><span>Commits</span></a></li>
-     <li><a href="#"><span>Checklist</span></a></li>
-     <li><a href="#"><span>Approval</span></a></li>
-     <li><a href="#" ><span>Deploy</span></a></li>
-   </ul>
-   <ul class="timeline" id="timeline">
-     <li class="li complete">
-       <div class="status">
-         <h4> Project Selected </h4>
-       </div>
-     </li>
-     <li class="li">
-       <div class="status">
-         <h4> Commit Selected </h4>
-       </div>
-     </li>
-     <li class="li">
-       <div class="status">
-         <h4> Checklist Filled </h4>
-       </div>
-     </li>
-     <li class="li">
-       <div class="status">
-         <h4> Deploy Approved </h4>
-       </div>
-     </li>
-    </ul>
- </div>
-</div>
-
-<div class="fixed-username" >
-  Hello, <%= @user.name %>
-</div>
-<div class="fixed-logout" >
-  <% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  <% end %>
-</div>
-
-
-<div class="container" style="max-width: 1400px;" >
-<div class="card  " style="text-align: center;">
-  <h4 class="card-header"  ><b style="text-align: center;  font-family:  'Lucida Sans', sans-serif;  font-weight: normal; line-height: 48px; margin: 0; color: #0a7fad; "><%= @projects_details["name"] %></b></h4>
-  <div class="card-body">
-
-    <p class="card-text" ><%= @projects_details["description"] %></p>
-    <p class="card-text">Commit Count: <%= @projects_details["statistics"]["commit_count"] %>      </p>
-     <p class="card-text">  Last Updated At: <%= @projects_details["last_activity_at"] %> </p>
-  </div>
-</div>
-   </div>
-   <br>
-<% @stages.each do |stage, jobs| %>
-<div class="container" style="max-width: 1400px;">
-<div id="accordion">
-
-  <div class="card">
-    <div class="card-header" id="heading<%= stage %>" style="padding-top: 0px; padding-bottom: 0px;">
-      <h6 class="">
-        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= stage %>" " aria-controls="collapse<%= stage %>">
-         <h4><%= stage.upcase %> </h4>
-        </button>
-      </h6>
-    </div>
-
-    <div id="collapse<%= stage %>" class="collapse" aria-labelledby="heading<%= stage %>" data-parent="#accordion">
-      <div class="card-body">
-      <ul>
-       <% jobs.each do |job| %>
-       <li><p><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )  %> <p></li>
-       <% end %>
-     </ul>
+<%= stylesheet_link_tag  'project-page'%>
+<%= render "layouts/topmenu_bar", user: @user %> 
+<%= render "layouts/sidebar_menu", user: @user %>
+           
+<div class = "container-collapses">
+    <div class="row">
+      <div class="card-panel white ">
+        <h2><%= @projects_details["name"] %></h2>
+        <p><%= @projects_details["description"] %></p>
+        <div class = "row">
+          <div class= "col s6"><span class = "span-left">Total commits: <%= @projects_details["statistics"]["commit_count"]%> </span></div>
+          <div class= "col s6"><span class = "span-right"><% time = Time.zone.rfc3339(@projects_details["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]%></span></div>
+        </div>
       </div>
     </div>
-  </div>
 
+  <div class="row">
+    <div class="card">  
+      <ul class="collection with-header">
+        <li class="collection-header">
+           <div class = "row">
+              <div class = "col s4">
+                <h4>Stages</h4>
+              </div>
+              <div class = "col s8 jobs">
+                <h4 class = "job">Jobs</h4>
+              </div>
+            </div>
+        </li>
+        <% @stages.each do |stage, jobs| %>
+          <li class="collection-item">
+            <div class = "row stagename-row">
+              <div class = "col s4">
+                <h6><%= stage.capitalize %></h6>
+              </div>
+
+            <div class = "col s8 jobs">
+            <% jobs.each do |job| %>
+            <% (0..2).each do %>
+            <div class = "row">
+              <p class = "span-right" ><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )%></p><br>
+            </div>
+            <% end %>
+            <% end %>
+            </div>
+            </div>
+          </li>
+          
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
- </div>
- <% end %>
 
-</body>
-
-</html>
+<footer class="page-footer"></footer>

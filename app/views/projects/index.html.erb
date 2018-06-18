@@ -1,25 +1,6 @@
-
-<head>
- <title>GO-Deploy</title>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
- <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
- <%= stylesheet_link_tag  'project-page'%>
-</head>
-
-
+<%= stylesheet_link_tag  'project-page'%>
 <%= render "layouts/topmenu_bar", user: @user, projects: @projects %> 
 <%= render "layouts/sidebar_menu", user: @user  %> 
-
-
 
 <div class="cards">
   <div class = "row">
@@ -27,15 +8,15 @@
       <h5>Projects </h5>
     </div>
     <div class="col s12 m6 l6">
-      <div class="nav-wrapper1">
+      <div class="search-wrapper">
         <form action="/users/<%= "#{@user.id}" %>/projects" method="get">
-          <input type="text" style="float:left; width: 200px;" placeholder="Search Your Projects" name="search_query"/>
-          <button type=submit formmethod="get" class="waves-effect waves-light btn-large" style="background-color: black;"><i class="material-icons left search-i">search</i>Search   </button>
+          <input class = "search-box" type="text" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" placeholder="Search Your Projects" name="search_query"/>
+          <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Search   </button>
         </form>
      </div>
     </div>
   </div>
-  
+
   <hr>
   <% @projects.each do |project| %>
     <section class="row">
@@ -44,26 +25,93 @@
           <i class="material-icons">folder_open</i>
         </div>
       </div>
-      <div class="col s8 m6 l7">
+      <div class="col s6 m6 l7">
         <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
         <p><%= project["description"] %></p>
       </div>
-      <div class="col s2 m4 l4">
-        <p class = "time-p"><% time = Time.zone.iso8601(project["last_activity_at"]) %> Last Updated : <%= time %></p>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]   %></p>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col s2 m2 l1">
+        <div class="icon">
+          <i class="material-icons">folder_open</i>
+        </div>
+      </div>
+      <div class="col s6 m6 l7">
+        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
+        <p><%= project["description"] %></p>
+      </div>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col s2 m2 l1">
+        <div class="icon">
+          <i class="material-icons">folder_open</i>
+        </div>
+      </div>
+      <div class="col s6 m6 l7">
+        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
+        <p><%= project["description"] %></p>
+      </div>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = Time.zone.iso8601(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col s2 m2 l1">
+        <div class="icon">
+          <i class="material-icons">folder_open</i>
+        </div>
+      </div>
+      <div class="col s6 m6 l7">
+        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
+        <p><%= project["description"] %></p>
+      </div>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = Time.zone.iso8601(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
       </div>
     </section>
   <% end %>
+  <section class="row">
+      <div class="col s2 m2 l1">
+        <div class="icon">
+          <i class="material-icons">folder_open</i>
+        </div>
+      </div>
+      <div class="col s6 m6 l7">
+        <h1><%= link_to "Some-super-big-project-name"  , user_project_path(:id => 3850, :user_id => @user.id) %></h1>
+        <p><%= "Some big poroject description for typiee people" %></p>
+      </div>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = "sometime" %> Last Updated : <%= time %></p>
+      </div>
+    </section>
+    <section class="row">
+      <div class="col s2 m2 l1">
+        <div class="icon">
+          <i class="material-icons">folder_open</i>
+        </div>
+      </div>
+      <div class="col s6 m6 l7">
+        <h1><%= link_to "some-project-name"  , user_project_path(:id => 3850, :user_id => @user.id) %></h1>
+        <p><%= "normal description for a project" %></p>
+      </div>
+      <div class="col s4 m4 l4">
+        <p class = "time-p"><% time = "clah" %> Last Updated : <%= time %></p>
+      </div>
+    </section>
 </div>
 
 
 <div class="container" style="margin-bottom: 50px; margin-top: 50px;" >
-  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" style=""  >
-      <div class="btn-group mr-2" role="group" aria-label="First group" style=" margin-left: 40%" >
-          <button type="button" class="waves-effect waves-light btn"  style="background-color: black;  " ><%= link_to_if  !@projects.headers["x-prev-page"].blank?, "Prev", user_projects_url(:page_id => @projects.headers["x-prev-page"], :user_id => @user.id)%></button>
-          <button type="button" class="waves-effect waves-light btn"  style="background-color: black;  "><%= link_to_if !@projects.headers["x-next-page"].blank?, "Next", user_projects_url(:page_id => @projects.headers["x-next-page"], :user_id => @user.id)%></button>
-        </div>
+  <div style=" margin-left: 40%" >
+    <button type="button" class="waves-effect waves-light btn"><%= link_to_if  !@projects.headers["x-prev-page"].blank?, "Prev", user_projects_url(:page_id => @projects.headers["x-prev-page"], :user_id => @user.id)%></button>
+    <button type="button" class="waves-effect waves-light btn"><%= link_to_if !@projects.headers["x-next-page"].blank?, "Next", user_projects_url(:page_id => @projects.headers["x-next-page"], :user_id => @user.id)%></button>
     </div>
 </div>
 
-<footer class="page-footer">
-</footer>
+<footer class="page-footer"></footer>

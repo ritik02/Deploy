@@ -4,4 +4,5 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
-//=require bootstrap.min
+//= require bootstrap.min
+//= require materialize

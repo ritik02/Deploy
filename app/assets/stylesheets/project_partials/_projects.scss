@@ -1,58 +1,92 @@
-.project_date {
-  font-size: 10px;
-  @media (min-width: 996px){
-    font-size: 15px;
-  }
+.row{
+  margin-bottom: 12px;
+  max-width: 940px;
+}
+.search-wrapper{
+  position: relative;
+  float: right;
+  margin: 0 auto;
+}
+section {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 12px;
+  max-width: 940px;
+  min-height: 80px;
+  padding: 5px;
+  background: $white;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }
 
-.project_description {
-  font-size: 10px;
-  @media (min-width: 996px){
-    font-size: 15px;
-  }
+section h1 {
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: .5rem;
+  font-size: 1.3em;
 }
 
-.project_description_full {
-  font-size: 10px;
-  @media (min-width: 996px){
-    font-size: 15px;
-  }
-  visibility: hidden;
-  opacity: 0;
-
+section p {
+  margin: 5px 5px 10px 0;
+  font-weight: 300;
+  line-height: 1.4em;
+  font-size: 0.95em;
+  color: $section-p-font-color;
 }
 
-.project_title {
-  font-size: 15px;
-  @media (min-width: 996px){
-    font-size: 25px;
-  }
+section .time-p{
+  margin-top: 10px;
 }
 
-.commits_title{
-  font-size: 15px;
-  @media (min-width: 996px){
-    font-size: 20px;
-  }
+.icon {
+  text-align: center;
 }
 
-* {
-  box-sizing: border-box;
+.cards {
+  margin-top: 40px;
+  margin-left: 65px;
+  margin-right: 5px;
 }
 
-.column {
-  float: left;
-  width: 50%;
+.cards i {
+  font-size: 3em;
+  color: $card-icon-color;
+  max-width: 50px;
+  margin-top: 10px;
+  height: auto;
 }
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+::placeholder {
+    color: $light-grey;
+    opacity: 1; 
 }
-
+.cards .search-button-icon{
+  max-width: auto;
+  height: auto;
+  margin: 2px;
+  margin-right: 5px;
+}
+.btn-large{
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 15px;
+  background-color: $search-button-color;
+}
+.btn-large:hover {
+  background-color: black;
+}
+.btn{
+  background-color: $search-button-color;
+}
+section:hover .icon > i{
+  color: $card-icon-color-dark;
+}
 @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
+  .icon {
+    display: block;
+  }
+  section h1 {
+    margin: 10px 0 0 0;
+  }
+  .search-wrapper{
+    float: left;
   }
 }

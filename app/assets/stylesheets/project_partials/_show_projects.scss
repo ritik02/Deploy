@@ -1,0 +1,72 @@
+.container-collapses{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.container-collapses h2{
+	text-align: center;
+	color: $project-name-color;
+	margin: 5px 0 25px 0;
+}
+
+.container-collapses p{
+	font-size: 16px;
+	text-align: center;
+	color: $dark-grey;
+	margin-bottom: 20px;
+}
+
+.container-collapses {
+	.collection {
+    margin: 0rem 0 4rem 0;
+  }
+	.span-left{
+		float: left;
+	}
+	.span-right{
+		float: right;
+	}
+	.card-row{
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.padding-class{
+		padding: 10px;
+		padding-left: 20px;
+	}
+	.card-title .margins{
+		margin-bottom: 0px;
+	}
+
+	.job{
+		font-size: 26px;
+		float: right;
+	}
+	.collection.with-header .collection-header {
+    padding: 0px 20px;
+	}
+	.collection-item {
+		padding-bottom: 0px;
+		.row{
+			padding:0px;
+			margin: 0px;
+		}
+		.stagename-row{
+			display: flex;
+  		align-items: center;
+		}
+		line-height: 0px;
+		.jobs{
+			float: right;
+		}
+		p{
+			margin: 13px;
+			margin-left: 5px;
+			margin-right: 5px;
+			font-size: 16px;
+		}
+		h6{
+			font-weight: 500;
+		}
+	}
+}

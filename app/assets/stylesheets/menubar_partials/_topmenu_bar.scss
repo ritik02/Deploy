@@ -1,149 +1,15 @@
-a{
-  color: #03A9F4;
-}
-
-body {
-  background: #F1F1F1;
-  font-family: 'Roboto', sans-serif;
-}
-
 .nav-wrapper{
     background-color: #009944;
 }
-
-.row{
-  margin-bottom: 12px;
-}
-
-.search-input{
-  float: left;
-  width: 200px;
-}
-
-.nav-wrapper1{
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  max-width: 610px;
-}
-
-h5{
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  max-width: 240px;
-  color: #757575;
-}
-hr{
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  max-width: 940px;
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #757575;
-}
-section {
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 12px;
-  max-width: 940px;
-  min-height: 80px;
-  max-height: 120px;
-  padding: 5px;
-  background: #FFF;
-  border-radius: 5px;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-section h1 {
-  letter-spacing: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: .5rem;
-  font-size: 1.3em;
-  color: #555;
-}
-
-section p {
-  margin: 15px 5px 0.5rem 0;
-  font-weight: 300;
-  line-height: 1.4em;
-  font-size: 0.95em;
-  color: #888;
-}
-
-.page-footer{
-  position: fixed;
-  width: 100%;
-  bottom:0;
-  height: 40px;
-  background-color: #000;
-  z-index: 1001;
-}
-
 .navbar-brand {
-    padding-left: 1.5rem;
+  padding-left: 1.5rem;
+  height: 50px;
+  width: auto;
+  margin-top: 5px;
 }
-
-section .time-p{
-  margin-top: 2rem;
-}
-
-.icon {
-  text-align: center;
-}
-
-.cards {
-  margin-top: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.cards i {
-  font-size: 3em;
-  color: #81C784;
-  max-width: 50px;
-  margin-top: 15px;
-  height: auto;
-}
-
-.cards .search-i{
-  max-width: auto;
-  height: auto;
-  margin: 2px;
-  margin-right: 5px;
-}
-.btn-large{
-  padding: 0px;
-  padding-left: 10px;
-  padding-right: 15px;
-}
-section:hover .icon > i{
-  color: #1B5E20;
-}
-
-#section0 {
-  display: none;
-}
-
-.added h1 {
-  text-align: center;
-  padding-top: 35px;
-  font-size: 1.3em;
-}
-
 @media screen and (max-width: 600px) {
-  header {
-    height: 50vh;
-  }
-  .icon {
-    display: block;
-  }
-  section h1 {
-    margin: 30px 0 0 0;
-  }
-  .added h1 {
-    padding-top: 15px;
+  .navbar-brand{
+    margin: 5px;
+    padding: 0px;
   }
 }
