@@ -22,7 +22,7 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#create" do
 		it "should create the checklist of a deployment" do
 				sign_in users(:nine)
-				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852}
+				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
 				expect(Deployment.second.status).to eq "Pending Approval"
 		end
 

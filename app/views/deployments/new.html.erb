@@ -59,10 +59,10 @@
 <%= form_for :deployments, url: "/deployments" do |form| %>
 
   <label >TITLE:</label>
-  <%= form.text_field :title ,class: 'form-group form-control' %>
+  <%= form.text_field :title ,class: 'form-group form-control', required: true,pattern: '\d{10}' %>
 
   <label >OVERVIEW:</label>
-  <%= form.text_area :overview ,class: 'form-group form-control' %>
+  <%= form.text_area :overview ,class: 'form-group form-control', required: true %>
 
   <label >COMMITTERS:</label>
   <%= form.text_area :committers ,class: 'form-group form-control' %>
@@ -182,7 +182,6 @@
   <%= hidden_field_tag 'project_name', @deployment.project_name  %>
   <%= hidden_field_tag 'project_id', @project_id %>
   <%= hidden_field_tag 'commit_id', @deployment.commit_id  %>
-  <%= hidden_field_tag 'diff_link', @deployment.diff_link  %>
   <%= hidden_field_tag 'last_deployed_commit', @last_deployed_commit  %>
   <%= form.submit  class: 'btn btn-primary'%>
   <%end %>

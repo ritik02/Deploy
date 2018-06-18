@@ -6,22 +6,22 @@ class DeploymentsController < ApplicationController
 	before_action :get_details
 
 	def new
-		git_diff_link = generate_diff_link(params)
-		@deployment = Deployment.new({user_id: current_user.id, project_name: params[:project_name], commit_id: params[:commit_id], status: "Created" ,diff_link: git_diff_link})
+		@deployment = Deployment.new({user_id: current_user.id, project_name: params[:project_name], commit_id: params[:commit_id], status: "Created" })
 	end
 
 	def create
 		return if !params_valid?(params)
-		deployment = Deployment.create!(user_id: current_user.id, project_name: params[:project_name], commit_id: params[:commit_id], status: "CheckList Filled" ,diff_link: params[:diff_link], checklist: params[:deployments].to_json, reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id )
+		git_diff_link = generate_diff_link(params)
+		deployment = Deployment.create!(user_id: current_user.id, project_name: params[:project_name], commit_id: params[:commit_id], status: "CheckList Filled" ,diff_link: git_diff_link, checklist: params[:deployments].to_json, reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id )
 		UserMailer.deployment_request_email(deployment).deliver
 		deployment.update({status: "Pending Approval"})
 		redirect_to deployments_path
 	end
 
 	def index
-		@deployments = Deployment.where(:user_id => current_user.id)
+		@deployments = Deployment.order('deployments.updated_at DESC').where(:user_id => current_user.id)
 	end
-	
+
 	def show
 		@deployment = Deployment.find(params[:id])
 		get_question_mapper
@@ -51,7 +51,7 @@ class DeploymentsController < ApplicationController
 	end
 
 	def generate_diff_link(params)
-		git_diff_link =  "http://172.16.12.114:3000/users/"+ params[:user_id] + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
+		git_diff_link =  "http://172.16.12.161:3000/users/"+ User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
 		git_diff_link
 	end
 

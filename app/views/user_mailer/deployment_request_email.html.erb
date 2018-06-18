@@ -10,6 +10,6 @@
       Hey, <%= User.find(@deployment.user_id).name %> is waiting for your approval .Please have a look.
 
     </p>
-	<%= link_to "Checklist Form" , "http://172.16.12.114:3000/deployments/" + @deployment.id.to_s %>
+	<%= link_to "Checklist Form" , "http://172.16.12.161:3000/deployments/" + @deployment.id.to_s , target: :_blank %>
   </body>
 </html>
