@@ -32,79 +32,8 @@
         <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]   %></p>
       </div>
     </section>
-    <section class="row">
-      <div class="col s2 m2 l1">
-        <div class="icon">
-          <i class="material-icons">folder_open</i>
-        </div>
-      </div>
-      <div class="col s6 m6 l7">
-        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
-        <p><%= project["description"] %></p>
-      </div>
-      <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
-      </div>
-    </section>
-    <section class="row">
-      <div class="col s2 m2 l1">
-        <div class="icon">
-          <i class="material-icons">folder_open</i>
-        </div>
-      </div>
-      <div class="col s6 m6 l7">
-        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
-        <p><%= project["description"] %></p>
-      </div>
-      <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = Time.zone.iso8601(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
-      </div>
-    </section>
-    <section class="row">
-      <div class="col s2 m2 l1">
-        <div class="icon">
-          <i class="material-icons">folder_open</i>
-        </div>
-      </div>
-      <div class="col s6 m6 l7">
-        <h1><%= link_to project["name"]  , user_project_path(:id => project["id"], :user_id => @user.id) %></h1>
-        <p><%= project["description"] %></p>
-      </div>
-      <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = Time.zone.iso8601(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24] %></p>
-      </div>
-    </section>
   <% end %>
-  <section class="row">
-      <div class="col s2 m2 l1">
-        <div class="icon">
-          <i class="material-icons">folder_open</i>
-        </div>
-      </div>
-      <div class="col s6 m6 l7">
-        <h1><%= link_to "Some-super-big-project-name"  , user_project_path(:id => 3850, :user_id => @user.id) %></h1>
-        <p><%= "Some big poroject description for typiee people" %></p>
-      </div>
-      <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = "sometime" %> Last Updated : <%= time %></p>
-      </div>
-    </section>
-    <section class="row">
-      <div class="col s2 m2 l1">
-        <div class="icon">
-          <i class="material-icons">folder_open</i>
-        </div>
-      </div>
-      <div class="col s6 m6 l7">
-        <h1><%= link_to "some-project-name"  , user_project_path(:id => 3850, :user_id => @user.id) %></h1>
-        <p><%= "normal description for a project" %></p>
-      </div>
-      <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = "clah" %> Last Updated : <%= time %></p>
-      </div>
-    </section>
 </div>
-
 
 <div class="container" style="margin-bottom: 50px; margin-top: 50px;" >
   <div style=" margin-left: 40%" >
