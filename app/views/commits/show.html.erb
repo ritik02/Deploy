@@ -1,72 +1,37 @@
-<%= stylesheet_link_tag  'project-page'%>
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700' rel='stylesheet' type='text/css'>
-  <div id="menu-nav">
-    <div id="navigation-bar">
-      <ul>
-        <li><a href="<%=user_projects_path%>" style = "color: #009944;">Projects</a></li>
-        <li><a href="/users/<%=@user_id%>/projects/<%=@project_id%>/commits" style = "color: #00FF00;"><span>Commits</span></a></li>
-        <li><a ><span>Checklist</span></a></li>
-        <li><a ><span>Approval</span></a></li>
-        <li><a ><span>Deploy</span></a></li>
-      </ul>
-      <ul class="timeline" id="timeline" >
-        <li class="li complete" >
-          <div class="status">
-            <h4> Project Selected </h4>
-          </div>
-        </li>
-        <li class="li complete">
-          <div class="status">
-            <h4> Commit Selected </h4>
-          </div>
-        </li>
-        <li class="li">
-          <div class="status">
-            <h4> Checklist Filled </h4>
-          </div>
-        </li>
-        <li class="li">
-          <div class="status">
-            <h4> Deploy Approved </h4>
-          </div>
-        </li>
-      </ul>
-    </div>
+<%= stylesheet_link_tag 'commit-page'%>
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
+
+<button class=" btn fab fixed-button waves-effect waves-light" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>'">Checklist</button>
+
+<div class = "row ">
+  <div class = "card diff-heading">
+    <h3>Diff of <%=@source_commit %> : <%=@destination_commit %></h3>
   </div>
-  <div class="fixed-username" >
-    Hello, <%= @user.name %>
-  </div>
-  <div class="fixed-logout" >
-    <% if user_signed_in? %>
-      <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-    <% end %>
-  </div>
+</div>
 
-  <button class="fab fixed-button" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>&job_name=<%=@job_name%>'" >Checklist</button>
+<div class="container">
+  <% @commit_diff.each do |diff| %>
+  	<div class="card diff-heading">
+    		<h4><b><%= diff["new_path"] %></b></h4>
+        <hr>
+    		<div class="card-content" style="text-align: left; margin:0px; padding: 0px;" >
+  			<% diffs = diff["diff"] %>
+  				<% diffs.each_line do |line|  %>
+  					<%if !line.include?("+++") && !line.include?("---") %>
+  						<%if line[0]=='+' %>
+  						<pre style="background-color:  #E3FAE8;margin:0px;"><%= line %></pre>
+  						<%elsif line[0]=='-' %>
+  						<pre style="background-color: #F4D8DC;margin:0px;"><%= line %></pre>
+  						<% else %>
+  						<pre style="margin:0px;"><%= line %></pre>
+  						<% end %>
+  					<% end %>
+  			<% end %>
+    		</div>
+  	</div>
+  <% end %>
+</div>
 
 
-<h3 style="text-align: center;">Diff of <b><%=@source_commit %> : <%=@destination_commit %></b></h3>
-
-<% @commit_diff.each do |diff| %>
-<div class="container"  >
-	<div class="card  " style="text-align: center;">
-  		<h4 class="card-header"  ><b style=" font-weight: normal; line-height: 0px; margin: 0; color: #0a7fad; font-size: 20px;"><%= diff["new_path"] %></b>
-  		</h4>
-
-  		<div class="card-body" style="text-align: left; margin:0px;" >
-			<% diffs = diff["diff"] %>
-				<% diffs.each_line do |line|  %>
-					<%if !line.include?("+++") && !line.include?("---") %>
-						<%if line[0]=='+' %>
-						<pre style="background-color:  #E3FAE8;margin:0px;"><%= line %></pre>
-						<%elsif line[0]=='-' %>
-						<pre style="background-color: #F4D8DC;margin:0px;"><%= line %></pre>
-						<% else %>
-						<pre style="margin:0px;"><%= line %></pre>
-						<% end %>
-					<% end %>
-			<% end %>
-  		</div>
-	</div>
-	</div>
-<% end %>
+<footer class="page-footer"></footer>

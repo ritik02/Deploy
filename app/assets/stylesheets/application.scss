@@ -1,1 +1,4 @@
-@import 'bootstrap';
+@import "materialize/components/color-variables";
+$primary-color: #009944 !default;
+$secondary-color: #009944 !default;
+@import 'materialize';

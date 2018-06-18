@@ -1,0 +1,42 @@
+.container{
+	margin-bottom: 50px;
+}
+.diff-heading{
+	padding: 5px;
+	text-align: center;
+	padding-left: 20px;
+	padding-bottom: 10px;
+	padding-top: 1px;
+}
+pre{
+	overflow-x: scroll;
+}
+h3{
+	text-align: center;
+	font-size: 2.2rem;
+}
+b{
+	 font-weight: normal; 
+	 line-height: 0px; 
+	 margin: 0; 
+	 color: $link-blue; 
+	 font-size: 25px;
+}
+.fixed-button {
+    position: fixed;
+    right: 30px;
+    z-index: 10;
+}
+.fab {
+	  border:none;
+    font-size:1rem;
+    color:white;
+    background-color: #000;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 30px;
+}
+.fab:hover {
+  background-color: #009944;
+}

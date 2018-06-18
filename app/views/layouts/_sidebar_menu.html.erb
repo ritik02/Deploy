@@ -1,0 +1,27 @@
+<nav class="main-menu">
+   <ul>
+      <li>
+         <a class = "sidemenu-a" href="/users/<%=@user.id%>/projects">
+            <i class="fa fa-files-o"></i>
+            <span class="nav-text">Projects</span>
+         </a>
+      </li>
+      <li class="has-subnav">
+         <a class = "sidemenu-a" href="/deployments">
+            <i class="fa fa-list-ul"></i>
+            <span class="nav-text">Deployment History</span>
+         </a>
+      </li>
+   </ul>
+
+   <ul class="logout">
+      <li>
+        <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-power-off"></i>
+                <span class="nav-text sidemenu-a">Logout</span>
+            <% end %>
+         <% end %>
+      </li>
+   </ul>
+</nav>

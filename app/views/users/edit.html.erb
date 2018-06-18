@@ -1,4 +1,6 @@
-  <head><%= stylesheet_link_tag 'home-page'%></head>
+ 
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+ <%= stylesheet_link_tag 'home-page'%>
   <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#page-top">Go-deploy</a>
@@ -32,20 +34,20 @@
           <div class="card purple-cards p-4 " >
             <div class="form-group"></br>
               <img class="img-responsive m-1" src="/assets/generate.png"  alt="paste"></br></br>
-              <a target=_blank href="https://source.golabs.io/profile/personal_access_tokens" class="btn btn-outline btn-xl">Generate Token</a></br></br>
+              <a target=_blank href="https://source.golabs.io/profile/personal_access_tokens" class="btn btn-outline btn-new">Generate Token</a></br></br>
               <img class="rounded" src="/assets/paste.png"  alt="paste">
               </br></br>
               <%= form_for @user do |f|  %>
-								  <%= f.text_field :gitlab_token, class: "form-control"%> <br/>
+								  <%= f.text_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px"%> <br/>
 								  <%= f.submit "Link your token", class: "btn btn-outline btn-new mt-1" %>
 							<% end %>
             </div>
           </div>
 
-          <div class="card purple-cards p-4" >
+          <div class="card purple-cards p-4" > 
             </br>
              <img class="card-img-top" src="/assets/goready.png" >
-            <a href="#download" class="btn btn-outline btn-xl mt-5">Let's Get Started</a>
+            <a href="#download" class="btn btn-outline btn-new mt-5">Let's Get Started</a>
           </div>
 
        </div>
