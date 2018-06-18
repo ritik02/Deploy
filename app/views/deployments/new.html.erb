@@ -24,15 +24,15 @@
       <h5><b>Service Details</b></h5>
        <div class="input-field col s12">
         <label for= "deployments_service_details_1">1. Please provide URL for your wiki page for this specific change:</label>
-        <%= form.text_field :service_details_1 ,class: 'form-group form-control', required: true, pattern: "https:\/\/source.golabs.io\/.+\/.+\/wikis/.+"%>
+        <%= form.text_field :service_details_1 ,class: 'form-group form-control'%>
       </div>
       <div class="input-field col s12">
         <label for= "deployments_service_details_2">2. Please provide datadog dashboard URL for your service:</label>
-        <%= form.text_field :service_details_2 ,class: 'form-group form-control', required: true, pattern: "https:\/\/app.datadoghq.com\/.+"%>
+        <%= form.text_field :service_details_2 ,class: 'form-group form-control'%>
       </div>
       <div class="input-field col s12">
         <label for= "deployments_service_details_3">3. Please provide newrelic dashboard URL for your service:</label>
-        <%= form.text_field :service_details_3 ,class: 'form-group form-control', required: true, pattern: "https:\/\/rpm.newrelic.com\/accounts\/[1-9]+\/applications/[1-9]+" %>
+        <%= form.text_field :service_details_3 ,class: 'form-group form-control' %>
       </div>
 
       <h5><b>Service Rollback</b></h5>
@@ -206,3 +206,4 @@
     <%end %>
   </div>
 </div>
+<footer class="page-footer"></footer>
