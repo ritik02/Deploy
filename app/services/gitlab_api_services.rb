@@ -40,12 +40,12 @@ class GitlabApiServices
 	end
 
   def get_all_deployments(gitlab_project_id)
-    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/deployments?private_token=" + @access_token + "&sort=desc"
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/deployments?private_token=" + @access_token + "&sort=desc&per_page=100"
     HTTParty.get(url)
   end
 
 	def get_all_commits_after_last_deployed_commit(gitlab_project_id, time)
-		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits?private_token=" + @access_token + "&since=" + time
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits?private_token=" + @access_token + "&since=" + time + "&per_page=100"
 		HTTParty.get(url)
 	end
 
@@ -66,7 +66,7 @@ class GitlabApiServices
   end
 
   def get_jobs_of_a_pipeline(gitlab_project_id, pipeline_id)
-    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines/" + pipeline_id.to_s + "/jobs?private_token=" + @access_token
+    url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines/" + pipeline_id.to_s + "/jobs?private_token=" + @access_token + "&per_page=100"
   	HTTParty.get(url)
   end
 
