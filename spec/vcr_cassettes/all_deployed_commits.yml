@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/389/deployments?private_token=ZUToPioeFWK5nvSWMLAi&sort=desc
+    uri: https://source.golabs.io/api/v4/projects/389/deployments?per_page=100&private_token=ZUToPioeFWK5nvSWMLAi&sort=desc
     body:
       encoding: US-ASCII
       string: ''

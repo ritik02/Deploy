@@ -119,7 +119,7 @@ http_interactions:
   recorded_at: Fri, 15 Jun 2018 07:18:17 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/deployments?private_token=dwUityYxzfBkgVvkJcch&sort=desc
+    uri: https://source.golabs.io/api/v4/projects/3850/deployments?per_page=100&private_token=dwUityYxzfBkgVvkJcch&sort=desc
     body:
       encoding: US-ASCII
       string: ''
@@ -209,7 +209,7 @@ http_interactions:
   recorded_at: Fri, 15 Jun 2018 07:18:17 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/repository/commits?private_token=dwUityYxzfBkgVvkJcch&since=2018-06-13T06:18:35.000Z
+    uri: https://source.golabs.io/api/v4/projects/3850/repository/commits?per_page=100&private_token=dwUityYxzfBkgVvkJcch&since=2018-06-13T06:18:35.000Z
     body:
       encoding: US-ASCII
       string: ''

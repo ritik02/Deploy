@@ -1,3 +1,6 @@
+.card-panel {
+	padding-bottom: 5px;
+}
 .container-collapses{
 	width: 50%;
 	margin: 0 auto;
@@ -17,6 +20,13 @@
 }
 
 .container-collapses {
+	p{
+		line-height: .4rem;
+	}
+	h2{
+		font-size: 2.2rem;
+		line-height: 50%;
+	}
 	.collection {
     margin: 0rem 0 4rem 0;
   }
@@ -37,13 +47,16 @@
 	.card-title .margins{
 		margin-bottom: 0px;
 	}
-
 	.job{
 		font-size: 26px;
 		float: right;
 	}
 	.collection.with-header .collection-header {
     padding: 0px 20px;
+    h4{
+    	font-size: 20px;
+    	font-weight: 600;
+    }
 	}
 	.collection-item {
 		.row{
@@ -63,6 +76,7 @@
 			margin-left: 5px;
 			margin-right: 5px;
 			font-size: 16px;
+			line-height: 0;
 		}
 		h6{
 			font-weight: 500;

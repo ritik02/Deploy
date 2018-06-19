@@ -54,7 +54,7 @@ http_interactions:
   recorded_at: Mon, 18 Jun 2018 11:46:47 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/215700/jobs?private_token=_YDN1qs7zMVVuCayWYpm
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/215700/jobs?per_page=100&private_token=_YDN1qs7zMVVuCayWYpm
     body:
       encoding: US-ASCII
       string: ''

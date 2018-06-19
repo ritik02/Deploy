@@ -2,6 +2,9 @@
 	margin-bottom: 50px;
 	max-width: 940px;
 }
+.container-head{
+	margin-bottom: 0px;
+}
 .diff-heading{
 	padding: 5px;
 	text-align: center;
@@ -21,7 +24,7 @@ b{
 	 line-height: 0px; 
 	 margin: 0; 
 	 color: $link-blue; 
-	 font-size: 25px;
+	 font-size: 18px;
 }
 .fixed-button {
     position: fixed;
