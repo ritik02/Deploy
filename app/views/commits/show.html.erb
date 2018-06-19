@@ -4,9 +4,11 @@
 
 <button class=" btn fab fixed-button waves-effect waves-light" onclick="location.href = '/deployments/new?user_id=<%=@user_id %>&project_id=<%=@project_id%>&commit_id=<%=@destination_commit %>&project_name=<%=@project_name%>&last_deployed_commit=<%=@source_commit%>&job_name=<%=@job_name%>'">Checklist</button>
 
-<div class = "row ">
-  <div class = "card diff-heading">
-    <h3>Diff of <%=@source_commit %> : <%=@destination_commit %></h3>
+<div class="container container-head">
+  <div class = "row ">
+    <div class = "card diff-heading">
+      <h3>Diff of <%=@source_commit %> : <%=@destination_commit %></h3>
+    </div>
   </div>
 </div>
 
