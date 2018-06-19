@@ -12,6 +12,7 @@ class DeploymentsController < ApplicationController
 	def create
 		return if !params_valid?(params)
 		git_diff_link = generate_diff_link(params)
+		puts git_diff_link
 		deployment = Deployment.create!(user_id: current_user.id,project_id: params[:project_id], project_name: params[:project_name], commit_id: params[:commit_id], status: "CheckList Filled" ,diff_link: git_diff_link, checklist: params[:deployments].to_json,job_name: params[:job_name], reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id )
 		UserMailer.deployment_request_email(deployment).deliver
 		deployment.update({status: "Pending Approval"})
@@ -29,9 +30,11 @@ class DeploymentsController < ApplicationController
 
 	def update
 		deployment = Deployment.find(params[:id])
-		deployment.update(:status => params[:status]) if current_user.id == deployment.reviewer_id
-		UserMailer.status_mail(deployment).deliver
-		redirect_to deployment_url(:id => deployment.id)
+		if current_user.id == deployment.reviewer_id
+			deployment.update(:status => params[:status])
+			UserMailer.status_mail(deployment).deliver
+		end
+			redirect_to deployment_url(:id => deployment.id)
 	end
 
 	def trigger_deployment
@@ -74,7 +77,7 @@ class DeploymentsController < ApplicationController
 	end
 
 	def generate_diff_link(params)
-		git_diff_link =  "http://172.16.12.132:3000/users/"+ User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
+		git_diff_link =  Figaro.env.diff_base_url + "/users/" + User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
 		git_diff_link
 	end
 

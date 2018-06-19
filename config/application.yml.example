@@ -6,6 +6,12 @@ DB_TIMEOUT:                  '5000'
 ENABLE_CAS_INTEGRATION:      'false'
 CAS_BASE_URL:                'http://localhost:3001'
 CAS_LOGIN_URL:                'http://localhost:3001/login'
+SMTP_ADDRESS:                'smtp.gmail.com'
+SMTP_PORT:                   '587'
+SMTP_DOMAIN:                 'test.com'
+SMTP_USER_NAME:              'pp@domain.com'
+SMTP_PASSWORD:               'password'
+DIFF_BASE_URL:               'http://localhost:3000'
 
 test:
   RAILS_ENV:                 'test'

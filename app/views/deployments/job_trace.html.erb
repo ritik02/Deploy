@@ -1,18 +1,17 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<%= render "layouts/topmenu_bar", user: @user %> 
-<%= render "layouts/sidebar_menu", user: @user %> 
-<meta http-equiv="refresh" content="1" >
+<%= javascript_include_tag 'job_trace'%>
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
 
 <div class="container deployment-container table-container">
   <div class="card card-heading" style="text-align: center;">
     <h4 style="text-align:center;">Job trace log</h4>
-    <p style="color: red">Please refresh for updated status</p>
   </div>
 </div>
 
 <div class="container">
 	<div class = "card trace-card">
-		<% if @job_trace.length > 0 %>
+		<% if !@job_trace.parsed_response.blank? %>
 			<% @job_trace.each_line do |line| %>
 			<% line.sub!("[0;m[0K", "");line.sub!("[0K", ""); line.sub!("[0;m", ""); line.sub!("[0K", ""); line.sub!("[0K", ""); %>
 				<% if line.include?("[32;1m") %>

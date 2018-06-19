@@ -36,7 +36,7 @@
               <div class = "col s8 jobs">
               <% jobs.each do |job| %>
               <div class = "row">
-                <p class = "span-right" ><%= link_to_if job["name"].include?("prod"), job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )%></p><br>
+                <p class = "span-right" ><%= link_to_if job["name"].include?('prod') || job["name"].include?('canary') || job["name"].include?('deploy') , job["name"].capitalize, user_project_commits_path(user_id: @user.id, project_id: @projects_details["id"],job_name: job["name"], project_name: @projects_details["name"] )%></p><br>
               </div>
               <% end %>
               </div>
