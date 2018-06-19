@@ -1,9 +1,14 @@
-<div class="container card-header" style="text-align:center;">
-<h2>Error!! </h2>
-<% flash.each do |k,v| %>
-<% if v != "You need to sign in or sign up before continuing." %>
-<h3> <%= v %> </h3>
-<% end %>
-<% end %>
-<p style="text-align: center;"><a href="/">Go Back!</a></p>
+<%= stylesheet_link_tag  'project-page'%>
+<%= render "layouts/topmenu_bar", user: @user, projects: @projects %> 
+
+<div class="container" >
+	<div class = "card" style="text-align:center; padding: 25px;margin-top: 30px;">
+	<h2> Oops !</h2>
+	<% flash.each do |k,v| %>
+		<% if v != "You need to sign in or sign up before continuing." %>
+			<h4> <%= v %> </h4>
+		<% end %>
+	<% end %>
+	<p ><a class="waves-effect waves-light btn" href="/">Go Back!</a></p>
+</div>
 </div>

@@ -3,7 +3,7 @@
 <%= render "layouts/sidebar_menu", user: @user  %>
 
 <div class="cards">
-  <div class = "row">
+  <div class = "row search-row">
     <div class="col s12 m6 l6">
       <h5>Projects </h5>
     </div>
@@ -18,7 +18,7 @@
   </div>
   <hr>
   <% @projects.each do |project| %>
-  <% (0..10).each do |i| %>
+    <% (0..10).each do |i| %>
     <section class="row">
       <div class="col s2 m2 l1">
         <div class="icon">
@@ -33,7 +33,7 @@
         <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]   %></p>
       </div>
     </section>
-    <%end%>
+    <% end %>
   <% end %>
 </div>
 
