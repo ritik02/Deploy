@@ -33,6 +33,8 @@
             <td><%= deployment.updated_at.to_s(:rfc822)[6..24] %></td>
               <% if deployment.status == "Approved" %>
               <td><%= link_to "Deploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :post ,data: { confirm: ' Are you sure? ' } %></td>
+              <% elsif deployment.status == "Deployed" %>
+              <td><%= link_to "Redeploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :post ,data: { confirm: ' Are you sure? ' } %></td>
               <% else %>
               <td></td>
               <% end %>

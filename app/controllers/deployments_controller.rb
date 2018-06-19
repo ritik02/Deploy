@@ -39,10 +39,14 @@ class DeploymentsController < ApplicationController
 
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
-		last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
-		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, last_pipeline_id), deployment.job_name)
-		job_trigger_response = @gitlab_api_services.trigger_job(job_id, deployment.project_id) if current_user.id == deployment.user_id
-		deployment.update(:status => "Deployed")
+		if current_user.id == deployment.user_id
+			if deployment.status == "Approved"
+				job_trigger_response = trigger_helper("play", deployment)
+				deployment.update(:status => "Deployed")
+			elsif deployment.status == "Deployed"
+				job_trigger_response = trigger_helper("retry", deployment)
+			end
+		end
 		redirect_to job_trace_path(id: job_trigger_response["id"], project_id: deployment.project_id)
 	end
 
@@ -51,6 +55,12 @@ class DeploymentsController < ApplicationController
 	end
 
 	private
+
+	def trigger_helper(trigger_type, deployment)
+		last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
+		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, last_pipeline_id), deployment.job_name)
+		job_trigger_response = @gitlab_api_services.trigger_job(job_id, deployment.project_id, trigger_type)
+	end
 
 	def params_valid?(params)
 		if User.where(:email => params[:deployments][:reviewer_email]).blank? || current_user.id.to_s != params[:user_id]

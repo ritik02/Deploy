@@ -131,7 +131,7 @@ http_interactions:
   recorded_at: Mon, 18 Jun 2018 11:46:48 GMT
 - request:
     method: post
-    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354965/play?private_token=_YDN1qs7zMVVuCayWYpm
+    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354965/retry?private_token=_YDN1qs7zMVVuCayWYpm
     body:
       encoding: UTF-8
       string: ''

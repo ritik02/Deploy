@@ -17,4 +17,14 @@ two:
    project_id: 3850
    job_name: deploy_staging
    checklist:
-   status: Created
+   status: Approved
+three:
+   id: 3
+   user_id: 3
+   project_name: Calculator Project
+   commit_id: be202954
+   reviewer_id: 2
+   project_id: 3850
+   job_name: deploy_staging
+   checklist:
+   status: Deployed

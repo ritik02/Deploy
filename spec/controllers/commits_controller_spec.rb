@@ -11,7 +11,7 @@ RSpec.describe CommitsController, type: :controller do
       end
     end
 
-    it "should render error template if no deployment related to job name is found" do
+     it "should render error template if no deployment related to job name is found" do
       VCR.use_cassette("user_project_commit_details") do
         sign_in users(:eight)
         get :index, params: { user_id: users(:eight).id, project_id: 3850 , job_name: "somename" }
