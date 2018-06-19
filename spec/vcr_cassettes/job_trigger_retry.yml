@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354965/retry?private_token=_YDN1qs7zMVVuCayWYpm
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Jun 2018 11:47:55 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1405'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"990697053c1a5d37ccc57a6c5399e705"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 401bfca6-c4ce-4e96-a924-34370efed35b
+      X-Runtime:
+      - '0.114759'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"id":1354965,"status":"success","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.185Z","started_at":"2018-06-18T11:46:49.870Z","finished_at":"2018-06-18T11:47:17.421Z","duration":27.550201,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":{"id":2494,"description":"i-gitlab-docker-runner-n0dq","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}}'
+    http_version:
+  recorded_at: Mon, 18 Jun 2018 11:47:55 GMT
+recorded_with: VCR 4.0.0
