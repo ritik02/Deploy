@@ -23,7 +23,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should create the checklist of a deployment" do
 			sign_in users(:nine)
 			post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
-			expect(Deployment.third.status).to eq "Pending Approval"
+			expect(Deployment.fourth.status).to eq "Pending Approval"
 		end
 
 		it "should not create the checklist of a deployment if reviewer_email is invalid" do
@@ -64,11 +64,19 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#trigger_deployment" do
-		it "should trigger job when deploy button is clicked" do
+		it "should trigger job play when deploy button is clicked" do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
 				post :trigger_deployment, params: {id: 2}
 				expect(Deployment.find(2).status).to eq "Deployed"
+				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
+			end
+		end
+
+		it "should trigger job retry when deploy button is clicked" do
+			VCR.use_cassette("trigger_deployment_controller_retry") do
+				sign_in users(:ten)
+				post :trigger_deployment, params: {id: 3}
 				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
 			end
 		end

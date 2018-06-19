@@ -138,9 +138,16 @@ RSpec.describe GitlabApiServices  do
   end
 
   context "check api for triggering a job" do
-    it "Should trigger a job" do
+    it "Should trigger a job play" do
       VCR.use_cassette("job_trigger") do
-        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850)
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850, "play")
+        expect(actual["status"]).to eq "success"
+      end
+    end
+
+    it "Should trigger a job retry" do
+      VCR.use_cassette("job_trigger_retry") do
+        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850, "retry")
         expect(actual["status"]).to eq "success"
       end
     end

@@ -75,8 +75,8 @@ class GitlabApiServices
 		HTTParty.get(url)["last_pipeline"]["id"]
 	end
 
-	def trigger_job(job_id, gitlab_project_id)
-		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/play?private_token=" + @access_token
+	def trigger_job(job_id, gitlab_project_id, trigger_type)
+		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/" + trigger_type.to_s + "?private_token=" + @access_token
 		response = HTTParty.post(url)
 	end
 
