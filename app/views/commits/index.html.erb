@@ -30,7 +30,7 @@
               </div>
               <div class="col s5" >
                 <% time = commit["created_at"][0...19]+"Z" %>
-                <p class = "time-p">Last Updated : <%= Time.zone.parse(time) %></p>
+                <p class = "time-p">Last Updated : <%= Time.zone.parse(time).to_s(:rfc822)[6..24]  %></p>
               </div>
             </div>
           </li>
@@ -66,7 +66,7 @@
                   </div>
                   <div class="col s5 project_date column" >
                     <% time = commit["created_at"][0...19]+"Z" %>
-                    <p class = "time-p">Last Updated : <%= Time.zone.parse(time) %></p>
+                    <p class = "time-p">Last Updated : <%= Time.zone.parse(time).to_s(:rfc822)[6..24]  %></p>
                   </div>
                 </div>
             </li>
