@@ -24,7 +24,6 @@ class CommitsController < ApplicationController
       if deployment["deployable"]["name"] == @selected_job_name
         @last_deployed_commit = deployment["deployable"]["commit"]
         @time = deployment["deployable"]["commit"]["created_at"]
-        parse_time
         return true
       end
     end
@@ -37,10 +36,6 @@ class CommitsController < ApplicationController
       render 'layouts/error'
       return false
     end
-  end
-
-  def parse_time
-    @time = @time[0..18] + "Z"
   end
 
   def validate_and_get_details

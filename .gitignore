@@ -3,8 +3,6 @@
 /log
 /coverage
 /spec/fixtures/users.yml
-
-# Ignore application configuration
 /config/application.yml
 /config/database.yml
 /spec/vcr_cassettes
