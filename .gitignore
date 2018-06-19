@@ -5,5 +5,5 @@
 /spec/fixtures/users.yml
 /config/application.yml
 /config/database.yml
-/spec/vcr_cassettes
+#/spec/vcr_cassettes
 /config/database.yml

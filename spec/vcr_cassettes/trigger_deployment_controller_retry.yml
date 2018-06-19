@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/repository/commits/be202954?private_token=_YDN1qs7zMVVuCayWYpm
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Jun 2018 11:46:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '715'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"112f18b4052ed65d005670d943ef70fe"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - '08b063fc-4f7e-48f1-9e67-3c0b4885645c'
+      X-Runtime:
+      - '0.030386'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000+00:00","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000+00:00","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000+00:00","stats":{"additions":1,"deletions":1,"total":2},"status":"success","last_pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"project_id":3850}'
+    http_version:
+  recorded_at: Mon, 18 Jun 2018 11:46:47 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/projects/3850/pipelines/215700/jobs?private_token=_YDN1qs7zMVVuCayWYpm
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Jun 2018 11:46:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3823'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"67daed60368cb23b5acfba8a75d9a208"
+      Link:
+      - <https://source.golabs.io/api/v4/projects/3850/pipelines/215700/jobs?id=3850&page=1&per_page=20&pipeline_id=215700&private_token=_YDN1qs7zMVVuCayWYpm>;
+        rel="first", <https://source.golabs.io/api/v4/projects/3850/pipelines/215700/jobs?id=3850&page=1&per_page=20&pipeline_id=215700&private_token=_YDN1qs7zMVVuCayWYpm>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - b4c10635-0ad8-4d4b-9fad-63a48dcdea9b
+      X-Runtime:
+      - '0.063346'
+      X-Total:
+      - '3'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1354964,"status":"success","stage":"test","name":"rspec","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.072Z","started_at":"2018-06-18T11:43:25.853Z","finished_at":"2018-06-18T11:44:20.034Z","duration":54.18032,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":{"id":2494,"description":"i-gitlab-docker-runner-n0dq","active":true,"is_shared":true,"name":"gitlab-runner","online":true,"status":"online"}},{"id":1354965,"status":"manual","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.185Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":null},{"id":1354966,"status":"manual","stage":"deploy","name":"prod","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.228Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":null}]'
+    http_version:
+  recorded_at: Mon, 18 Jun 2018 11:46:48 GMT
+- request:
+    method: post
+    uri: https://source.golabs.io/api/v4/projects/3850/jobs/1354965/retry?private_token=_YDN1qs7zMVVuCayWYpm
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Jun 2018 11:46:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1219'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"46b57569a499f77aa5463ada50cb4d4a"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - c92c1e1f-1ad2-45b4-b8f0-4026b0c47662
+      X-Runtime:
+      - '0.064062'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '{"id":1354965,"status":"pending","stage":"deploy","name":"deploy_staging","ref":"master","tag":false,"coverage":null,"created_at":"2018-06-18T11:43:24.185Z","started_at":null,"finished_at":null,"duration":null,"user":{"id":1020,"name":"Archit
+        Joshi","username":"archit.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3ee03adec0436a369bb7c435c13a4663?s=80\u0026d=identicon","web_url":"https://source.golabs.io/archit.j.aux","created_at":"2018-05-31T13:37:45.974Z","bio":"","location":"","skype":"","linkedin":"","twitter":"","website_url":"","organization":""},"commit":{"id":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","short_id":"be202954","title":"Replace
+        hyphen with colon in README.md","created_at":"2018-06-18T11:43:23.000Z","parent_ids":["ed62398d217afa7767e488ae36ce3356f39ed531"],"message":"Replace
+        hyphen with colon in README.md","author_name":"Archit Joshi","author_email":"archit.j.aux@go-jek.com","authored_date":"2018-06-18T11:43:23.000Z","committer_name":"Archit
+        Joshi","committer_email":"archit.j.aux@go-jek.com","committed_date":"2018-06-18T11:43:23.000Z"},"pipeline":{"id":215700,"sha":"be20295473cd40cdbee7d2c3f21a2f734a1343a6","ref":"master","status":"success"},"runner":null}'
+    http_version:
+  recorded_at: Mon, 18 Jun 2018 11:46:48 GMT
+recorded_with: VCR 4.0.0
