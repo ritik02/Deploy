@@ -29,9 +29,11 @@ class DeploymentsController < ApplicationController
 
 	def update
 		deployment = Deployment.find(params[:id])
-		deployment.update(:status => params[:status]) if current_user.id == deployment.reviewer_id
-		UserMailer.status_mail(deployment).deliver
-		redirect_to deployment_url(:id => deployment.id)
+		if current_user.id == deployment.reviewer_id
+			deployment.update(:status => params[:status])
+			UserMailer.status_mail(deployment).deliver
+		end
+			redirect_to deployment_url(:id => deployment.id)
 	end
 
 	def trigger_deployment
