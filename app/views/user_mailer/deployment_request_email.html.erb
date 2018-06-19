@@ -9,6 +9,6 @@
     <p><h3>Project Name: <%= @deployment.project_name %></h3>
       Hey, <b><%= User.find(@deployment.user_id).name.upcase %></b> is waiting for your approval .Please have a look.
     </p>
-	<%= link_to "Checklist Form" , "http://172.16.12.161:3000/deployments/" + @deployment.id.to_s , target: :_blank %>
+	<%= link_to "Checklist Form" , "http://172.16.12.132:3000/deployments/" + @deployment.id.to_s , target: :_blank %>
   </body>
 </html>
