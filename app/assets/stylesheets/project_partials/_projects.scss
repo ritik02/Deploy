@@ -1,35 +1,35 @@
-.row{
-  margin-bottom: 12px;
-  max-width: 940px;
-}
+
 .search-wrapper{
   position: relative;
   float: right;
   margin: 0 auto;
 }
 section {
-  position: relative;
   margin: 0 auto;
-  margin-bottom: 12px;
   max-width: 940px;
-  min-height: 80px;
   padding: 5px;
   background: $white;
   border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }
-
+.search-row{
+  max-width: 940px;
+}
+.row{
+  margin-bottom: 8px;
+}
 section h1 {
-  letter-spacing: 1px;
-  margin-top: 10px;
-  margin-bottom: .5rem;
-  font-size: 1.3em;
+    letter-spacing: 1px;
+    line-height: 30%;
+    margin-top: 10px;
+    margin-bottom: .5rem;
+    font-size: 1.1em;
 }
 
 section p {
-  margin: 5px 5px 10px 0;
+  margin: 10px 0px 5px 0;
   font-weight: 300;
-  line-height: 1.4em;
-  font-size: 0.95em;
+  line-height: 1.2em;
+  font-size: 0.85em;
   color: $section-p-font-color;
 }
 
@@ -42,17 +42,15 @@ section .time-p{
 }
 
 .cards {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 65px;
   margin-right: 5px;
 }
 
 .cards i {
-  font-size: 3em;
+  font-size: 2em;
+  margin-top: 5px;
   color: $card-icon-color;
-  max-width: 50px;
-  margin-top: 10px;
-  height: auto;
 }
 ::placeholder {
     color: $light-grey;

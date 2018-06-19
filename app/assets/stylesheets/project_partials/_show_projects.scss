@@ -69,3 +69,17 @@
 		}
 	}
 }
+@media screen and (max-width: 600px) {
+	.container-collapses h2{
+		font-size: 18px;
+	}
+	.container-collapses .collection-item p{
+		font-size: 14px;
+	}
+	.collection-header h4{
+		font-size: 22px;
+	}
+	job{
+		float: left;
+	}
+}
