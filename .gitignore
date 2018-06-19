@@ -6,5 +6,4 @@
 /config/application.yml
 /config/database.yml
 /spec/vcr_cassettes
-/config/environments/development.rb
 /config/database.yml
