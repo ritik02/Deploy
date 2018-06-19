@@ -3,7 +3,7 @@ Rails.application.configure do
   config.eager_load = false
   config.serve_static_assets = true
   config.assets.compile = true
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.cache_store = :memory_store
@@ -21,13 +21,13 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
-  port: 587,
-  domain: "go-jek.com",
+  address: Figaro.env.smtp_address,
+  port: Figaro.env.smtp_port,
+  domain: Figaro.env.smtp_domain,
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: "prakash.d.aux@go-jek.com",
-  password: "gitignore"
+  user_name: Figaro.env.smtp_user_name,
+  password: Figaro.env.smtp_password
 }
   config.active_support.deprecation = :log
   config.active_record.migration_error = :page_load

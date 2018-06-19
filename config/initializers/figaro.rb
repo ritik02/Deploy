@@ -7,5 +7,10 @@ Figaro.require_keys(
   'DB_TIMEOUT',
   'RAILS_ENV',
   'CAS_BASE_URL',
-  'CAS_LOGIN_URL'
+  'CAS_LOGIN_URL',
+  'SMTP_PORT',
+  'SMTP_DOMAIN',
+  'SMTP_USER_NAME',
+  'SMTP_PASSWORD',
+  'DIFF_BASE_URL'
 )

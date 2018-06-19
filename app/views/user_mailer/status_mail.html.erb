@@ -14,6 +14,6 @@
           <h4><font color="red"><%=@deployment.status%></font></h4>
         <% end %>
     </p>
-	<%= link_to "Deployment History" , "http://172.16.12.132:3000/deployments/"%>
+	<%= link_to "Deployment History" , Figaro.env.diff_base_url + "/deployments/"%>
   </body>
 </html>
