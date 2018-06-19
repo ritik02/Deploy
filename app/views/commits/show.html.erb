@@ -7,7 +7,7 @@
 <div class="container container-head">
   <div class = "row ">
     <div class = "card diff-heading">
-      <h3>Diff of <%=@source_commit %> : <%=@destination_commit %></h3>
+      <h5>Diff of <%=@source_commit %> : <%=@destination_commit %></h5>
     </div>
   </div>
 </div>
@@ -15,7 +15,7 @@
 <div class="container">
   <% @commit_diff.each do |diff| %>
   	<div class="card diff-heading">
-    		<h4><b><%= diff["new_path"] %></b></h4>
+    		<h6><b><%= diff["new_path"] %></b></h6>
         <hr>
     		<div class="card-content" style="text-align: left; margin:0px; padding: 0px;" >
   			<% diffs = diff["diff"] %>
