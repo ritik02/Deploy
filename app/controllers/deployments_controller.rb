@@ -45,6 +45,7 @@ class DeploymentsController < ApplicationController
 				deployment.update(:status => "Deployed")
 			elsif deployment.status == "Deployed"
 				job_trigger_response = trigger_helper("retry", deployment)
+				deployment.update(:updated_at => Time.now())
 			end
 		end
 		redirect_to job_trace_path(id: job_trigger_response["id"], project_id: deployment.project_id)
