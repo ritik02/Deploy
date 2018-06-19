@@ -1,11 +1,11 @@
 <%= stylesheet_link_tag 'deployment-page'%>
+<%= javascript_include_tag 'job_trace'%>
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
-<meta http-equiv="refresh" content="4" >
+
 <div class="container deployment-container table-container">
   <div class="card card-heading" style="text-align: center;">
     <h4 style="text-align:center;">Job trace log</h4>
-    <p style="color: red">Please refresh for updated status</p>
   </div>
 </div>
 
