@@ -53,6 +53,8 @@ class DeploymentsController < ApplicationController
 
 	def job_trace
 		@job_trace = @gitlab_api_services.get_job_trace(params[:id], params[:project_id])
+		@project_id = params[:project_id]
+		@job_id = params[:id]
 	end
 
 	private
