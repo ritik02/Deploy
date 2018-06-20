@@ -29,7 +29,7 @@
         <p><%= project["description"] %></p>
       </div>
       <div class="col s4 m4 l4">
-        <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]   %></p>
+        <p class = "time-p"><% time = Time.zone.rfc3339(project["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[4..24]   %></p>
       </div>
     </section>
   <% end %>

@@ -31,7 +31,7 @@
             <td><%= @deployment.status %></td>
             <td><%= @deployment.project_name %></td>
             <td><%= @deployment.commit_id %></td>
-            <td><%= @deployment.updated_at.to_s(:rfc822)[6..24] %></td>
+            <td><%= @deployment.updated_at.to_s(:rfc822)[4..24] %></td>
             <% diff_link_1 =  @deployment.diff_link[0..@deployment.diff_link.index("users/")+5] %>
             <% diff_link_2 =  @deployment.diff_link[@deployment.diff_link.index("/projects/")...@deployment.diff_link.length]  %>
             <td><%= link_to "Link", diff_link_1 + @user.id.to_s + diff_link_2 , target: :_blank %></td>
