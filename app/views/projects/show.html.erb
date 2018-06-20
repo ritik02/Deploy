@@ -9,7 +9,7 @@
         <p><%= @projects_details["description"] %></p>
         <div class = "row">
           <div class= "col s6"><span class = "span-left">Total commits: <%= @projects_details["statistics"]["commit_count"]%> </span></div>
-          <div class= "col s6"><span class = "span-right"><% time = Time.zone.rfc3339(@projects_details["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[6..24]%></span></div>
+          <div class= "col s6"><span class = "span-right"><% time = Time.zone.rfc3339(@projects_details["last_activity_at"]) %> Last Updated : <%= time.to_s(:rfc822)[4..24]%></span></div>
         </div>
       </div>
     </div>
