@@ -1,8 +1,35 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<%= javascript_include_tag 'job_trace'%>
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
 
+<script>
+
+function executeQuery() {
+  $.ajax({
+
+    success: function(data) {
+      console.log("<%=job_trace_path(id: @job_id, project_id: @project_id)%>");
+      if ( window.location.href == "<%=Figaro.env.domain_base_url%><%=job_trace_path(id: @job_id, project_id: @project_id)%>") {
+        console.log("error", "5555");
+        $('#mydiv').load('<%=job_trace_path(id: @job_id, project_id: @project_id)%> #mydiv');
+        setTimeout(executeQuery, 2000);
+      }
+      else {
+        console.log("error", "444");
+        return;
+
+      }
+    }
+  });
+
+}
+
+$(document).ready(function() {
+  console.log("error", "333");
+  setTimeout(executeQuery, 2000);
+});
+
+</script>
 <div class="container deployment-container table-container">
   <div class="card card-heading" style="text-align: center;">
     <h4 style="text-align:center;">Job trace log</h4>
@@ -10,18 +37,18 @@
 </div>
 
 <div class="container">
-	<div class = "card trace-card">
-		<% if !@job_trace.parsed_response.blank? %>
-			<% @job_trace.each_line do |line| %>
-			<% line.sub!("[0;m[0K", "");line.sub!("[0K", ""); line.sub!("[0;m", ""); line.sub!("[0K", ""); line.sub!("[0K", ""); %>
-				<% if line.include?("[32;1m") %>
-					<% line.sub!("[32;1m", ""); %>
-					<pre style="color: #00D600; font-weight: 600;"><%= line %></pre>
-				<% else %>
-					<pre style="color: #fff;"><%= line %></pre>
-				<%end %>
-			<% end %>
-		<% end %>
-	</div>
+  <div class = "card trace-card" id="mydiv">
+    <% if !@job_trace.parsed_response.blank? %>
+    <% @job_trace.each_line do |line| %>
+    <% line.sub!("[0;m[0K", "");line.sub!("[0K", ""); line.sub!("[0;m", ""); line.sub!("[0K", ""); line.sub!("[0K", ""); %>
+    <% if line.include?("[32;1m") %>
+    <% line.sub!("[32;1m", ""); %>
+    <pre style="color: #00D600; font-weight: 600;"><%= line %></pre>
+    <% else %>
+    <pre style="color: #fff;"><%= line %></pre>
+    <%end %>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 <footer class="page-footer"></footer>
