@@ -22,7 +22,6 @@ RSpec.describe CommitsController, type: :controller do
     it "should render error template if project does not contain any deployments" do
       VCR.use_cassette("user_project_no_deployments_found") do
         sign_in users(:nine)
-        puts "HELOEHELEOEOEOEOEO\n"
         get :index, params: { user_id: users(:nine).id, project_id: 3852 , job_name: "prod" }
         expect(response).to render_template('layouts/error')
       end
