@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   include EncryptionHelper
   include TokenValidationHelper
 
+  def index
+    @users = User.all
+  end
+
   def edit
     @user = current_user
   end

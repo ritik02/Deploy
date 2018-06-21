@@ -23,8 +23,9 @@ three:
    user_id: 3
    project_name: Calculator Project
    commit_id: be202954
-   reviewer_id: 2
+   reviewer_id: 3
    project_id: 3850
    job_name: deploy_staging
    checklist:
-   status: Deployed
+   status: Approved
+   review_time:

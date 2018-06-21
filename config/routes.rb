@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'projects#index'
-  post 'deployments/:id/trigger_deployment', to: 'deployments#trigger_deployment', as: 'trigger_deployment'
-  resources :users, only: [:edit, :update]do
+  get 'deployments/:id/trigger_deployment', to: 'deployments#trigger_deployment', as: 'trigger_deployment'
+  resources :users, only: [:edit, :update, :index]do
     resources :projects, only: [:index, :show] do
       resources :commits, only: [:index, :show]
     end

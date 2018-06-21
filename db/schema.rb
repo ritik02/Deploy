@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_094838) do
+ActiveRecord::Schema.define(version: 2018_06_21_074918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_06_18_094838) do
     t.string "diff_link"
     t.string "job_name"
     t.integer "project_id"
+    t.integer "review_time"
   end
 
   create_table "users", force: :cascade do |t|

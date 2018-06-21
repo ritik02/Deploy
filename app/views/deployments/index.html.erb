@@ -32,7 +32,7 @@
             <td><%= deployment.status %></td>
             <td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
               <% if deployment.status == "Approved" %>
-              <td><%= link_to "Deploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :post%></td>
+              <td><%= link_to "Deploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :get%></td>
               <% else %>
               <td></td>
               <% end %>

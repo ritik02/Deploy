@@ -46,25 +46,37 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#update" do
 		it "should update deployment status to Approved when Approve button is clicked when reviewer is valid" do
 			sign_in users(:seven)
-			put :update, params: {id: 1, status: "Approved"}
+			put :update, params: {id: 1, status: "Approved", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Approved"
 		end
 
 		it "should update deployment status to Rejected when Rejected button is clicked when reviewer is valid" do
 			sign_in users(:seven)
-			put :update, params: {id: 1,status: "Rejected"}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Rejected"
 		end
 
 		it "should not update deployment status to Rejected when Rejected button is clicked when reviewer is invalid" do
 			sign_in users(:eight)
-			put :update, params: {id: 1,status: "Rejected"}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Created"
+		end
+
+		it "should update review time to difference between page open and button clicked when reviewer is valid" do
+			sign_in users(:ten)
+			put :update, params: {id: 3, status: "Approved", current_time: Time.current}
+			expect(deployments(:three).review_time).not_to be nil
 		end
 	end
 
 	describe "GET deployments#trigger_deployment" do
-
+		it "should redirect to gitlab pipeline link" do
+			VCR.use_cassette("trigger_deployment_controller") do
+				sign_in users(:ten)
+				get :trigger_deployment, params: {id: 3}
+				expect(response).to redirect_to 'https://source.golabs.io/archit.j.aux/Calculator Project/pipelines/215700'
+			end
+		end
 	end
 
 end
