@@ -14,8 +14,9 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#index" do
 		it "should open deployments index page (history of deployments) when deployments button is clicked" do
 			sign_in users(:four)
-			get :index
+			get :index, params: {options: "reviewer_id", sort: "DESC"}
 			expect(response).to have_http_status(:success)
+			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all
 		end
 	end
 

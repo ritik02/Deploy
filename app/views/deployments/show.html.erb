@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag 'deployment-page'%>
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
-<%= current_time = Time.current %>
+<% current_time = Time.current %>
 <% if  @user.id == @deployment.reviewer_id %>
 <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-success' %>
 <%= link_to  "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-danger' %>
@@ -32,9 +32,7 @@
             <td><%= @deployment.project_name %></td>
             <td><%= @deployment.commit_id %></td>
             <td><%= @deployment.updated_at.to_s(:rfc822)[4..24] %></td>
-            <% diff_link_1 =  @deployment.diff_link[0..@deployment.diff_link.index("users/")+5] %>
-            <% diff_link_2 =  @deployment.diff_link[@deployment.diff_link.index("/projects/")...@deployment.diff_link.length]  %>
-            <td><%= link_to "Link", diff_link_1 + @user.id.to_s + diff_link_2 , target: :_blank %></td>
+            <td><%= link_to "Link", generate_user_specific_diff_link(@deployment.diff_link, @user.id), target: :_blank %></td>
           </tr>
       </tbody>
     </table>

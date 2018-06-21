@@ -31,7 +31,7 @@ class DeploymentsController < ApplicationController
 	end
 
 	def index
-		@deployments = Deployment.order('deployments.updated_at DESC').where(:user_id => current_user.id)
+		@all_deployments = Deployment.order("deployments.#{params[:options]} #{params[:sort]}").all
 	end
 
 	def show
@@ -49,6 +49,8 @@ class DeploymentsController < ApplicationController
 
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
+		puts current_user.id
+		puts deployment.user_id
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 		trigger_helper(deployment)
 		redirect_to get_gitlab_pipeline_trigger_link(deployment)
