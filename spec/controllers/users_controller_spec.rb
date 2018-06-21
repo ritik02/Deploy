@@ -86,4 +86,13 @@ RSpec.describe UsersController, type: :controller do
 		end
 	end
 
+	describe "GET users#index" do
+		it "should open signed in user to the index users page" do
+			sign_in users(:one)
+			get :index
+			expect(response).to have_http_status(:success)
+			expect(assigns(:users)).to eq User.all
+		end
+	end
+
 end

@@ -2,7 +2,7 @@ class CommitsController < ApplicationController
   include TokenValidationHelper
   include EncryptionHelper
   include UrlValidatorHelper
-  before_action :validate_and_get_details
+  before_action :get_details, :run_validations
 
   def index
     @selected_job_name = params[:job_name]
@@ -38,9 +38,15 @@ class CommitsController < ApplicationController
     end
   end
 
-  def validate_and_get_details
+  def run_validations
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
-    return if !validate_user_id?(current_user.id.to_s, params[:user_id]) || !project_id_valid?(params[:project_id]) || !redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token)) || !redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token))
+    return if (!validate_user_id?(current_user.id.to_s, params[:user_id]) ||
+                !project_id_valid?(params[:project_id]) ||
+                !redirect_if_token_is_nil?(decrypt_access_token(current_user.gitlab_token)) ||
+                !redirect_if_token_is_invalid?(decrypt_access_token(current_user.gitlab_token)))
+  end
+
+  def get_details
     @project_id = params[:project_id]
     @user_id = params[:user_id]
     @user = current_user

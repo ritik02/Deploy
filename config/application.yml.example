@@ -12,7 +12,8 @@ SMTP_DOMAIN:                 'test.com'
 SMTP_USER_NAME:              'pp@domain.com'
 SMTP_PASSWORD:               'password'
 DIFF_BASE_URL:               'http://localhost:3000'
-DOMAIN_BASE_URL:               'http://localhost:3000'
+DOMAIN_BASE_URL:             'http://localhost:3000'
+GITLAB_BASE_URL:             'https://gitlab.com/'
 
 test:
   RAILS_ENV:                 'test'

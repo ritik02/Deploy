@@ -5,6 +5,7 @@ class GitlabApiServices
 		@base_url = "https://source.golabs.io/api/v4"
 	end
 
+
   def check_api_for_valid_token?
     url = @base_url + "/users?private_token=" + @access_token
     response = HTTParty.get(url)
@@ -32,11 +33,6 @@ class GitlabApiServices
 	def get_project_jobs(gitlab_project_id)
 		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs?private_token=" + @access_token
 		HTTParty.get(url)
-	end
-
-	def get_last_deployed_commit(gitlab_project_id)
-		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/deployments?private_token=" + @access_token
-		HTTParty.get(url)[0]
 	end
 
   def get_all_deployments(gitlab_project_id)
@@ -73,16 +69,6 @@ class GitlabApiServices
 	def get_last_pipeline_id_of_commit(commit_id, gitlab_project_id)
 		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/repository/commits/" + commit_id + "?private_token=" + @access_token
 		HTTParty.get(url)["last_pipeline"]["id"]
-	end
-
-	def trigger_job(job_id, gitlab_project_id, trigger_type)
-		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/" + trigger_type.to_s + "?private_token=" + @access_token
-		response = HTTParty.post(url)
-	end
-
-	def get_job_trace(job_id, gitlab_project_id)
-		url = @base_url + "/projects/" + gitlab_project_id.to_s + "/jobs/" + job_id.to_s + "/trace?private_token=" + @access_token
-		response = HTTParty.get(url)
 	end
 
 end

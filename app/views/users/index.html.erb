@@ -1,0 +1,5 @@
+<h1>Index users </h1>
+<% @users.each do |user| %>
+	<p><%= user.username %>, number of deployments: <%= Deployment.where(user_id: user.id).count%>, number of reviews done: <%= Deployment.where(reviewer_id: user.id).count%></p>
+
+<% end %>

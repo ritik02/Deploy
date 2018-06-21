@@ -19,7 +19,7 @@ RSpec.describe CommitsController, type: :controller do
       end
     end
 
-    it "should render error template if project does not containers any deployments" do
+    it "should render error template if project does not contain any deployments" do
       VCR.use_cassette("user_project_no_deployments_found") do
         sign_in users(:nine)
         get :index, params: { user_id: users(:nine).id, project_id: 3852 , job_name: "prod" }

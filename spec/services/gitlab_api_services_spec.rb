@@ -66,16 +66,6 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
-  context "check api for last deployed commit of project" do
-    it "Should return last deployed commit of project" do
-      VCR.use_cassette("project_last_deployed_commit") do
-        actual = GitlabApiServices.new(decrypt_access_token(users(:four).gitlab_token)).get_last_deployed_commit(3850)
-        expect(actual["deployable"]["name"]).to eq "deploy_staging"
-      end
-    end
-  end
-
-
   context "check api for all commits after last deployed commit of project" do
     it "Should return all commits after last deployed commit of project" do
       VCR.use_cassette("project_all_commits_after_last_deployed_commit") do
@@ -137,29 +127,5 @@ RSpec.describe GitlabApiServices  do
     end
   end
 
-  context "check api for triggering a job" do
-    it "Should trigger a job play" do
-      VCR.use_cassette("job_trigger") do
-        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850, "play")
-        expect(actual["status"]).to eq "success"
-      end
-    end
-
-    it "Should trigger a job retry" do
-      VCR.use_cassette("job_trigger_retry") do
-        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").trigger_job(1354965, 3850, "retry")
-        expect(actual["status"]).to eq "success"
-      end
-    end
-  end
-
-  context "check api for job trace" do
-    it "Should return trace of a job" do
-      VCR.use_cassette("job_trace") do
-        actual = GitlabApiServices.new("_YDN1qs7zMVVuCayWYpm").get_job_trace(1354247, 3850)
-        expect(actual.code).to eq 200
-      end
-    end
-  end
 
 end
