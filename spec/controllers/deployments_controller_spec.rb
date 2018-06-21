@@ -64,31 +64,7 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#trigger_deployment" do
-		it "should trigger job play when deploy button is clicked" do
-			VCR.use_cassette("trigger_deployment_controller") do
-				sign_in users(:ten)
-				post :trigger_deployment, params: {id: 2}
-				expect(Deployment.find(2).status).to eq "Deployed"
-				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
-			end
-		end
 
-		it "should trigger job retry when deploy button is clicked" do
-			VCR.use_cassette("trigger_deployment_controller_retry") do
-				sign_in users(:ten)
-				post :trigger_deployment, params: {id: 3}
-				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
-			end
-		end
 	end
 
-	describe "GET deployments#job_trace" do
-		it "should open job_trace page when deployment is triggered" do
-			VCR.use_cassette("job_trace_controller") do
-				sign_in users(:ten)
-				get :job_trace, params: {id: 135457, project_id: 3850}
-				expect(response).to have_http_status(:success)
-			end
-		end
-	end
 end

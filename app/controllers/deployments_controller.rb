@@ -39,20 +39,7 @@ class DeploymentsController < ApplicationController
 
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
-		if current_user.id == deployment.user_id
-			if deployment.status == "Approved"
-				job_trigger_response = trigger_helper("play", deployment)
-				deployment.update(:status => "Deployed")
-			elsif deployment.status == "Deployed"
-				job_trigger_response = trigger_helper("retry", deployment)
-				deployment.update(:updated_at => Time.now())
-			end
-		end
-		redirect_to job_trace_path(id: job_trigger_response["id"], project_id: deployment.project_id)
-	end
-
-	def job_trace
-		@job_trace = @gitlab_api_services.get_job_trace(params[:id], params[:project_id])
+		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 	end
 
 	private
@@ -88,7 +75,12 @@ class DeploymentsController < ApplicationController
 	end
 
 	def generate_diff_link(params)
-		git_diff_link =  Figaro.env.diff_base_url + "/users/" + User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s + "/projects/" + params[:project_id] + "/commits/" + params[:commit_id] + "?last_deployed_commit=" + params[:last_deployed_commit] + "&project_name=" + params[:project_name]
+		git_diff_link =  Figaro.env.diff_base_url +
+		 "/users/" + User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s +
+		 "/projects/" + params[:project_id] +
+		  "/commits/" + params[:commit_id] +
+		  "?last_deployed_commit=" + params[:last_deployed_commit] +
+			 "&project_name=" + params[:project_name]
 		git_diff_link
 	end
 
