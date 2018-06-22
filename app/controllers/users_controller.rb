@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+    @user = User.find(params[:id])
+    @user_deployments = Deployment.order('deployments.updated_at DESC').where(user_id: @user.id)
+    @user_reviews = Deployment.order('deployments.updated_at DESC').where(reviewer_id: @user.id)
+  end
+
   def edit
   end
 
