@@ -48,7 +48,7 @@
 				<tr>
 					<td><%= deployment.project_name %></td>
 					<td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
-					<td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
+					<td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @current_user.id), target: :_blank%></td>
 					<td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
 					<td><%= deployment.status %></td>
 					<td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
@@ -89,7 +89,7 @@
 					<tr>
 						<td><%= reviews.project_name %></td>
 						<td><%= JSON.parse(reviews.checklist)["title"] %></td>
-						<td><%= link_to reviews.commit_id, generate_user_specific_diff_link(reviews.diff_link, @user.id), target: :_blank%></td>
+						<td><%= link_to reviews.commit_id, generate_user_specific_diff_link(reviews.diff_link, @current_user.id), target: :_blank%></td>
 						<td><%= User.where(:id => reviews.user_id).first.name %></td>
 						<td><%= reviews.status %></td>
 						<td><%= reviews.updated_at.to_s(:rfc822)[4..24] %></td>
