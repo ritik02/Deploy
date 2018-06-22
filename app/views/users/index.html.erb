@@ -1,5 +1,6 @@
+<%= stylesheet_link_tag 'deployment-page'%>
+
 <h1>Index users </h1>
 <% @users.each do |user| %>
-	<p><%= user.username %>, number of deployments: <%= Deployment.where(user_id: user.id).count%>, number of reviews done: <%= Deployment.where(reviewer_id: user.id).count%></p>
-
+	<p><%=link_to user.username, user_path(id: user.id) %>, number of deployments: <%= Deployment.where(user_id: user.id).count%>, number of reviews done: <%= Deployment.where(reviewer_id: user.id).count%>, average time taken to review: <%= Deployment.where(reviewer_id: user.id).average(:review_time)%></p>
 <% end %>

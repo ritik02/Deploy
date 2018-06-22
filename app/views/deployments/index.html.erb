@@ -4,38 +4,55 @@
 
 <div class="container deployment-container table-container">
   <div class="card card-heading">
-    <h4 style="text-align:center;"> Deployment History </h4>
+    <h4 style="text-align:center;"> All Deployments </h4>
   </div>
 </div>
+  <div class="col s12 m6 l6 container">
+      <div class="search-wrapper">
+        <form action="/deployments" method="get">
+         <div class="input-field col s12">
+    <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options">
+      <option value="updated_at">Time</option>
+      <option value="project_id">Project</option>
+      <option value="user_id">Deployer</option>
+      <option value="reviewer_id">Reviewer</option>
+    </select>
+      <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort">
+      <option value="DESC">Descending</option>
+      <option value="ASC">Ascending</option>
+      
+    </select>
+  </div>
+          <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Sort</button>
+        </form>
+     </div>
+    </div>
+  </div>
 <div class="container table-container">
   <div class= "card">
     <table class="table highlight responsive-table striped centered">
       <thead class="thead-dark">
         <tr>
+          <th>Deployer</th>
           <th>Project Name</th>
           <th>Title</th>
           <th>Commit ID</th>
           <th>Reviewer</th>
           <th>Status</th>
           <th>Last Activity</th>
-          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <% @deployments.each do |deployment| %>
+        <% @all_deployments.each do |deployment| %>
           <tr>
             <% if !deployment.reviewer_id.blank? %>
+            <td><%= User.where(:id => deployment.user_id).first.name %></td>
             <td><%= deployment.project_name %></td>
-            <td><%= JSON.parse(deployment.checklist)["title"] %></td>
-            <td><%= deployment.commit_id %></td>
+            <td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
+            <td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
             <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
             <td><%= deployment.status %></td>
             <td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
-              <% if deployment.status == "Approved" %>
-              <td><%= link_to "Deploy", trigger_deployment_path(id: deployment.id) ,class: 'btn btn-success', :method => :get%></td>
-              <% else %>
-              <td></td>
-              <% end %>
             <% end %>
           </tr>
         <% end %>

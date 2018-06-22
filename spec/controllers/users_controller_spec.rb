@@ -2,10 +2,6 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 	fixtures :users
-	before(:each) do
-		@valid_token = users(:one).gitlab_token
-	end
-
 	describe "GET users#edit" do
 		it "should redirect signed in user to the edit(home) page for updating token" do
 			sign_in users(:one)
@@ -15,17 +11,20 @@ RSpec.describe UsersController, type: :controller do
 	end
 
 	describe "PATCH users#update" do
-		it "should update gitlab token for a user if valid" do
-			VCR.use_cassette("valid_gitlab_token") do
-				sign_in users(:three)
-				expected_token = decrypt_access_token(@valid_token)
+		it "should update both gitlab and jira token for a user if valid" do
+			VCR.use_cassette("valid_tokens") do
+				sign_in users(:eleven)
+				expected_token = decrypt_access_token(users(:eleven).gitlab_token)
 				form_params = {
-					id: users(:three).id,
-					user: { gitlab_token: decrypt_access_token(@valid_token) }
+					id: users(:eleven).id,
+					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
+					 				jira_token: decrypt_access_token(users(:eleven).jira_token)}
 				}
 				patch :update, params: form_params
-				actual_token = decrypt_access_token(subject.current_user.gitlab_token)
-				expect(actual_token).to eq(expected_token)
+				actual_gitlab_token = decrypt_access_token(subject.current_user.gitlab_token)
+				actual_jira_token = decrypt_access_token(subject.current_user.jira_token)
+				expect(actual_gitlab_token).to eq(expected_token)
+				expect(actual_jira_token).to eq(decrypt_access_token(users(:eleven).jira_token))
 			end
 		end
 
@@ -51,15 +50,16 @@ RSpec.describe UsersController, type: :controller do
 			expect(users(:three).gitlab_token).to eq(nil)
 		end
 
-		it "should show projects page if gitlab token is valid" do
-			VCR.use_cassette("valid_gitlab_token") do
-				sign_in users(:one)
+		it "should show projects page if both tokens is valid" do
+			VCR.use_cassette("valid_tokens") do
+				sign_in users(:eleven)
 				form_params = {
-					id: users(:one).id,
-					user: { gitlab_token: decrypt_access_token(@valid_token) }
+					id: users(:eleven).id,
+					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
+					 				jira_token: decrypt_access_token(users(:eleven).jira_token)}
 				}
 				patch :update, params: form_params
-				expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:one).id)
+				expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:eleven).id)
 			end
 		end
 
@@ -79,19 +79,52 @@ RSpec.describe UsersController, type: :controller do
 			sign_in users(:three)
 			form_params = {
 				id: users(:three).id,
-				user: { gitlab_token: "" }
+				user: { gitlab_token: "",
+				 				jira_token: decrypt_access_token(users(:eleven).jira_token)}
 			}
 			patch :update, params: form_params
 			expect(response).to redirect_to(edit_user_url)
 		end
+
+		it "should reload edit page if jira token is invalid" do
+			VCR.use_cassette("new_invalid_jira_token") do
+				sign_in users(:eleven)
+				form_params = {
+					id: users(:eleven).id,
+					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
+					 				jira_token: "invalid_token"}
+				}
+				patch :update, params: form_params
+				expect(response).to redirect_to(edit_user_url)
+			end
+		end
+
+		it "should reload edit page if jira token is empty" do
+			VCR.use_cassette("new_empty_jira_token") do
+				sign_in users(:eleven)
+				form_params = {
+					id: users(:eleven).id,
+					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
+									jira_token: ""}
+								}
+				patch :update, params: form_params
+				expect(response).to redirect_to(edit_user_url)
+			end
+		end
 	end
 
 	describe "GET users#index" do
-		it "should open signed in user to the index users page" do
-			sign_in users(:one)
+		it "should open signed in user to the index users page when admin" do
+			sign_in users(:ten)
 			get :index
 			expect(response).to have_http_status(:success)
 			expect(assigns(:users)).to eq User.all
+		end
+
+		it "should redirect to projects page of signed in user when not admin" do
+			sign_in users(:one)
+			get :index
+			expect(response).to redirect_to user_projects_path(user_id: users(:one).id)
 		end
 	end
 

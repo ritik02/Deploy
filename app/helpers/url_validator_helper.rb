@@ -1,5 +1,9 @@
 module UrlValidatorHelper
 
+  def get_admins
+      @admin = "archit.j.aux@go-jek.com"
+  end
+
   def validate_user_id?(current_user_id, param_user_id)
       return true if current_user_id == param_user_id
       redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s

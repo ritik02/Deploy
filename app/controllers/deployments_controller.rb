@@ -4,6 +4,7 @@ class DeploymentsController < ApplicationController
 	include EncryptionHelper
 	include TokenValidationHelper
 	before_action :get_details
+	before_action :check_admin, only: [:index]
 
 	def new
 		@deployment = Deployment.new({user_id: current_user.id,
@@ -31,7 +32,9 @@ class DeploymentsController < ApplicationController
 	end
 
 	def index
-		@deployments = Deployment.order('deployments.updated_at DESC').where(:user_id => current_user.id)
+		params[:options] = "updated_at" if params[:options].blank?
+		params[:sort] = "DESC" if params[:sort].blank?
+		@all_deployments = Deployment.order("deployments.#{params[:options]} #{params[:sort]}").all
 	end
 
 	def show
@@ -49,6 +52,8 @@ class DeploymentsController < ApplicationController
 
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
+		puts current_user.id
+		puts deployment.user_id
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 		trigger_helper(deployment)
 		redirect_to get_gitlab_pipeline_trigger_link(deployment)
@@ -57,6 +62,7 @@ class DeploymentsController < ApplicationController
 	private
 
 	def trigger_helper(deployment)
+		get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
 		@last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
 		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, @last_pipeline_id), deployment.job_name)
 	end
@@ -82,8 +88,8 @@ class DeploymentsController < ApplicationController
 		@user = current_user
 		@last_deployed_commit = params[:last_deployed_commit]
 		@project_id = params[:project_id]
-		get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
 	end
+
 
 	def generate_diff_link(params)
 		git_diff_link =  Figaro.env.diff_base_url +
@@ -101,4 +107,10 @@ class DeploymentsController < ApplicationController
 		deployment.project_name +
 		"/pipelines/" + @last_pipeline_id.to_s
 	end
+
+	def check_admin 
+    get_admins
+    return if current_user.email == @admin
+    redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
+  end
 end
