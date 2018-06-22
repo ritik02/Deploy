@@ -30,7 +30,7 @@ class DeploymentsController < ApplicationController
 				reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id)
 			jira_link = create_issue(params, deployment)
 			UserMailer.deployment_request_email(deployment).deliver
-			redirect_to deployments_path
+			redirect_to user_path(id: @user.id)
 			end
 
 			def index
