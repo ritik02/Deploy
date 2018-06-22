@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:46:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4492'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"68f5eeaff766e5ece442c96b6bd9f3fe"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=2&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="next", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=52&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 3dcb37d6-bdb7-4981-b46e-6db6ad7f8af1
+      X-Runtime:
+      - '0.035791'
+      X-Total:
+      - '1021'
+      X-Total-Pages:
+      - '52'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1056,"name":"rizky.dwi","username":"rizky.dwi","state":"active","avatar_url":"https://secure.gravatar.com/avatar/35a4fe2dc7934fb0bae3382957f0b14e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/rizky.dwi"},{"id":1055,"name":"Anirudh
+        M","username":"anirudh.m.aux","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1055/avatar.png","web_url":"https://source.golabs.io/anirudh.m.aux"},{"id":1054,"name":"julius.lauw","username":"julius.lauw","state":"active","avatar_url":"https://secure.gravatar.com/avatar/13eb63fbcc7bc61e21ea0e2a35e58aa2?s=80\u0026d=identicon","web_url":"https://source.golabs.io/julius.lauw"},{"id":1053,"name":"sunil.p.aux","username":"sunil.p.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e16397b436149b5d8e0f11f6f5a156e1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sunil.p.aux"},{"id":1052,"name":"vanessa.ambar","username":"vanessa.ambar","state":"active","avatar_url":"https://secure.gravatar.com/avatar/04044920c841680dad14946c95a3d19b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vanessa.ambar"},{"id":1051,"name":"Sneha","username":"sneha.m.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/a04859e636e29d7ed96e89e39c1f1efc?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sneha.m.aux"},{"id":1050,"name":"trit.t","username":"trit.t","state":"active","avatar_url":"https://secure.gravatar.com/avatar/03b5b9abbac79bed669f5f45c6d25ff6?s=80\u0026d=identicon","web_url":"https://source.golabs.io/trit.t"},{"id":1049,"name":"guntapon.p","username":"guntapon.p","state":"active","avatar_url":"https://secure.gravatar.com/avatar/6ca08a308b731913f576ded464178f73?s=80\u0026d=identicon","web_url":"https://source.golabs.io/guntapon.p"},{"id":1048,"name":"Andrawinatama","username":"andra.w","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1048/avatar.png","web_url":"https://source.golabs.io/andra.w"},{"id":1047,"name":"sukreet","username":"sukreet.r.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ccfd866d70073d30b7e8a3eb1a7cb065?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sukreet.r.aux"},{"id":1046,"name":"himani","username":"himani.agrawal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/c4cd5ff185618aca3e8763af50948566?s=80\u0026d=identicon","web_url":"https://source.golabs.io/himani.agrawal"},{"id":1045,"name":"vietnt","username":"vietnt","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4ebf1ec64955a6790149487c5056e0ad?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vietnt"},{"id":1044,"name":"duyenutp","username":"duyenutp","state":"active","avatar_url":"https://secure.gravatar.com/avatar/547396ecac9090caf7e87646738613de?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duyenutp"},{"id":1043,"name":"diya.shah","username":"diya.shah","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3d7614c56917df48f3df8e26b30f4d4b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/diya.shah"},{"id":1042,"name":"mayank.j.aux","username":"mayank.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/130ef9481910b8fbd54d061aca58bd25?s=80\u0026d=identicon","web_url":"https://source.golabs.io/mayank.j.aux"},{"id":1041,"name":"kashyap.k","username":"kashyap.k","state":"active","avatar_url":"https://secure.gravatar.com/avatar/657939eb7b23ae76b54ca8fcb04cb597?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashyap.k"},{"id":1040,"name":"kashif.khan","username":"kashif.khan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/dd10994651237ccfc564817e718dfc60?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashif.khan"},{"id":1039,"name":"gunjan.dewan","username":"gunjan.dewan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2512136b37be09f1bc7c011661e35c88?s=80\u0026d=identicon","web_url":"https://source.golabs.io/gunjan.dewan"},{"id":1038,"name":"vinkesh.banka","username":"vinkesh.banka","state":"active","avatar_url":"https://secure.gravatar.com/avatar/80e6c75489e17773160b1c52afe5a75c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vinkesh.banka"},{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:46:46 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:46:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '230'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"8b591ad44db35c144680c50b6eb2be06"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - fc178610-f0b4-4622-a5d3-c261bbf0f5c8
+      X-Runtime:
+      - '0.024511'
+      X-Total:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1022,"name":"Ritik Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:46:46 GMT
+recorded_with: VCR 4.0.0
