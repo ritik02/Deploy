@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   before_action :check_admin, only: [:index, :show]
 
   def index
+    @user = current_user
     @users = User.all
   end
 

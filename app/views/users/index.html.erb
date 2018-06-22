@@ -1,6 +1,37 @@
 <%= stylesheet_link_tag 'deployment-page'%>
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
 
-<h1>Index users </h1>
-<% @users.each do |user| %>
-	<p><%=link_to user.username, user_path(id: user.id) %>, number of deployments: <%= Deployment.where(user_id: user.id).count%>, number of reviews done: <%= Deployment.where(reviewer_id: user.id).count%>, average time taken to review: <%= Deployment.where(reviewer_id: user.id).average(:review_time)%></p>
-<% end %>
+<div class="container deployment-container table-container">
+  <div class="card card-heading">
+    <h4 style="text-align:center;"> All Users </h4>
+  </div>
+</div>
+<div class="container table-container">
+  <div class= "card">
+    <table class="table highlight responsive-table striped centered">
+      <thead class="thead-dark">
+        <tr>
+          <th>User Id</th>
+          <th>Name</th>
+          <th>Number of deployments</th>
+          <th>Number of reviews done</th>
+          <th>Average time taken to review</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%=link_to user.name, user_path(id: user.id) %></td>
+            <td><%= Deployment.where(user_id: user.id).count%></td>
+            <td><%= Deployment.where(reviewer_id: user.id).count%></td>
+            <td><%= Deployment.where(reviewer_id: user.id).average(:review_time)%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="page-footer"></footer>
