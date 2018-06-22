@@ -86,4 +86,27 @@ RSpec.describe UsersController, type: :controller do
 		end
 	end
 
+	describe "GET users#index" do
+		it "should open signed in user to the index users page when admin" do
+			sign_in users(:ten)
+			get :index
+			expect(response).to have_http_status(:success)
+			expect(assigns(:users)).to eq User.all
+		end
+
+		it "should redirect to projects page of signed in user when not admin" do
+			sign_in users(:one)
+			get :index
+			expect(response).to redirect_to user_projects_path(user_id: users(:one).id)
+		end
+	end
+
+	describe "GET users#show" do
+		it "should open signed in user to the show user page" do
+			sign_in users(:one)
+			get :show, params: {id: users(:one).id}
+			expect(response).to have_http_status(:success)
+			expect(assigns(:user)).to eq User.find(users(:one).id)
+		end
+	end
 end

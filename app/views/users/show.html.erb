@@ -1,0 +1,98 @@
+<%= stylesheet_link_tag 'deployment-page'%>
+<%= render "layouts/topmenu_bar", user: @user %>
+<%= render "layouts/sidebar_menu", user: @user %>
+<script type="text/javascript">
+	$(document).ready(function(){
+    $('.modal').modal();
+  });
+</script>
+
+
+<div class="container deployment-container table-container">
+	<div class="card card-heading">
+		<h4 style="text-align:center;"> Deployment History </h4>
+	</div>
+</div>
+<div class="container table-container">
+	<div class= "card">
+		<table class="table highlight responsive-table striped centered">
+			<thead class="thead-dark">
+				<tr>
+					<th>Project Name</th>
+					<th>Title</th>
+					<th>Commit ID</th>
+					<th>Reviewer</th>
+					<th>Status</th>
+					<th>Last Activity</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @user_deployments.each do |deployment| %>
+				<tr>
+					<td><%= deployment.project_name %></td>
+					<td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
+					<td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
+					<td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
+					<td><%= deployment.status %></td>
+					<td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
+					<% if deployment.status == "Approved" %>
+					<td><a  class="waves-effect waves-light btn modal-trigger" href="#consent">Deploy</a></td>
+					<% else %>
+					<td></td>
+					<% end %>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>
+<% if !@user_reviews.blank? %>
+	<div class="container deployment-container table-container">
+		<div class="card card-heading">
+			<h4 style="text-align:center;"> Review History </h4>
+		</div>
+	</div>
+	<div class="container table-container">
+		<div class= "card">
+			<table class="table highlight responsive-table striped centered">
+				<thead class="thead-dark">
+					<tr>
+						<th>Project Name</th>
+						<th>Title</th>
+						<th>Commit ID</th>
+						<th>Deployer</th>
+						<th>Status</th>
+						<th>Last Activity</th>
+						<th>Checklist</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user_reviews.each do |reviews| %>
+					<tr>
+						<td><%= reviews.project_name %></td>
+						<td><%= JSON.parse(reviews.checklist)["title"] %></td>
+						<td><%= link_to reviews.commit_id, generate_user_specific_diff_link(reviews.diff_link, @user.id), target: :_blank%></td>
+						<td><%= User.where(:id => reviews.user_id).first.name %></td>
+						<td><%= reviews.status %></td>
+						<td><%= reviews.updated_at.to_s(:rfc822)[4..24] %></td>
+						<td><%= link_to "Link", deployment_url(id: reviews.id), target: :_blank%></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<% end %>
+
+<div id="consent" class="modal">
+    <div class="modal-content">
+      <h4>Consent Form</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+
+      <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+<footer class="page-footer"></footer>

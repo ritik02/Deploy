@@ -12,10 +12,17 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#index" do
-		it "should open deployments index page (history of deployments) when deployments button is clicked" do
+		it "should open deployments index page (history of deployments) when admin" do
 			sign_in users(:four)
-			get :index
+			get :index, params: {options: "reviewer_id", sort: "DESC"}
 			expect(response).to have_http_status(:success)
+			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all
+		end
+
+		it "should redirect to projects index page when not admin" do
+			sign_in users(:one)
+			get :index, params: {options: "reviewer_id", sort: "DESC"}
+			expect(response).to redirect_to user_projects_path(user_id: users(:one).id)
 		end
 	end
 
@@ -46,49 +53,37 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#update" do
 		it "should update deployment status to Approved when Approve button is clicked when reviewer is valid" do
 			sign_in users(:seven)
-			put :update, params: {id: 1, status: "Approved"}
+			put :update, params: {id: 1, status: "Approved", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Approved"
 		end
 
 		it "should update deployment status to Rejected when Rejected button is clicked when reviewer is valid" do
 			sign_in users(:seven)
-			put :update, params: {id: 1,status: "Rejected"}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Rejected"
 		end
 
 		it "should not update deployment status to Rejected when Rejected button is clicked when reviewer is invalid" do
 			sign_in users(:eight)
-			put :update, params: {id: 1,status: "Rejected"}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
 			expect(deployments(:one).status).to eq "Created"
+		end
+
+		it "should update review time to difference between page open and button clicked when reviewer is valid" do
+			sign_in users(:ten)
+			put :update, params: {id: 3, status: "Approved", current_time: Time.current}
+			expect(deployments(:three).review_time).not_to be nil
 		end
 	end
 
 	describe "GET deployments#trigger_deployment" do
-		it "should trigger job play when deploy button is clicked" do
+		it "should redirect to gitlab pipeline link" do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
-				post :trigger_deployment, params: {id: 2}
-				expect(Deployment.find(2).status).to eq "Deployed"
-				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
-			end
-		end
-
-		it "should trigger job retry when deploy button is clicked" do
-			VCR.use_cassette("trigger_deployment_controller_retry") do
-				sign_in users(:ten)
-				post :trigger_deployment, params: {id: 3}
-				expect(response).to redirect_to job_trace_path(id: 1354965, project_id: 3850)
+				get :trigger_deployment, params: {id: 3}
+				expect(response).to redirect_to 'https://source.golabs.io/archit.j.aux/Calculator Project/pipelines/215700'
 			end
 		end
 	end
 
-	describe "GET deployments#job_trace" do
-		it "should open job_trace page when deployment is triggered" do
-			VCR.use_cassette("job_trace_controller") do
-				sign_in users(:ten)
-				get :job_trace, params: {id: 135457, project_id: 3850}
-				expect(response).to have_http_status(:success)
-			end
-		end
-	end
 end

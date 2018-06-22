@@ -12,5 +12,7 @@ Figaro.require_keys(
   'SMTP_DOMAIN',
   'SMTP_USER_NAME',
   'SMTP_PASSWORD',
-  'DIFF_BASE_URL'
+  'DIFF_BASE_URL',
+  'DOMAIN_BASE_URL',
+  'GITLAB_BASE_URL'
 )

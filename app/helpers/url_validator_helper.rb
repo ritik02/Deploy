@@ -1,17 +1,18 @@
 module UrlValidatorHelper
 
+  def get_admins
+      @admin = "archit.j.aux@go-jek.com"
+  end
+
   def validate_user_id?(current_user_id, param_user_id)
-    if current_user_id == param_user_id
-      return true
-    else
+      return true if current_user_id == param_user_id
       redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
       return false
-    end
   end
 
   def project_id_valid?(project_id)
     @projects_details = @gitlab_api_services.get_project_details(project_id)
-    if !@projects_details["message"].blank? && (@projects_details["message"].include?("404") || @projects_details["message"].include?("401") || @projects_details["message"].include?("403"))
+    if !@projects_details["message"].blank?
       flash[:notice] = "Project Does Not Exist Or You Are Not Authorized To See It"
       render 'layouts/error'
       return false
@@ -32,11 +33,7 @@ module UrlValidatorHelper
 
   def deployment_exist?
     @deployments = @gitlab_api_services.get_all_deployments(@project_id)
-    if @deployments.blank?
-      flash[:notice] = "Sorry No Deployments For This Job!"
-      render 'layouts/error'
-      return false
-    elsif @deployments.length==1 && !@deployments["message"].blank? && (@deployments["message"].include?("404") || @deployments["message"].include?("401") || @deployments["message"].include?("403"))
+    if @deployments.blank? || @deployments.key?("message")
       flash[:notice] = "Sorry No Deployments For This Job Or You Are Not Authorized To See It!"
       render 'layouts/error'
       return false
