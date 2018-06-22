@@ -33,25 +33,27 @@
 
           <div class="card purple-cards p-4 " >
             <div class="form-group"></br>
-              <img class="img-responsive m-1" src="/assets/generate.png"  alt="paste"></br></br>
-              <a target=_blank href="<%=Figaro.env.gitlab_base_url%>profile/personal_access_tokens" class="btn btn-outline btn-new">Generate Gitlab Token</a></br></br>
-            <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br>
-              <img class="rounded" src="/assets/paste.png"  alt="paste">
+              <img class="img-responsive m-1" src="/assets/gitlab_logo.png"  alt="paste" width="100px" height="100px"></br></br>
+              <a target=_blank href="<%=Figaro.env.gitlab_base_url%>profile/personal_access_tokens" class="btn btn-outline btn-new">Generate Gitlab Token</a></br></br><br>
+              <img class="rounded" src="/assets/paste.png"  alt="paste" width="100px" height="100px">
               </br></br>
               <%= form_for @user do |f|  %>
-								  <%= f.text_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px"%> <br/>
-                   <%= f.text_field :jira_token, class: "form-control", style: "background-color: white; font-size: 20px"%> <br/>
-								  <%= f.submit "Link your token", class: "btn btn-outline btn-new mt-1" %>
-							<% end %>
+                <%= f.text_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your gitlab token'%> <br/>
             </div>
           </div>
 
           <div class="card purple-cards p-4" >
             </br>
-             <img class="card-img-top" src="/assets/goready.png" >
-            <a href="#download" class="btn btn-outline btn-new mt-5">Let's Get Started</a>
+            <div class="form-group"></br>
+                <img class="img-responsive m-1" src="/assets/jira_icon.png"  alt="paste" width="100px" height="100px"></br></br>
+                <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br><br>
+                <img class="rounded" src="/assets/paste.png"  alt="paste" width="100px" height="100px">
+                </br></br>
+                <%= f.text_field :jira_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your Jira token'%> <br/>
+                <%= f.submit "Let's Go", class: "btn btn-outline btn-new mt-1" %>
+            </div>
           </div>
-
+          <% end %>
        </div>
       </div>
   </section>
