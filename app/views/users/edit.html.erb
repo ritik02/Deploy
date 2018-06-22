@@ -24,6 +24,7 @@
 
   <section class="steps bg-primary text-center" id="steps">
     <div class="container">
+      <%= flash.empty? %>
       <% flash.each do |k,v| %>
         <% if v != "You need to sign in or sign up before continuing." %>
            alert("<%= v %>");

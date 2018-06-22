@@ -17,6 +17,7 @@ GITLAB_BASE_URL:             'https://source.golabs.io/'
 JIRA_BASE_URL:               'https://godeploy.atlassian.net/'
 JIRA_PROJECT_KEY:            'DEMO'
 JIRA_ISSUE_TYPE:             'Task'
+SLACK_WEBHOOK:               'https://hooks.slack.com/services/okok/okok'
 
 test:
   RAILS_ENV:                 'test'

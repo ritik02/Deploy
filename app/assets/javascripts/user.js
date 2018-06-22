@@ -12,9 +12,10 @@ function close_click(){
 }
 function agree_click(){
 	var a = document.getElementById('agree');
-	var e = document.getElementById("team_email");
-	var s = e.options[e.selectedIndex].value;
-	var b = a.href + "?team_email=" + s;
-	a.href = b;
+	var dropdown = document.getElementById("team_email");
+	var channel_name = document.getElementById("slack_channel").value;
+	var team_email = dropdown.options[dropdown.selectedIndex].value;
+	var new_url = a.href + "?team_email=" + team_email + "&channel_name=" + channel_name;
+	a.href = new_url;
 	$('.modal').modal('close');
 }

@@ -17,5 +17,6 @@ Figaro.require_keys(
   'GITLAB_BASE_URL',
   'JIRA_BASE_URL',
   'JIRA_PROJECT_KEY',
-  'JIRA_ISSUE_TYPE'
+  'JIRA_ISSUE_TYPE',
+  'SLACK_WEBHOOK'
 )
