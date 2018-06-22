@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GO - DEPLOY</title>
-
-  </head>
-
-  <body>
-    <p><h3>Project Name: <%= @deployment.project_name %></h3>
-      Hey, <b><%= User.find(@deployment.user_id).name.upcase %></b> is waiting for your approval .Please have a look.
-    </p>
-	<%= link_to "Checklist Form" , Figaro.env.diff_base_url+ "/deployments/" + @deployment.id.to_s , target: :_blank %>
-  <br>
-  <%= link_to "Jira Issue Link" , @deployment.jira_link , target: :_blank %>
-  </body>
+ <head>
+   <title>GO - DEPLOY</title>
+ </head>
+ <body>
+   <p><h3>Project Name: <%= @deployment.project_name %></h3>
+     Hey, <b><%= User.find(@deployment.user_id).name.upcase %></b> is waiting for your approval .Please have a look.
+   </p>
+    <%= link_to "Checklist Form" , Figaro.env.diff_base_url+ "/deployments/" + @deployment.id.to_s , target: :_blank %>
+ <br>
+ <%= link_to "Jira Issue Link" , @deployment.jira_link , target: :_blank %>
+ </body>
 </html>
