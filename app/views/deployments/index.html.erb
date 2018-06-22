@@ -10,19 +10,18 @@
   <div class="col s12 m6 l6 container">
       <div class="search-wrapper">
         <form action="/deployments" method="get">
-         <div class="input-field col s12">
-    <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options">
-      <option value="updated_at">Time</option>
-      <option value="project_id">Project</option>
-      <option value="user_id">Deployer</option>
-      <option value="reviewer_id">Reviewer</option>
-    </select>
-      <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort">
-      <option value="DESC">Descending</option>
-      <option value="ASC">Ascending</option>
-      
-    </select>
-  </div>
+          <div class="input-field col s12">
+            <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options">
+              <option value="updated_at">Time</option>
+              <option value="project_id">Project</option>
+              <option value="user_id">Deployer</option>
+              <option value="reviewer_id">Reviewer</option>
+            </select>
+              <select style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort">
+              <option value="DESC">Descending</option>
+              <option value="ASC">Ascending</option>
+            </select>
+          </div>
           <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Sort</button>
         </form>
      </div>
