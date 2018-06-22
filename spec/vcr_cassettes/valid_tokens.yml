@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:33:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4492'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"68f5eeaff766e5ece442c96b6bd9f3fe"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=2&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="next", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=52&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 4facb42d-b154-4f18-84b4-3c8e513b2e6b
+      X-Runtime:
+      - '0.035659'
+      X-Total:
+      - '1021'
+      X-Total-Pages:
+      - '52'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1056,"name":"rizky.dwi","username":"rizky.dwi","state":"active","avatar_url":"https://secure.gravatar.com/avatar/35a4fe2dc7934fb0bae3382957f0b14e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/rizky.dwi"},{"id":1055,"name":"Anirudh
+        M","username":"anirudh.m.aux","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1055/avatar.png","web_url":"https://source.golabs.io/anirudh.m.aux"},{"id":1054,"name":"julius.lauw","username":"julius.lauw","state":"active","avatar_url":"https://secure.gravatar.com/avatar/13eb63fbcc7bc61e21ea0e2a35e58aa2?s=80\u0026d=identicon","web_url":"https://source.golabs.io/julius.lauw"},{"id":1053,"name":"sunil.p.aux","username":"sunil.p.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e16397b436149b5d8e0f11f6f5a156e1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sunil.p.aux"},{"id":1052,"name":"vanessa.ambar","username":"vanessa.ambar","state":"active","avatar_url":"https://secure.gravatar.com/avatar/04044920c841680dad14946c95a3d19b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vanessa.ambar"},{"id":1051,"name":"Sneha","username":"sneha.m.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/a04859e636e29d7ed96e89e39c1f1efc?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sneha.m.aux"},{"id":1050,"name":"trit.t","username":"trit.t","state":"active","avatar_url":"https://secure.gravatar.com/avatar/03b5b9abbac79bed669f5f45c6d25ff6?s=80\u0026d=identicon","web_url":"https://source.golabs.io/trit.t"},{"id":1049,"name":"guntapon.p","username":"guntapon.p","state":"active","avatar_url":"https://secure.gravatar.com/avatar/6ca08a308b731913f576ded464178f73?s=80\u0026d=identicon","web_url":"https://source.golabs.io/guntapon.p"},{"id":1048,"name":"Andrawinatama","username":"andra.w","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1048/avatar.png","web_url":"https://source.golabs.io/andra.w"},{"id":1047,"name":"sukreet","username":"sukreet.r.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ccfd866d70073d30b7e8a3eb1a7cb065?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sukreet.r.aux"},{"id":1046,"name":"himani","username":"himani.agrawal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/c4cd5ff185618aca3e8763af50948566?s=80\u0026d=identicon","web_url":"https://source.golabs.io/himani.agrawal"},{"id":1045,"name":"vietnt","username":"vietnt","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4ebf1ec64955a6790149487c5056e0ad?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vietnt"},{"id":1044,"name":"duyenutp","username":"duyenutp","state":"active","avatar_url":"https://secure.gravatar.com/avatar/547396ecac9090caf7e87646738613de?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duyenutp"},{"id":1043,"name":"diya.shah","username":"diya.shah","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3d7614c56917df48f3df8e26b30f4d4b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/diya.shah"},{"id":1042,"name":"mayank.j.aux","username":"mayank.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/130ef9481910b8fbd54d061aca58bd25?s=80\u0026d=identicon","web_url":"https://source.golabs.io/mayank.j.aux"},{"id":1041,"name":"kashyap.k","username":"kashyap.k","state":"active","avatar_url":"https://secure.gravatar.com/avatar/657939eb7b23ae76b54ca8fcb04cb597?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashyap.k"},{"id":1040,"name":"kashif.khan","username":"kashif.khan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/dd10994651237ccfc564817e718dfc60?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashif.khan"},{"id":1039,"name":"gunjan.dewan","username":"gunjan.dewan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2512136b37be09f1bc7c011661e35c88?s=80\u0026d=identicon","web_url":"https://source.golabs.io/gunjan.dewan"},{"id":1038,"name":"vinkesh.banka","username":"vinkesh.banka","state":"active","avatar_url":"https://secure.gravatar.com/avatar/80e6c75489e17773160b1c52afe5a75c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vinkesh.banka"},{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:33:53 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:33:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '230'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"8b591ad44db35c144680c50b6eb2be06"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - f9810008-ccd0-4ea0-9565-ec9bca3f38c0
+      X-Runtime:
+      - '0.019958'
+      X-Total:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1022,"name":"Ritik Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:33:53 GMT
+- request:
+    method: get
+    uri: https://godeploy.atlassian.net/rest/api/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cml0aWsudi5hdXhAZ28tamVrLmNvbTpIWTRHUEVQUTUxUWN3a3p4WlhCaDA4QUI=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Atlassian Proxy/0.1.266
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html;charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains; preload
+      Date:
+      - Fri, 22 Jun 2018 06:33:54 GMT
+      X-Arequestid:
+      - 1b3c1f0e-b28e-47a2-b8c3-08eabccb1b29
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      X-Ausername:
+      - ritik.v.aux
+      X-Content-Type-Options:
+      - nosniff
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=5B8EB54D59B383C3982796DFE419EB65; Expires=Thu, 01-Jan-1970 00:00:10
+        GMT; Path=/; Secure; HttpOnly
+      - atlassian.xsrf.token=b192e582-268b-4e4e-af0a-ed4d57aa5fcb_cf53b7cea2502fc9e71ac4a3abc43e9a772a831c_lin;
+        Path=/; Secure
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta
+        http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Oops, you&#39;ve
+        found a dead link. - JIRA</title><script type=\"text/javascript\">contextPath
+        = \"\";</script><link type='text/css' rel='stylesheet' href='/static-assets/metal-all.css'
+        media='all'><script src='/static-assets/metal-all.js'></script><!--[if lt
+        IE 9]><link type='text/css' rel='stylesheet' href='/static-assets/metal-all-ie.css'
+        media='all'><script src='/static-assets/metal-all-ie.js'></script><![endif]--><!--[if
+        IE 9]><link type='text/css' rel='stylesheet' href='/static-assets/metal-all-ie9.css'
+        media='all'><![endif]--><meta name=\"decorator\" content=\"none\" /></head><body
+        class=\" error-page error404\"><script type=\"text/javascript\">document.body.className
+        += \" js-enabled\";</script><div id=\"page\"><header id=\"header\" role=\"banner\"></header><!--
+        #header --><section id=\"content\" role=\"main\"><div class=\"aui-page-panel\"><div
+        class=\"aui-page-panel-inner\"><section class=\"aui-page-panel-content lowerContent\"><div
+        id=\"error-state\"><span class=\"error-type\"></span><h1>Oops, you&#39;ve
+        found a dead link.</h1><ul><li>Go back to the <a href=\"javascript:window.history.back()\">previous
+        page</a></li><li>Go to the <a href=\"/secure/MyJiraHome.jspa\">Home Page</a></li></ul></div></section><!--
+        .aui-page-panel-content --></div><!-- .aui-page-panel-inner --></div><!--
+        .aui-page-panel --></section><!-- #content --><footer id=\"footer\" role=\"contentinfo\"><section
+        class=\"footer-body\">\n\n\n<ul class=\"atlassian-footer\">\n    <li>\n        Atlassian
+        JIRA <a class=\"seo-link\" href=\"https://www.atlassian.com/software/jira\">Project
+        Management Software</a>\n\n                                    \n                        \n
+        \       <span id=\"footer-build-information\">(v1001.0.0-SNAPSHOT#100087-<span
+        title='2813e6b6712bfbde5d8838a93e9c10bda3573f23' data-commit-id='2813e6b6712bfbde5d8838a93e9c10bda3573f23}'>sha1:2813e6b</span>)</span>\n
+        \   </li>\n    <li>\n        <a id=\"about-link\" href=\"/secure/AboutPage.jspa\">About
+        JIRA</a>\n    </li>\n    <li>\n                        <a id=\"footer-report-problem-link\"
+        href=\"/secure/ContactAdministrators!default.jspa\">Report a problem</a>\n
+        \   </li>\n</ul>\n<div id=\"footer-logo\"><a href=\"http://www.atlassian.com/\"
+        rel=\"nofollow\">Atlassian</a></div></section></footer><!-- #footer --></div><!--
+        #page --></body></html>"
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:33:55 GMT
+recorded_with: VCR 4.0.0

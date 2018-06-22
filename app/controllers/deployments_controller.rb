@@ -71,8 +71,8 @@ class DeploymentsController < ApplicationController
 		return true if !User.where(:email => params[:deployments][:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
 		redirect_to new_deployment_path(user_id: current_user.id,
 			project_name: params[:project_name],
-			commit_id: params[:commit_id], 
-			diff_link: params[:diff_link], 
+			commit_id: params[:commit_id],
+			diff_link: params[:diff_link],
 			last_deployed_commit: params[:last_deployed_commit],
 			project_id: params[:project_id])
 		return false
@@ -103,8 +103,8 @@ class DeploymentsController < ApplicationController
 
 	def get_gitlab_pipeline_trigger_link(deployment)
 		pipeline_trigger_gitlab_link = Figaro.env.gitlab_base_url +
-		@user.username + "/" + 
-		deployment.project_name + 
+		@user.username + "/" +
+		deployment.project_name +
 		"/pipelines/" + @last_pipeline_id.to_s
 	end
 

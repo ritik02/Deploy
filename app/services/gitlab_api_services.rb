@@ -9,10 +9,8 @@ class GitlabApiServices
   def check_api_for_valid_token?
     url = @base_url + "/users?private_token=" + @access_token
     response = HTTParty.get(url)
-    if response.code == 200
-      return true
-    else false
-    end
+    return true if response.code == 200
+    return false
   end
 
 	def get_user_details(username)

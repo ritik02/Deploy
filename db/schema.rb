@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_21_074918) do
+ActiveRecord::Schema.define(version: 2018_06_22_051053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2018_06_21_074918) do
     t.integer "gitlab_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "jira_token"
   end
 
 end

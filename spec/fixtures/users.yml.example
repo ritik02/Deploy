@@ -4,6 +4,7 @@ one:
   gitlab_token: qMAqNOQdaCXoX6Aq6ToLjAP7HAXtywLmSfa7nJ/u--xzvVOF8zolwzmAkH--olOU0t9OUr9/XjSe3ziDmg==
   gitlab_user_id: 1022
   username: ritik.v.aux
+  jira_token: YCP+iwnpEul1zzFv6kTnH+qrsWsJ3qcb72cd4YCYn9cqWA==--Bai6KWkqclA32ZNE--2c7eeMWQN9vBf2+lgwCCaA==
 
 two:
   name: Ritik Verma
@@ -69,3 +70,11 @@ ten:
   gitlab_token: FH/YvijBziCzDao+RqeK2eld5XCPzQkdznQyuXGc--lcKqhy/m166qU7Jz--s/XD5d4TryB2hv+i/To39A==
   gitlab_user_id: 1020
   username: archit.j.aux
+
+eleven:
+  name: Ritik Verma
+  email: ritik.v.aux@go-jek.com
+  gitlab_token: b2/SlGCmWII9bKGnvr5dR2cJh9kGSg00fci/v+Ba--Z4p6+0712/9nGzb5--5tyj+sDhVXfuFZMd/M6BvQ==
+  gitlab_user_id: 1022
+  username: ritik.v.aux
+  jira_token: YCP+iwnpEul1zzFv6kTnH+qrsWsJ3qcb72cd4YCYn9cqWA==--Bai6KWkqclA32ZNE--2c7eeMWQN9vBf2+lgwCCaA==

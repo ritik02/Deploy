@@ -21,24 +21,27 @@ class UsersController < ApplicationController
   end
 
   def update
-    pasted_token = params["user"]["gitlab_token"]
-    return if !redirect_if_token_is_nil?(pasted_token) || !redirect_if_token_is_invalid?(pasted_token)
+    pasted_gitlab_token = params["user"]["gitlab_token"]
+    pasted_jira_token = params["user"]["jira_token"]
+    return if !redirect_if_token_is_nil?(pasted_gitlab_token) || !redirect_if_token_is_invalid?(pasted_gitlab_token)
     response = @gitlab_api_services.get_user_details(current_user.username)
+    return if !redirect_if_token_is_nil?(pasted_jira_token) || !redirect_if_jira_token_is_invalid?(pasted_jira_token, response.first["username"]+"@go-jek.com")
     current_user.update(
       name: response.first["name"],
       gitlab_user_id: response.first["id"].to_i,
       email: response.first["username"]+"@go-jek.com",
-      gitlab_token: encrypt_access_token(pasted_token))
+      gitlab_token: encrypt_access_token(pasted_gitlab_token),
+      jira_token: encrypt_access_token(pasted_jira_token))
     redirect_to action: "index", controller: "projects", user_id: current_user.id
   end
 
-  private 
+  private
 
   def run_validations
     return if !validate_user_id?(current_user.id.to_s, params[:id])
   end
 
-  def check_admin 
+  def check_admin
     get_admins
     return if current_user.email == @admin
     run_validations if !params[:id].blank?
