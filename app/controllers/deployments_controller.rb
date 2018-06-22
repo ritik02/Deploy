@@ -29,8 +29,9 @@ class DeploymentsController < ApplicationController
 				job_name: params[:job_name],
 				reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id)
 			jira_link = create_issue(params, deployment)
+			deployment.update(jira_link: jira_link)
 			UserMailer.deployment_request_email(deployment).deliver
-			redirect_to deployments_path
+			redirect_to user_path(id: @user.id)
 			end
 
 			def index
@@ -66,7 +67,8 @@ class DeploymentsController < ApplicationController
 				response = @jira_api_services.create_issue(params[:project_name] + " - " + params[:deployments][:title],
 					 "CHECKLIST LINK: " + Figaro.env.domain_base_url + "/deployments/" + deployment.id.to_s,
 						User.find(deployment.reviewer_id).username)
-				response["self"]
+				puts Figaro.env.jira_base_url + "/browse/" + response["key"]
+				Figaro.env.jira_base_url + "browse/" + response["key"]
 			end
 
 			def trigger_helper(deployment)
