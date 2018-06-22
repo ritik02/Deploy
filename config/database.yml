@@ -9,13 +9,8 @@ development:
   encoding: unicode
   database: godeploy
   pool: 5
-<<<<<<< HEAD
-  username: postgres
-  password: heisenberg
-=======
   username: <%= Figaro.env.db_user %>
   password: <%= Figaro.env.db_password %>
->>>>>>> 6372762118c424115bbf43428ab3258869d77265
   timeout: 5000
 
 test:
@@ -23,13 +18,8 @@ test:
   encoding: unicode
   database: godeploytest
   pool: 5
-<<<<<<< HEAD
-  username: postgres
-  password: heisenberg
-=======
   username: <%= Figaro.env.db_user %>
   password: <%= Figaro.env.db_password %>
->>>>>>> 6372762118c424115bbf43428ab3258869d77265
   timeout: 5000
 
 production:

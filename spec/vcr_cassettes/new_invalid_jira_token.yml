@@ -1,0 +1,235 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:46:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '4492'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"68f5eeaff766e5ece442c96b6bd9f3fe"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=2&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="next", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=52&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - '2'
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 6c2743a3-f66b-48a6-8689-e9a0691f773b
+      X-Runtime:
+      - '0.038002'
+      X-Total:
+      - '1021'
+      X-Total-Pages:
+      - '52'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1056,"name":"rizky.dwi","username":"rizky.dwi","state":"active","avatar_url":"https://secure.gravatar.com/avatar/35a4fe2dc7934fb0bae3382957f0b14e?s=80\u0026d=identicon","web_url":"https://source.golabs.io/rizky.dwi"},{"id":1055,"name":"Anirudh
+        M","username":"anirudh.m.aux","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1055/avatar.png","web_url":"https://source.golabs.io/anirudh.m.aux"},{"id":1054,"name":"julius.lauw","username":"julius.lauw","state":"active","avatar_url":"https://secure.gravatar.com/avatar/13eb63fbcc7bc61e21ea0e2a35e58aa2?s=80\u0026d=identicon","web_url":"https://source.golabs.io/julius.lauw"},{"id":1053,"name":"sunil.p.aux","username":"sunil.p.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e16397b436149b5d8e0f11f6f5a156e1?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sunil.p.aux"},{"id":1052,"name":"vanessa.ambar","username":"vanessa.ambar","state":"active","avatar_url":"https://secure.gravatar.com/avatar/04044920c841680dad14946c95a3d19b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vanessa.ambar"},{"id":1051,"name":"Sneha","username":"sneha.m.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/a04859e636e29d7ed96e89e39c1f1efc?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sneha.m.aux"},{"id":1050,"name":"trit.t","username":"trit.t","state":"active","avatar_url":"https://secure.gravatar.com/avatar/03b5b9abbac79bed669f5f45c6d25ff6?s=80\u0026d=identicon","web_url":"https://source.golabs.io/trit.t"},{"id":1049,"name":"guntapon.p","username":"guntapon.p","state":"active","avatar_url":"https://secure.gravatar.com/avatar/6ca08a308b731913f576ded464178f73?s=80\u0026d=identicon","web_url":"https://source.golabs.io/guntapon.p"},{"id":1048,"name":"Andrawinatama","username":"andra.w","state":"active","avatar_url":"https://source.golabs.io/uploads/-/system/user/avatar/1048/avatar.png","web_url":"https://source.golabs.io/andra.w"},{"id":1047,"name":"sukreet","username":"sukreet.r.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/ccfd866d70073d30b7e8a3eb1a7cb065?s=80\u0026d=identicon","web_url":"https://source.golabs.io/sukreet.r.aux"},{"id":1046,"name":"himani","username":"himani.agrawal","state":"active","avatar_url":"https://secure.gravatar.com/avatar/c4cd5ff185618aca3e8763af50948566?s=80\u0026d=identicon","web_url":"https://source.golabs.io/himani.agrawal"},{"id":1045,"name":"vietnt","username":"vietnt","state":"active","avatar_url":"https://secure.gravatar.com/avatar/4ebf1ec64955a6790149487c5056e0ad?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vietnt"},{"id":1044,"name":"duyenutp","username":"duyenutp","state":"active","avatar_url":"https://secure.gravatar.com/avatar/547396ecac9090caf7e87646738613de?s=80\u0026d=identicon","web_url":"https://source.golabs.io/duyenutp"},{"id":1043,"name":"diya.shah","username":"diya.shah","state":"active","avatar_url":"https://secure.gravatar.com/avatar/3d7614c56917df48f3df8e26b30f4d4b?s=80\u0026d=identicon","web_url":"https://source.golabs.io/diya.shah"},{"id":1042,"name":"mayank.j.aux","username":"mayank.j.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/130ef9481910b8fbd54d061aca58bd25?s=80\u0026d=identicon","web_url":"https://source.golabs.io/mayank.j.aux"},{"id":1041,"name":"kashyap.k","username":"kashyap.k","state":"active","avatar_url":"https://secure.gravatar.com/avatar/657939eb7b23ae76b54ca8fcb04cb597?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashyap.k"},{"id":1040,"name":"kashif.khan","username":"kashif.khan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/dd10994651237ccfc564817e718dfc60?s=80\u0026d=identicon","web_url":"https://source.golabs.io/kashif.khan"},{"id":1039,"name":"gunjan.dewan","username":"gunjan.dewan","state":"active","avatar_url":"https://secure.gravatar.com/avatar/2512136b37be09f1bc7c011661e35c88?s=80\u0026d=identicon","web_url":"https://source.golabs.io/gunjan.dewan"},{"id":1038,"name":"vinkesh.banka","username":"vinkesh.banka","state":"active","avatar_url":"https://secure.gravatar.com/avatar/80e6c75489e17773160b1c52afe5a75c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/vinkesh.banka"},{"id":1037,"name":"Karuppiah","username":"karuppiah7890","state":"active","avatar_url":"https://secure.gravatar.com/avatar/0856951761e1108b3dcb735c98d1e70c?s=80\u0026d=identicon","web_url":"https://source.golabs.io/karuppiah7890"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:46:42 GMT
+- request:
+    method: get
+    uri: https://source.golabs.io/api/v4/users?private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 22 Jun 2018 06:46:43 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '230'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"8b591ad44db35c144680c50b6eb2be06"
+      Link:
+      - <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="first", <https://source.golabs.io/api/v4/users?active=false&blocked=false&external=false&page=1&per_page=20&private_token=Dh36kW9v5J9zHVTk3syC&username=ritik.v.aux&with_custom_attributes=false>;
+        rel="last"
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Next-Page:
+      - ''
+      X-Page:
+      - '1'
+      X-Per-Page:
+      - '20'
+      X-Prev-Page:
+      - ''
+      X-Request-Id:
+      - 202bb909-b4b8-4568-8542-11cccb6aa106
+      X-Runtime:
+      - '0.017519'
+      X-Total:
+      - '1'
+      X-Total-Pages:
+      - '1'
+      Strict-Transport-Security:
+      - max-age=31536000
+    body:
+      encoding: UTF-8
+      string: '[{"id":1022,"name":"Ritik Verma","username":"ritik.v.aux","state":"active","avatar_url":"https://secure.gravatar.com/avatar/e28fafbbe3c5bc839318e09f489a0587?s=80\u0026d=identicon","web_url":"https://source.golabs.io/ritik.v.aux"}]'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:46:43 GMT
+- request:
+    method: get
+    uri: https://godeploy.atlassian.net/rest/api/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cml0aWsudi5hdXhAZ28tamVrLmNvbTppbnZhbGlkX3Rva2Vu
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Server:
+      - Atlassian Proxy/0.1.266
+      Www-Authenticate:
+      - OAuth realm="https%3A%2F%2Fgodeploy.atlassian.net"
+      Content-Type:
+      - text/html;charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains; preload
+      Date:
+      - Fri, 22 Jun 2018 06:46:44 GMT
+      X-Arequestid:
+      - 6fa9c5eb-d8b3-4c96-b4d8-9e7419202f94
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      X-Content-Type-Options:
+      - nosniff
+      Connection:
+      - keep-alive
+      X-Seraph-Loginreason:
+      - AUTHENTICATED_FAILED
+    body:
+      encoding: UTF-8
+      string: "\n\n\n\n\n\n\n\n\n\n<html>\n\n<head>\n    <title>Unauthorized (401)</title>\n
+        \   \n\n\n\n\n\n<!--[if IE]><![endif]-->\n<script type=\"text/javascript\"
+        >\n    var contextPath = '';\n    var DeferScripts = { deferState: 'disabled'
+        };\n</script>\n<script>\nwindow.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};\nWRM._unparsedData[\"com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path\"]=\"\\\"\\\"\";\nWRM._unparsedData[\"com.atlassian.plugins.atlassian-plugins-webresource-rest:curl.cross-origin-resources\"]=\"false\";\nWRM._unparsedData[\"jira.webresources:feature-flags.feature-flag-data\"]=\"{\\\"enabled-feature-keys\\\":[\\\"connect.no-applinks\\\",\\\"jira.plugin.devstatus.smartcommits.dvcs.enabled\\\",\\\"nps.survey.inline.dialog\\\",\\\"fusion.dvcs.use_amq_to_invoke_sync.enabled\\\",\\\"com.atlassian.jira.plugins.mail.internal.enabled\\\",\\\"sd.new.settings.sidebar.location\\\",\\\"atlassian.rest.xsrf.legacy.enabled\\\",\\\"jira.baseurl.cdn.enabled\\\",\\\"fusion.bitbucket.rebrand\\\",\\\"dvcs.connector.smartcommits.disabled\\\",\\\"sd.email.mailbox.poppy.migration.poppyonly.enabled\\\",\\\"dvcs.connector.repositorydao.ao.enabled\\\",\\\"unified.usermanagement\\\",\\\"com.atlassian.jira.projects.issuenavigator\\\",\\\"com.atlassian.jira.projects.issue.summary.vignettes\\\",\\\"atlassian.aui.raphael.disabled\\\",\\\"fusion.dvcs.use_amq_for_executors.enabled\\\",\\\"fusion.devstatus.devsummary.customfield.jql.enabled\\\",\\\"com.atlassian.jira.config.CoreFeatures.PERMISSIONS_MANAGED_BY_UM\\\",\\\"com.atlassian.jira.projects.ProjectCentricNavigation.Switch\\\",\\\"com.atlassian.jira.config.CoreFeatures.ON_DEMAND\\\",\\\"atlassian.plugin.aci.enabled\\\"],\\\"feature-flag-states\\\":{\\\"sd.sla.agent.jql.security.restricted\\\":true,\\\"jira.feature.flag.board.issue.modal.labs\\\":true,\\\"sd.test.feature.flag.x\\\":true,\\\"sd.test.feature.flag.y\\\":false,\\\"jira.issue.search.api.databaseonly\\\":false,\\\"sd.email.channel.folders\\\":false,\\\"jira.issue.search.jql.databaseonly\\\":false,\\\"jira.mail.default.mailstore.polling\\\":true,\\\"com.atlassian.jira.plugins.mail.size.check\\\":true,\\\"jira.instrumentation.laas\\\":false,\\\"jira.issue.search.jql.issuepicker.killswitch\\\":false,\\\"sd.new.settings.sidebar.location\\\":true,\\\"jira.feature.rest.single.step.avatar.upload\\\":true,\\\"sd.email.outsider.comments\\\":false,\\\"sd.email.add.user.cc\\\":true,\\\"jira.login.useBasicAuthFilter\\\":true,\\\"jira.ondemand.maintain.trusted.apps\\\":true,\\\"jira.mail.fake.default.mail.server\\\":false,\\\"jira.issue.search.jql.anonymize\\\":true,\\\"com.atlassian.jira.plugins.mail.internal\\\":false,\\\"com.atlassian.jira.feature.flag.for.TestFeatureFlagResource\\\":false,\\\"com.atlassian.jira.plugins.mail.amq\\\":true,\\\"sd.global.portal.search.atlassian.only.tracking\\\":false,\\\"jira.feature.flag.board.polling\\\":true,\\\"issue.collector.cache.limiter\\\":true}}\";\nWRM._unparsedData[\"jira.webresources:simplified-ux-feature-flags.feature-flag-data\"]=\"{\\\"isBacklogViewPlanSprintXflowEnabled\\\":true,\\\"isGlobalSidebarEnabled\\\":true,\\\"isAdg3NewProjectAvatarsEnabled\\\":true,\\\"isUserDiscoveryEnabled\\\":false,\\\"isGlobalSettingsLandingPageEnable\\\":false,\\\"isNewExperienceMenuEnabled\\\":false,\\\"isOptinDismissed\\\":false,\\\"isUmuxLiteInAdg2Enabled\\\":false,\\\"isFiltersDirectoryVersion2Enabled\\\":false,\\\"isProjectDirectoryVersion2Enabled\\\":false,\\\"isAdg3FeatureStateCheckerEnabled\\\":false,\\\"isStickyQuickfilterFixEnabled\\\":false,\\\"isUserOptedInSkipped\\\":false,\\\"isAgilityProjectFeaturesAllowed\\\":true,\\\"isAdg3StylesEnabled\\\":true,\\\"isGinFilterDetailsDialogEnabled\\\":false,\\\"isChangeboardingOptional\\\":false,\\\"isAdg3PINEnabled\\\":false,\\\"isUnusedUserPreferencesHidden\\\":true,\\\"isPeopleProfileEnabled\\\":false,\\\"isProjectLandingEnabled\\\":false,\\\"isAdg3ProfilecardEnabled\\\":false,\\\"isGraduationWarningVisible\\\":false,\\\"isVersionsPageOn\\\":true,\\\"isImportIssueButtonEnabled\\\":true,\\\"isXflowPagesEnabled\\\":true,\\\"isOnboardingProjectSwitcherEnabled\\\":true,\\\"isLabsEnabled\\\":true,\\\"isOptOutEnabled\\\":false,\\\"isUserOptedIn\\\":false,\\\"isAdg3ModeOn\\\":true,\\\"isOptInEnabled\\\":false}\";\nWRM._unparsedData[\"jira.webresources:default-comment-security-level.DefaultCommentSecurityLevelHelpLink\"]=\"{\\\"extraClasses\\\":\\\"default-comment-level-help\\\",\\\"title\\\":\\\"Commenting
+        on an Issue\\\",\\\"url\\\":\\\"https://confluence.atlassian.com/display/JIRACORECLOUD/Editing+and+collaborating+on+issues#Editingandcollaboratingonissues-addcommentsCommentingonissues\\\",\\\"isLocal\\\":false}\";\nWRM._unparsedData[\"com.atlassian.jira.jira-client-analytics-plugin:analytics-context-provider.client-analytic-descriptors\"]=\"{\\\"analyticsResource\\\":{\\\"jira-core\\\":{\\\"events\\\":{\\\"issue.comment.added\\\":{\\\"trigger\\\":\\\"click
+        #issue-comment-add-submit\\\",\\\"properties\\\":{\\\"comment-length\\\":\\\"value.length
+        #issue-comment-add #comment\\\"}}}}},\\\"tenantId\\\":\\\"1d7c6b68-35a4-4031-ba3d-8d81f4c3e8fe\\\",\\\"env\\\":\\\"prod\\\"}\";\nWRM._unparsedData[\"jira.webresources:key-commands.shortcuts\"]=\"[{\\\"moduleKey\\\":\\\"go-to-dashboard-kb-shortcut\\\",\\\"keys\\\":[[\\\"g\\\",\\\"d\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"goTo\\\",\\\"param\\\":\\\"/secure/Dashboard.jspa\\\"},{\\\"moduleKey\\\":\\\"browse-project-kb-shortcut\\\",\\\"keys\\\":[[\\\"g\\\",\\\"p\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"execute\\\",\\\"param\\\":\\\"var
+        elem = jQuery(\\\\\\\"#browse_link\\\\\\\");\\\\n                if (elem.length
+        \\u003e 0) {\\\\n                    window.location.href = elem.attr(\\\\\\\"href\\\\\\\");\\\\n
+        \               }\\\"},{\\\"moduleKey\\\":\\\"issue-navigator-kb-shortcut\\\",\\\"keys\\\":[[\\\"g\\\",\\\"i\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"execute\\\",\\\"param\\\":\\\"var
+        elem = jQuery(\\\\\\\"#find_link\\\\\\\");\\\\n                if (elem.length
+        \\u003e 0) {\\\\n                    window.location.href = elem.attr(\\\\\\\"href\\\\\\\");\\\\n
+        \               }\\\"},{\\\"moduleKey\\\":\\\"admin.quicksearch.dialog.shortcut\\\",\\\"keys\\\":[[\\\"g\\\",\\\"g\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"execute\\\",\\\"param\\\":\\\"if
+        (AJS.Meta.get(\\'admin-quicksearch-show\\')) {\\\\n              JIRA.Shifter.show(\\'admin\\');\\\\n
+        \           }\\\"},{\\\"moduleKey\\\":\\\"quicksearch\\\",\\\"keys\\\":[[\\\"/\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"moveToAndFocus\\\",\\\"param\\\":\\\"#quickSearchInput,
+        #admin-quick-nav-field\\\"},{\\\"moduleKey\\\":\\\"create.issue\\\",\\\"keys\\\":[[\\\"c\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"moveToAndClick\\\",\\\"param\\\":\\\"#header
+        .create-issue\\\"},{\\\"moduleKey\\\":\\\"shifter\\\",\\\"keys\\\":[[\\\".\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"execute\\\",\\\"param\\\":\\\"JIRA.Shifter.show();\\\"},{\\\"moduleKey\\\":\\\"help\\\",\\\"keys\\\":[[\\\"?\\\"]],\\\"context\\\":\\\"global\\\",\\\"op\\\":\\\"click\\\",\\\"param\\\":\\\"#keyshortscuthelp\\\"}]\";\nWRM._unparsedData[\"com.atlassian.plugins.atlassian-connect-plugin:dialog-options.data\"]=\"{\\\"allJsVersion\\\":\\\"1.2.0\\\",\\\"dialogOptions\\\":{},\\\"inlineDialogOptions\\\":{},\\\"dialogModules\\\":{\\\"com.atlassian.jira.chat\\\":{\\\"stride-create-room-dialog\\\":{\\\"url\\\":\\\"/static/jiraOldDedicatedRoomsConfig/?issueKey={issue.key}\\\",\\\"options\\\":{\\\"height\\\":\\\"650\\\",\\\"header\\\":{\\\"value\\\":\\\"Title\\\"},\\\"width\\\":\\\"548\\\"},\\\"key\\\":\\\"stride-create-room-dialog\\\"}}}}\";\nWRM._unparsedData[\"com.atlassian.plugins.atlassian-connect-plugin:jira-date-picker-widget.config\"]=\"{\\\"dateFormat\\\":\\\"%e/%b/%y\\\",\\\"dateTimeFormat\\\":\\\"%e/%b/%y
+        %I:%M %p\\\",\\\"timeFormat\\\":\\\"12\\\",\\\"firstDay\\\":1,\\\"useISO8601WeekNumbers\\\":false}\";\nWRM._unparsedData[\"com.atlassian.product.fabric.pf-jira-confluence-integration-plugin:app-switcher-initial-resources.cloud-id\"]=\"\\\"1d7c6b68-35a4-4031-ba3d-8d81f4c3e8fe\\\"\";\nWRM._unparsedData[\"com.atlassian.product.fabric.pf-jira-confluence-integration-plugin:app-switcher-initial-resources.is-anonymous\"]=\"true\";\nWRM._unparsedData[\"jira.webresources:dateFormatProvider.dateFormat\"]=\"{\\\"meridiem\\\":[\\\"AM\\\",\\\"PM\\\"],\\\"eras\\\":[\\\"BC\\\",\\\"AD\\\"],\\\"months\\\":[\\\"January\\\",\\\"February\\\",\\\"March\\\",\\\"April\\\",\\\"May\\\",\\\"June\\\",\\\"July\\\",\\\"August\\\",\\\"September\\\",\\\"October\\\",\\\"November\\\",\\\"December\\\"],\\\"monthsShort\\\":[\\\"Jan\\\",\\\"Feb\\\",\\\"Mar\\\",\\\"Apr\\\",\\\"May\\\",\\\"Jun\\\",\\\"Jul\\\",\\\"Aug\\\",\\\"Sep\\\",\\\"Oct\\\",\\\"Nov\\\",\\\"Dec\\\"],\\\"weekdaysShort\\\":[\\\"Sun\\\",\\\"Mon\\\",\\\"Tue\\\",\\\"Wed\\\",\\\"Thu\\\",\\\"Fri\\\",\\\"Sat\\\"],\\\"weekdays\\\":[\\\"Sunday\\\",\\\"Monday\\\",\\\"Tuesday\\\",\\\"Wednesday\\\",\\\"Thursday\\\",\\\"Friday\\\",\\\"Saturday\\\"]}\";\nWRM._unparsedData[\"com.atlassian.servicedesk.frontend-webpack-plugin:data-provider.webpack-meta\"]=\"{\\\"locale\\\":\\\"en-US\\\",\\\"publicPath\\\":\\\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/-30jg3x/b/6/1000.3954.0/_/download/resources/com.atlassian.servicedesk.frontend-webpack-plugin:webpack-async-chunks/\\\"}\";\nWRM._unparsedData[\"com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-help-paths\"]=\"{\\\"entries\\\":{\\\"applinks.docs.root\\\":\\\"https://confluence.atlassian.com/display/APPLINKS-062/\\\",\\\"applinks.docs.diagnostics.troubleshoot.sslunmatched\\\":\\\"SSL+and+application+link+troubleshooting+guide\\\",\\\"applinks.docs.diagnostics.troubleshoot.oauthsignatureinvalid\\\":\\\"OAuth+troubleshooting+guide\\\",\\\"applinks.docs.diagnostics.troubleshoot.oauthtimestamprefused\\\":\\\"OAuth+troubleshooting+guide\\\",\\\"applinks.docs.delete.entity.link\\\":\\\"Create+links+between+projects\\\",\\\"applinks.docs.adding.application.link\\\":\\\"Link+Atlassian+applications+to+work+together\\\",\\\"applinks.docs.administration.guide\\\":\\\"Application+Links+Documentation\\\",\\\"applinks.docs.oauth.security\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.troubleshoot.application.links\\\":\\\"Troubleshoot+application+links\\\",\\\"applinks.docs.diagnostics.troubleshoot.unknownerror\\\":\\\"Network+and+connectivity+troubleshooting+guide\\\",\\\"applinks.docs.configuring.auth.trusted.apps\\\":\\\"Configuring+Trusted+Applications+authentication+for+an+application+link\\\",\\\"applinks.docs.diagnostics.troubleshoot.authlevelunsupported\\\":\\\"OAuth+troubleshooting+guide\\\",\\\"applinks.docs.diagnostics.troubleshoot.ssluntrusted\\\":\\\"SSL+and+application+link+troubleshooting+guide\\\",\\\"applinks.docs.diagnostics.troubleshoot.unknownhost\\\":\\\"Network+and+connectivity+troubleshooting+guide\\\",\\\"applinks.docs.delete.application.link\\\":\\\"Link+Atlassian+applications+to+work+together\\\",\\\"applinks.docs.link.applications\\\":\\\"Link+Atlassian+applications+to+work+together\\\",\\\"applinks.docs.diagnostics.troubleshoot.oauthproblem\\\":\\\"OAuth+troubleshooting+guide\\\",\\\"applinks.docs.diagnostics.troubleshoot.migration\\\":\\\"Update+application+links+to+use+OAuth\\\",\\\"applinks.docs.relocate.application.link\\\":\\\"Link+Atlassian+applications+to+work+together\\\",\\\"applinks.docs.administering.entity.links\\\":\\\"Create+links+between+projects\\\",\\\"applinks.docs.upgrade.application.link\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.diagnostics.troubleshoot.connectionrefused\\\":\\\"Network+and+connectivity+troubleshooting+guide\\\",\\\"applinks.docs.configuring.auth.oauth\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.insufficient.remote.permission\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.configuring.application.link.auth\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.diagnostics\\\":\\\"Application+links+diagnostics\\\",\\\"applinks.docs.configured.authentication.types\\\":\\\"OAuth+security+for+application+links\\\",\\\"applinks.docs.adding.entity.link\\\":\\\"Create+links+between+projects\\\",\\\"applinks.docs.diagnostics.troubleshoot.unexpectedresponse\\\":\\\"Network+and+connectivity+troubleshooting+guide\\\",\\\"applinks.docs.configuring.auth.basic\\\":\\\"Configuring+Basic+HTTP+Authentication+for+an+Application+Link\\\",\\\"applinks.docs.diagnostics.troubleshoot.authlevelmismatch\\\":\\\"OAuth+troubleshooting+guide\\\"}}\";\nWRM._unparsedData[\"com.atlassian.applinks.applinks-plugin:applinks-common-exported.applinks-types\"]=\"{\\\"crowd\\\":\\\"Crowd\\\",\\\"confluence\\\":\\\"Confluence\\\",\\\"remote.plugin.container\\\":\\\"Atlassian
+        Connect\\\",\\\"fecru\\\":\\\"FishEye / Crucible\\\",\\\"stash\\\":\\\"Stash\\\",\\\"jira\\\":\\\"JIRA\\\",\\\"bamboo\\\":\\\"Bamboo\\\",\\\"generic\\\":\\\"Generic
+        Application\\\"}\";\nWRM._unparsedData[\"com.atlassian.applinks.applinks-plugin:applinks-common-exported.entity-types\"]=\"{\\\"singular\\\":{\\\"fecru.project\\\":\\\"Crucible
+        Project\\\",\\\"fecru.repository\\\":\\\"FishEye Repository\\\",\\\"stash.project\\\":\\\"Stash
+        Project\\\",\\\"generic.entity\\\":\\\"Generic Project\\\",\\\"confluence.space\\\":\\\"Confluence
+        Space\\\",\\\"bamboo.project\\\":\\\"Bamboo Project\\\",\\\"jira.project\\\":\\\"JIRA
+        Project\\\"},\\\"plural\\\":{\\\"fecru.project\\\":\\\"Crucible Projects\\\",\\\"fecru.repository\\\":\\\"FishEye
+        Repositories\\\",\\\"stash.project\\\":\\\"Stash Projects\\\",\\\"generic.entity\\\":\\\"Generic
+        Projects\\\",\\\"confluence.space\\\":\\\"Confluence Spaces\\\",\\\"bamboo.project\\\":\\\"Bamboo
+        Projects\\\",\\\"jira.project\\\":\\\"JIRA Projects\\\"}}\";\nWRM._unparsedData[\"com.atlassian.applinks.applinks-plugin:applinks-common-exported.authentication-types\"]=\"{\\\"com.atlassian.applinks.api.auth.types.BasicAuthenticationProvider\\\":\\\"Basic
+        Access\\\",\\\"com.atlassian.applinks.api.auth.types.TrustedAppsAuthenticationProvider\\\":\\\"Trusted
+        Applications\\\",\\\"com.atlassian.applinks.api.auth.types.CorsAuthenticationProvider\\\":\\\"CORS\\\",\\\"com.atlassian.applinks.api.auth.types.OAuthAuthenticationProvider\\\":\\\"OAuth\\\",\\\"com.atlassian.applinks.api.auth.types.TwoLeggedOAuthAuthenticationProvider\\\":\\\"OAuth\\\",\\\"com.atlassian.applinks.api.auth.types.TwoLeggedOAuthWithImpersonationAuthenticationProvider\\\":\\\"OAuth\\\"}\";\nWRM._unparsedData[\"com.atlassian.crowd.user-provisioning-vertigo-plugin:create-users-resources.isSiteAdmin\"]=\"false\";\nWRM._unparsedData[\"jira.webresources:avatar-picker.data\"]=\"{\\\"isEnabled\\\":true,\\\"url\\\":\\\"/plugins/servlet/redirectToProfile?target=edit-avatar\\\"}\";\nWRM._unparsedData[\"com.atlassian.jira.jira-header-plugin:dismissedFlags.flags\"]=\"{\\\"dismissed\\\":[]}\";\nWRM._unparsedData[\"com.atlassian.jira.ui.selector:ui-selector.uri-override\"]=\"{\\\"uri\\\":\\\"\\\"}\";\nWRM._unparsedData[\"com.atlassian.servicedesk.core-ui:util-help-links.help-links\"]=\"{\\\"help\\\":{\\\"sla.settings\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/setting+up+slas\\\",\\\"email.settings\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Receiving+requests+by+email\\\",\\\"request.type\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/configuring+request+types+and+workflows\\\",\\\"servicedesk.organizations\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Setting+up+service+desk+users#Settingupservicedeskusers-manageorgsManageorganizations\\\",\\\"managing.queues\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Setting+up+queues+for+your+team\\\",\\\"servicedesk.users\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Setting+up+service+desk+users\\\",\\\"email.setup\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Receiving+requests+by+email\\\",\\\"documentation.home\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/JIRA+Service+Desk+Documentation\\\",\\\"multi.language.portal\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Translating+your+customer+portal+and+supporting+multiple+languages\\\",\\\"default\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/\\\",\\\"portal.settings\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/best+practices+for+designing+the+customer+portal\\\",\\\"setting.up.reports\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Setting+up+service+desk+reports\\\",\\\"getting.started.agent\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Getting+started+for+service+desk+agents\\\",\\\"queues.setup\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/setting+up+queues+for+your+team\\\",\\\"request.settings.help.bubble\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Managing+access+to+your+service+desk\\\",\\\"email.settings.suitablerequest\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Receiving+requests+by+email#Receivingrequestsbyemail-suitablerequest\\\",\\\"servicedesk.software.teams\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/best+practices+for+software+teams+using+jira+service+desk\\\",\\\"create.space.help\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Serving+customers+with+a+knowledge+base#serving-customers-with-a-knowledge-base-createpermission\\\",\\\"email.settings.troubleshooting\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Troubleshooting+issues+with+the+email+channel\\\",\\\"admin.notifications.config\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Managing+service+desk+notifications\\\",\\\"troubleshoot.requesttype\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Troubleshooting+issues+with+request+types\\\",\\\"approvals.configuration\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Configuring+JIRA+Service+Desk+approvals\\\",\\\"public.signup\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Configuring+public+signup\\\",\\\"knowledge.base\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Serving+customers+with+a+knowledge+base\\\",\\\"resolve.permission.scheme.errors\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Resolving+permission+scheme+errors\\\",\\\"getting.started\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Getting+started+with+JIRA+Service+Desk\\\",\\\"invite.customers\\\":\\\"https://confluence.atlassian.com/display/SERVICEDESKCLOUD/Managing+access+to+your+service+desk\\\"},\\\"kb\\\":{\\\"default\\\":\\\"https://confluence.atlassian.com/display/SDKB/\\\",\\\"legacytransition\\\":\\\"https://confluence.atlassian.com/display/SDKB/Replacing+legacy+automatic+transitions+with+automation+rules\\\",\\\"umtroubleshoot\\\":\\\"https://confluence.atlassian.com/display/SDKB/Troubleshooting+issues+with+service+desk+user+management\\\"}}\";\nWRM._unparsedData[\"com.atlassian.servicedesk.core-ui:util-base-url.base-url\"]=\"\\\"https://godeploy.atlassian.net\\\"\";\nWRM._unparsedData[\"com.atlassian.jira.ext.calendar:tipDataProvider.tip\"]=\"{\\\"suppressTip\\\":false}\";\nWRM._unparsedData[\"com.atlassian.jira.jira-tzdetect-plugin:tzdetect-lib.time-zone-data\"]=\"{\\\"julyOffset\\\":19800000,\\\"tzid\\\":\\\"Asia/Calcutta\\\",\\\"tzname\\\":\\\"(GMT+05:30)
+        timezone.zone.asia.calcutta\\\",\\\"janOffset\\\":19800000,\\\"enabled\\\":false}\";\nWRM._unparsedData[\"com.atlassian.labs.hipchat.hipchat-for-jira-plugin:resources-init.is-hipchat-enabled-data-provider\"]=\"false\";\nWRM._unparsedData[\"jira.webresources:user-message-flags.adminLockout\"]=\"{}\";\nWRM._unparsedData[\"com.atlassian.plugins.helptips.jira-help-tips:help-tip-manager.JiraHelpTipData\"]=\"{\\\"anonymous\\\":true}\";\nif(window.WRM._dataArrived)window.WRM._dataArrived();</script>\n<link
+        type=\"text/css\" rel=\"stylesheet\" href=\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/4f9a9a37cb0ca9d1c8a5039ae4ca1f68/_/download/contextbatch/css/_super/batch.css?adg3Enabled=true&amp;relative-url=true\"
+        data-wrm-key=\"_super\" data-wrm-batch-type=\"context\" media=\"all\">\n<link
+        type=\"text/css\" rel=\"stylesheet\" href=\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/1340787ffe2854c566c2e8211676d9e4/_/download/contextbatch/css/atl.general,jira.general,atl.global,jira.global,-_super/batch.css?adg3Enabled=true&amp;agile_global_admin_condition=true&amp;devsummary=true&amp;globalSidebarEnabled=true&amp;jag=true&amp;relative-url=true\"
+        data-wrm-key=\"atl.general,jira.general,atl.global,jira.global,-_super\" data-wrm-batch-type=\"context\"
+        media=\"all\">\n<script type=\"text/javascript\" src=\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/bbdf4ade4647f633cb51ebf35be75786/_/download/contextbatch/js/_super/batch.js?adg3Enabled=true&amp;locale=en-US\"
+        data-wrm-key=\"_super\" data-wrm-batch-type=\"context\" data-initially-rendered></script>\n<script
+        type=\"text/javascript\" src=\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/ac286b2eaefe0bed132c45e22b8c4b1f/_/download/contextbatch/js/atl.general,jira.general,atl.global,jira.global,-_super/batch.js?adg3Enabled=true&amp;agile_global_admin_condition=true&amp;devsummary=true&amp;globalSidebarEnabled=true&amp;jag=true&amp;locale=en-US\"
+        data-wrm-key=\"atl.general,jira.general,atl.global,jira.global,-_super\" data-wrm-batch-type=\"context\"
+        data-initially-rendered></script>\n<script type=\"text/javascript\" src=\"//d8yamy2x5x1sw.cloudfront.net/atl-vertigo--shard-jira-prod-eu-3--3--jres.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/9bfbe78980c18e5e8c2dba0ea7f0ef59/_/download/batch/com.pyxis.greenhopper.jira:gh-create-board-adg3-no-condition/com.pyxis.greenhopper.jira:gh-create-board-adg3-no-condition.js\"
+        data-wrm-key=\"com.pyxis.greenhopper.jira:gh-create-board-adg3-no-condition\"
+        data-wrm-batch-type=\"resource\" data-initially-rendered></script>\n<link
+        type=\"text/css\" rel=\"stylesheet\" href=\"//d8yamy2x5x1sw.cloudfront.net/godeploy.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-CDN/-30jg3x/b/6/7b27c1cc24eea6ce29e692efdc90dd5c/_/download/jira-lf-contextbatch/css/jira.global.look-and-feel,-_super/batch.css?adg3Enabled=true&amp;relative-url=true\"
+        data-wrm-key=\"jira.global.look-and-feel,-_super\" data-wrm-batch-type=\"context\"
+        media=\"all\">\n\n    <meta name=\"application-name\" content=\"JIRA\" data-name=\"jira\"
+        data-version=\"1001.0.0-SNAPSHOT\">\n</head>\n<body id=\"jira\" class=\"aui-layout
+        aui-style-default page-type-message\"  data-version=\"1001.0.0-SNAPSHOT\"
+        >\n    <div class=\"aui-page-panel\"><div class=\"aui-page-panel-inner\">\n
+        \           <section class=\"aui-page-panel-content\">\n                    <header
+        class=\"aui-page-header\"><div class=\"aui-page-header-inner\">\n                            <div
+        class=\"aui-page-header-main\">\n                                    <h1>Unauthorized
+        (401)</h1>\n                                </div><!-- .aui-page-header-main
+        -->\n                        </div><!-- .aui-page-header-inner --></header><!--
+        .aui-page-header -->\n                    <div class=\"aui-message aui-message-warning
+        warning\">\n                            <p>Encountered a <code>&quot;401 -
+        Unauthorized&quot;</code> error while loading this page.</p>\n                            <p><a
+        href=\"/secure/MyJiraHome.jspa\">Go to Jira home</a></p>\n                        </div>\n
+        \               </section><!-- .aui-page-panel-content -->\n        </div><!--
+        .aui-page-panel-inner --></div><!-- .aui-page-panel -->\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 06:46:45 GMT
+recorded_with: VCR 4.0.0

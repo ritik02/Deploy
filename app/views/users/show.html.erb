@@ -1,19 +1,35 @@
 <%= stylesheet_link_tag 'deployment-page'%>
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
-<script type="text/javascript">
-	$(document).ready(function(){
-    $('.modal').modal();
-  });
-</script>
+<%= javascript_include_tag "user.js" %>
 
+<div id="consent" class="modal">
+    <div class="modal-content">
+      <h4>Consent Form</h4>
+      <p>I acknowledge the approval of the requested deployement and is going to trigger the same.</p>
+      <p>Allow redirection to gitlab pipeline and sending of notifiaction to the choosen mail group.</p>
+      <div class="input-field col s12">
+      	<% users = User.all %>
+		    <select id="team_email">
+		      <option value="" disabled selected>Select your team mail</option>
+		      <% users.each do |user| %>
+		      	<option value="<%= user.email %>"><%= user.email %></option>
+		      <% end %>
+		    </select>
+		  </div>
+    </div>
+    <div class="modal-footer">
+      <a onclick="close_click()" class="modal-close waves-effect waves-green btn-flat agree">Close</a>
+      <a onclick="agree_click()" id="agree" class="modal-close waves-effect waves-green btn-flat agree">Agree</a>
+    </div>
+</div>
 
 <div class="container deployment-container table-container">
 	<div class="card card-heading">
 		<h4 style="text-align:center;"> Deployment History </h4>
 	</div>
 </div>
-<div class="container table-container">
+<div class="container table-container deployments-done-container">
 	<div class= "card">
 		<table class="table highlight responsive-table striped centered">
 			<thead class="thead-dark">
@@ -37,7 +53,7 @@
 					<td><%= deployment.status %></td>
 					<td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
 					<% if deployment.status == "Approved" %>
-					<td><a  class="waves-effect waves-light btn modal-trigger" href="#consent">Deploy</a></td>
+					<td> <button onclick="button_click('<%= deployment.id %>')" data-target="consent" class="btn modal-trigger">Deploy</button></td>
 					<% else %>
 					<td></td>
 					<% end %>
@@ -46,9 +62,10 @@
 			</tbody>
 		</table>
 	</div>
+
 </div>
 <% if !@user_reviews.blank? %>
-	<div class="container deployment-container table-container">
+	<div class="container deployment-container table-container ">
 		<div class="card card-heading">
 			<h4 style="text-align:center;"> Review History </h4>
 		</div>
@@ -85,14 +102,5 @@
 	</div>
 <% end %>
 
-<div id="consent" class="modal">
-    <div class="modal-content">
-      <h4>Consent Form</h4>
-      <p>A bunch of text</p>
-    </div>
-    <div class="modal-footer">
 
-      <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-    </div>
-  </div>
 <footer class="page-footer"></footer>

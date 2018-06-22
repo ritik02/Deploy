@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://godeploy.atlassian.net/rest/api/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cml0aWsudi5hdXhAZ28tamVrLmNvbTpIWTRHUEVQUTUxUWN3a3p4WlhCaDA4QUI=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - Atlassian Proxy/0.1.266
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/html;charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains; preload
+      Date:
+      - Fri, 22 Jun 2018 08:26:47 GMT
+      X-Arequestid:
+      - deb37a7b-e42e-400d-9966-59618314a1bb
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      X-Ausername:
+      - ritik.v.aux
+      X-Content-Type-Options:
+      - nosniff
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - JSESSIONID=53C77D47BFCC54B50BA21A8F544482C4; Expires=Thu, 01-Jan-1970 00:00:10
+        GMT; Path=/; Secure; HttpOnly
+      - atlassian.xsrf.token=b192e582-268b-4e4e-af0a-ed4d57aa5fcb_4ba72a614a1bbd1fd06e7d8090adc66dabfd6c10_lin;
+        Path=/; Secure
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta
+        http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title>Oops, you&#39;ve
+        found a dead link. - JIRA</title><script type=\"text/javascript\">contextPath
+        = \"\";</script><link type='text/css' rel='stylesheet' href='/static-assets/metal-all.css'
+        media='all'><script src='/static-assets/metal-all.js'></script><!--[if lt
+        IE 9]><link type='text/css' rel='stylesheet' href='/static-assets/metal-all-ie.css'
+        media='all'><script src='/static-assets/metal-all-ie.js'></script><![endif]--><!--[if
+        IE 9]><link type='text/css' rel='stylesheet' href='/static-assets/metal-all-ie9.css'
+        media='all'><![endif]--><meta name=\"decorator\" content=\"none\" /></head><body
+        class=\" error-page error404\"><script type=\"text/javascript\">document.body.className
+        += \" js-enabled\";</script><div id=\"page\"><header id=\"header\" role=\"banner\"></header><!--
+        #header --><section id=\"content\" role=\"main\"><div class=\"aui-page-panel\"><div
+        class=\"aui-page-panel-inner\"><section class=\"aui-page-panel-content lowerContent\"><div
+        id=\"error-state\"><span class=\"error-type\"></span><h1>Oops, you&#39;ve
+        found a dead link.</h1><ul><li>Go back to the <a href=\"javascript:window.history.back()\">previous
+        page</a></li><li>Go to the <a href=\"/secure/MyJiraHome.jspa\">Home Page</a></li></ul></div></section><!--
+        .aui-page-panel-content --></div><!-- .aui-page-panel-inner --></div><!--
+        .aui-page-panel --></section><!-- #content --><footer id=\"footer\" role=\"contentinfo\"><section
+        class=\"footer-body\">\n\n\n<ul class=\"atlassian-footer\">\n    <li>\n        Atlassian
+        JIRA <a class=\"seo-link\" href=\"https://www.atlassian.com/software/jira\">Project
+        Management Software</a>\n\n                                    \n                        \n
+        \       <span id=\"footer-build-information\">(v1001.0.0-SNAPSHOT#100087-<span
+        title='2813e6b6712bfbde5d8838a93e9c10bda3573f23' data-commit-id='2813e6b6712bfbde5d8838a93e9c10bda3573f23}'>sha1:2813e6b</span>)</span>\n
+        \   </li>\n    <li>\n        <a id=\"about-link\" href=\"/secure/AboutPage.jspa\">About
+        JIRA</a>\n    </li>\n    <li>\n                        <a id=\"footer-report-problem-link\"
+        href=\"/secure/ContactAdministrators!default.jspa\">Report a problem</a>\n
+        \   </li>\n</ul>\n<div id=\"footer-logo\"><a href=\"http://www.atlassian.com/\"
+        rel=\"nofollow\">Atlassian</a></div></section></footer><!-- #footer --></div><!--
+        #page --></body></html>"
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 08:26:47 GMT
+recorded_with: VCR 4.0.0

@@ -8,6 +8,7 @@ one:
    job_name: prod
    checklist:
    status: Created
+   jira_link: "http://jira_link.com"
 two:
    id: 2
    user_id: 3

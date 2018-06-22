@@ -4,9 +4,11 @@ RSpec.describe DeploymentsController, type: :controller do
 	fixtures :deployments , :users
 	describe "GET deployments#new" do
 		it "should open deployment new page when checklist button is clicked" do
-			sign_in users(:four)
-			get :new , params: {user_id: 4, project_name: "Calculator_Project", commit_id: "r3df32", project_id: 234, last_deployed_commit: "r3df32"}
-			expect(response).to have_http_status(:success)
+			VCR.use_cassette("deployment_new") do
+				sign_in users(:eleven)
+				get :new , params: {user_id: users(:eleven).id, project_name: "Calculator_Project", commit_id: "r3df32", project_id: 234, last_deployed_commit: "r3df32"}
+				expect(response).to have_http_status(:success)
+			end
 		end
 
 	end
@@ -28,9 +30,12 @@ RSpec.describe DeploymentsController, type: :controller do
 
 	describe "GET deployments#create" do
 		it "should create the checklist of a deployment" do
-			sign_in users(:nine)
-			post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
-			expect(Deployment.fourth.status).to eq "Pending Approval"
+			VCR.use_cassette("deployment_create") do
+				sign_in users(:eleven)
+				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:eleven).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
+				expect(Deployment.fourth.status).to eq "Pending Approval"
+				expect(Deployment.fourth.jira_link).not_to be nil
+			end
 		end
 
 		it "should not create the checklist of a deployment if reviewer_email is invalid" do
