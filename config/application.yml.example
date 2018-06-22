@@ -14,6 +14,9 @@ SMTP_PASSWORD:               'password'
 DIFF_BASE_URL:               'http://localhost:3000'
 DOMAIN_BASE_URL:             'http://localhost:3000'
 GITLAB_BASE_URL:             'https://source.golabs.io/'
+JIRA_BASE_URL:               'https://godeploy.atlassian.net/'
+JIRA_PROJECT_KEY:            'DEMO'
+JIRA_ISSUE_TYPE:             'Task'
 
 test:
   RAILS_ENV:                 'test'

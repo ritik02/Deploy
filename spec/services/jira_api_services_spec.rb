@@ -19,4 +19,15 @@ RSpec.describe JiraApiServices  do
     end
   end
 
-end
+  context "check api creating an issue" do
+    it "Should create a new issue" do
+      VCR.use_cassette("create_new_jira_issue") do
+        actual = JiraApiServices.new(decrypt_access_token(users(:eleven).jira_token), users(:eleven).email).create_issue("New Issue",
+          "Checklist link",users(:eleven).username)
+          expect(actual["self"]).to eq "https://godeploy.atlassian.net/rest/api/2/issue/10021"
+        end
+      end
+    end
+
+
+  end

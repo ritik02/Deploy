@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://godeploy.atlassian.net/rest/api/2/issue
+    body:
+      encoding: UTF-8
+      string: '{"fields":{"project":{"key":"DEMO"},"summary":"New Issue","description":"Checklist
+        link","issuetype":{"name":"Task"},"assignee":{"name":"ritik.v.aux"}}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic cml0aWsudi5hdXhAZ28tamVrLmNvbTpIWTRHUEVQUTUxUWN3a3p4WlhCaDA4QUI=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - Atlassian Proxy/0.1.266
+      Cache-Control:
+      - no-cache, no-store, no-transform
+      Content-Type:
+      - application/json;charset=UTF-8
+      Strict-Transport-Security:
+      - max-age=315360000; includeSubDomains; preload
+      Date:
+      - Fri, 22 Jun 2018 08:42:43 GMT
+      X-Arequestid:
+      - f0b496b0-d250-4956-bf30-a414e305f1bd
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      X-Ausername:
+      - ritik.v.aux
+      X-Content-Type-Options:
+      - nosniff
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - atlassian.xsrf.token=b192e582-268b-4e4e-af0a-ed4d57aa5fcb_359705dd4d64958346d6e14ca81ad2ab5c6158bf_lin;
+        Path=/; Secure
+    body:
+      encoding: UTF-8
+      string: '{"id":"10021","key":"DEMO-21","self":"https://godeploy.atlassian.net/rest/api/2/issue/10021"}'
+    http_version: 
+  recorded_at: Fri, 22 Jun 2018 08:42:43 GMT
+recorded_with: VCR 4.0.0
