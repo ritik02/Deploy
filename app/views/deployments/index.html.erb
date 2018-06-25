@@ -50,7 +50,7 @@
           <tr>
             <% if !deployment.reviewer_id.blank? %>
             <td><%= User.where(:id => deployment.user_id).first.name %></td>
-            <td><%= deployment.project_name %></td>
+            <td><%= link_to deployment.project_name, user_project_path(user_id: @user.id, id: deployment.project_id) %></td>
             <td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
             <td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
             <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
