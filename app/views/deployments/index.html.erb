@@ -41,6 +41,7 @@
           <th>Commit ID</th>
           <th>Reviewer</th>
           <th>Status</th>
+          <th>Time taken to review</th>
           <th>Last Activity</th>
         </tr>
       </thead>
@@ -54,6 +55,7 @@
             <td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
             <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
             <td><%= deployment.status %></td>
+            <td><%= deployment.review_time %></td>
             <td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
             <% end %>
           </tr>
