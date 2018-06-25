@@ -2,6 +2,12 @@
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>
+
 <div class = "container-collapses">
     <div class="row">
       <div class="card-panel white ">
@@ -46,6 +52,40 @@
       </ul>
     </div>
   </div>
+
+  <div class="row">
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">history</i>Project Deployments</div>
+        <div class="collapsible-body" style="margin-bottom: 50px;">
+          <table class="table highlight responsive-table striped centered">
+            <thead class="thead-dark">
+              <tr>
+                <th>Title</th>
+                <th>Commit ID</th>
+                <th>Reviewer</th>
+                <th>Status</th>
+                <th>Last Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @project_deployments.each do |deployment| %>
+              <tr>
+                <td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
+                <td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @current_user.id), target: :_blank%></td>
+                <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
+                <td><%= deployment.status %></td>
+                <td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </li>
+  </ul>
+  </div>
 </div>
+
+
 
 <footer class="page-footer"></footer>

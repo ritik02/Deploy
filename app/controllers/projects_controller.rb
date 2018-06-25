@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
     project_id = params["id"]
     get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
     return if !project_id_valid?(project_id) || !pipeline_exist?(project_id)
+    @project_deployments = Deployment.where(project_id: project_id)
     jobs = @gitlab_api_services.get_jobs_of_a_pipeline(project_id, @pipeline["id"])
     map_stages_with_jobs(jobs)
   end
