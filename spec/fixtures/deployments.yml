@@ -31,6 +31,7 @@ three:
    checklist:
    status: Approved
    review_time:
+   jira_link: "http://jira_link.com"
 four:
    id: 4
    user_id: 5
@@ -42,3 +43,4 @@ four:
    checklist:
    status: Approved
    review_time:
+   jira_link: "http://jira_link.com"

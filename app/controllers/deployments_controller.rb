@@ -62,6 +62,7 @@ class DeploymentsController < ApplicationController
 		unless params[:channel_name].blank?
 			send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
 		end
+		UserMailer.deployment_trigger_mail(deployment, params[:team_email]).deliver if !params[:team_email].blank?
 		redirect_to user_path(id: @user.id)
 	end
 
@@ -72,7 +73,6 @@ class DeploymentsController < ApplicationController
 		response = @jira_api_services.create_issue(params[:project_name] + " - " + params[:deployments][:title],
 			"CHECKLIST LINK: " + Figaro.env.domain_base_url + "/deployments/" + deployment.id.to_s,
 			User.find(deployment.reviewer_id).username)
-		puts Figaro.env.jira_base_url + "/browse/" + response["key"]
 		Figaro.env.jira_base_url + "browse/" + response["key"]
 	end
 
@@ -114,7 +114,7 @@ class DeploymentsController < ApplicationController
 
 	def check_admin
 		get_admins
-		return if current_user.email == @admin
+		return if @admin.include?(current_user.email)
 		redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
 	end
 end

@@ -23,6 +23,7 @@ RSpec.describe DeploymentsController, type: :controller do
 
 		it "should redirect to projects index page when not admin" do
 			sign_in users(:one)
+			subject.current_user.email = "not_admin@go-jek.com"
 			get :index, params: {options: "reviewer_id", sort: "DESC"}
 			expect(response).to redirect_to user_projects_path(user_id: users(:one).id)
 		end
@@ -86,7 +87,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should redirect to users show page even if channel_name is not provided" do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
-				get :trigger_deployment, params: {id: 3}
+				get :trigger_deployment, params: {id: 3, team_email: "group_mail@go-jek.com"}
 				expect(response).to redirect_to user_url(id: users(:ten).id)
 			end
 		end
@@ -94,7 +95,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should redirect to users show page if channel_name is provided" do
 			VCR.use_cassette("trigger_deployment_with_channel_name") do
 				sign_in users(:twelve)
-				get :trigger_deployment, params: {id: 4, channel_name: "test_new"}
+				get :trigger_deployment, params: {id: 4, channel_name: "test_new", team_email: "group_mail@go-jek.com"}
 				expect(response).to redirect_to user_url(id: users(:twelve).id)
 			end
 		end
