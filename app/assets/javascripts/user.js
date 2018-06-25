@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('.modal').modal();
+	$('select').formSelect();
+	$('.tabs').tabs();
 });
 function button_click(id){
 	console.log(id);

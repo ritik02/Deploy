@@ -8,28 +8,28 @@
   </div>
 </div>
 
-      <div class="row" style="max-width: 1280px;">
-        <form action="/deployments" method="get">
-          <div class="input-field col s5">
-            <select onchange="setCategory(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options" id="category">
-              <option value="updated_at">Time</option>
-              <option value="project_id">Project</option>
-              <option value="user_id">Deployer</option>
-              <option value="reviewer_id">Reviewer</option>
-            </select>
-            <label>Select a category</label>
-          </div>
-          <div class="input-field col s5">
-            <select onchange="setOrder(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort" id="order">
-              <option value="DESC">Descending</option>
-              <option value="ASC">Ascending</option>
-            </select>
-          </div>
-          <div class="input-field col s2 center">
-            <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Sort</button>
-          </div>
-        </form>
+<div class="row" style="max-width: 1280px;">
+  <form action="/deployments" method="get">
+    <div class="input-field col s5">
+      <select onchange="setCategory(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options" id="category">
+        <option value="updated_at">Time</option>
+        <option value="project_id">Project</option>
+        <option value="user_id">Deployer</option>
+        <option value="reviewer_id">Reviewer</option>
+      </select>
+      <label>Select a category</label>
     </div>
+    <div class="input-field col s5">
+      <select onchange="setOrder(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort" id="order">
+        <option value="DESC">Descending</option>
+        <option value="ASC">Ascending</option>
+      </select>
+      </div>
+      <div class="input-field col s2 center">
+        <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Sort</button>
+      </div>
+  </form>
+</div>
 <div class="container table-container">
   <div class= "card">
     <table class="table highlight responsive-table striped centered">
