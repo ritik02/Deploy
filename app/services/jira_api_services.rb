@@ -12,6 +12,7 @@ class JiraApiServices
 
   def check_api_for_valid_token?
     response = HTTParty.get(@base_url, :headers => @headers)
+    puts response
     return false if response.code == 401
     return true
   end
