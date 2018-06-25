@@ -59,11 +59,10 @@ class DeploymentsController < ApplicationController
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
-		trigger_helper(deployment)
 		unless params[:channel_name].blank?
-			message_status = send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
+			send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
 		end
-		redirect_to get_gitlab_pipeline_trigger_link(deployment)
+		redirect_to user_path(id: @user.id)
 	end
 
 	private
@@ -84,12 +83,6 @@ class DeploymentsController < ApplicationController
 			"\n Checklist Link: #{checklist_link}\n Jira Issue Link: #{deployment.jira_link}."
 	end
 
-	def trigger_helper(deployment)
-		get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
-		@last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
-		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, @last_pipeline_id), deployment.job_name)
-	end
-
 	def params_valid?(params)
 		return true if !User.where(:email => params[:deployments][:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
 		redirect_to new_deployment_path(user_id: current_user.id,
@@ -101,11 +94,6 @@ class DeploymentsController < ApplicationController
 		return false
 	end
 
-	def get_job_id_from_job_name(jobs, job_name)
-		jobs.each do |job|
-			return job["id"] if job["name"] == job_name
-		end
-	end
 
 	def get_details
 		@user = current_user
@@ -122,13 +110,6 @@ class DeploymentsController < ApplicationController
 		"?last_deployed_commit=" + params[:last_deployed_commit] +
 		"&project_name=" + params[:project_name]
 		git_diff_link
-	end
-
-	def get_gitlab_pipeline_trigger_link(deployment)
-		pipeline_trigger_gitlab_link = Figaro.env.gitlab_base_url +
-		@user.username + "/" +
-		deployment.project_name +
-		"/pipelines/" + @last_pipeline_id.to_s
 	end
 
 	def check_admin

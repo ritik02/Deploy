@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<%= render "layouts/topmenu_bar", user: @user %>
-<%= render "layouts/sidebar_menu", user: @user %>
+<% user = @user; user = User.where(email: @admin).first if @current_user.email == @admin %>
+<%= render "layouts/topmenu_bar", user: user %>
+<%= render "layouts/sidebar_menu", user: @current_user %>
 <%= javascript_include_tag "user.js" %>
 
 <div class="container table-container deployments-done-container">
@@ -33,7 +34,7 @@
     </div>
     <div class="modal-footer">
       <a onclick="close_click()" class="modal-close waves-effect waves-green btn-flat agree">Close</a>
-      <a onclick="agree_click()" id="agree" class="modal-close waves-effect waves-green btn-flat agree">Agree</a>
+      <a onclick="agree_click()" id="agree" class="modal-close waves-effect waves-green btn-flat agree">Agree and Redirect to Gitlab</a>
     </div>
 </div>
 
@@ -61,7 +62,8 @@
 					<td><%= deployment.status %></td>
 					<td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
 					<% if deployment.status == "Approved" && @user.id == @current_user.id %>
-					<td> <button onclick="button_click('<%= deployment.id %>')" data-target="consent" class="btn modal-trigger">Deploy</button></td>
+          <% pipeline_trigger_link = get_gitlab_pipeline_trigger_link(deployment) %>
+					<td> <button onclick="button_click('<%= deployment.id %>','<%= pipeline_trigger_link %>')" data-target="consent" class="btn modal-trigger">Deploy</button></td>
 					<% else %>
 					<td></td>
 					<% end %>

@@ -1,6 +1,7 @@
 <%= stylesheet_link_tag 'deployment-page'%>
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
+<%= javascript_include_tag "deployment.js" %>
 
 <div class="container">
   <div class = "card">
@@ -161,7 +162,7 @@
 
       <h5><b>Project component - Code</b></h5>
       <div class="input-field col s12">
-        <label for="deployments_project_component_code_1">1. List down commits with acceptance criteria, if it’s adhoc, mention adhoc, if it’s adhoc thenget sign off from tech lead and product manager, ask them to document this ad-hoc storyand put a proper sign off</label>
+        <label for="deployments_project_component_code_1">1. List down commits with acceptance criteria, if it’s adhoc, mention adhoc, if it’s adhoc then get sign off from tech lead and product manager, ask them to document this ad-hoc storyand put a proper sign off</label>
         <br>
         <%= form.text_area :project_component_code_1 ,class: 'materialize-textarea form-group form-control' %>
       </div>
@@ -190,7 +191,7 @@
         <%= form.text_area :project_component_code_7 ,class: 'materialize-textarea form-group form-control' %>
       </div>
       <div class="input-field col s12">
-        <label for="deployments_project_component_code_8">8. How many synnous calls your code makes? (Also list down in impacted services)</label>
+        <label for="deployments_project_component_code_8">8. How many synchronous calls your code makes? (Also list down in impacted services)</label>
         <%= form.text_area :project_component_code_8 ,class: 'materialize-textarea form-group form-control' %>
       </div>
       <label style="font-size: 18px;">Choose a reviewer to mail</label>
