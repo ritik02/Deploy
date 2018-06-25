@@ -24,14 +24,7 @@
 
   <section class="steps bg-primary text-center" id="steps">
     <div class="container">
-      <%= flash.empty? %>
-      <% flash.each do |k,v| %>
-        <% if v != "You need to sign in or sign up before continuing." %>
-           alert("<%= v %>");
-        <% end %>
-      <% end %>
 				<div class="card-deck">
-
           <div class="card purple-cards align-card p-1 pt-5">
             <h3 class="my-4 mx-2">1. Click on Generate Token.</h3>
             <h3 class="my-3 mx-2" >2. Create a new personal access token.</h3>
