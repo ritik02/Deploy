@@ -7,6 +7,7 @@
     </div>
   </nav>
 
+
   <header class="masthead">
     <div class="container h-100">
       <div class="row h-100">
@@ -23,6 +24,12 @@
 
   <section class="steps bg-primary text-center" id="steps">
     <div class="container">
+      <%= flash.empty? %>
+      <% flash.each do |k,v| %>
+        <% if v != "You need to sign in or sign up before continuing." %>
+           alert("<%= v %>");
+        <% end %>
+      <% end %>
 				<div class="card-deck">
 
           <div class="card purple-cards align-card p-1 pt-5">
@@ -43,7 +50,6 @@
           </div>
 
           <div class="card purple-cards p-4" >
-            </br>
             <div class="form-group"></br>
                 <img class="img-responsive m-1" src="/assets/jira_icon.png"  alt="paste" width="100px" height="100px"></br></br>
                 <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br><br>

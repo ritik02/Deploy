@@ -20,6 +20,7 @@ gem 'vcr'
 gem 'webmock'
 gem 'figaro'
 gem 'materialize-sass', '~> 1.0.0.rc1'
+gem 'slack-notifier'
 group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'pry'

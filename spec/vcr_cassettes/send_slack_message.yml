@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://hooks.slack.com/services/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
+    body:
+      encoding: US-ASCII
+      string: payload=%7B%22channel%22%3A%22%23test_new%22%2C%22username%22%3A%22go-deploy%22%2C%22text%22%3A%22Test+message%22%7D
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 25 Jun 2018 05:18:29 GMT
+      Server:
+      - Apache
+      X-Slack-Backend:
+      - h
+      Referrer-Policy:
+      - no-referrer
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Via:
+      - haproxy-www-ky3l
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 706c647442c234a140558b049b967cc5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - r0QVGkpCy9ErR6iRIgog6oIm98f-Y0mbCc12GVgCpB8Vrn4Bod_wCQ==
+    body:
+      encoding: ASCII-8BIT
+      string: ok
+    http_version: 
+  recorded_at: Mon, 25 Jun 2018 05:18:29 GMT
+recorded_with: VCR 4.0.0

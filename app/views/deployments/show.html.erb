@@ -3,8 +3,8 @@
 <%= render "layouts/sidebar_menu", user: @user %>
 <% current_time = Time.current %>
 <% if  @user.id == @deployment.reviewer_id %>
-<%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-success' %>
-<%= link_to  "Reject", deployment_url(id: @deployment.id, status: "Rejected"), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-danger' %>
+  <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-success' %>
+  <%= link_to  "Reject", deployment_url(id: @deployment.id, status: "Rejected", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-danger' %>
 <% end %>
 
 <div class="container deployment-container table-container">

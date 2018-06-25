@@ -33,8 +33,8 @@ RSpec.describe DeploymentsController, type: :controller do
 			VCR.use_cassette("deployment_create") do
 				sign_in users(:eleven)
 				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:eleven).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
-				expect(Deployment.fourth.status).to eq "Pending Approval"
-				expect(Deployment.fourth.jira_link).not_to be nil
+				expect(Deployment.fifth.status).to eq "Pending Approval"
+				expect(Deployment.fifth.jira_link).not_to be nil
 			end
 		end
 
@@ -82,10 +82,18 @@ RSpec.describe DeploymentsController, type: :controller do
 	end
 
 	describe "GET deployments#trigger_deployment" do
-		it "should redirect to gitlab pipeline link" do
+		it "should redirect to gitlab pipeline link even if channel_name is not provided" do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
 				get :trigger_deployment, params: {id: 3}
+				expect(response).to redirect_to 'https://source.golabs.io/archit.j.aux/Calculator Project/pipelines/215700'
+			end
+		end
+
+		it "should redirect to gitlab pipeline link if channel_name is provided" do
+			VCR.use_cassette("trigger_deployment_with_channel_name") do
+				sign_in users(:twelve)
+				get :trigger_deployment, params: {id: 4, channel_name: "test_new"}
 				expect(response).to redirect_to 'https://source.golabs.io/archit.j.aux/Calculator Project/pipelines/215700'
 			end
 		end

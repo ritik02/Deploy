@@ -16,6 +16,7 @@ module TokenValidationHelper
   def redirect_if_token_is_invalid?(token)
     get_gitlab_api_services(token)
     return true if @gitlab_api_services.check_api_for_valid_token?
+    flash[:notice] = "Oops! Seems like your Gitlab token has expired or was revoked"
     redirect_to action: "edit", controller: "users", id: current_user.id
     return false
   end
@@ -23,6 +24,7 @@ module TokenValidationHelper
   def redirect_if_jira_token_is_invalid?(token, user_email)
     get_jira_api_services(token, user_email)
     return true  if @jira_api_services.check_api_for_valid_token?
+    flash[:notice] = "Oops! Seems like your Jira token was revoked"
     redirect_to action: "edit", controller: "users", id: current_user.id
     return false
   end
