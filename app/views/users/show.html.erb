@@ -56,7 +56,7 @@
 					<td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
 					<td><%= deployment.status %></td>
 					<td><%= deployment.updated_at.to_s(:rfc822)[4..24] %></td>
-					<% if deployment.status == "Approved" %>
+					<% if deployment.status == "Approved" && @user.id == @current_user.id %>
 					<td> <button onclick="button_click('<%= deployment.id %>')" data-target="consent" class="btn modal-trigger">Deploy</button></td>
 					<% else %>
 					<td></td>
