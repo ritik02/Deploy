@@ -61,7 +61,7 @@ class DeploymentsController < ApplicationController
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 		trigger_helper(deployment)
 		unless params[:channel_name].blank?
-			send_message_on_slack_channel(params[:channel_name], "Deploying #commit")
+			message_status = send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
 		end
 		redirect_to get_gitlab_pipeline_trigger_link(deployment)
 	end
@@ -75,6 +75,13 @@ class DeploymentsController < ApplicationController
 			User.find(deployment.reviewer_id).username)
 		puts Figaro.env.jira_base_url + "/browse/" + response["key"]
 		Figaro.env.jira_base_url + "browse/" + response["key"]
+	end
+
+	def get_slack_message(deployment)
+		checklist_link = Figaro.env.diff_base_url+ "/deployments/" + deployment.id.to_s
+		message = User.find(deployment.user_id).name.upcase +
+			" is deploying commit ##{deployment.commit_id} of Project - #{deployment.project_name}" +
+			"\n Checklist Link: #{checklist_link}\n Jira Issue Link: #{deployment.jira_link}."
 	end
 
 	def trigger_helper(deployment)

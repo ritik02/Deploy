@@ -12,8 +12,7 @@
           <h4><font color="green"><%=@deployment.status.upcase%></font></h4>
         <% else %>
           <h4><font color="red"><%=@deployment.status.upcase%></font> </h4>
-          <h3>message</h3>
-          <%=@deployment.checklist_comment%>
+          <h4>message from reviewer: "<%=@deployment.checklist_comment%>"</h4>
         <% end %>
     </p>
 	<%= link_to "Deployment History" , Figaro.env.diff_base_url + "/users/" + @deployment.user_id.to_s %>
