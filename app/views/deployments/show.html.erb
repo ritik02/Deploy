@@ -2,9 +2,29 @@
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
 <% current_time = Time.current %>
+<%= javascript_include_tag "deployment.js" %>
+
+<%= form_for @deployment do |form| %>
+  <div id="comment" class="modal">
+      <div class="modal-content">
+       <h4>Add a Comment</h4>
+       <br>
+       <div class="input-field col s12">
+        <%= form.text_area :checklist_comment, class: 'materialize-textarea form-group form-control' %>
+        <label style="font-size: 16px;" for="checklist_comment">Enter your comment</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <%= hidden_field_tag 'status' , "Rejected" %>
+      <%= hidden_field_tag 'current_time' , current_time %>
+      <%= form.submit  "Comment" , class: 'waves-effect waves-green btn-flat' %>
+    </div>
+  </div>
+<% end %>
+
 <% if  @user.id == @deployment.reviewer_id %>
-  <%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-success' %>
-  <%= link_to  "Reject", deployment_url(id: @deployment.id, status: "Rejected", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-danger' %>
+<%= link_to "Approve", deployment_url(id: @deployment.id, status: "Approved", current_time: current_time), :method => :put ,data: { confirm: 'Are you sure?' }, class: 'btn fab fixed-button waves-effect waves-light btn-success' %>
+> <button onclick="button_click()" data-target="comment" class="btn fab fixed-button modal-trigger btn-danger">Reject</button>
 <% end %>
 
 <div class="container deployment-container table-container">
@@ -26,14 +46,14 @@
         </tr>
       </thead>
       <tbody>
-          <tr>
-            <td><%= User.find(@deployment.user_id).name %></td>
-            <td><%= @deployment.status %></td>
-            <td><%= @deployment.project_name %></td>
-            <td><%= @deployment.commit_id %></td>
-            <td><%= @deployment.updated_at.to_s(:rfc822)[4..24] %></td>
-            <td><%= link_to "Link", generate_user_specific_diff_link(@deployment.diff_link, @user.id), target: :_blank %></td>
-          </tr>
+        <tr>
+          <td><%= User.find(@deployment.user_id).name %></td>
+          <td><%= @deployment.status %></td>
+          <td><%= @deployment.project_name %></td>
+          <td><%= @deployment.commit_id %></td>
+          <td><%= @deployment.updated_at.to_s(:rfc822)[4..24] %></td>
+          <td><%= link_to "Link", generate_user_specific_diff_link(@deployment.diff_link, @user.id), target: :_blank %></td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -44,32 +64,32 @@
     <% checklist = JSON.parse(@deployment.checklist)%> <% prev = "" %> <% number = "" %>
 
     <% @question_hash.each do |key, value| %>
-      <% if key.to_s[key.to_s.length-1].between?('0','9') %>
-        <% number = key.to_s[key.to_s.length-1] + ": " %>
-        <% title = key.to_s[0...key.to_s.length-2].split('_') %>
-        <% if prev != title.join(' ').upcase %>
-          <h6 style="color: #4DA852;"><%= title.join(' ').upcase %></h6>
-          <% prev = title.join(' ').upcase %>
-        <% end %>
-        <% else %>
-        <% prev = "" %>
-        <% number = "" %>
-      <% end %>
-        <% if value.to_s.include?("Service") || value.to_s.include?("SERVICE") %>
-        <h6 style="color: #4DA852;"><%= value.upcase %></h6>
-        <% else %>
-          <% if !number.blank? %>
-            <h6 class="questions"><%= number + value %></h6>
-          <% else %>
-            <h6 class="questions"><%=  value %></h6>
-          <% end %>
-        <%end %>
-        <% if key.to_s.include?("service_details") %>
-          <p class = "answers"> <%=  link_to checklist[key.to_s], checklist[key.to_s], target: :_blank %></p>
-        <% else %>
-          <p class = "answers"><%=  checklist[key.to_s] %></p>
-        <% end %>
+    <% if key.to_s[key.to_s.length-1].between?('0','9') %>
+    <% number = key.to_s[key.to_s.length-1] + ": " %>
+    <% title = key.to_s[0...key.to_s.length-2].split('_') %>
+    <% if prev != title.join(' ').upcase %>
+    <h6 style="color: #4DA852;"><%= title.join(' ').upcase %></h6>
+    <% prev = title.join(' ').upcase %>
+    <% end %>
+    <% else %>
+    <% prev = "" %>
+    <% number = "" %>
+    <% end %>
+    <% if value.to_s.include?("Service") || value.to_s.include?("SERVICE") %>
+    <h6 style="color: #4DA852;"><%= value.upcase %></h6>
+    <% else %>
+    <% if !number.blank? %>
+    <h6 class="questions"><%= number + value %></h6>
+    <% else %>
+    <h6 class="questions"><%=  value %></h6>
+    <% end %>
+    <%end %>
+    <% if key.to_s.include?("service_details") %>
+    <p class = "answers"> <%=  link_to checklist[key.to_s], checklist[key.to_s], target: :_blank %></p>
+    <% else %>
+    <p class = "answers"><%=  checklist[key.to_s] %></p>
+    <% end %>
     <% end %>
   </div>
- </div>
+</div>
 <footer class="page-footer"></footer>

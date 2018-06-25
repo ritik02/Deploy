@@ -9,6 +9,7 @@ one:
    checklist:
    status: Created
    jira_link: "http://jira_link.com"
+   checklist_comment:
 two:
    id: 2
    user_id: 3

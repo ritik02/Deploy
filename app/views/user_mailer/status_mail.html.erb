@@ -9,9 +9,11 @@
     <p><h3>Project Name: <%= @deployment.project_name %> </h3>
         Hey, <b><%=User.find(@deployment.reviewer_id).name.upcase%></b> just changed the status of your deployment request to
         <% if @deployment.status == "Approved" %>
-          <h4><font color="green"><%=@deployment.status%></font></h4>
+          <h4><font color="green"><%=@deployment.status.upcase%></font></h4>
         <% else %>
-          <h4><font color="red"><%=@deployment.status%></font></h4>
+          <h4><font color="red"><%=@deployment.status.upcase%></font> </h4>
+          <h3>message</h3>
+          <%=@deployment.checklist_comment%>
         <% end %>
     </p>
 	<%= link_to "Deployment History" , Figaro.env.diff_base_url + "/users/" + @deployment.user_id.to_s %>

@@ -64,13 +64,14 @@ RSpec.describe DeploymentsController, type: :controller do
 
 		it "should update deployment status to Rejected when Rejected button is clicked when reviewer is valid" do
 			sign_in users(:seven)
-			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current, deployment: {checklist_comment: "COMMENT"} }
 			expect(deployments(:one).status).to eq "Rejected"
+			expect(deployments(:one).checklist_comment).to eq "COMMENT"
 		end
 
 		it "should not update deployment status to Rejected when Rejected button is clicked when reviewer is invalid" do
 			sign_in users(:eight)
-			put :update, params: {id: 1,status: "Rejected", current_time: Time.current}
+			put :update, params: {id: 1,status: "Rejected", current_time: Time.current, checklist_comment: "COMMENT"}
 			expect(deployments(:one).status).to eq "Created"
 		end
 

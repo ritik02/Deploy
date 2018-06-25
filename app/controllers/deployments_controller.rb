@@ -49,7 +49,9 @@ class DeploymentsController < ApplicationController
 	def update
 		deployment = Deployment.find(params[:id])
 		return if current_user.id != deployment.reviewer_id
-		deployment.update(status: params[:status], review_time: ((Time.current - Time.parse(params[:current_time])) / 1.minute).round)
+		deployment.update(status: params[:status],
+		 	review_time: ((Time.current - Time.parse(params[:current_time])) / 1.minute).round)
+		deployment.update(checklist_comment: params[:deployment][:checklist_comment].strip) if params[:status] == "Rejected"
 		UserMailer.status_mail(deployment).deliver
 		redirect_to deployment_url(:id => deployment.id)
 	end
