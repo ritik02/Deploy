@@ -78,3 +78,11 @@ eleven:
   gitlab_user_id: 1022
   username: ritik.v.aux
   jira_token: YCP+iwnpEul1zzFv6kTnH+qrsWsJ3qcb72cd4YCYn9cqWA==--Bai6KWkqclA32ZNE--2c7eeMWQN9vBf2+lgwCCaA==
+
+twelve:
+  id: 5
+  name: Archit Joshi
+  email: archit.j.aux@go-jek.com
+  gitlab_token: VoIOtws+UMNSUBWgY/ydjc9sBNlSDCMbEeRhSm7c--vaNaX6vRcx8TYVRj--4Nt32gFvK8+2AWlFmeTOtw==
+  gitlab_user_id: 1020
+  username: archit.j.aux

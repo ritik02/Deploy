@@ -30,3 +30,14 @@ three:
    checklist:
    status: Approved
    review_time:
+four:
+   id: 4
+   user_id: 5
+   project_name: Calculator Project
+   commit_id: be202954
+   reviewer_id: 5
+   project_id: 3850
+   job_name: deploy_staging
+   checklist:
+   status: Approved
+   review_time:
