@@ -28,6 +28,4 @@ RSpec.describe JiraApiServices  do
         end
       end
     end
-
-
-  end
+end

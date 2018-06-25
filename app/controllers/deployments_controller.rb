@@ -3,6 +3,7 @@ class DeploymentsController < ApplicationController
 	include UrlValidatorHelper
 	include EncryptionHelper
 	include TokenValidationHelper
+	include SlackNotifierService
 	before_action :get_details
 	before_action :check_admin, only: [:index]
 
@@ -58,20 +59,12 @@ class DeploymentsController < ApplicationController
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 		trigger_helper(deployment)
 		unless params[:channel_name].blank?
-			get_slack_notifier(params[:channel_name])
-			@notifier.ping "Deploying #commit"
+			send_message_on_slack_channel(params[:channel_name], "Deploying #commit")
 		end
 		redirect_to get_gitlab_pipeline_trigger_link(deployment)
 	end
 
 	private
-
-	def get_slack_notifier(channel_name)
-		@notifier = Slack::Notifier.new(Figaro.env.slack_webhook) do
-			defaults channel: "#" + channel_name,
-			username: "go-deploy"
-		end
-	end
 
 	def create_issue(params, deployment)
 		get_jira_api_services(decrypt_access_token(@user.jira_token), @user.email)
