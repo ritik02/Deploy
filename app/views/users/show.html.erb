@@ -1,6 +1,5 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<% user = @user; user = User.where(email: @admin).first if @current_user.email == @admin %>
-<%= render "layouts/topmenu_bar", user: user %>
+<%= render "layouts/topmenu_bar", user: @current_user %>
 <%= render "layouts/sidebar_menu", user: @current_user %>
 <%= javascript_include_tag "user.js" %>
 
