@@ -1,9 +1,9 @@
 <%= stylesheet_link_tag 'deployment-page'%>
-<%= render "layouts/topmenu_bar", user: @user %>
-<%= render "layouts/sidebar_menu", user: @user %>
+<%= render "layouts/topmenu_bar", user: @current_user %>
+<%= render "layouts/sidebar_menu", user: @current_user %>
 <%= javascript_include_tag "user.js" %>
 
-<div class="container table-container deployments-done-container">
+<div class="container table-container deployment-container">
   <div class="col s12">
     <ul class="tabs tabs-fixed-width">
       <li class="tab"><a class="active"  href="#deployment_history">Deployment History</a></li>
