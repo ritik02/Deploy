@@ -10,4 +10,9 @@ class UserMailer < ApplicationMailer
     @deployment = deployment
     mail(to: User.find(deployment.user_id).email, subject: 'Deployment Status Changed')
   end
+
+  def deployment_trigger_mail(deployment, group_mail_id)
+    @deployment = deployment
+    mail(to: group_mail_id, subject: 'Deployment Trigger Notification')
+  end
 end

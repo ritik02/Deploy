@@ -1,6 +1,6 @@
 module UrlValidatorHelper
   def get_admins
-      @admin = "archit.j.aux@go-jek.com"
+      @admin = ["archit.j.aux@go-jek.com","ritik.v.aux@go-jek.com","prakash.d.aux@go-jek.com"]
   end
 
   def validate_user_id?(current_user_id, param_user_id)

@@ -45,7 +45,7 @@ class UsersController < ApplicationController
 
   def check_admin
     get_admins
-    return if current_user.email == @admin
+    return if @admin.include?(current_user.email)
     run_validations if !params[:id].blank?
     redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s if params[:id].blank?
   end

@@ -59,11 +59,11 @@ class DeploymentsController < ApplicationController
 	def trigger_deployment
 		deployment = Deployment.find(params[:id])
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
-		trigger_helper(deployment)
 		unless params[:channel_name].blank?
-			message_status = send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
+			send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
 		end
-		redirect_to get_gitlab_pipeline_trigger_link(deployment)
+		UserMailer.deployment_trigger_mail(deployment, params[:team_email]).deliver if !params[:team_email].blank?
+		redirect_to user_path(id: @user.id)
 	end
 
 	private
@@ -73,7 +73,6 @@ class DeploymentsController < ApplicationController
 		response = @jira_api_services.create_issue(params[:project_name] + " - " + params[:deployments][:title],
 			"CHECKLIST LINK: " + Figaro.env.domain_base_url + "/deployments/" + deployment.id.to_s,
 			User.find(deployment.reviewer_id).username)
-		puts Figaro.env.jira_base_url + "/browse/" + response["key"]
 		Figaro.env.jira_base_url + "browse/" + response["key"]
 	end
 
@@ -82,12 +81,6 @@ class DeploymentsController < ApplicationController
 		message = User.find(deployment.user_id).name.upcase +
 			" is deploying commit ##{deployment.commit_id} of Project - #{deployment.project_name}" +
 			"\n Checklist Link: #{checklist_link}\n Jira Issue Link: #{deployment.jira_link}."
-	end
-
-	def trigger_helper(deployment)
-		get_gitlab_api_services(decrypt_access_token(current_user.gitlab_token))
-		@last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
-		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, @last_pipeline_id), deployment.job_name)
 	end
 
 	def params_valid?(params)
@@ -101,11 +94,6 @@ class DeploymentsController < ApplicationController
 		return false
 	end
 
-	def get_job_id_from_job_name(jobs, job_name)
-		jobs.each do |job|
-			return job["id"] if job["name"] == job_name
-		end
-	end
 
 	def get_details
 		@user = current_user
@@ -124,16 +112,9 @@ class DeploymentsController < ApplicationController
 		git_diff_link
 	end
 
-	def get_gitlab_pipeline_trigger_link(deployment)
-		pipeline_trigger_gitlab_link = Figaro.env.gitlab_base_url +
-		@user.username + "/" +
-		deployment.project_name +
-		"/pipelines/" + @last_pipeline_id.to_s
-	end
-
 	def check_admin
 		get_admins
-		return if current_user.email == @admin
+		return if @admin.include?(current_user.email)
 		redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
 	end
 end

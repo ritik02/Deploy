@@ -2,10 +2,13 @@ $(document).ready(function(){
 	$('.modal').modal();
 	$('.tabs').tabs();
 });
-function button_click(id){
+var gitlab_trigger_link
+function button_click(id, trigger_link){
 	console.log(id);
+	console.log(trigger_link);
 	var a = document.getElementById('agree');
 	a.href = "/deployments/" + id + "/trigger_deployment"
+	gitlab_trigger_link = trigger_link
 	$('.modal').modal('open');
 }
 function close_click(){
@@ -18,5 +21,6 @@ function agree_click(){
 	var team_email = dropdown.options[dropdown.selectedIndex].value;
 	var new_url = a.href + "?team_email=" + team_email + "&channel_name=" + channel_name;
 	a.href = new_url;
+	window.open(gitlab_trigger_link,'_blank')
 	$('.modal').modal('close');
 }

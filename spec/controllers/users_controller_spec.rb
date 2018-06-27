@@ -123,6 +123,7 @@ RSpec.describe UsersController, type: :controller do
 
 		it "should redirect to projects page of signed in user when not admin" do
 			sign_in users(:one)
+			subject.current_user.email = "not_admin@go-jek.com"
 			get :index
 			expect(response).to redirect_to user_projects_path(user_id: users(:one).id)
 		end
