@@ -1,5 +1,4 @@
 module UrlValidatorHelper
-
   def get_admins
       @admin = ["archit.j.aux@go-jek.com","ritik.v.aux@go-jek.com","prakash.d.aux@go-jek.com"]
   end

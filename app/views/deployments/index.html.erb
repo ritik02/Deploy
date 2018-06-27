@@ -8,25 +8,24 @@
   </div>
 </div>
 
-<div class="row" style="max-width: 1280px;">
+<div class="row" style="width: 80%;">
   <form action="/deployments" method="get">
     <div class="input-field col s5">
-      <select onchange="setCategory(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="options" id="category">
+      <select onchange="setCategory(this);" name="options" id="category">
         <option value="updated_at">Time</option>
         <option value="project_id">Project</option>
         <option value="user_id">Deployer</option>
         <option value="reviewer_id">Reviewer</option>
       </select>
-      <label>Select a category</label>
     </div>
     <div class="input-field col s5">
-      <select onchange="setOrder(this);" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" name="sort" id="order">
+      <select onchange="setOrder(this);"  name="sort" id="order">
         <option value="DESC">Descending</option>
         <option value="ASC">Ascending</option>
       </select>
       </div>
       <div class="input-field col s2 center">
-        <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Sort</button>
+        <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">sort</i>Sort</button>
       </div>
   </form>
 </div>
@@ -50,8 +49,8 @@
           <tr>
             <% if !deployment.reviewer_id.blank? %>
             <td><%= User.where(:id => deployment.user_id).first.name %></td>
-            <td><%= link_to deployment.project_name, user_project_path(user_id: @user.id, id: deployment.project_id) %></td>
-            <td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id) %></td>
+            <td><%= link_to deployment.project_name, user_project_path(user_id: @user.id, id: deployment.project_id),target: :_blank %></td>
+            <td><%= link_to JSON.parse(deployment.checklist)["title"], deployment_url(id: deployment.id),target: :_blank %></td>
             <td><%= link_to deployment.commit_id, generate_user_specific_diff_link(deployment.diff_link, @user.id), target: :_blank%></td>
             <td><%= User.where(:id => deployment.reviewer_id).first.name %></td>
             <td><%= deployment.status %></td>
@@ -66,4 +65,4 @@
 </div>
 <footer class="page-footer"></footer>
 
-<%= javascript_include_tag "deployment.js" %>
+<%= javascript_include_tag "deployment_index.js" %>

@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	$('.modal').modal();
-	$('select').formSelect();
 	$('.tabs').tabs();
 });
 var gitlab_trigger_link
