@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   def index
     @user = current_user
     @users = User.all
-    puts params[:search_query].downcase
     @users = User.where("lower(name) LIKE ?", "%#{params[:search_query].downcase}%") unless params[:search_query].blank?
   end
 
