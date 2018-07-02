@@ -2,11 +2,24 @@
 <%= render "layouts/topmenu_bar", user: @user %>
 <%= render "layouts/sidebar_menu", user: @user %>
 
-<div class="container deployment-container table-container">
-  <div class="card card-heading">
-    <h4 style="text-align:center;"> All Users </h4>
+<div class="container table-container deployment-container">
+  <div class="card search-card">
+    <div class = "row search-row">
+        <div class="col s12 m6 l6">
+          <h5>All Users</h5>
+        </div>
+        <div class="col s12 m6 l6">
+          <div class="search-wrapper">
+            <form action="/users" method="get">
+              <input class = "search-box" type="text" style="float:left; width: 250px; height: 53px; font-size: 18px; margin-right: 5px;" placeholder="Search Users" name="search_query"/>
+              <button type=submit formmethod="get" class="waves-effect waves-light btn-large"><i class="material-icons left search-button-icon">search</i>Search  </button>
+            </form>
+         </div>
+        </div>
+    </div>
   </div>
 </div>
+
 <div class="container table-container">
   <div class= "card">
     <table class="table highlight responsive-table striped centered">
@@ -26,7 +39,7 @@
             <td><%=link_to user.name, user_path(id: user.id) %></td>
             <td><%= Deployment.where(user_id: user.id).count%></td>
             <td><%= Deployment.where(reviewer_id: user.id).count%></td>
-            <td><%= Deployment.where(reviewer_id: user.id).average(:review_time)%></td>
+            <td><%= number_with_precision(Deployment.where(reviewer_id: user.id).average(:review_time),precision: 2) %></td>
           </tr>
         <% end %>
       </tbody>
