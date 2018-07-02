@@ -11,7 +11,7 @@ RSpec.describe JiraApiServices  do
       end
     end
 
-    it "Should return False when token is Valid'" do
+    it "Should return False when token is Invalid'" do
       VCR.use_cassette("invalid_jira_token") do
         actual = JiraApiServices.new("invalid_token", users(:one).email).check_api_for_valid_token?
         expect(actual).to eq false
