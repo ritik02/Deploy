@@ -33,9 +33,9 @@
 
           <div class="card purple-cards p-4 " >
             <div class="form-group"></br>
-              <img class="img-responsive m-1" src="/assets/gitlab_logo.png"  alt="paste" width="100px" height="100px"></br></br>
+              <img class="img-responsive m-1" src=<%=asset_path 'gitlab_logo.png'%>  alt="paste" width="100px" height="100px"></br></br>
               <a target=_blank href="<%=Figaro.env.gitlab_base_url%>profile/personal_access_tokens" class="btn btn-outline btn-new">Generate Gitlab Token</a></br></br><br>
-              <img class="rounded" src="/assets/paste.png"  alt="paste" width="100px" height="100px">
+              <img class="rounded" src=<%=asset_path 'paste.png'%>  alt="paste" width="100px" height="100px">
               </br></br>
               <%= form_for @user do |f|  %>
                 <%= f.text_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your gitlab token'%> <br/>
@@ -44,9 +44,9 @@
 
           <div class="card purple-cards p-4" >
             <div class="form-group"></br>
-                <img class="img-responsive m-1" src="/assets/jira_icon.png"  alt="paste" width="100px" height="100px"></br></br>
+                <img class="img-responsive m-1" src=<%=asset_path 'jira_icon.png' %>  alt="paste" width="100px" height="100px"></br></br>
                 <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br><br>
-                <img class="rounded" src="/assets/paste.png"  alt="paste" width="100px" height="100px">
+                <img class="rounded" src=<%=asset_path 'paste.png'%> alt="paste" width="100px" height="100px">
                 </br></br>
                 <%= f.text_field :jira_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your Jira token'%> <br/>
                 <%= f.submit "Let's Go", class: "btn btn-outline btn-new mt-1" %>

@@ -5,9 +5,9 @@ header.masthead {
     color: white;
     padding-top: 150px;
     padding-bottom: 100px;
-    background: url('bg-pattern.png'), $green;
-    background: url('bg-pattern.png'), -webkit-linear-gradient(to left, $black, $green);
-    background: url('bg-pattern.png'), linear-gradient(to left, $black, $green);
+    background: image-url('bg-pattern.png'), $green;
+    background: image-url('bg-pattern.png'), -webkit-linear-gradient(to left, $black, $green);
+    background: image-url('bg-pattern.png'), linear-gradient(to left, $black, $green);
     .header-content {
         max-width: 500px;
         margin-bottom: 100px;
