@@ -264,7 +264,6 @@ DEPENDENCIES
   rails (~> 5.2.0)
   rails-controller-testing
   rails_12factor
-  rake
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)
   simplecov
