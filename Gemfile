@@ -8,6 +8,8 @@ gem 'simplecov', require: false, group: :test
 gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'puma', '~> 3.11'
+gem 'uglifier'
+gem 'rails_12factor'
 gem 'bootstrap'
 gem 'newrelic_rpm'
 gem 'jquery-rails'
@@ -32,9 +34,4 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-end
-
-group :production do
-	gem 'uglifier'
-	gem 'rails_12factor'
 end
