@@ -114,8 +114,7 @@ class DeploymentsController < ApplicationController
 	end
 
 	def check_admin
-		get_admins
-		return if @admin.include?(current_user.email)
+		return if current_user.admin
 		redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
 	end
 end
