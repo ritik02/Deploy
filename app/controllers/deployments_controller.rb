@@ -38,7 +38,7 @@ class DeploymentsController < ApplicationController
 	def index
 		params[:options] = "updated_at" if params[:options].blank?
 		params[:sort] = "DESC" if params[:sort].blank?
-		@all_deployments = Deployment.order("deployments.#{params[:options]} #{params[:sort]}").all.paginate(:page => params[:page], :per_page => 5)
+		@all_deployments = Deployment.order("deployments.#{params[:options]} #{params[:sort]}").all.paginate(:page => params[:page], :per_page => 20)
 	end
 
 	def show

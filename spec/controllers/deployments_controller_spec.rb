@@ -16,9 +16,9 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#index" do
 		it "should open deployments index page (history of deployments) when admin" do
 			sign_in users(:four)
-			get :index, params: {options: "reviewer_id", sort: "DESC"}
+			get :index, params: {options: "reviewer_id", sort: "DESC", :page => 1}
 			expect(response).to have_http_status(:success)
-			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all
+			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all.paginate(:page => 1, :per_page => 20)
 		end
 
 		it "should redirect to projects index page when not admin" do
