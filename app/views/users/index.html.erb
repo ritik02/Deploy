@@ -30,6 +30,7 @@
           <th>Number of deployments</th>
           <th>Number of reviews done</th>
           <th>Average time taken to review(in minutes)</th>
+          <th>Admin</th>
         </tr>
       </thead>
       <tbody>
@@ -40,6 +41,13 @@
             <td><%= Deployment.where(user_id: user.id).count%></td>
             <td><%= Deployment.where(reviewer_id: user.id).count%></td>
             <td><%= number_with_precision(Deployment.where(reviewer_id: user.id).average(:review_time),precision: 2) %></td>
+            <td>
+              <% if user.admin %>
+                <p>Admin</p>
+              <% else %>
+                <button class="waves-effect waves-light btn" color=black>Make Admin</button>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
