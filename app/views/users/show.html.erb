@@ -19,11 +19,9 @@
       <p>Allow redirection to gitlab pipeline and sending of notifiaction to the choosen mail group.</p>
       <div class="input-field col s12">
 		    <select id="team_email">
-      		<% users = User.all %>
-			    <option value="" disabled selected>Select your team mail</option>
-			    <% users.each do |user| %>
-			      <option value="<%= user.email %>"><%= user.email %></option>
-		      <% end %>
+      		<% group_mail = Figaro.env.group_notification_mail %>
+			    <option value="" disabled selected>Select your group email</option>
+			      <option value="<%= group_mail %>"><%= group_mail %></option>
 		    </select>
 		  </div>
 		  <div class="input-field col s12">

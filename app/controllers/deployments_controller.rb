@@ -28,7 +28,7 @@ class DeploymentsController < ApplicationController
 			diff_link: git_diff_link,
 			checklist: params[:deployments].to_json,
 			job_name: params[:job_name],
-			reviewer_id: User.where(:email => params[:deployments][:reviewer_email]).first.id)
+			reviewer_id: User.where(:email => params[:reviewer_email]).first.id)
 		jira_link = create_issue(params, deployment)
 		deployment.update(jira_link: jira_link)
 		UserMailer.deployment_request_email(deployment).deliver
@@ -84,7 +84,8 @@ class DeploymentsController < ApplicationController
 	end
 
 	def params_valid?(params)
-		return true if !User.where(:email => params[:deployments][:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
+		puts params[:reviewer_mail]
+		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
 		redirect_to new_deployment_path(user_id: current_user.id,
 			project_name: params[:project_name],
 			commit_id: params[:commit_id],
@@ -104,7 +105,7 @@ class DeploymentsController < ApplicationController
 
 	def generate_diff_link(params)
 		git_diff_link =  Figaro.env.diff_base_url +
-		"/users/" + User.where(:email => params[:deployments][:reviewer_email]).first.id.to_s +
+		"/users/" + User.where(:email => params[:reviewer_email]).first.id.to_s +
 		"/projects/" + params[:project_id] +
 		"/commits/" + params[:commit_id] +
 		"?last_deployed_commit=" + params[:last_deployed_commit] +

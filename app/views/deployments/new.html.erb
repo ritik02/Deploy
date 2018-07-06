@@ -195,9 +195,13 @@
         <%= form.text_area :project_component_code_8 ,class: 'materialize-textarea form-group form-control' %>
       </div>
       <label style="font-size: 18px;">Choose a reviewer to mail</label>
-      <div class="input-field col s12">
-        <%= form.select :reviewer_email, User.all.collect { |x| x.email }, {:include_blank => "Select One"} %>
-      </div>
+      <input list="reviewer_email" name="reviewer_email">
+        <datalist id="reviewer_email">
+          <% users = User.all %>
+          <% users.each do |user| %>
+            <%= options_for_select([[user.email]]) %>
+          <% end %>
+        </datalist>
         <%= hidden_field_tag 'user_id', @deployment.user_id  %>
         <%= hidden_field_tag 'project_name', @deployment.project_name  %>
         <%= hidden_field_tag 'project_id', @deployment.project_id %>
