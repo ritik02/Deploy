@@ -9,6 +9,9 @@ require_relative '../app/services/gitlab_api_services'
 
 
 ActiveRecord::Migration.maintain_test_schema!
+ActiveRecord::Base.logger.level = Logger::INFO
+ActionController::Base.logger.level = Logger::ERROR
+Rails.logger.level = Logger::ERROR
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

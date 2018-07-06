@@ -45,7 +45,9 @@
               <% if user.admin %>
                 <p>Admin</p>
               <% else %>
-                <button class="waves-effect waves-light btn" color=black>Make Admin</button>
+                <form action="/users/<%= user.id %>/admin" method="get">
+                  <button type=submit formmethod="get" class="waves-effect waves-light btn">Make Admin</button>
+                </form>
               <% end %>
             </td>
           </tr>

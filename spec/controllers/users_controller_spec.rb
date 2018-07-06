@@ -137,4 +137,14 @@ RSpec.describe UsersController, type: :controller do
 			expect(assigns(:user)).to eq User.find(users(:one).id)
 		end
 	end
+
+	describe "GET users#make_admin" do
+		it "should grant admin privleges to the user" do
+			sign_in users(:twelve)
+			not_admin_user_id = users(:six).id
+			get :make_admin, params: {id: not_admin_user_id}
+			expect(User.find(not_admin_user_id).admin).to eq true
+			expect(response).to redirect_to users_path
+		end
+	end
 end
