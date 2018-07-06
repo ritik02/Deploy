@@ -1,5 +1,6 @@
 Figaro.require_keys(
   'DB_HOST',
+  'DB_PORT',
   'DB_NAME',
   'DB_USER',
   'DB_PASSWORD',
@@ -18,5 +19,6 @@ Figaro.require_keys(
   'JIRA_BASE_URL',
   'JIRA_PROJECT_KEY',
   'JIRA_ISSUE_TYPE',
-  'SLACK_WEBHOOK'
+  'SLACK_WEBHOOK',
+  'GROUP_NOTIFICATION_MAIL',
 )

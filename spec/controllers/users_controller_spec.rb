@@ -116,9 +116,9 @@ RSpec.describe UsersController, type: :controller do
 	describe "GET users#index" do
 		it "should open signed in user to the index users page when admin" do
 			sign_in users(:ten)
-			get :index
+			get :index, params: {:page => 1}
 			expect(response).to have_http_status(:success)
-			expect(assigns(:users)).to eq User.all
+			expect(assigns(:users)).to eq User.all.paginate(:page => 1, :per_page => 20)
 		end
 
 		it "should redirect to projects page of signed in user when not admin" do
@@ -135,6 +135,16 @@ RSpec.describe UsersController, type: :controller do
 			get :show, params: {id: users(:one).id}
 			expect(response).to have_http_status(:success)
 			expect(assigns(:user)).to eq User.find(users(:one).id)
+		end
+	end
+
+	describe "GET users#make_admin" do
+		it "should grant admin privleges to the user" do
+			sign_in users(:twelve)
+			not_admin_user_id = users(:six).id
+			get :make_admin, params: {id: not_admin_user_id}
+			expect(User.find(not_admin_user_id).admin).to eq true
+			expect(response).to redirect_to users_path
 		end
 	end
 end

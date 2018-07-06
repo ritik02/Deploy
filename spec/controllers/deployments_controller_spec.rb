@@ -16,9 +16,9 @@ RSpec.describe DeploymentsController, type: :controller do
 	describe "GET deployments#index" do
 		it "should open deployments index page (history of deployments) when admin" do
 			sign_in users(:four)
-			get :index, params: {options: "reviewer_id", sort: "DESC"}
+			get :index, params: {options: "reviewer_id", sort: "DESC", :page => 1}
 			expect(response).to have_http_status(:success)
-			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all
+			expect(assigns(:all_deployments)).to eq Deployment.order('deployments.reviewer_id DESC').all.paginate(:page => 1, :per_page => 20)
 		end
 
 		it "should redirect to projects index page when not admin" do
@@ -33,7 +33,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should create the checklist of a deployment" do
 			VCR.use_cassette("deployment_create") do
 				sign_in users(:eleven)
-				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle", reviewer_email: "ritik.v.aux@go-jek.com"}, user_id: users(:eleven).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
+				post :create, params: {status: "Checklist Filled", deployments: {title: "TestTitle"},reviewer_email: "ritik.v.aux@go-jek.com", user_id: users(:eleven).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5, project_id: 3852, last_deployed_commit: "abc1232"}
 				expect(Deployment.fifth.status).to eq "Pending Approval"
 				expect(Deployment.fifth.jira_link).not_to be nil
 			end
@@ -41,7 +41,7 @@ RSpec.describe DeploymentsController, type: :controller do
 
 		it "should not create the checklist of a deployment if reviewer_email is invalid" do
 			sign_in users(:four)
-			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle", reviewer_email: "invalid@go-jek.com"}, user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
+			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle"}, reviewer_email: "invalid@go-jek.com", user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
 			expect(deployments(:one).status).to eq "Created"
 			response.should redirect_to '/deployments/new?commit_id=abc3423&project_name=New+Project&user_id='+subject.current_user.id.to_s
 		end

@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
+gem 'rake'
 gem 'rails', '~> 5.2.0'
 gem 'pg'
 gem 'simplecov', require: false, group: :test
 gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'puma', '~> 3.11'
+gem 'uglifier'
+gem 'rails_12factor'
 gem 'bootstrap'
 gem 'newrelic_rpm'
 gem 'jquery-rails'
@@ -16,12 +19,14 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'httparty'
-gem 'vcr'
-gem 'webmock'
 gem 'figaro'
 gem 'materialize-sass', '~> 1.0.0.rc1'
 gem 'slack-notifier'
+gem 'will_paginate'
+
 group :development, :test do
+  gem 'vcr'
+  gem 'webmock'
   gem 'rspec-rails', '~> 3.7'
   gem 'pry'
   gem 'rails-controller-testing'

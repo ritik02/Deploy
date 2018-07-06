@@ -3,12 +3,13 @@ class UsersController < ApplicationController
   include EncryptionHelper
   include TokenValidationHelper
   include UrlValidatorHelper
-  before_action :run_validations, except: [:index, :show]
+  before_action :run_validations, except: [:index, :show, :make_admin]
   before_action :check_admin, only: [:index, :show]
 
   def index
     @user = current_user
-    @users = User.all
+    @users = User.all.paginate(:page => params[:page], :per_page => 20)
+    @users = User.where("lower(name) LIKE ?", "%#{params[:search_query].downcase}%") unless params[:search_query].blank?
   end
 
   def show
@@ -31,10 +32,17 @@ class UsersController < ApplicationController
     current_user.update(
       name: response.first["name"],
       gitlab_user_id: response.first["id"].to_i,
-      email: response.first["username"]+"@go-jek.com",
+      email: current_user.username + "@go-jek.com",
       gitlab_token: encrypt_access_token(pasted_gitlab_token),
       jira_token: encrypt_access_token(pasted_jira_token))
     redirect_to action: "index", controller: "projects", user_id: current_user.id
+  end
+
+  def make_admin
+    user = User.find(params[:id])
+    user.update({admin: true})
+    puts user.admin
+    redirect_to users_path
   end
 
   private
@@ -44,8 +52,7 @@ class UsersController < ApplicationController
   end
 
   def check_admin
-    get_admins
-    return if @admin.include?(current_user.email)
+    return if current_user.admin
     run_validations if !params[:id].blank?
     redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s if params[:id].blank?
   end

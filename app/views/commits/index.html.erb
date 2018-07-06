@@ -20,7 +20,7 @@
               <div class="col s7">
                 <div class="row">
                   <div class="col s1">
-                    <img src="/assets/commit.png"  width="25" height="25">
+                    <img src=<%=asset_path 'commit.png'%>  width="25" height="25">
                   </div>
                   <div class="col s11">
                     <a class="tooltipped"  data-position="top"  data-tooltip="<%=commit["message"]%>" style="color: #757575"><% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %><%= message  %></a>
@@ -54,7 +54,7 @@
                   <div class="col s7 column">
                     <div class="row">
                         <div class="col s1 column">
-                          <img src="/assets/commit.png"  width="25" height="25">
+                          <img src=<%=asset_path 'commit.png'%>  width="25" height="25">
                         </div>
                         <div class="col s11 column">
                           <% if commit["message"].length > 50; message = commit["message"][0..50] + "...";else message = commit["message"]; end %>

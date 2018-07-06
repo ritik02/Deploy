@@ -6,6 +6,9 @@
 }
 .table-container{
 	width: 80%;
+	.search-card{
+		padding: 5px;
+	}
 }
 .deployments-done-container{
 	margin-bottom: 60px;
@@ -31,4 +34,18 @@ h4{
 }
 .tabs .tab a.active{
   color: black;
+}
+.search-row{
+  max-width: 90%;
+  margin-bottom: 0px;
+}
+.search-wrapper{
+  position: relative;
+  float: right;
+  margin: 0 auto;
+}
+.pagination{
+	margin: 0 auto;
+	width: 20%;
+	margin-top: 10px;
 }

@@ -89,6 +89,9 @@
     <% else %>
     <p class = "answers"><%=  checklist[key.to_s] %></p>
     <% end %>
+    <% if key.to_s.include?("reviewer_email") %>
+    <p class = "answers"><%=  User.find(@deployment.reviewer_id).email %></p>
+    <% end %>
     <% end %>
   </div>
 </div>

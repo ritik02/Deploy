@@ -23,5 +23,12 @@ test:
   timeout: 5000
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: godeploy
+  pool: 5
+  username: <%= Figaro.env.db_user %>
+  password: <%= Figaro.env.db_password %>
+  timeout: 5000
+  host: <%= Figaro.env.db_host %>
+  port: <%= Figaro.env.db_port %>
