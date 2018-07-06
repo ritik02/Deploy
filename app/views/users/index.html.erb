@@ -54,6 +54,7 @@
         <% end %>
       </tbody>
     </table>
+  <%= will_paginate @users, inner_window: 3, outer_window: 1,  class: "pagination"%>
   </div>
 </div>
 

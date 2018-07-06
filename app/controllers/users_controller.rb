@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def index
     @user = current_user
-    @users = User.all
+    @users = User.all.paginate(:page => params[:page], :per_page => 20)
     @users = User.where("lower(name) LIKE ?", "%#{params[:search_query].downcase}%") unless params[:search_query].blank?
   end
 

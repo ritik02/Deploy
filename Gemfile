@@ -22,6 +22,7 @@ gem 'httparty'
 gem 'figaro'
 gem 'materialize-sass', '~> 1.0.0.rc1'
 gem 'slack-notifier'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'vcr'

@@ -61,6 +61,7 @@
         <% end %>
       </tbody>
     </table>
+     <%= will_paginate @all_deployments, inner_window: 3, outer_window: 1,  class: "pagination"%>
   </div>
 </div>
 <footer class="page-footer"></footer>
