@@ -4,7 +4,7 @@ This Project has been created to bring all the deployment related hassles to a s
 
 Main Objectives are -
 
-1) Get a List of all User Specific Projects currently hosted on Gitlab
+1) Get a List of all User Specific Projects currently hosted on Gitlab -
 2) Get a list of all deployed and undeployed commits for a specific Project user chooses to deploy from .
 3) User can choose which commit to deploy and get a "git diff" from last deployed commit .
 4) Redirect user to fill a Mandatory deployment checklist .
