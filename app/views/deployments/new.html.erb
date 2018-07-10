@@ -197,7 +197,7 @@
       <label style="font-size: 18px;">Choose a reviewer to mail</label>
       <input list="reviewer_email" name="reviewer_email">
         <datalist id="reviewer_email">
-          <% users = User.all %>
+          <% users = User.all%>
           <% users.each do |user| %>
             <%= options_for_select([[user.email]]) %>
           <% end %>

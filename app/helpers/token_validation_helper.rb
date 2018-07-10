@@ -9,6 +9,7 @@ module TokenValidationHelper
 
   def redirect_if_token_is_nil?(token)
     return true if !token.blank?
+    flash[:notice] = "Token field cannot be empty."
     redirect_to action: "edit", controller: "users", id: current_user.id
     return false
   end

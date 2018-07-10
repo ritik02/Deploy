@@ -1,4 +1,4 @@
-require 'httparty'
+ require 'httparty'
 
 desc "Populate Users database with seed data"
 task populate_database: :environment do 
@@ -17,9 +17,10 @@ task populate_database: :environment do
     end
     next_page = response.headers["X-Next-Page"]
   end
+  User.where(username: "akashs").first.update(admin: true)
 end
 
 def get_users(page="1" , token)
   url = "https://source.golabs.io/api/v4/users?private_token=" + token + "&active=true&per_page=100&page=" + page
   HTTParty.get(url)
-end
+end 

@@ -33,3 +33,11 @@
   $(window).scroll(navbarCollapse);
 
 })(jQuery); 
+$(document).ready(function(){
+  $('.modal').modal();
+  $("#error").removeClass("modal_close");
+});
+function close_click(){
+  $('.modal').modal('close');
+  $("#error").addClass("modal_close");
+}
