@@ -24,36 +24,37 @@ class UsersController < ApplicationController
   end
 
   def update
-    pasted_gitlab_token = params["user"]["gitlab_token"]
-    pasted_jira_token = params["user"]["jira_token"]
-    return if !redirect_if_token_is_nil?(pasted_gitlab_token) || !redirect_if_token_is_invalid?(pasted_gitlab_token)
-    response = @gitlab_api_services.get_user_details(current_user.username)
-    return if !redirect_if_token_is_nil?(pasted_jira_token) || !redirect_if_jira_token_is_invalid?(pasted_jira_token, response.first["username"]+"@go-jek.com")
-    current_user.update(
-      name: response.first["name"],
-      gitlab_user_id: response.first["id"].to_i,
-      email: current_user.username + "@go-jek.com",
-      gitlab_token: encrypt_access_token(pasted_gitlab_token),
-      jira_token: encrypt_access_token(pasted_jira_token))
-    redirect_to action: "index", controller: "projects", user_id: current_user.id
-  end
+   pasted_gitlab_token = params["user"]["gitlab_token"]
+   pasted_jira_token = params["user"]["jira_token"]
+   user_email = params["user"]["email"]
+   return if !redirect_if_token_is_nil?(pasted_gitlab_token) || !redirect_if_token_is_invalid?(pasted_gitlab_token)
+   response = @gitlab_api_services.get_user_details(current_user.username)
+   return if !redirect_if_token_is_nil?(pasted_jira_token) || !redirect_if_jira_token_is_invalid?(pasted_jira_token, user_email)
+   current_user.update(
+     name: response.first["name"],
+     gitlab_user_id: response.first["id"].to_i,
+     email: user_email,
+     gitlab_token: encrypt_access_token(pasted_gitlab_token),
+     jira_token: encrypt_access_token(pasted_jira_token))
+   redirect_to action: "index", controller: "projects", user_id: current_user.id
+ end
 
-  def make_admin
-    user = User.find(params[:id])
-    user.update({admin: true})
-    puts user.admin
-    redirect_to users_path
-  end
+ def make_admin
+  user = User.find(params[:id])
+  user.update({admin: true})
+  puts user.admin
+  redirect_to users_path
+end
 
-  private
+private
 
-  def run_validations
-    return if !validate_user_id?(current_user.id.to_s, params[:id])
-  end
+def run_validations
+  return if !validate_user_id?(current_user.id.to_s, params[:id])
+end
 
-  def check_admin
-    return if current_user.admin
-    run_validations if !params[:id].blank?
-    redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s if params[:id].blank?
-  end
+def check_admin
+  return if current_user.admin
+  run_validations if !params[:id].blank?
+  redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s if params[:id].blank?
+end
 end
