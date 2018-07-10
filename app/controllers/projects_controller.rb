@@ -45,7 +45,7 @@ class ProjectsController < ApplicationController
 
   def run_validations
     return if !validate_user_id?(current_user.id.to_s, params[:user_id]) ||
-    !redirect_if_token_is_nil?(@user.gitlab_token) ||
+    !redirect_if_token_is_nil_in_db?(@user.gitlab_token) ||
     !redirect_if_token_is_invalid?(decrypt_access_token(@user.gitlab_token))
   end
 
