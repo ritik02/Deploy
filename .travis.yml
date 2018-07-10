@@ -7,5 +7,25 @@ before_script:
   - cp spec/fixtures/users.yml.example spec/fixtures/users.yml
   - psql -c 'create database godeploytest;' -U postgres
 script:
+  - bundle package --all
+  - bundle install --binstubs --local
   - bundle exec rake db:migrate
   - bundle exec rake spec
+  - bundle exec rake assets:precompile
+after_success:
+before_deploy:
+  - git config --local user.name "ritik02"
+  - git config --local user.email "ritikxman@gmail.com"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - "rm -rf $TRAVIS_BUILD_DIR/*.tar.gz"
+  - "tar zcf godeploy.tar.gz -C $TRAVIS_BUILD_DIR ./*"
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: $TRAVIS_BUILD_DIR/*.tar.gz
+  on:
+    tags: true
+    repo: ritik02/Deploy
+all_branches: true
