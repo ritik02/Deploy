@@ -6,7 +6,22 @@
       <a class="navbar-brand" href="#page-top">Go-deploy</a>
     </div>
   </nav>
-
+  
+  <% if !flash.empty? %>
+  <div id="error" class="modal">
+      <div class="modal-content">
+        <h4>Invalid token</h4>
+        <% flash.each do |k,v| %>
+          <% if v != "You need to sign in or sign up before continuing." %>
+            <p><%= v %></p>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <a onclick="close_click()" class="modal-close waves-effect waves-green btn-flat agree">Close</a>
+      </div>
+  </div>
+  <% end %>
 
   <header class="masthead">
     <div class="container h-100">

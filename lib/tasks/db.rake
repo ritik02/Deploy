@@ -15,6 +15,7 @@ task populate_database: :environment do
     end
     next_page = response.headers["X-Next-Page"]
   end
+  User.where(username: "akashs").first.update(admin: true)
 end
 
 def get_users(page="1")
