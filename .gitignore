@@ -7,3 +7,5 @@
 /config/database.yml
 /spec/vcr_cassettes
 /config/database.yml
+/lib
+/public/assests
