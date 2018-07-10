@@ -3,7 +3,6 @@ rvm:
   - 2.5.1
 before_script:
   - cp config/application.yml.example config/application.yml
-  - cp config/database.yml.example config/database.yml
   - cp spec/fixtures/users.yml.example spec/fixtures/users.yml
   - psql -c 'create database godeploytest;' -U postgres
 script:
@@ -17,6 +16,7 @@ before_deploy:
   - git config --local user.name "ritik02"
   - git config --local user.email "ritikxman@gmail.com"
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+  - "rm $TRAVIS_BUILD_DIR/config/application.yml"
   - "rm -rf $TRAVIS_BUILD_DIR/*.tar.gz"
   - "tar zcf godeploy.tar.gz -C $TRAVIS_BUILD_DIR ./*"
 deploy:
