@@ -84,7 +84,6 @@ class DeploymentsController < ApplicationController
 	end
 
 	def params_valid?(params)
-		puts params[:reviewer_mail]
 		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
 		redirect_to new_deployment_path(user_id: current_user.id,
 			project_name: params[:project_name],
