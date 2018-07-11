@@ -18,7 +18,8 @@ RSpec.describe UsersController, type: :controller do
 				form_params = {
 					id: users(:eleven).id,
 					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
-					 				jira_token: decrypt_access_token(users(:eleven).jira_token)}
+					 				jira_token: decrypt_access_token(users(:eleven).jira_token),
+					 				email: users(:eleven).email}
 				}
 				patch :update, params: form_params
 				actual_gitlab_token = decrypt_access_token(subject.current_user.gitlab_token)
@@ -33,7 +34,7 @@ RSpec.describe UsersController, type: :controller do
 				sign_in users(:three)
 				form_params = {
 					id: users(:three).id,
-					user: { gitlab_token: "invalid_gitlab_token" }
+					user: { gitlab_token: "invalid_gitlab_token", email: users(:three).email }
 				}
 				patch :update, params: form_params
 				expect(users(:three).gitlab_token).to eq(nil)
@@ -56,7 +57,8 @@ RSpec.describe UsersController, type: :controller do
 				form_params = {
 					id: users(:eleven).id,
 					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
-					 				jira_token: decrypt_access_token(users(:eleven).jira_token)}
+					 				jira_token: decrypt_access_token(users(:eleven).jira_token),
+					 				email: users(:eleven).email}
 				}
 				patch :update, params: form_params
 				expect(response).to redirect_to(action: "index", controller: "projects", user_id: users(:eleven).id)
@@ -68,7 +70,7 @@ RSpec.describe UsersController, type: :controller do
 				sign_in users(:two)
 				form_params = {
 					id: users(:two).id,
-					user: { gitlab_token: "invalid_gitlab_token" }
+					user: { gitlab_token: "invalid_gitlab_token", email: users(:two).email }
 				}
 				patch :update, params: form_params
 				expect(response).to redirect_to(edit_user_url)
@@ -92,7 +94,8 @@ RSpec.describe UsersController, type: :controller do
 				form_params = {
 					id: users(:eleven).id,
 					user: { gitlab_token: decrypt_access_token(users(:eleven).gitlab_token),
-					 				jira_token: "invalid_token"}
+					 				jira_token: "invalid_token",
+					 				email: users(:eleven).email }
 				}
 				patch :update, params: form_params
 				expect(response).to redirect_to(edit_user_url)
