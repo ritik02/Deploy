@@ -6,14 +6,13 @@ task populate_database: :environment do
   response = get_users("1" , token)
   next_page = response.headers["X-Next-Page"]
   response.each do |user|
-    User.create(gitlab_user_id: user["id"] , name: user["name"] , username: user["username"] , email: user["username"] + "@go-jek.com")
+    User.create(gitlab_user_id: user["id"] , name: user["name"] , username: user["username"] , email: user["username"])
   end
   while !next_page.blank? do
     page = next_page
     response = get_users(page , token)
     response.each do |user|
-      User.create(gitlab_user_id: user["id"] , name: user["name"] , username: user["username"] , email: user["username"] + "@go-jek.com")
-      puts "Done!"
+      User.create(gitlab_user_id: user["id"] , name: user["name"] , username: user["username"])
     end
     next_page = response.headers["X-Next-Page"]
   end

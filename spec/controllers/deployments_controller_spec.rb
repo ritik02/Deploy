@@ -41,7 +41,7 @@ RSpec.describe DeploymentsController, type: :controller do
 
 		it "should not create the checklist of a deployment if reviewer_email is invalid" do
 			sign_in users(:four)
-			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle"}, reviewer_email: "invalid@go-jek.com", user_id: users(:nine).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
+			post :create, params: {status: "Checklist Filled",deployments: {title: "TestTitle"}, reviewer_email: "invalid@go-jek.com", user_id: users(:four).id, project_name: "New Project", commit_id: "abc3423", reviewer_id: 5}
 			expect(deployments(:one).status).to eq "Created"
 			response.should redirect_to '/deployments/new?commit_id=abc3423&project_name=New+Project&user_id='+subject.current_user.id.to_s
 		end
