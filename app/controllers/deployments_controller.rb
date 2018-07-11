@@ -53,7 +53,7 @@ class DeploymentsController < ApplicationController
 			review_time: ((Time.current - Time.parse(params[:current_time])) / 1.minute).round)
 		deployment.update(checklist_comment: params[:deployment][:checklist_comment].strip) if params[:status] == "Rejected"
 		UserMailer.status_mail(deployment).deliver
-		redirect_to deployment_url(:id => deployment.id)
+		redirect_to user_path(:id => current_user.id)
 	end
 
 	def trigger_deployment
@@ -84,7 +84,8 @@ class DeploymentsController < ApplicationController
 	end
 
 	def params_valid?(params)
-		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id]
+		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id] && Figaro.env.mandate_checklist == "false" 
+		return true if Figaro.env.mandate_checklist == "true" && is_checklist_valid?(params[:deployments])
 		redirect_to new_deployment_path(user_id: current_user.id,
 			project_name: params[:project_name],
 			commit_id: params[:commit_id],
@@ -116,4 +117,8 @@ class DeploymentsController < ApplicationController
 		return if current_user.admin
 		redirect_to action: "index", controller: "projects", user_id: current_user.id.to_s
 	end
+
+	def is_checklist_valid?(checklist)
+   !checklist.values.any?{|v| v.nil? || v.length == 0}
+ end
 end
