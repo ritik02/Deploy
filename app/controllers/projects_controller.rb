@@ -36,9 +36,9 @@ class ProjectsController < ApplicationController
     @stages = {}
     pipeline_jobs.each do |job|
       unless @stages.key?(job["stage"])
-        @stages.merge!(job["stage"] => [])
+        @stages.merge!(job["stage"] => Set.new)
       end
-      @stages[job["stage"]].push(job)
+      @stages[job["stage"]].add(job)
     end
     @stages
   end

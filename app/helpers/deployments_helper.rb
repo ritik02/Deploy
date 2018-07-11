@@ -7,10 +7,11 @@ module DeploymentsHelper
 	def get_gitlab_pipeline_trigger_link(deployment)
 		get_gitlab_api_services(decrypt_access_token(@user.gitlab_token))
 		last_pipeline_id = @gitlab_api_services.get_last_pipeline_id_of_commit(deployment.commit_id, deployment.project_id)
-		job_id = get_job_id_from_job_name(@gitlab_api_services.get_jobs_of_a_pipeline(deployment.project_id, last_pipeline_id), deployment.job_name)
-		pipeline_trigger_gitlab_link = Figaro.env.gitlab_base_url +
-		@user.username + "/" +
-		deployment.project_name +
+		project_web_url = @gitlab_api_services.get_project_details(deployment.project_id)
+		puts project_web_url
+		puts project_web_url["web_url"]
+		
+		pipeline_trigger_gitlab_link = project_web_url["web_url"] +
 		"/pipelines/" + last_pipeline_id.to_s
 	end
 
