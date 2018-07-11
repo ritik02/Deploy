@@ -26,13 +26,14 @@ class UsersController < ApplicationController
   def update
     pasted_gitlab_token = params["user"]["gitlab_token"]
     pasted_jira_token = params["user"]["jira_token"]
+    user_email = params["user"]["email"]
     return if !redirect_if_token_is_nil?(pasted_gitlab_token) || !redirect_if_token_is_invalid?(pasted_gitlab_token)
     response = @gitlab_api_services.get_user_details(current_user.username)
-    return if !redirect_if_token_is_nil?(pasted_jira_token) || !redirect_if_jira_token_is_invalid?(pasted_jira_token, response.first["username"]+"@go-jek.com")
+    return if !redirect_if_token_is_nil?(pasted_jira_token) || !redirect_if_jira_token_is_invalid?(pasted_jira_token, user_email)
     current_user.update(
       name: response.first["name"],
       gitlab_user_id: response.first["id"].to_i,
-      email: current_user.username + "@go-jek.com",
+      email: user_email,
       gitlab_token: encrypt_access_token(pasted_gitlab_token),
       jira_token: encrypt_access_token(pasted_jira_token))
     redirect_to action: "index", controller: "projects", user_id: current_user.id

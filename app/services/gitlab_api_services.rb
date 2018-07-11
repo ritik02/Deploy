@@ -59,6 +59,12 @@ class GitlabApiServices
     response = HTTParty.get(url)
   end
 
+	def get_user_email(user_id)
+    url = @base_url + "/users/" + user_id.to_s + "/email"
+    response = HTTParty.get(url)
+		puts response
+  end
+
   def get_jobs_of_a_pipeline(gitlab_project_id, pipeline_id)
     url = @base_url + "/projects/" + gitlab_project_id.to_s + "/pipelines/" + pipeline_id.to_s + "/jobs?private_token=" + @access_token + "&per_page=100"
   	HTTParty.get(url)
