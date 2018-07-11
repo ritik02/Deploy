@@ -53,7 +53,7 @@ class DeploymentsController < ApplicationController
 			review_time: ((Time.current - Time.parse(params[:current_time])) / 1.minute).round)
 		deployment.update(checklist_comment: params[:deployment][:checklist_comment].strip) if params[:status] == "Rejected"
 		UserMailer.status_mail(deployment).deliver
-		redirect_to deployment_url(:id => deployment.id)
+		redirect_to user_path(:id => current_user.id)
 	end
 
 	def trigger_deployment

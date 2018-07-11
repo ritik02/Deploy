@@ -6,21 +6,21 @@
       <a class="navbar-brand" href="#page-top">Go-deploy</a>
     </div>
   </nav>
-  
+
   <% if !flash.empty? %>
-  <div id="error" class="modal">
-      <div class="modal-content">
-        <h4>Invalid token</h4>
-        <% flash.each do |k,v| %>
-          <% if v != "You need to sign in or sign up before continuing." %>
-            <p><%= v %></p>
-          <% end %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <a onclick="close_click()" class="modal-close waves-effect waves-green btn-flat agree">Close</a>
-      </div>
-  </div>
+    <% flash.each do |k,v| %>
+      <% if v != "You need to sign in or sign up before continuing." %>
+        <div id="error" class="modal">
+            <div class="modal-content">
+              <h4>Invalid token</h4>
+              <p><%= v %></p>
+            </div>
+            <div class="modal-footer">
+              <a onclick="close_click()" class="modal-close waves-effect waves-green btn-flat agree">Close</a>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 
   <header class="masthead">
@@ -41,9 +41,10 @@
     <div class="container">
 				<div class="card-deck">
           <div class="card purple-cards align-card p-1 pt-5">
-            <h3 class="my-4 mx-2">1. Click on Generate Token.</h3>
-            <h3 class="my-3 mx-2" >2. Create a new personal access token.</h3>
-            <h3 class="my-3 mx-2">3. Paste the token.</h3></br>
+            <h4 class="my-4 mx-2">1. Click on Generate Token.</h4>
+            <h4 class="my-3 mx-2" >2. Create a new personal access token with <strong>'api'</strong> access.</h4>
+            <h4 class="my-3 mx-2">3. Paste the token.</h4></br>
+            <h4 class="my-3 mx-2">4. Click on Let's Go.</h4></br>
           </div>
 
           <div class="card purple-cards p-4 " >
@@ -53,17 +54,17 @@
               <img class="rounded" src=<%=asset_path 'paste.png'%>  alt="paste" width="100px" height="100px">
               </br></br>
               <%= form_for @user do |f|  %>
-                <%= f.text_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your gitlab token'%> <br/>
+                <%= f.password_field :gitlab_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your gitlab token'%> <br/>
             </div>
           </div>
 
           <div class="card purple-cards p-4" >
             <div class="form-group"></br>
                 <img class="img-responsive m-1" src=<%=asset_path 'jira_icon.png' %>  alt="paste" width="100px" height="100px"></br></br>
-                <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br><br>
-                <img class="rounded" src=<%=asset_path 'paste.png'%> alt="paste" width="100px" height="100px">
-                </br></br>
-                <%= f.text_field :jira_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your Jira token'%> <br/>
+                <a target=_blank href="https://id.atlassian.com/manage/api-tokens" class="btn btn-outline btn-new">Generate Jira Token</a></br></br>
+                <label>This will be used for jira token validation and emailing.</label>
+                <%= f.text_field :email, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Please enter your email'%> <br/>
+                <%= f.password_field :jira_token, class: "form-control", style: "background-color: white; font-size: 20px", placeholder: 'Paste your Jira token'%> <br/>
                 <%= f.submit "Let's Go", class: "btn btn-outline btn-new mt-1" %>
             </div>
           </div>
