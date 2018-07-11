@@ -25,8 +25,5 @@ MANDATE_CHECKLIST:           'true'
 test:
   RAILS_ENV:                 'test'
   DB_NAME:                   'godeploytest'
-
-production:
-  RAILS_ENV:                 'production'
-  DB_NAME:                   'godeploy'
   MANDATE_CHECKLIST:         'false'
+
