@@ -19,7 +19,7 @@ class GitlabApiServices
 	end
 
   def get_user_projects(gitlab_user_id, page_id)
-    url = @base_url + "/projects?private_token=" + @access_token + "&per_page=20&page=" + page_id.to_s + "&owned=true&membership=true"
+    url = @base_url + "/projects?private_token=" + @access_token + "&per_page=20&page=" + page_id.to_s + "&membership=true"
     HTTParty.get(url)
   end
 

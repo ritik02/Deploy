@@ -69,7 +69,7 @@ http_interactions:
   recorded_at: Wed, 13 Jun 2018 09:10:08 GMT
 - request:
     method: get
-    uri: https://source.golabs.io/api/v4/projects?membership=true&owned=true&page=1&per_page=20&private_token=2zs_9Eu2PyH2z822Vg4a
+    uri: https://source.golabs.io/api/v4/projects?membership=true&page=1&per_page=20&private_token=2zs_9Eu2PyH2z822Vg4a
     body:
       encoding: US-ASCII
       string: ''
