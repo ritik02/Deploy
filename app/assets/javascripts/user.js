@@ -18,8 +18,9 @@ function agree_click(){
 	var a = document.getElementById('agree');
 	var dropdown = document.getElementById("team_email");
 	var channel_name = document.getElementById("slack_channel").value;
+	var deployment_summary = document.getElementById("deployment_summary").value;
 	var team_email = dropdown.options[dropdown.selectedIndex].value;
-	var new_url = a.href + "?team_email=" + team_email + "&channel_name=" + channel_name;
+	var new_url = a.href + "?team_email=" + team_email + "&channel_name=" + channel_name + "&deployment_summary=" + deployment_summary;
 	a.href = new_url;
 	window.open(gitlab_trigger_link,'_blank')
 	$('.modal').modal('close');

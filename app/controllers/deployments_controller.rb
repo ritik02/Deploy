@@ -60,9 +60,9 @@ class DeploymentsController < ApplicationController
 		deployment = Deployment.find(params[:id])
 		return if current_user.id != deployment.user_id || deployment.status != "Approved"
 		unless params[:channel_name].blank?
-			send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment))
+			send_message_on_slack_channel(params[:channel_name], get_slack_message(deployment, params[:deployment_summary]))
 		end
-		UserMailer.deployment_trigger_mail(deployment, params[:team_email]).deliver if !params[:team_email].blank?
+		UserMailer.deployment_trigger_mail(deployment, params[:team_email], params[:deployment_summary]).deliver if !params[:team_email].blank?
 		redirect_to user_path(id: @user.id)
 	end
 
@@ -76,15 +76,16 @@ class DeploymentsController < ApplicationController
 		Figaro.env.jira_base_url + "browse/" + response["key"]
 	end
 
-	def get_slack_message(deployment)
+	def get_slack_message(deployment, summary)
 		checklist_link = Figaro.env.diff_base_url+ "/deployments/" + deployment.id.to_s
 		message = User.find(deployment.user_id).name.upcase +
 		" is deploying commit ##{deployment.commit_id} of Project - #{deployment.project_name}" +
-		"\n Checklist Link: #{checklist_link}\n Jira Issue Link: #{deployment.jira_link}."
+		"\n Checklist Link: #{checklist_link}\n Jira Issue Link: #{deployment.jira_link}." +
+		"\nSummary: " + summary + "."
 	end
 
 	def params_valid?(params)
-		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id] && Figaro.env.mandate_checklist == "false" 
+		return true if !User.where(:email => params[:reviewer_email]).blank? && current_user.id.to_s == params[:user_id] && Figaro.env.mandate_checklist == "false"
 		return true if Figaro.env.mandate_checklist == "true" && is_checklist_valid?(params[:deployments])
 		redirect_to new_deployment_path(user_id: current_user.id,
 			project_name: params[:project_name],

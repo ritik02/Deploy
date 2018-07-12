@@ -87,7 +87,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should redirect to users show page even if channel_name is not provided" do
 			VCR.use_cassette("trigger_deployment_controller") do
 				sign_in users(:ten)
-				get :trigger_deployment, params: {id: 3, team_email: "group_mail@go-jek.com"}
+				get :trigger_deployment, params: {id: 3, team_email: "group_mail@go-jek.com", deployment_summary: "hello"}
 				expect(response).to redirect_to user_url(id: users(:ten).id)
 			end
 		end
@@ -95,7 +95,7 @@ RSpec.describe DeploymentsController, type: :controller do
 		it "should redirect to users show page if channel_name is provided" do
 			VCR.use_cassette("trigger_deployment_with_channel_name") do
 				sign_in users(:twelve)
-				get :trigger_deployment, params: {id: 4, channel_name: "test_new", team_email: "group_mail@go-jek.com"}
+				get :trigger_deployment, params: {id: 4, channel_name: "test_new", team_email: "group_mail@go-jek.com", deployment_summary: "hello"}
 				expect(response).to redirect_to user_url(id: users(:twelve).id)
 			end
 		end

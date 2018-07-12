@@ -6,6 +6,8 @@
  <body>
    <p><h3>Project Name: <%= @deployment.project_name %></h3>
      Hey, <b><%= User.find(@deployment.user_id).name.upcase %></b> is deploying commit: #<%=@deployment.commit_id%>
+     <br>
+     Summary: "<%=@deployment_summary%>"
    </p>
     <%= link_to "Checklist Form" , Figaro.env.diff_base_url+ "/deployments/" + @deployment.id.to_s , target: :_blank %>
  <br>
