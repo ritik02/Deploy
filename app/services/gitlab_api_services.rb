@@ -49,7 +49,7 @@ class GitlabApiServices
   end
 
   def get_search_results(gitlab_user_id, searched_query)
-    url = @base_url + "/projects?private_token=" + @access_token + "&owned=true&membership=true&search=" + searched_query + "&per_page=1000"
+    url = @base_url + "/projects?private_token=" + @access_token + "&membership=true&search=" + searched_query + "&per_page=1000"
     search_results = HTTParty.get(url)
 		search_results
   end
